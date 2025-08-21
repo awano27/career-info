@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>転職者向け情報サイト - 要件定義書</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --dark: #020617;
+            --light: #f8fafc;
+            --border: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--light);
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 260px;
+            height: 100vh;
+            background: var(--primary);
+            padding: 24px 16px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            z-index: 1000;
+        }
+        
+        .sidebar h2 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 4px;
+        }
+        
+        .sidebar a {
+            display: block;
+            padding: 8px 12px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .sidebar a:hover {
+            background: rgba(255,255,255,0.08);
+            color: white;
+        }
+        
+        .sidebar a.active {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .main-content {
+            margin-left: 260px;
+            padding: 32px 48px;
+            max-width: 1600px;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            font-size: 1.1rem;
+            margin: 20px 0 10px;
+            color: var(--text-secondary);
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-left: 3px solid var(--accent);
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .ui-proposal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .ui-option {
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .ui-option:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+        }
+        
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .color-box {
+            width: 120px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge-high {
+            background: var(--error);
+            color: white;
+        }
+        
+        .badge-medium {
+            background: var(--warning);
+            color: white;
+        }
+        
+        .badge-low {
+            background: var(--success);
+            color: white;
+        }
+        
+        .stat-card {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            
+            .ui-proposal {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media print {
+            .sidebar {
+                display: none;
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+        
+        .mermaid {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>📋 要件定義書</h2>
+        <ul>
+            <li><a href="#overview" class="active">プロジェクト概要</a></li>
+            <li><a href="#ui-design">UIデザイン案</a></li>
+            <li><a href="#color-palette">カラーパレット</a></li>
+            <li><a href="#persona">ペルソナ設定</a></li>
+            <li><a href="#requirements">要望一覧</a></li>
+            <li><a href="#features">機能要件</a></li>
+            <li><a href="#non-functional">非機能要件</a></li>
+            <li><a href="#architecture">システム構成</a></li>
+            <li><a href="#schedule">スケジュール</a></li>
+            <li><a href="#settings">設定情報</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <h1>転職者向け情報サイト - 要件定義書</h1>
+        
+        <section id="overview">
+            <h2>プロジェクト概要</h2>
+            <div class="card">
+                <h3>エグゼクティブサマリー</h3>
+                <p>転職者向け情報サイト（career-horizon.com準拠）として、転職市場のKPI指標をリアルタイムで可視化するダッシュボードページと、転職に関する最新ニュースを掲載するニュースページの2つの主要コンテンツで構成されるシンプルな情報サイトを構築します。</p>
+            </div>
+            
+            <div class="stat-card">
+                <div>サイト構成</div>
+                <div class="stat-value">2ページ</div>
+                <div>ダッシュボード + ニュース</div>
+            </div>
+            
+            <div class="feature-card">
+                <h3>主要コンテンツ1: KPI指標ダッシュボード</h3>
+                <p>転職市場の動向、求人倍率、平均年収、業界別転職率などを視覚的に表示するダッシュボード</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>主要コンテンツ2: 転職ニュースページ</h3>
+                <p>転職市場の最新ニュース、業界動向、転職成功事例、専門家コラムを掲載するニュースページ</p>
+            </div>
+        </section>
+        
+        <section id="ui-design">
+            <h2>UIデザイン案</h2>
+            <div class="ui-proposal">
+                <div class="ui-option">
+                    <h3>案1: ダッシュボード特化型</h3>
+                    <p><strong>特徴:</strong> データ可視化に特化したビジネス・アナリティクス系デザイン</p>
+                    <p><strong>採用理由:</strong> KPI指標を効果的に表示するため、グラフやチャートが見やすい構成</p>
+                    <p><strong>画像生成プロンプト:</strong> "Modern analytics dashboard UI, career KPI metrics, charts and graphs, dark blue theme, professional data visualization, clean layout with sidebar navigation"</p>
+                </div>
+                
+                <div class="ui-option">
+                    <h3>案2: ニュース・メディア型</h3>
+                    <p><strong>特徴:</strong> ニュースサイト風のクリーンで読みやすいレイアウト</p>
+                    <p><strong>採用理由:</strong> ニュース記事の閲覧性を重視し、記事一覧とダッシュボードを両立</p>
+                    <p><strong>画像生成プロンプト:</strong> "Clean news website UI, article cards layout, dashboard widgets integration, modern typography, white and blue color scheme, responsive design"</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="color-palette">
+            <h2>カラーパレット</h2>
+            <div class="color-palette">
+                <div class="color-box" style="background: #0f172a;">Primary<br>#0f172a</div>
+                <div class="color-box" style="background: #3b82f6;">Accent<br>#3b82f6</div>
+                <div class="color-box" style="background: #020617;">Dark<br>#020617</div>
+                <div class="color-box" style="background: #f8fafc; color: #333;">Light<br>#f8fafc</div>
+                <div class="color-box" style="background: #10b981;">Success<br>#10b981</div>
+                <div class="color-box" style="background: #f59e0b;">Warning<br>#f59e0b</div>
+                <div class="color-box" style="background: #ef4444;">Error<br>#ef4444</div>
+            </div>
+        </section>
+        
+        <section id="persona">
+            <h2>ペルソナ設定</h2>
+            <div class="card">
+                <h3>主要ペルソナ: 佐藤美咲（28歳）</h3>
+                <ul>
+                    <li><strong>職業:</strong> 営業職（金融業界）</li>
+                    <li><strong>年収:</strong> 450万円</li>
+                    <li><strong>転職検討理由:</strong> 市場動向を知りたい、転職のタイミングを判断したい</li>
+                    <li><strong>課題:</strong> 転職市場の現状が分からない、業界の最新動向に疎い</li>
+                    <li><strong>ニーズ:</strong> 転職市場のKPI指標確認、業界ニュースの定期的な情報収集</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>副ペルソナ: 山田隆志（35歳）</h3>
+                <ul>
+                    <li><strong>職業:</strong> 人事担当者（製造業）</li>
+                    <li><strong>年収:</strong> 650万円</li>
+                    <li><strong>利用目的:</strong> 採用市場の動向調査、競合他社の動向把握</li>
+                    <li><strong>ニーズ:</strong> 採用関連KPI確認、転職トレンドニュースの収集</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="requirements">
+            <h2>ユーザー要望一覧</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>要望内容</th>
+                        <th>優先度</th>
+                        <th>実装難易度</th>
+                        <th>予想工数</th>
+                        <th>備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>KPI指標ダッシュボード機能</td>
+                        <td><span class="badge badge-high">高</span></td>
+                        <td><span class="badge badge-medium">中</span></td>
+                        <td>15日</td>
+                        <td>メインコンテンツ</td>
+                    </tr>
+                    <tr>
+                        <td>転職ニュース掲載機能</td>
+                        <td><span class="badge badge-high">高</span></td>
+                        <td><span class="badge badge-low">低</span></td>
+                        <td>8日</td>
+                        <td>メインコンテンツ</td>
+                    </tr>
+                    <tr>
+                        <td>データ自動更新機能</td>
+                        <td><span class="badge badge-medium">中</span></td>
+                        <td><span class="badge badge-medium">中</span></td>
+                        <td>10日</td>
+                        <td>ダッシュボード用</td>
+                    </tr>
+                    <tr>
+                        <td>記事CMS機能</td>
+                        <td><span class="badge badge-medium">中</span></td>
+                        <td><span class="badge badge-low">低</span></td>
+                        <td>7日</td>
+                        <td>ニュース管理用</td>
+                    </tr>
+                    <tr>
+                        <td>レスポンシブ対応</td>
+                        <td><span class="badge badge-high">高</span></td>
+                        <td><span class="badge badge-low">低</span></td>
+                        <td>5日</td>
+                        <td>モバイル対応</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="features">
+            <h2>機能要件</h2>
+            <h3>サイト構成図</h3>
+            <div class="mermaid">
+                flowchart TB
+                    A[転職者向け情報サイト] --> B[KPI指標ダッシュボード]
+                    A --> C[転職ニュースページ]
+                    
+                    B --> D[求人倍率]
+                    B --> E[平均年収]
+                    B --> F[業界別転職率]
+                    B --> G[地域別求人数]
+                    
+                    C --> H[最新ニュース一覧]
+                    C --> I[業界トレンド記事]
+                    C --> J[転職成功事例]
+                    C --> K[専門家コラム]
+            </div>
+            
+            <h3>KPI指標詳細</h3>
+            <div class="feature-card">
+                <h4>表示指標</h4>
+                <ul>
+                    <li><strong>求人倍率:</strong> 月次・年次推移グラフ</li>
+                    <li><strong>平均年収:</strong> 業界別・職種別比較チャート</li>
+                    <li><strong>転職成功率:</strong> 年代別・経験年数別データ</li>
+                    <li><strong>求人数推移:</strong> 地域別・時系列データ</li>
+                </ul>
+            </div>
+            
+            <h3>ユーザーストーリー</h3>
+            <div class="feature-card">
+                <p>「転職を検討している私は、現在の転職市場の状況を把握したいので、KPI指標をダッシュボードで確認し、最新の業界ニュースを読みたい」</p>
+            </div>
+        </section>
+        
+        <section id="non-functional">
+            <h2>非機能要件</h2>
+            <div class="card">
+                <h3>パフォーマンス要件</h3>
+                <ul>
+                    <li>ページ表示速度: 3秒以内</li>
+                    <li>同時接続数: 10,000ユーザー</li>
+                    <li>検索レスポンス: 1秒以内</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>セキュリティ要件</h3>
+                <ul>
+                    <li>SSL/TLS暗号化通信</li>
+                    <li>個人情報保護法準拠</li>
+                    <li>GDPR対応</li>
+                    <li>2段階認証対応</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="architecture">
+            <h2>システムアーキテクチャ</h2>
+            <div class="mermaid">
+                graph TB
+                    A[ユーザー] --> B[Webブラウザ]
+                    B --> C[静的サイト/CDN]
+                    C --> D[ダッシュボードページ]
+                    C --> E[ニュースページ]
+                    
+                    F[データ収集API] --> G[KPI指標DB]
+                    H[ニュースCMS] --> I[記事DB]
+                    
+                    D --> F
+                    E --> H
+                    
+                    J[管理者] --> H
+                    K[外部データソース] --> F
+            </div>
+            
+            <h3>技術スタック（シンプル構成）</h3>
+            <div class="card">
+                <ul>
+                    <li><strong>フロントエンド:</strong> HTML, CSS, JavaScript（Chart.js等）</li>
+                    <li><strong>バックエンド:</strong> Node.js または Python（データ取得）</li>
+                    <li><strong>データベース:</strong> JSON/CSV形式またはMySQL（軽量）</li>
+                    <li><strong>ホスティング:</strong> Netlify, Vercel, GitHub Pages</li>
+                    <li><strong>データ可視化:</strong> Chart.js, D3.js</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="schedule">
+            <h2>プロジェクトスケジュール</h2>
+            <div class="mermaid">
+                gantt
+                    title 転職者向け情報サイト開発スケジュール
+                    dateFormat YYYY-MM-DD
+                    section 設計フェーズ
+                    要件定義           :2024-01-01, 5d
+                    基本設計           :5d
+                    section ダッシュボード開発
+                    KPI指標設計        :2024-01-11, 3d
+                    データ収集機能     :5d
+                    可視化機能         :7d
+                    section ニュース機能開発
+                    CMS設計           :2024-01-26, 3d
+                    記事管理機能       :5d
+                    フロント実装       :5d
+                    section 統合・テスト
+                    統合テスト         :2024-02-13, 5d
+                    リリース準備       :3d
+                    section リリース
+                    サービス開始       :milestone, 2024-02-21, 0d
+            </div>
+        </section>
+        
+        <section id="settings">
+            <h2>設定情報</h2>
+            <div class="card">
+                <h3>Claude Code統合設定</h3>
+                <p>以下の設定をClaude Codeの設定ファイルまたは環境変数として登録してください：</p>
+                <ul>
+                    <li><strong>プロジェクトURL:</strong> https://www.career-horizon.com</li>
+                    <li><strong>参考サイト:</strong> career-horizon.com</li>
+                    <li><strong>主要ページ:</strong>
+                        <ul>
+                            <li>/dashboard - KPI指標ダッシュボード</li>
+                            <li>/news - 転職ニュースページ</li>
+                        </ul>
+                    </li>
+                    <li><strong>データソース:</strong>
+                        <ul>
+                            <li>転職求人倍率API</li>
+                            <li>厚生労働省統計データ</li>
+                            <li>業界ニュースフィード</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p style="margin-top: 20px; padding: 10px; background: #fef3c7; border-left: 3px solid #f59e0b;">
+                    <strong>⚠️ 重要:</strong> 上記の設定をClaude Codeの設定ファイルまたは環境変数として登録してください
+                </p>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+        
+        // サイドバーナビゲーション
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // スクロールに応じてアクティブリンクを更新
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+                
+                if (scrollPosition >= top && scrollPosition < top + height) {
+                    document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+                    document.querySelector(`.sidebar a[href="#${id}"]`)?.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

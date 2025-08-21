@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__requirement__create_requirement",
+      "Bash(mkdir:*)",
+      "Bash(start docsrequirements.html)",
+      "WebFetch(domain:www.career-horizon.com)",
+      "Bash(start index.html)",
+      "Bash(git init:*)",
+      "Bash(dir:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "additionalDirectories": [
+      "C:\\c\\Users\\yoshitaka"
+    ]
+  }
+}

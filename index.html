@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>転職市場情報サイト | Career Horizon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>Career Horizon</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">ダッシュボード</a></li>
+                <li><a href="news.html" class="nav-link">転職ニュース</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="dashboard-header">
+            <h2>転職市場KPI指標ダッシュボード</h2>
+            <p class="update-time">最終更新: 2025年8月21日</p>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h3>有効求人倍率</h3>
+                    <span class="kpi-trend up">↗️</span>
+                </div>
+                <div class="kpi-value">1.28</div>
+                <div class="kpi-change">+0.05 (前月比)</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h3>平均年収</h3>
+                    <span class="kpi-trend up">↗️</span>
+                </div>
+                <div class="kpi-value">456万円</div>
+                <div class="kpi-change">+12万円 (前年比)</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h3>転職成功率</h3>
+                    <span class="kpi-trend stable">→</span>
+                </div>
+                <div class="kpi-value">68%</div>
+                <div class="kpi-change">-1% (前月比)</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <h3>新規求人数</h3>
+                    <span class="kpi-trend up">↗️</span>
+                </div>
+                <div class="kpi-value">24,567件</div>
+                <div class="kpi-change">+2,341件 (前月比)</div>
+            </div>
+        </div>
+
+        <div class="chart-grid">
+            <div class="chart-container">
+                <h3>求人倍率推移</h3>
+                <canvas id="jobRatioChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>業界別平均年収</h3>
+                <canvas id="salaryChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>地域別求人数</h3>
+                <canvas id="regionChart" width="400" height="200"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>年代別転職成功率</h3>
+                <canvas id="ageChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h3>市場概況</h3>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h4>📈 市場動向</h4>
+                    <p>転職市場は引き続き活況を呈しており、特にIT・DX関連職種の需要が高まっています。リモートワーク対応企業の求人も増加傾向にあります。</p>
+                </div>
+                <div class="summary-card">
+                    <h4>🎯 注目業界</h4>
+                    <p>IT・通信業界が平均年収トップを維持。次いで金融・保険業界、製造業が続いています。新興のフィンテック・AI関連企業も求人を拡大中です。</p>
+                </div>
+                <div class="summary-card">
+                    <h4>💼 転職のポイント</h4>
+                    <p>デジタルスキルの習得が重要。特にデータ分析、プロジェクト管理、コミュニケーション能力が求められています。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

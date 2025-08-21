@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>転職ニュース | Career Horizon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>Career Horizon</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
+                <li><a href="news.html" class="nav-link active">転職ニュース</a></li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="news-header">
+            <h2>転職・キャリア最新ニュース</h2>
+            <p class="update-time">最終更新: 2025年8月21日</p>
+        </div>
+
+        <div class="news-categories">
+            <button class="category-btn active" data-category="all">すべて</button>
+            <button class="category-btn" data-category="market">市場動向</button>
+            <button class="category-btn" data-category="industry">業界トレンド</button>
+            <button class="category-btn" data-category="success">成功事例</button>
+            <button class="category-btn" data-category="expert">専門家コラム</button>
+        </div>
+
+        <div class="news-grid">
+            <article class="news-card featured" data-category="market">
+                <div class="news-image">
+                    <div class="placeholder-image">📊</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag market">市場動向</span>
+                        <span class="news-date">2025年8月21日</span>
+                    </div>
+                    <h3>2025年転職市場レポート：IT人材不足が深刻化</h3>
+                    <p>最新の調査によると、2025年のIT業界における人材不足はさらに深刻化しており、特にAI・機械学習エンジニアの求人倍率が3.2倍に達しています。企業は高額な報酬と柔軟な働き方を提示して人材確保に努めています。</p>
+                    <div class="news-actions">
+                        <a href="#" class="read-more" onclick="openFullArticle(event, 'article1')">続きを読む →</a>
+                        <button class="source-btn" onclick="showSource(event, 'article1')">ソース</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="industry">
+                <div class="news-image">
+                    <div class="placeholder-image">🏢</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag industry">業界トレンド</span>
+                        <span class="news-date">2025年8月20日</span>
+                    </div>
+                    <h3>リモートワーク定着で地方移住転職が増加</h3>
+                    <p>コロナ禍で始まったリモートワークが定着し、東京の企業に勤務しながら地方に移住する転職者が30%増加しています。</p>
+                    <div class="news-actions">
+                        <a href="#" class="read-more" onclick="openFullArticle(event, 'article2')">続きを読む →</a>
+                        <button class="source-btn" onclick="showSource(event, 'article2')">ソース</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="success">
+                <div class="news-image">
+                    <div class="placeholder-image">⭐</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag success">成功事例</span>
+                        <span class="news-date">2025年8月19日</span>
+                    </div>
+                    <h3>30代未経験からデータサイエンティストに転職成功</h3>
+                    <p>営業職から独学でプログラミングを学び、データサイエンティストへの転職を成功させた田中さんの事例をご紹介します。</p>
+                    <div class="news-actions">
+                        <a href="#" class="read-more" onclick="openFullArticle(event, 'article3')">続きを読む →</a>
+                        <button class="source-btn" onclick="showSource(event, 'article3')">ソース</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="expert">
+                <div class="news-image">
+                    <div class="placeholder-image">👨‍💼</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag expert">専門家コラム</span>
+                        <span class="news-date">2025年8月18日</span>
+                    </div>
+                    <h3>転職活動で重要な「ポータブルスキル」とは</h3>
+                    <p>キャリアコンサルタントが解説する、業界を問わず活用できるポータブルスキルの重要性と身につけ方。</p>
+                    <div class="news-actions">
+                        <a href="#" class="read-more" onclick="openFullArticle(event, 'article4')">続きを読む →</a>
+                        <button class="source-btn" onclick="showSource(event, 'article4')">ソース</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="market">
+                <div class="news-image">
+                    <div class="placeholder-image">💰</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag market">市場動向</span>
+                        <span class="news-date">2025年8月17日</span>
+                    </div>
+                    <h3>平均年収が最も上がった職種TOP10発表</h3>
+                    <p>2024年度の転職データを分析し、前年比で最も年収が上昇した職種ランキングを発表。1位はAIエンジニアで平均15%アップ。</p>
+                    <a href="#" class="read-more">続きを読む →</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="industry">
+                <div class="news-image">
+                    <div class="placeholder-image">🌱</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag industry">業界トレンド</span>
+                        <span class="news-date">2025年8月16日</span>
+                    </div>
+                    <h3>ESG投資拡大で環境関連職種の求人急増</h3>
+                    <p>企業のサステナビリティ重視により、環境コンサルタントや再生可能エネルギー関連の求人が前年比200%増加しています。</p>
+                    <a href="#" class="read-more">続きを読む →</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="expert">
+                <div class="news-image">
+                    <div class="placeholder-image">📚</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag expert">専門家コラム</span>
+                        <span class="news-date">2025年8月15日</span>
+                    </div>
+                    <h3>面接官が見ているポイント：オンライン面接のコツ</h3>
+                    <p>人事のプロが教える、オンライン面接で好印象を与えるための準備と注意点。技術的な準備から話し方まで詳しく解説。</p>
+                    <a href="#" class="read-more">続きを読む →</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-category="success">
+                <div class="news-image">
+                    <div class="placeholder-image">🚀</div>
+                </div>
+                <div class="news-content">
+                    <div class="news-meta">
+                        <span class="category-tag success">成功事例</span>
+                        <span class="news-date">2025年8月14日</span>
+                    </div>
+                    <h3>スタートアップから大手企業へ：年収アップ転職の実例</h3>
+                    <p>スタートアップでの経験を活かし、大手企業のDX推進ポジションに転職した佐藤さんの体験談。年収は40%アップを実現。</p>
+                    <a href="#" class="read-more">続きを読む →</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="load-more">
+            <button class="load-more-btn">さらに記事を読み込む</button>
+        </div>
+
+        <div class="newsletter-signup">
+            <div class="newsletter-content">
+                <h3>📧 転職市場レポートを毎週お届け</h3>
+                <p>最新の転職市場動向やKPI指標をメールでお送りします</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="メールアドレスを入力" class="newsletter-input">
+                    <button class="newsletter-btn">登録する</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for Full Articles and Sources -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">記事タイトル</h3>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="news.js"></script>
+</body>
+</html>
