@@ -479,6 +479,133 @@ function getArticleData() {
     };
 }
 
+// HTML Source Display Functions
+function showHTMLSource(event) {
+    event.preventDefault();
+    const modal = document.getElementById('articleModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    
+    modalTitle.textContent = 'HTMLソースコード';
+    modalBody.innerHTML = `
+        <div class="source-info">
+            <h4>📄 このページのHTMLソース</h4>
+            <p>ページの一部のHTMLソースコードを表示しています。</p>
+            <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; margin: 1rem 0; max-height: 400px; overflow-y: auto;">
+                <pre style="font-family: 'Monaco', 'Courier New', monospace; font-size: 0.8rem; line-height: 1.4; margin: 0; white-space: pre-wrap;">${escapeHtml(getNewsCardHTML())}</pre>
+            </div>
+            <div style="margin-top: 1rem; padding: 1rem; background: #e7f3ff; border-left: 3px solid #3b82f6; border-radius: 4px;">
+                <h4>🔗 完全なソースコード</h4>
+                <p>完全なHTMLソースコードを見るには:</p>
+                <ul>
+                    <li>ブラウザで <strong>Ctrl+U</strong> (Windows) または <strong>Cmd+Option+U</strong> (Mac)</li>
+                    <li>右クリック → <strong>「ページのソースを表示」</strong></li>
+                    <li>開発者ツール (<strong>F12</strong>) → <strong>Elements</strong>タブ</li>
+                </ul>
+            </div>
+        </div>
+    `;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function showPageSource() {
+    const modal = document.getElementById('articleModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    
+    modalTitle.textContent = '📄 ページソースコード情報';
+    modalBody.innerHTML = `
+        <div class="source-info">
+            <h4>🌐 このWebサイトについて</h4>
+            <p>この転職情報サイトは、HTML、CSS、JavaScriptで構築されています。</p>
+            
+            <h4>🛠️ 使用技術</h4>
+            <ul>
+                <li><strong>HTML5</strong> - セマンティックなマークアップ</li>
+                <li><strong>CSS3</strong> - モダンなスタイリング（Grid、Flexbox、CSS Variables）</li>
+                <li><strong>JavaScript ES6+</strong> - インタラクティブ機能</li>
+                <li><strong>Chart.js</strong> - データ可視化ライブラリ</li>
+                <li><strong>Inter Font</strong> - Google Fonts</li>
+            </ul>
+            
+            <h4>📁 ファイル構成</h4>
+            <ul>
+                <li><code>index.html</code> - KPI指標ダッシュボード</li>
+                <li><code>news.html</code> - 転職ニュースページ（現在のページ）</li>
+                <li><code>style.css</code> - 統一CSSスタイル</li>
+                <li><code>news.js</code> - ニュースページ用JavaScript</li>
+                <li><code>dashboard.js</code> - ダッシュボード用JavaScript</li>
+            </ul>
+            
+            <div style="margin-top: 1rem; padding: 1rem; background: #f0f9ff; border-left: 3px solid #0ea5e9; border-radius: 4px;">
+                <h4>🔍 ソースコードを見る方法</h4>
+                <p><strong>完全なHTMLソース:</strong></p>
+                <ul>
+                    <li><kbd>Ctrl+U</kbd> (Windows) または <kbd>Cmd+Option+U</kbd> (Mac)</li>
+                    <li>右クリック → 「ページのソースを表示」</li>
+                </ul>
+                <p><strong>開発者ツール:</strong></p>
+                <ul>
+                    <li><kbd>F12</kbd> または 右クリック → 「検証」</li>
+                    <li>Elements タブでHTML構造を確認</li>
+                    <li>Console タブでJavaScriptのログを確認</li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 1rem; padding: 1rem; background: #f9fafb; border: 1px solid #d1d5db; border-radius: 4px;">
+                <h4>⭐ このサイトの特徴</h4>
+                <ul>
+                    <li>レスポンシブデザイン（PC、タブレット、スマートフォン対応）</li>
+                    <li>モダンで洗練された大人向けデザイン</li>
+                    <li>インタラクティブなチャートとグラフ</li>
+                    <li>モーダルウィンドウによる詳細表示</li>
+                    <li>カテゴリ別フィルタリング機能</li>
+                    <li>ニュースレター登録フォーム</li>
+                </ul>
+            </div>
+        </div>
+    `;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+// Get sample HTML for news card
+function getNewsCardHTML() {
+    return `<article class="news-card" data-category="market">
+    <div class="news-image">
+        <div class="placeholder-image">📊</div>
+    </div>
+    <div class="news-content">
+        <div class="news-meta">
+            <span class="category-tag market">市場動向</span>
+            <span class="news-date">2025年8月21日</span>
+        </div>
+        <h3>2025年転職市場レポート：IT人材不足が深刻化</h3>
+        <p>最新の調査によると、2025年のIT業界における人材不足は
+        さらに深刻化しており、特にAI・機械学習エンジニアの求人倍率が
+        3.2倍に達しています。</p>
+        <div class="news-actions">
+            <a href="#" class="read-more">続きを読む →</a>
+            <button class="source-btn">データソース</button>
+            <button class="source-btn">HTMLソース</button>
+        </div>
+    </div>
+</article>`;
+}
+
+// Escape HTML for display
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
 // Export functions for potential module use
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -490,6 +617,8 @@ if (typeof module !== 'undefined' && module.exports) {
         searchNews,
         openFullArticle,
         showSource,
-        closeModal
+        closeModal,
+        showHTMLSource,
+        showPageSource
     };
 }

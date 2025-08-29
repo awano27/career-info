@@ -19,6 +19,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">ダッシュボード</a></li>
                 <li><a href="news.html" class="nav-link">転職ニュース</a></li>
+                <li><a href="docs/requirements.html" class="nav-link">要件定義書</a></li>
             </ul>
             <div class="nav-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -32,6 +33,9 @@
         <div class="dashboard-header">
             <h2>転職市場KPI指標ダッシュボード</h2>
             <p class="update-time">最終更新: 2025年8月21日</p>
+            <div class="header-actions">
+                <button class="view-source-btn" onclick="showDashboardSource()">📄 ページソース情報</button>
+            </div>
         </div>
 
         <div class="kpi-grid">
@@ -116,6 +120,19 @@
     <footer class="footer">
         <p>&copy; 2025 Career Horizon. All rights reserved.</p>
     </footer>
+
+    <!-- Modal for Source Display -->
+    <div id="sourceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="sourceModalTitle">ソース情報</h3>
+                <button class="close" onclick="closeSourceModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="sourceModalBody">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
 
     <script src="dashboard.js"></script>
 </body>

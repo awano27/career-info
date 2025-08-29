@@ -109,6 +109,15 @@ git push
 
 ✅ https://awano27.github.io/career-info/ でダッシュボードが表示される
 ✅ https://awano27.github.io/career-info/news.html でニュースページが表示される
+✅ https://awano27.github.io/career-info/docs/requirements.html で要件定義書が表示される
 ✅ チャートが正常に表示される
 ✅ ニュース記事のモーダルが動作する
 ✅ レスポンシブデザインが機能する
+
+## 📄 公開される全ページ
+
+| ページ | URL | 説明 |
+|--------|-----|------|
+| ダッシュボード | https://awano27.github.io/career-info/ | KPI指標とチャート |
+| ニュース | https://awano27.github.io/career-info/news.html | 転職関連ニュース |
+| 要件定義書 | https://awano27.github.io/career-info/docs/requirements.html | プロジェクト仕様書 |

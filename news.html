@@ -18,6 +18,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
                 <li><a href="news.html" class="nav-link active">転職ニュース</a></li>
+                <li><a href="docs/requirements.html" class="nav-link">要件定義書</a></li>
             </ul>
             <div class="nav-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -31,6 +32,9 @@
         <div class="news-header">
             <h2>転職・キャリア最新ニュース</h2>
             <p class="update-time">最終更新: 2025年8月21日</p>
+            <div class="header-actions">
+                <button class="view-source-btn" onclick="showPageSource()">📄 ページソース表示</button>
+            </div>
         </div>
 
         <div class="news-categories">
@@ -55,7 +59,8 @@
                     <p>最新の調査によると、2025年のIT業界における人材不足はさらに深刻化しており、特にAI・機械学習エンジニアの求人倍率が3.2倍に達しています。企業は高額な報酬と柔軟な働き方を提示して人材確保に努めています。</p>
                     <div class="news-actions">
                         <a href="#" class="read-more" onclick="openFullArticle(event, 'article1')">続きを読む →</a>
-                        <button class="source-btn" onclick="showSource(event, 'article1')">ソース</button>
+                        <button class="source-btn" onclick="showSource(event, 'article1')">データソース</button>
+                        <button class="source-btn" onclick="showHTMLSource(event)">HTMLソース</button>
                     </div>
                 </div>
             </article>
@@ -73,7 +78,8 @@
                     <p>コロナ禍で始まったリモートワークが定着し、東京の企業に勤務しながら地方に移住する転職者が30%増加しています。</p>
                     <div class="news-actions">
                         <a href="#" class="read-more" onclick="openFullArticle(event, 'article2')">続きを読む →</a>
-                        <button class="source-btn" onclick="showSource(event, 'article2')">ソース</button>
+                        <button class="source-btn" onclick="showSource(event, 'article2')">データソース</button>
+                        <button class="source-btn" onclick="showHTMLSource(event)">HTMLソース</button>
                     </div>
                 </div>
             </article>
@@ -91,7 +97,8 @@
                     <p>営業職から独学でプログラミングを学び、データサイエンティストへの転職を成功させた田中さんの事例をご紹介します。</p>
                     <div class="news-actions">
                         <a href="#" class="read-more" onclick="openFullArticle(event, 'article3')">続きを読む →</a>
-                        <button class="source-btn" onclick="showSource(event, 'article3')">ソース</button>
+                        <button class="source-btn" onclick="showSource(event, 'article3')">データソース</button>
+                        <button class="source-btn" onclick="showHTMLSource(event)">HTMLソース</button>
                     </div>
                 </div>
             </article>
@@ -109,7 +116,8 @@
                     <p>キャリアコンサルタントが解説する、業界を問わず活用できるポータブルスキルの重要性と身につけ方。</p>
                     <div class="news-actions">
                         <a href="#" class="read-more" onclick="openFullArticle(event, 'article4')">続きを読む →</a>
-                        <button class="source-btn" onclick="showSource(event, 'article4')">ソース</button>
+                        <button class="source-btn" onclick="showSource(event, 'article4')">データソース</button>
+                        <button class="source-btn" onclick="showHTMLSource(event)">HTMLソース</button>
                     </div>
                 </div>
             </article>
