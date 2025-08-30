@@ -5,12 +5,19 @@ const parser = new Parser({ timeout: 20000 });
 
 // Feeds focusing on career/転職/就職/雇用 関連（RSS/Atom）
 const feeds = [
+  // 公式/公共
   { url: 'https://www.mhlw.go.jp/stf/news.rdf', org: '厚生労働省', defCat: '市場動向', defClass: 'market' },
   { url: 'https://www3.nhk.or.jp/rss/news/cat5.xml', org: 'NHK 経済', defCat: '市場動向', defClass: 'market' },
+  // 経済一般
   { url: 'https://www.asahi.com/rss/asahi/business.rdf', org: '朝日新聞 経済', defCat: '市場動向', defClass: 'market' },
   { url: 'https://toyokeizai.net/list/feed/rss', org: '東洋経済', defCat: '業界トレンド', defClass: 'industry' },
   { url: 'https://news.yahoo.co.jp/rss/topics/business.xml', org: 'Yahoo!ニュース 経済', defCat: '市場動向', defClass: 'market' },
   { url: 'https://news.livedoor.com/topics/rss/eco.xml', org: 'livedoor 経済', defCat: '市場動向', defClass: 'market' },
+  // HR/キャリア系メディア（公開RSS）
+  { url: 'https://hrnote.jp/feed/', org: 'HR NOTE', defCat: '専門家コラム', defClass: 'expert' },
+  { url: 'https://bizspa.jp/feed/', org: 'bizSPA!フレッシュ', defCat: '業界トレンド', defClass: 'industry' },
+  { url: 'https://goworkship.com/magazine/feed/', org: 'Workship MAGAZINE', defCat: '専門家コラム', defClass: 'expert' },
+  // プレス
   { url: 'https://prtimes.jp/index.rdf', org: 'PR TIMES', defCat: '業界トレンド', defClass: 'industry' }
 ];
 
