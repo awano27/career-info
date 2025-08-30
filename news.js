@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inject structured data (JSON-LD) dynamically
     injectStructuredData();
+
+    // Load dynamic news from data/news.json (if present)
+    fetchDynamicNews();
     
     // Add fade-in animation to news cards
     animateNewsCards();
@@ -479,6 +482,70 @@ function removeArticleFocusTrap() {
     }
 }
 
+// -------- Dynamic news (data/news.json) --------
+let __dynamicNews = {};
+async function fetchDynamicNews() {
+    try {
+        const res = await fetch('data/news.json', { cache: 'no-cache' });
+        if (!res.ok) return;
+        const data = await res.json();
+        const items = Array.isArray(data.items) ? data.items : [];
+        if (!items.length) return;
+        const grid = document.querySelector('.news-grid');
+        if (!grid) return;
+        const frag = document.createDocumentFragment();
+        items.forEach(item => {
+            __dynamicNews[item.id] = item;
+            const art = document.createElement('article');
+            art.className = 'news-card';
+            art.setAttribute('data-category', item.categoryClass || 'market');
+            art.innerHTML = `
+              <div class="news-image"><div class="placeholder-image">📰</div></div>
+              <div class="news-content">
+                <div class="news-meta">
+                  <span class="category-tag ${item.categoryClass || 'market'}">${item.category || ''}</span>
+                  <span class="news-date">${item.date || ''}</span>
+                </div>
+                <h3>${item.title}</h3>
+                <p>${(item.fullContent || '').replace(/<[^>]+>/g,' ').slice(0,140)}...</p>
+                <div class="news-actions">
+                  <a href="#" class="read-more" onclick="openDynamicArticle(event, '${item.id}')">続きを読む →</a>
+                  ${item.sourceUrl ? `<a class="source-btn" href="${item.sourceUrl}" target="_blank">出典リンク</a>` : ''}
+                </div>
+              </div>`;
+            frag.appendChild(art);
+        });
+        grid.prepend(frag);
+        // Rebuild JSON-LD to include dynamic items
+        injectStructuredData();
+    } catch (e) {
+        // ignore
+    }
+}
+
+function openDynamicArticle(event, id) {
+    event.preventDefault();
+    const item = __dynamicNews[id];
+    if (!item) return;
+    const modal = document.getElementById('articleModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    modalTitle.textContent = item.title;
+    modalBody.innerHTML = `
+      <div class="article-meta">
+        <span class="category-tag ${item.categoryClass || ''}">${item.category || ''}</span>
+        <span class="article-date">${item.date || ''}</span>
+      </div>
+      <div class="article-content">${item.fullContent || ''}</div>
+      ${item.sourceUrl ? `<div class="source-info" style="margin-top:1rem;">出典: <a href="${item.sourceUrl}" target="_blank">${item.organization || item.source || item.sourceUrl}</a></div>` : ''}
+    `;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    const closeBtn = modal.querySelector('.close');
+    if (closeBtn) closeBtn.focus();
+    setupArticleFocusTrap(modal);
+}
+
 // Article data with full content and source information
 function getArticleData() {
     return {
@@ -593,6 +660,15 @@ function getArticleData() {
             sourceUrl: 'https://www.jcda.jp/'
         }
     };
+}
+
+// Merge static + dynamic for JSON-LD
+function getAllArticles() {
+    const staticItems = getArticleData();
+    const dynPairs = Object.entries(__dynamicNews || {}).map(([id, a]) => [id, a]);
+    const merged = { ...staticItems };
+    dynPairs.forEach(([id, a]) => { merged[id] = a; });
+    return merged;
 }
 
 // Enhance existing cards with reliability and tags for top articles
@@ -819,7 +895,7 @@ function buildStructuredData() {
     const base = (location && location.origin && location.pathname)
       ? location.origin + location.pathname
       : 'https://awano27.github.io/career-info/news.html';
-    const articles = getArticleData();
+    const articles = getAllArticles();
     const toISO = (jp) => {
         const m = /^(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日$/.exec(jp);
         if (!m) return jp;
