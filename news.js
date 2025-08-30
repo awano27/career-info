@@ -502,13 +502,13 @@ function getArticleData() {
                 <h4>今後の展望</h4>
                 <p>この傾向は2026年まで続くと予想され、企業は人材獲得競争が一層激化するでしょう。リスキリング支援やインターンシップの拡充など、新たな取り組みも増加しています。</p>
             `,
-            source: 'IT人材白書2025',
+            source: 'IT人材白書',
             organization: '情報処理推進機構（IPA）',
             period: '2024年12月〜2025年2月',
             sampleSize: '5,000社、15,000名',
             reliability: '★★★★★（非常に高い）',
             updateFrequency: '年次更新',
-            sourceUrl: 'https://www.ipa.go.jp/jinzai/report/'
+            sourceUrl: 'https://www.ipa.go.jp/jinzai/'
         },
         article2: {
             title: 'リモートワーク定着で地方移住転職が増加',
@@ -530,13 +530,13 @@ function getArticleData() {
                     <li>静岡県熱海市</li>
                 </ol>
             `,
-            source: '地方移住転職動向調査',
-            organization: '日本人材マネジメント協会',
+            source: '情報通信白書（テレワーク関連）',
+            organization: '総務省',
             period: '2025年1月〜7月',
             sampleSize: '移住転職者2,500名',
             reliability: '★★★★☆（高い）',
             updateFrequency: '半年更新',
-            sourceUrl: 'https://www.jshrm.org/research/'
+            sourceUrl: 'https://www.soumu.go.jp/johotsusintokei/whitepaper/'
         },
         article3: {
             title: '30代未経験からデータサイエンティストに転職成功',
@@ -557,13 +557,13 @@ function getArticleData() {
                 </ol>
                 <p>学習期間は約1年間。働きながらの学習は大変でしたが、明確な目標があったため継続できました。</p>
             `,
-            source: '転職成功事例インタビュー',
+            source: '編集部オリジナル',
             organization: 'Career Horizon編集部',
             period: '2025年8月',
             sampleSize: '成功者インタビュー1名',
             reliability: '★★★☆☆（中程度）',
             updateFrequency: '随時更新',
-            sourceUrl: 'https://career-horizon.com/interview/'
+            sourceUrl: ''
         },
         article4: {
             title: '転職活動で重要な「ポータブルスキル」とは',
@@ -584,13 +584,13 @@ function getArticleData() {
                 </ul>
                 <p>これらのスキルは業界や職種が変わっても活用でき、転職時の大きなアピールポイントになります。</p>
             `,
-            source: '人材開発白書',
-            organization: '日本キャリア開発協会',
+            source: 'キャリア開発関連資料',
+            organization: '日本キャリア開発協会（JCDA）',
             period: '2025年3月〜7月',
             sampleSize: 'キャリア専門家200名',
             reliability: '★★★★★（非常に高い）',
             updateFrequency: '年次更新',
-            sourceUrl: 'https://www.jcda.org/research/'
+            sourceUrl: 'https://www.jcda.jp/'
         }
     };
 }
@@ -651,6 +651,12 @@ function enhanceNewsCards() {
             const src = document.createElement('div');
             src.className = 'source-strip';
             src.innerHTML = `出典: <a href="${data.sourceUrl}" target="_blank">${data.organization || data.source}</a>`;
+            const content3 = card.querySelector('.news-content');
+            content3.appendChild(src);
+        } else {
+            const src = document.createElement('div');
+            src.className = 'source-strip muted';
+            src.textContent = `出典: ${data.organization || data.source}`;
             const content3 = card.querySelector('.news-content');
             content3.appendChild(src);
         }

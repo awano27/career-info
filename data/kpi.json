@@ -1,7 +1,10 @@
 {
   "lastUpdated": "2025-08-21",
   "sources": [
-    { "name": "厚生労働省", "url": "https://www.mhlw.go.jp/" }
+    { "name": "厚生労働省 一般職業紹介状況（職業安定業務統計）", "url": "https://www.mhlw.go.jp/toukei/list/114-1.html" },
+    { "name": "厚生労働省 賃金構造基本統計調査", "url": "https://www.mhlw.go.jp/toukei/list/chingin.html" },
+    { "name": "総務省統計局 労働力調査", "url": "https://www.stat.go.jp/data/roudou/index.html" },
+    { "name": "国税庁 民間給与実態統計調査", "url": "https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan/index.htm" }
   ],
   "metrics": {
     "jobRatio": {
