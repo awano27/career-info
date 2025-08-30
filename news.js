@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeTagFilters();
     // Delegate handlers for dynamically added cards
     initializeDelegatedHandlers();
+
+    // Inject structured data (JSON-LD) dynamically
+    injectStructuredData();
     
     // Add fade-in animation to news cards
     animateNewsCards();
@@ -771,7 +774,8 @@ if (typeof module !== 'undefined' && module.exports) {
         closeModal,
         showHTMLSource,
         showPageSource,
-        showAllSources
+        showAllSources,
+        injectStructuredData
     };
 }
 
@@ -802,6 +806,73 @@ function initializeDelegatedHandlers() {
             setupArticleFocusTrap(modal);
         }
     });
+}
+
+// Build and inject JSON-LD for NewsArticle from getArticleData
+function injectStructuredData() {
+    try {
+        const head = document.head || document.getElementsByTagName('head')[0];
+        if (!head) return;
+        // Remove previous script if exists
+        const old = document.getElementById('news-jsonld');
+        if (old && old.parentNode) old.parentNode.removeChild(old);
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'news-jsonld';
+
+        const base = (location && location.origin && location.pathname)
+          ? location.origin + location.pathname
+          : 'https://awano27.github.io/career-info/news.html';
+
+        const articles = getArticleData();
+        const toISO = (jp) => {
+            // 2025年8月21日 → 2025-08-21
+            const m = /^(\d{4})年\s*(\d{1,2})月\s*(\d{1,2})日$/.exec(jp);
+            if (!m) return jp;
+            const y = m[1];
+            const mo = String(m[2]).padStart(2, '0');
+            const d = String(m[3]).padStart(2, '0');
+            return `${y}-${mo}-${d}`;
+        };
+        const stripHtml = (html) => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+        const graph = Object.entries(articles).map(([id, a]) => {
+            const url = `${base}#${id}`;
+            const isOrg = (a.author || '').includes('編集部');
+            const author = isOrg
+              ? { '@type': 'Organization', name: a.author }
+              : { '@type': 'Person', name: a.author };
+            const desc = a.fullContent ? stripHtml(a.fullContent).slice(0, 180) : undefined;
+            const obj = {
+                '@type': 'NewsArticle',
+                headline: a.title,
+                datePublished: toISO(a.date || ''),
+                dateModified: toISO(a.date || ''),
+                articleSection: a.category,
+                author,
+                publisher: { '@type': 'Organization', name: 'Career Horizon' },
+                keywords: Array.isArray(a.tags) ? a.tags : undefined,
+                url,
+                mainEntityOfPage: { '@type': 'WebPage', '@id': url }
+            };
+            if (a.sourceUrl) {
+                obj.isBasedOn = { '@type': 'WebPage', url: a.sourceUrl };
+                obj.citation = a.sourceUrl;
+            }
+            if (desc) obj.description = desc;
+            return obj;
+        });
+
+        const jsonld = {
+            '@context': 'https://schema.org',
+            '@graph': graph
+        };
+        script.textContent = JSON.stringify(jsonld);
+        head.appendChild(script);
+    } catch (e) {
+        // no-op
+    }
 }
 
 // Aggregate sources
