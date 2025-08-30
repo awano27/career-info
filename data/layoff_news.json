@@ -1,0 +1,24 @@
+[
+  {
+    "id": "2025-08-30-techcrunchcom-n",
+    "date": "2025-08-30",
+    "company": "techcrunch.com",
+    "event_type": "layoff",
+    "headcount_affected": 0,
+    "headcount_confidence": 0.5,
+    "summary": "A complete list of all the known layoffs in tech, from Big Tech to startups, broken down by month throughout 2024.",
+    "source_urls": [
+      "https://techcrunch.com/2025/08/29/tech-layoffs-2025-list/"
+    ],
+    "region": "JP",
+    "sector": "Unknown",
+    "listed_flag": false,
+    "tags": [
+      "layoff",
+      "layoffs"
+    ],
+    "_meta": {
+      "source_domain": "techcrunch.com"
+    }
+  }
+]
