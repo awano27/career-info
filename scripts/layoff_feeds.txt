@@ -1,0 +1,16 @@
+# RSS/Atom feed URLs for layoff/voluntary retirement/restructure detection
+# One URL per line. Lines starting with # are comments.
+
+# 実運用候補（利用規約・robotsの遵守は各自確認してください）
+# Reuters Japan Business
+https://feeds.reuters.com/reuters/JPbusinessNews
+# Reuters World Business (EN)
+https://feeds.reuters.com/reuters/businessNews
+# NHKニュース 経済
+https://www3.nhk.or.jp/rss/news/cat5.xml
+# ITmedia ビジネスオンライン（経済/ビジネス全般）
+https://www.itmedia.co.jp/business/subtop/rss/business.rdf
+# TechCrunch (EN) – frequent layoffs coverage
+https://techcrunch.com/feed/
+# Panasonic Newsroom Japan – プレスリリース
+https://news.panasonic.com/jp/rss/press/index.xml

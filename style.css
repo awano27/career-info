@@ -499,6 +499,11 @@ body {
     color: var(--warning-color);
 }
 
+.category-tag.employment {
+    background: rgba(99, 102, 241, 0.12);
+    color: #4f46e5;
+}
+
 .news-date {
     color: var(--secondary-color);
     font-size: 0.8rem;

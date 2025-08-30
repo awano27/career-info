@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load dynamic news from data/news.json (if present)
     fetchDynamicNews();
+    // Load layoff/retirement news from data/layoff_news.json
+    fetchLayoffNews();
     
     // Add fade-in animation to news cards
     animateNewsCards();
@@ -52,30 +54,75 @@ function initializeMobileNav() {
 }
 
 // News Category Filtering
+let __currentCategory = 'all';
+let __currentSubcategory = 'all';
 function initializeNewsFiltering() {
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const newsCards = document.querySelectorAll('.news-card');
+    const categoryButtons = document.querySelectorAll('.news-categories .category-btn');
+    const newsCards = document.getElementsByClassName('news-card');
+    const subcatWrap = document.getElementById('employment-subcategories');
+    const subcatButtons = subcatWrap ? subcatWrap.querySelectorAll('.subcategory-btn') : [];
 
     categoryButtons.forEach(button => {
         button.addEventListener('click', function() {
             const category = this.getAttribute('data-category');
-            
+            __currentCategory = category || 'all';
+
             // Update active button
             categoryButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
+
+            // Toggle subcategories visibility
+            if (__currentCategory === 'employment' && subcatWrap) {
+                subcatWrap.style.display = '';
+            } else if (subcatWrap) {
+                subcatWrap.style.display = 'none';
+                __currentSubcategory = 'all';
+                if (subcatButtons && subcatButtons.length) {
+                    subcatButtons.forEach(btn => btn.classList.remove('active'));
+                    const first = subcatWrap.querySelector('.subcategory-btn[data-subcategory="all"]');
+                    if (first) first.classList.add('active');
+                }
+            }
+
             // Filter news cards
-            filterNewsCards(category, newsCards);
+            filterNewsCards(__currentCategory, __currentSubcategory, newsCards);
         });
     });
+
+    // Subcategory listeners
+    if (subcatButtons && subcatButtons.length) {
+        subcatButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const sub = this.getAttribute('data-subcategory') || 'all';
+                __currentSubcategory = sub;
+                subcatButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                filterNewsCards(__currentCategory, __currentSubcategory, newsCards);
+            });
+        });
+    }
 }
 
 // Filter news cards based on category
-function filterNewsCards(category, newsCards) {
-    newsCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        
-        if (category === 'all' || cardCategory === category) {
+function filterNewsCards(category, subcategory, newsCards) {
+    const list = Array.from(newsCards || []);
+    list.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || '';
+        const cardSub = card.getAttribute('data-subcategory') || 'all';
+        let visible = false;
+        if (category === 'all') {
+            visible = true;
+        } else if (category === cardCategory) {
+            if (category === 'employment') {
+                visible = (subcategory === 'all' || subcategory === cardSub);
+            } else {
+                visible = true;
+            }
+        } else {
+            visible = false;
+        }
+
+        if (visible) {
             card.style.display = 'block';
             card.classList.add('fade-in');
         } else {
@@ -484,6 +531,7 @@ function removeArticleFocusTrap() {
 
 // -------- Dynamic news (data/news.json) --------
 let __dynamicNews = {};
+let __layoffNews = {};
 async function fetchDynamicNews() {
     try {
         const res = await fetch('data/news.json', { cache: 'no-cache' });
@@ -521,6 +569,111 @@ async function fetchDynamicNews() {
     } catch (e) {
         // ignore
     }
+}
+
+// -------- Layoff news (data/layoff_news.json) --------
+async function fetchLayoffNews() {
+    try {
+        const res = await fetch('data/layoff_news.json', { cache: 'no-cache' });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!Array.isArray(data) || data.length === 0) return;
+        const grid = document.querySelector('.news-grid');
+        if (!grid) return;
+        const frag = document.createDocumentFragment();
+
+        const toJpDate = (iso) => {
+            const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+            if (!m) return iso || '';
+            return `${m[1]}年${parseInt(m[2],10)}月${parseInt(m[3],10)}日`;
+        };
+        const toEventJa = (et) => et === 'layoff' ? '人員削減/リストラ' : (et === 'voluntary_retirement' ? '希望退職募集' : '事業再編');
+
+        data.forEach(raw => {
+            const id = `layoff-${raw.id}`;
+            const title = `${raw.company}：${toEventJa(raw.event_type)}${raw.headcount_affected ? `（影響人数: ${raw.headcount_affected}人）` : ''}`;
+            const dateJp = toJpDate(raw.date);
+            const sourceUrl = Array.isArray(raw.source_urls) && raw.source_urls.length ? raw.source_urls[0] : '';
+            const tags = Array.isArray(raw.tags) ? raw.tags : [];
+            const fullContent = `
+              <p>${escapeHtml(raw.summary || '')}</p>
+              <ul>
+                <li><strong>会社名:</strong> ${escapeHtml(raw.company || '')}</li>
+                <li><strong>イベント種別:</strong> ${toEventJa(raw.event_type)}</li>
+                <li><strong>影響人数:</strong> ${raw.headcount_affected || '不明'} 人（信頼度: ${(raw.headcount_confidence ?? 0).toFixed(2)}）</li>
+                <li><strong>地域:</strong> ${escapeHtml(raw.region || '')}</li>
+                <li><strong>セクター:</strong> ${escapeHtml(raw.sector || '')}</li>
+                <li><strong>上場フラグ:</strong> ${raw.listed_flag ? '上場' : '非上場/不明'}</li>
+              </ul>
+              ${sourceUrl ? `<div class="source-info">出典: <a href="${sourceUrl}" target="_blank" rel="noopener">${escapeHtml(sourceUrl)}</a></div>` : ''}
+            `;
+
+            const norm = {
+                id,
+                title,
+                category: '雇用・人事',
+                categoryClass: 'employment',
+                date: dateJp,
+                author: 'Career Horizon編集部',
+                readTimeMin: 2,
+                tags: ['レイオフ/希望退職'].concat(tags || []),
+                fullContent,
+                sourceUrl,
+                _raw: raw,
+            };
+            __layoffNews[id] = norm;
+
+            const art = document.createElement('article');
+            art.className = 'news-card';
+            art.setAttribute('data-category', 'employment');
+            art.setAttribute('data-subcategory', 'layoff');
+            art.innerHTML = `
+              <div class="news-image"><div class="placeholder-image">🏷️</div></div>
+              <div class="news-content">
+                <div class="news-meta">
+                  <span class="category-tag employment">雇用・人事</span>
+                  <span class="news-date">${norm.date}</span>
+                </div>
+                <h3>${escapeHtml(norm.title)}</h3>
+                <p>${escapeHtml((raw.summary || '')).slice(0, 140)}${(raw.summary || '').length > 140 ? '...' : ''}</p>
+                <div class="news-actions">
+                  <a href="#" class="read-more" onclick="openLayoffArticle(event, '${norm.id}')">続きを読む →</a>
+                  ${sourceUrl ? `<a class="source-btn" href="${sourceUrl}" target="_blank" rel="noopener">出典リンク</a>` : ''}
+                </div>
+              </div>`;
+            frag.appendChild(art);
+        });
+
+        // Insert layoff cards at top
+        grid.prepend(frag);
+        // Rebuild JSON-LD to include these items
+        injectStructuredData();
+        animateNewsCards();
+    } catch (e) {
+        // ignore
+    }
+}
+
+function openLayoffArticle(event, id) {
+    event.preventDefault();
+    const item = __layoffNews[id];
+    if (!item) return;
+    const modal = document.getElementById('articleModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    modalTitle.textContent = item.title;
+    modalBody.innerHTML = `
+      <div class="article-meta">
+        <span class="category-tag ${item.categoryClass}">${item.category}</span>
+        <span class="article-date">${item.date}</span>
+      </div>
+      <div class="article-content">${item.fullContent}</div>
+    `;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    const closeBtn = modal.querySelector('.close');
+    if (closeBtn) closeBtn.focus();
+    setupArticleFocusTrap(modal);
 }
 
 function openDynamicArticle(event, id) {
@@ -666,8 +819,10 @@ function getArticleData() {
 function getAllArticles() {
     const staticItems = getArticleData();
     const dynPairs = Object.entries(__dynamicNews || {}).map(([id, a]) => [id, a]);
+    const layPairs = Object.entries(__layoffNews || {}).map(([id, a]) => [id, a]);
     const merged = { ...staticItems };
     dynPairs.forEach(([id, a]) => { merged[id] = a; });
+    layPairs.forEach(([id, a]) => { merged[id] = a; });
     return merged;
 }
 
@@ -972,7 +1127,7 @@ function showAllSources() {
     const modal = document.getElementById('articleModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
-    const articles = getArticleData();
+    const articles = getAllArticles();
     const unique = new Map();
     Object.values(articles).forEach(a => {
         if (a.sourceUrl && !unique.has(a.sourceUrl)) {
