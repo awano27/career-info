@@ -6,6 +6,12 @@
 https://feeds.reuters.com/reuters/JPbusinessNews
 # Reuters World Business (EN)
 https://feeds.reuters.com/reuters/businessNews
+# Asahi Business (JP)
+https://www.asahi.com/rss/asahi/business.rdf
+# NHK 経済 (JP)
+https://www3.nhk.or.jp/rss/news/cat5.xml
+# Toyokeizai (JP)
+https://toyokeizai.net/list/feed/rss
 # NHKニュース 経済
 https://www3.nhk.or.jp/rss/news/cat5.xml
 # ITmedia ビジネスオンライン（経済/ビジネス全般）
