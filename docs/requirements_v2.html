@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>転職者向け情報サイト - 要件定義書 v2（コンテンツ充実化）</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #3b82f6;
+      --dark: #020617;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --error: #ef4444;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--light);
+    }
+
+    .sidebar {
+      position: fixed; left: 0; top: 0; width: 260px; height: 100vh;
+      background: var(--primary); padding: 24px 16px; overflow-y: auto; z-index: 1000;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    .sidebar h2 { color: #fff; font-size: 1.2rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .sidebar ul { list-style: none; }
+    .sidebar li { margin-bottom: 4px; }
+    .sidebar a { display: block; padding: 8px 12px; color: rgba(255,255,255,0.85); text-decoration: none; border-radius: 6px; transition: all .3s; }
+    .sidebar a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .sidebar a.active { background: var(--accent); color: #fff; }
+
+    .main-content {
+      margin-left: 260px; padding: 32px 48px; max-width: 1600px; background: #fff; min-height: 100vh;
+    }
+    h1 { font-size: 2.1rem; margin-bottom: 20px; color: var(--primary); }
+    h2 { font-size: 1.5rem; margin: 30px 0 15px; color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 8px; }
+    h3 { font-size: 1.1rem; margin: 18px 0 10px; color: var(--text-secondary); }
+    p { margin: 8px 0; color: var(--text-secondary); }
+    ul { padding-left: 18px; margin: 8px 0; }
+    code, kbd { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+    .card { background: #fff; padding: 16px 18px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin: 12px 0; }
+    .feature-card { background: #f8f9fa; border-left: 3px solid var(--accent); padding: 14px 16px; margin: 10px 0; }
+    .badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: .75rem; font-weight: 600; }
+    .badge-high { background: var(--error); color: #fff; }
+    .badge-medium { background: var(--warning); color: #fff; }
+    .badge-low { background: var(--success); color: #fff; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+    th { background: var(--primary); color: #fff; padding: 10px 12px; text-align: left; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .muted { color: var(--text-muted); font-size: .9em; }
+
+    .mermaid { margin: 20px 0; }
+
+    @media (max-width: 1024px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); }
+      .main-content { margin-left: 0; padding: 20px; }
+    }
+    @media print {
+      .sidebar { display: none; }
+      .main-content { margin-left: 0; }
+    }
+  </style>
+  <meta name="description" content="転職者向け情報サイトの要件定義書v2。検索・関連記事・タグ・信頼性表示、ダッシュボード/ニュース拡張、データ自動更新、SEO/A11y/新規ページの計画を記載。">
+</head>
+<body>
+  <div class="sidebar">
+    <div style="margin-bottom: 1rem; display: grid; gap: 8px;">
+      <a href="../index.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem;">← ダッシュボード</a>
+      <a href="../news.html" style="color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.9rem;">← 転職ニュース</a>
+    </div>
+    <h2>📋 要件定義書 v2</h2>
+    <ul>
+      <li><a href="#overview" class="active">プロジェクト概要</a></li>
+      <li><a href="#quick-wins">クイックウィン</a></li>
+      <li><a href="#dashboard">ダッシュボード強化</a></li>
+      <li><a href="#news">ニュース強化</a></li>
+      <li><a href="#new-pages">新規ページ</a></li>
+      <li><a href="#data-automation">データと自動化</a></li>
+      <li><a href="#seo">SEO/発見性</a></li>
+      <li><a href="#ux">UX/アクセシビリティ</a></li>
+      <li><a href="#non-functional">非機能要件</a></li>
+      <li><a href="#architecture">アーキテクチャ</a></li>
+      <li><a href="#data-models">データモデル</a></li>
+      <li><a href="#schedule">スケジュール</a></li>
+      <li><a href="#acceptance">受け入れ基準/KPI</a></li>
+      <li><a href="#rollout">ロールアウト</a></li>
+      <li><a href="#risks">リスク/対応</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <h1>転職者向け情報サイト - 要件定義書 v2（コンテンツ充実化）</h1>
+
+    <section id="overview">
+      <h2>プロジェクト概要</h2>
+      <div class="card">
+        <h3>目的</h3>
+        <p>既存の「KPIダッシュボード + ニュース」サイトに対し、ユーザーの情報探索体験と信頼性を高めるための機能強化（検索・関連記事・タグ・信頼性可視化）と、データ自動更新/新規ページ拡充/SEO・A11y改善を段階的に実施する。</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>スコープ</h3>
+          <ul>
+            <li>ニュース検索/関連記事/タグ/信頼性UI</li>
+            <li>ダッシュボードの注釈/絞り込み/可視化追加</li>
+            <li>記事構造化データ/著者/読了時間/連載設計</li>
+            <li>新規ページ（リソース集/用語集/ツール/企業研究）</li>
+            <li>データ分離（JSON）と週次自動更新（GitHub Actions）</li>
+            <li>SEO/OGP/サイトマップ/A11y強化</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>成功指標（KPI）</h3>
+          <ul>
+            <li>ページ/セッション +20%</li>
+            <li>平均滞在時間 +15%</li>
+            <li>回遊率（同一セッション内PV） +25%</li>
+            <li>ニュースレター登録率 +30%</li>
+            <li>検索流入 +30%（3ヶ月後）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="quick-wins">
+      <h2>クイックウィン（即日〜2日）</h2>
+      <div class="feature-card">
+        <h3>1) ニュース検索の有効化</h3>
+        <p>検索フィールドを追加し、既存の <code>initializeSearch</code>/<code>searchNews</code>/<code>debounce</code> を有効化。ヒット件数表示/ハイライトを追加。</p>
+        <p class="muted">受入基準: 入力に応じて記事カードがリアルタイムにフィルタ、0件時の空状態表示</p>
+      </div>
+      <div class="feature-card">
+        <h3>2) 関連記事ブロック</h3>
+        <p>同カテゴリ（＋簡易タイトル類似）で3件まで表示。記事モーダル末尾に挿入。</p>
+        <p class="muted">受入基準: 関連が無い場合は非表示、クリックで対象記事に遷移</p>
+      </div>
+      <div class="feature-card">
+        <h3>3) タグ導入</h3>
+        <p>記事に複数タグ付与。タグチップからフィルタ可能。タグ一覧簡易ページ（同一UIでフィルタ）。</p>
+        <p class="muted">受入基準: 複数タグのAND/OR切替（初期はOR）</p>
+      </div>
+      <div class="feature-card">
+        <h3>4) 信頼性UI</h3>
+        <p>カードに「出典・更新日・信頼度（★）」を簡易表示。記事モーダルのソース情報と連動。</p>
+        <p class="muted">受入基準: JSON上の <code>reliability</code> に応じた視覚表現</p>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <h2>ダッシュボード強化</h2>
+      <div class="card">
+        <ul>
+          <li>注釈: 特異点にイベント注釈（例: 政策、大規模採用）</li>
+          <li>比較表示: 前月比/前年比のバッジ、移動平均/変化率ラインの重ね書き</li>
+          <li>絞り込み: 業界/地域/年代タブやセレクトでデータ切替</li>
+          <li>追加可視化: コーラスマップ、ヒストグラム/箱ひげ図（給与分布）</li>
+          <li>データ出力: CSV/JSONのダウンロードリンク</li>
+          <li>メタ情報: 最終更新/出典/更新ポリシーの常時表示</li>
+        </ul>
+        <p class="muted">注釈はChart.js Annotationプラグインの採用を検討</p>
+      </div>
+    </section>
+
+    <section id="news">
+      <h2>ニュース強化</h2>
+      <div class="card">
+        <ul>
+          <li>構造化データ: schema.org <code>NewsArticle</code>/<code>Article</code> のJSON-LDを各記事埋め込み</li>
+          <li>メタ情報: 著者/読了時間/公開・更新日/シリーズ（連載）
+          </li>
+          <li>配信: RSS/Atomフィード、ニュースレターの価値訴求文を追記</li>
+          <li>イベント委譲: 追加カードにもモーダル/ソース/HTML表示が効くように</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>連載企画（例）</h3>
+        <ul>
+          <li>業界深掘り：IT/金融/製造の年収・求人・転職成功率</li>
+          <li>スキル別給与ガイド：データ/PM/Infra/セールス</li>
+          <li>年代別キャリア戦略：20代/30代/40代</li>
+          <li>転職の科学：意思決定/内定率/交渉術の実証知見</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="new-pages">
+      <h2>新規ページ（柱コンテンツ）</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>リソース集</h3>
+          <ul>
+            <li>履歴書/職務経歴書テンプレ、面接チェックリスト</li>
+            <li>年収交渉スクリプト（PDF配布でリード獲得）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>用語集/FAQ</h3>
+          <ul>
+            <li>転職KPI/雇用形態/選考用語の定義</li>
+            <li>FAQは <code>FAQPage</code> スキーマで構造化</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>ツール</h3>
+          <ul>
+            <li>年収シミュレーター、地域別給与指数、簡易スキル診断</li>
+            <li>結果の共有/CTA連動（ニュースレター登録）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>企業研究</h3>
+          <ul>
+            <li>主要企業プロファイル：平均年収/募集傾向/選考ポイント</li>
+            <li>業界別一覧＋フィルタ、内部リンク強化</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="data-automation">
+      <h2>データと自動化</h2>
+      <div class="card">
+        <ul>
+          <li>データ分離: <code>data/kpi.json</code> と <code>data/news.json</code> を新設し、フロントはFetchで描画</li>
+          <li>自動更新: GitHub Actionsで週次スケジュール → e-Stat/厚労省等から集計 → JSON更新 → Pages反映</li>
+          <li>品質: スキーマ（Zod等）でバリデーション、差分検知で通知</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="seo">
+      <h2>SEO/発見性</h2>
+      <div class="card">
+        <ul>
+          <li>メタ/OGP/Twitterカードを各ページ個別設定</li>
+          <li>サイトマップ/robots、構造化データ（<code>WebSite</code>, <code>BreadcrumbList</code>, <code>NewsArticle</code>, <code>FAQPage</code>）</li>
+          <li>内部リンク: シリーズ・タグ・関連記事で回遊性強化</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ux">
+      <h2>UX/アクセシビリティ</h2>
+      <div class="card">
+        <ul>
+          <li>モーダル: <code>role="dialog"</code>/<code>aria-modal="true"</code>、ESCクローズ/フォーカストラップ</li>
+          <li>キーボード操作/フォーカスリング/コントラスト基準（WCAG AA）</li>
+          <li>読みやすさ: 要約ボックス、表のモバイル横スクロール、見出し構造の最適化</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="non-functional">
+      <h2>非機能要件</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>パフォーマンス</h3>
+          <ul>
+            <li>初回描画 < 3s（4G/中端末）</li>
+            <li>LCP < 2.5s, CLS < 0.1</li>
+            <li>JS/CSSの軽微ミニファイ、フォント <code>display=swap</code></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>セキュリティ</h3>
+          <ul>
+            <li>外部データはサニタイズ/XSS対策（<code>escapeHtml</code>運用徹底）</li>
+            <li>HTTPSのみ、依存CDNのSRI導入検討</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2>システムアーキテクチャ</h2>
+      <div class="mermaid">
+        graph TB
+          U[ユーザー] --> B[Webブラウザ]
+          B --> C[静的サイト/CDN (GitHub Pages)]
+          C --> D[ダッシュボード]
+          C --> E[ニュース]
+          C --> NP[新規ページ群]
+
+          subgraph DataOps [データ更新]
+            GA[GitHub Actions (週次)] --> ETL[収集/整形スクリプト]
+            ETL --> J1[data/kpi.json]
+            ETL --> J2[data/news.json]
+          end
+
+          D -.fetch.-> J1
+          E -.fetch.-> J2
+          NP -.fetch.-> J2
+      </div>
+    </section>
+
+    <section id="data-models">
+      <h2>データモデル（ドラフト）</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>kpi.json</h3>
+          <pre style="white-space: pre-wrap; font-family: ui-monospace,Consolas,monospace; font-size: 12px;">
+{
+  "lastUpdated": "2025-08-21",
+  "sources": [
+    { "name": "厚生労働省", "url": "https://www.mhlw.go.jp/" }
+  ],
+  "metrics": {
+    "jobRatio": { "monthly": [1.15,1.18,1.22,1.25,1.23,1.26,1.28,1.28] },
+    "salaryByIndustry": [
+      { "industry": "IT・通信", "avg": 580 },
+      { "industry": "金融・保険", "avg": 520 }
+    ],
+    "regionJobShare": [ { "region": "関東", "share": 45 } ],
+    "successRateByAge": [ { "age": "20代前半", "rate": 75 } ]
+  }
+}
+          </pre>
+        </div>
+        <div class="card">
+          <h3>news.json</h3>
+          <pre style="white-space: pre-wrap; font-family: ui-monospace,Consolas,monospace; font-size: 12px;">
+[
+  {
+    "id": "article1",
+    "title": "2025年転職市場レポート：IT人材不足が深刻化",
+    "category": "市場動向",
+    "tags": ["AI","IT人材","レポート"],
+    "author": "編集部",
+    "datePublished": "2025-08-21",
+    "dateModified": "2025-08-21",
+    "readTimeMin": 6,
+    "summary": "AI/ML人材の求人倍率が3.2倍…",
+    "contentHTML": "<p>…</p>",
+    "source": {
+      "name": "IT人材白書2025",
+      "organization": "IPA",
+      "period": "2024-12〜2025-02",
+      "sampleSize": "5,000社/15,000名",
+      "reliability": 5,
+      "updateFrequency": "年次",
+      "url": "https://www.ipa.go.jp/jinzai/report/"
+    }
+  }
+]
+          </pre>
+          <p class="muted">注: 将来のCMS導入時は同スキーマをAPI化</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule">
+      <h2>スケジュール（目安）</h2>
+      <div class="mermaid">
+        gantt
+          title コンテンツ充実化 開発スケジュール
+          dateFormat  YYYY-MM-DD
+          section フェーズ1（週1）
+          検索/関連記事/タグ/信頼性 :2025-09-01, 5d
+          section フェーズ2（週2）
+          ダッシュボード強化             :2025-09-08, 5d
+          ニュース拡張/構造化データ       :5d
+          section フェーズ3（週3）
+          新規ページ（リソース/用語/ツール）:2025-09-15, 5d
+          section フェーズ4（週4）
+          データ自動更新/SEO/A11y最適化 :2025-09-22, 5d
+          リリース準備/計測設定          :3d
+      </div>
+    </section>
+
+    <section id="acceptance">
+      <h2>受け入れ基準 / 計測KPI</h2>
+      <div class="card">
+        <ul>
+          <li>ニュース検索: インクリメンタル検索、0件メッセージ、ヒット強調</li>
+          <li>関連記事: 同カテゴリ3件まで表示、重複/自己参照除外</li>
+          <li>タグ: 複数タグのORフィルタ、タグ一覧からの遷移</li>
+          <li>信頼性: 1〜5段階で視覚表示、ソースモーダルと整合</li>
+          <li>ダッシュボード: 注釈/比較/絞り込み/出力が動作</li>
+          <li>SEO: 構造化データの検証合格、サイトマップ配信</li>
+          <li>A11y: キーボード操作で全機能を利用可能（モーダル対応含む）</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="rollout">
+      <h2>ロールアウト計画</h2>
+      <div class="card">
+        <ul>
+          <li>機能フラグ最小: 新規UIは段階的にDOMへ挿入（既存干渉を最小化）</li>
+          <li>計測設定: 変更点の効果測定（イベント/目標）をGA等で設定</li>
+          <li>リグレッション: 主要ブラウザ/端末で簡易回帰テスト</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="risks">
+      <h2>リスク/対応</h2>
+      <table>
+        <thead>
+          <tr><th>リスク</th><th>影響</th><th>対応</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>外部データ仕様変更</td>
+            <td>自動更新が停止</td>
+            <td>スキーマバリデーション/異常検知でSlack/メール通知</td>
+          </tr>
+          <tr>
+            <td>SEO効果の遅延</td>
+            <td>短期KPI未達</td>
+            <td>内部リンク/構造化強化と継続的記事投入</td>
+          </tr>
+          <tr>
+            <td>パフォーマンス劣化</td>
+            <td>UX低下</td>
+            <td>軽量実装/遅延読込/アセット最適化の徹底</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+    // サイドバーナビゲーション
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+        const targetId = this.getAttribute('href').substring(1);
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    // スクロールでアクティブ更新
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const y = window.scrollY + 100;
+      sections.forEach(sec => {
+        const top = sec.offsetTop, h = sec.offsetHeight, id = sec.id;
+        if (y >= top && y < top + h) {
+          document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
+          const curr = document.querySelector(`.sidebar a[href="#${id}"]`);
+          if (curr) curr.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

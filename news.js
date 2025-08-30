@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize newsletter signup
     initializeNewsletter();
+
+    // Initialize search
+    initializeSearch();
+
+    // Enhance cards with tags/reliability and add tag filters
+    enhanceNewsCards();
+    initializeTagFilters();
     
     // Add fade-in animation to news cards
     animateNewsCards();
@@ -267,9 +274,17 @@ function animateNewsCards() {
 function initializeSearch() {
     const searchInput = document.querySelector('.search-input');
     if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase();
+        const debounced = debounce((e) => {
+            const query = (e.target.value || '').trim().toLowerCase();
             searchNews(query);
+        }, 200);
+        searchInput.addEventListener('input', debounced);
+        // Enterキーで明示的に確定
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchNews((searchInput.value || '').trim().toLowerCase());
+            }
         });
     }
 }
@@ -277,17 +292,45 @@ function initializeSearch() {
 // Search news articles
 function searchNews(query) {
     const newsCards = document.querySelectorAll('.news-card');
-    
-    newsCards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        const content = card.querySelector('p').textContent.toLowerCase();
-        
-        if (title.includes(query) || content.includes(query)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
+    const resultEl = document.getElementById('search-result');
+    let count = 0;
+
+    const escapeReg = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const highlight = (el, q) => {
+        const titleEl = el.querySelector('h3');
+        if (!titleEl) return;
+        if (!titleEl.dataset.originalTitle) {
+            titleEl.dataset.originalTitle = titleEl.innerHTML;
         }
+        if (!q) {
+            titleEl.innerHTML = titleEl.dataset.originalTitle;
+            return;
+        }
+        const re = new RegExp(`(${escapeReg(q)})`, 'ig');
+        titleEl.innerHTML = titleEl.dataset.originalTitle.replace(re, '<mark>$1</mark>');
+    };
+
+    newsCards.forEach(card => {
+        const h3 = card.querySelector('h3');
+        const p = card.querySelector('p');
+        const title = (h3 ? h3.textContent : '').toLowerCase();
+        const content = (p ? p.textContent : '').toLowerCase();
+
+        const match = !query || title.includes(query) || content.includes(query);
+        card.style.display = match ? 'block' : 'none';
+        if (match) {
+            count++;
+        }
+        highlight(card, query);
     });
+
+    if (resultEl) {
+        if (!query) {
+            resultEl.textContent = '';
+        } else {
+            resultEl.textContent = `${count} 件ヒット`;
+        }
+    }
 }
 
 // Utility function to debounce search
@@ -315,7 +358,7 @@ function openFullArticle(event, articleId) {
     
     if (article) {
         modalTitle.textContent = article.title;
-        modalBody.innerHTML = `
+        const mainHtml = `
             <div class="article-meta">
                 <span class="category-tag ${article.categoryClass}">${article.category}</span>
                 <span class="article-date">${article.date}</span>
@@ -324,8 +367,24 @@ function openFullArticle(event, articleId) {
                 ${article.fullContent}
             </div>
         `;
+        // Related articles (same category)
+        const related = Object.entries(articles)
+          .filter(([id, a]) => id !== articleId && a.categoryClass === article.categoryClass)
+          .slice(0, 3);
+        const relatedHtml = related.length ? `
+          <div class="related-articles">
+            <h4>関連記事</h4>
+            <div class="related-list">
+              ${related.map(([id, a]) => `<a href="#" onclick="openFullArticle(event, '${id}')">${a.title}</a>`).join('')}
+            </div>
+          </div>
+        ` : '';
+
+        modalBody.innerHTML = mainHtml + relatedHtml;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('.close');
+        if (closeBtn) closeBtn.focus();
     }
 }
 
@@ -358,6 +417,8 @@ function showSource(event, articleId) {
         `;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('.close');
+        if (closeBtn) closeBtn.focus();
     }
 }
 
@@ -375,6 +436,16 @@ window.onclick = function(event) {
     }
 }
 
+// Close modal on ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('articleModal');
+        if (modal && modal.style.display === 'block') {
+            closeModal();
+        }
+    }
+});
+
 // Article data with full content and source information
 function getArticleData() {
     return {
@@ -383,6 +454,9 @@ function getArticleData() {
             category: '市場動向',
             categoryClass: 'market',
             date: '2025年8月21日',
+            author: 'Career Horizon編集部',
+            readTimeMin: 6,
+            tags: ['AI','IT人材','レポート'],
             fullContent: `
                 <p>最新の調査によると、2025年のIT業界における人材不足はさらに深刻化しており、特にAI・機械学習エンジニアの求人倍率が3.2倍に達しています。</p>
                 <p>企業は高額な報酬と柔軟な働き方を提示して人材確保に努めており、年収1000万円を超える求人も珍しくなくなっています。</p>
@@ -408,6 +482,9 @@ function getArticleData() {
             category: '業界トレンド',
             categoryClass: 'industry',
             date: '2025年8月20日',
+            author: 'Career Horizon編集部',
+            readTimeMin: 5,
+            tags: ['リモートワーク','地方移住'],
             fullContent: `
                 <p>コロナ禍で始まったリモートワークが定着し、東京の企業に勤務しながら地方に移住する転職者が30%増加しています。</p>
                 <p>特に北海道、沖縄、長野県への移住が人気で、IT系職種を中心に多くの転職者が生活拠点を変えています。</p>
@@ -433,6 +510,9 @@ function getArticleData() {
             category: '成功事例',
             categoryClass: 'success',
             date: '2025年8月19日',
+            author: 'Career Horizon編集部',
+            readTimeMin: 7,
+            tags: ['データサイエンス','学習','ポートフォリオ'],
             fullContent: `
                 <p>営業職から独学でプログラミングを学び、データサイエンティストへの転職を成功させた田中さん（32歳）の体験談をご紹介します。</p>
                 <h4>転職までのステップ</h4>
@@ -457,6 +537,9 @@ function getArticleData() {
             category: '専門家コラム',
             categoryClass: 'expert',
             date: '2025年8月18日',
+            author: 'キャリアコンサルタント',
+            readTimeMin: 5,
+            tags: ['ポータブルスキル','コミュニケーション','問題解決'],
             fullContent: `
                 <p>キャリアコンサルタントが解説する、業界を問わず活用できるポータブルスキルの重要性と身につけ方について詳しくご説明します。</p>
                 <h4>主要なポータブルスキル</h4>
@@ -479,6 +562,84 @@ function getArticleData() {
     };
 }
 
+// Enhance existing cards with reliability and tags for top articles
+function enhanceNewsCards() {
+    const articles = getArticleData();
+    const anchors = document.querySelectorAll('.news-card .read-more[onclick^="openFullArticle"]');
+    anchors.forEach(a => {
+        const m = a.getAttribute('onclick').match(/openFullArticle\(event,\s*'([^']+)'\)/);
+        if (!m) return;
+        const id = m[1];
+        const data = articles[id];
+        if (!data) return;
+        const card = a.closest('.news-card');
+        const meta = card.querySelector('.news-meta');
+        // reliability stars
+        const starCount = (data.reliability.match(/★/g) || []).length;
+        const rel = document.createElement('span');
+        rel.className = 'reliability';
+        rel.title = data.reliability;
+        rel.textContent = '★'.repeat(starCount);
+        rel.style.marginLeft = '8px';
+        if (meta) meta.appendChild(rel);
+
+        // author / read time
+        const info = document.createElement('div');
+        info.className = 'extra-meta muted';
+        info.style.marginTop = '4px';
+        info.textContent = `${data.author} ・ 約${data.readTimeMin}分で読了`;
+        const content = card.querySelector('.news-content');
+        if (content) content.insertBefore(info, content.querySelector('h3'));
+
+        // tags
+        if (Array.isArray(data.tags) && data.tags.length) {
+            const tagWrap = document.createElement('div');
+            tagWrap.className = 'tag-chips';
+            tagWrap.style.marginTop = '6px';
+            data.tags.forEach(t => {
+                const chip = document.createElement('span');
+                chip.className = 'tag-chip';
+                chip.textContent = `#${t}`;
+                chip.addEventListener('click', () => {
+                    const input = document.querySelector('.search-input');
+                    if (input) {
+                        input.value = t;
+                        searchNews(t.toLowerCase());
+                    }
+                });
+                tagWrap.appendChild(chip);
+            });
+            const content2 = card.querySelector('.news-content');
+            content2.appendChild(tagWrap);
+            card.setAttribute('data-tags', data.tags.join(','));
+        }
+    });
+}
+
+function initializeTagFilters() {
+    const container = document.getElementById('tag-filters');
+    if (!container) return;
+    const articles = getArticleData();
+    const set = new Set();
+    Object.values(articles).forEach(a => (a.tags || []).forEach(t => set.add(t)));
+    if (set.size === 0) return;
+    container.innerHTML = '<div class="muted" style="margin-bottom:6px;">タグから探す</div>';
+    set.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.className = 'tag-btn';
+        btn.type = 'button';
+        btn.textContent = `#${tag}`;
+        btn.addEventListener('click', () => {
+            const input = document.querySelector('.search-input');
+            if (input) {
+                input.value = tag;
+                searchNews(tag.toLowerCase());
+            }
+        });
+        container.appendChild(btn);
+    });
+}
+
 // HTML Source Display Functions
 function showHTMLSource(event) {
     event.preventDefault();
@@ -486,24 +647,13 @@ function showHTMLSource(event) {
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
     
-    modalTitle.textContent = 'HTMLソースコード';
+    modalTitle.textContent = 'HTMLソース（抜粋）';
     modalBody.innerHTML = `
-        <div class="source-info">
-            <h4>📄 このページのHTMLソース</h4>
-            <p>ページの一部のHTMLソースコードを表示しています。</p>
-            <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; margin: 1rem 0; max-height: 400px; overflow-y: auto;">
-                <pre style="font-family: 'Monaco', 'Courier New', monospace; font-size: 0.8rem; line-height: 1.4; margin: 0; white-space: pre-wrap;">${escapeHtml(getNewsCardHTML())}</pre>
-            </div>
-            <div style="margin-top: 1rem; padding: 1rem; background: #e7f3ff; border-left: 3px solid #3b82f6; border-radius: 4px;">
-                <h4>🔗 完全なソースコード</h4>
-                <p>完全なHTMLソースコードを見るには:</p>
-                <ul>
-                    <li>ブラウザで <strong>Ctrl+U</strong> (Windows) または <strong>Cmd+Option+U</strong> (Mac)</li>
-                    <li>右クリック → <strong>「ページのソースを表示」</strong></li>
-                    <li>開発者ツール (<strong>F12</strong>) → <strong>Elements</strong>タブ</li>
-                </ul>
-            </div>
+      <div class="source-info">
+        <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; margin: 0; max-height: 400px; overflow-y: auto;">
+          <pre style="font-family: 'Monaco', 'Courier New', monospace; font-size: 0.8rem; line-height: 1.4; margin: 0; white-space: pre-wrap;">${escapeHtml(getNewsCardHTML())}</pre>
         </div>
+      </div>
     `;
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -514,57 +664,18 @@ function showPageSource() {
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
     
-    modalTitle.textContent = '📄 ページソースコード情報';
+    modalTitle.textContent = '📄 ページソース';
     modalBody.innerHTML = `
-        <div class="source-info">
-            <h4>🌐 このWebサイトについて</h4>
-            <p>この転職情報サイトは、HTML、CSS、JavaScriptで構築されています。</p>
-            
-            <h4>🛠️ 使用技術</h4>
-            <ul>
-                <li><strong>HTML5</strong> - セマンティックなマークアップ</li>
-                <li><strong>CSS3</strong> - モダンなスタイリング（Grid、Flexbox、CSS Variables）</li>
-                <li><strong>JavaScript ES6+</strong> - インタラクティブ機能</li>
-                <li><strong>Chart.js</strong> - データ可視化ライブラリ</li>
-                <li><strong>Inter Font</strong> - Google Fonts</li>
-            </ul>
-            
-            <h4>📁 ファイル構成</h4>
-            <ul>
-                <li><code>index.html</code> - KPI指標ダッシュボード</li>
-                <li><code>news.html</code> - 転職ニュースページ（現在のページ）</li>
-                <li><code>style.css</code> - 統一CSSスタイル</li>
-                <li><code>news.js</code> - ニュースページ用JavaScript</li>
-                <li><code>dashboard.js</code> - ダッシュボード用JavaScript</li>
-            </ul>
-            
-            <div style="margin-top: 1rem; padding: 1rem; background: #f0f9ff; border-left: 3px solid #0ea5e9; border-radius: 4px;">
-                <h4>🔍 ソースコードを見る方法</h4>
-                <p><strong>完全なHTMLソース:</strong></p>
-                <ul>
-                    <li><kbd>Ctrl+U</kbd> (Windows) または <kbd>Cmd+Option+U</kbd> (Mac)</li>
-                    <li>右クリック → 「ページのソースを表示」</li>
-                </ul>
-                <p><strong>開発者ツール:</strong></p>
-                <ul>
-                    <li><kbd>F12</kbd> または 右クリック → 「検証」</li>
-                    <li>Elements タブでHTML構造を確認</li>
-                    <li>Console タブでJavaScriptのログを確認</li>
-                </ul>
-            </div>
-            
-            <div style="margin-top: 1rem; padding: 1rem; background: #f9fafb; border: 1px solid #d1d5db; border-radius: 4px;">
-                <h4>⭐ このサイトの特徴</h4>
-                <ul>
-                    <li>レスポンシブデザイン（PC、タブレット、スマートフォン対応）</li>
-                    <li>モダンで洗練された大人向けデザイン</li>
-                    <li>インタラクティブなチャートとグラフ</li>
-                    <li>モーダルウィンドウによる詳細表示</li>
-                    <li>カテゴリ別フィルタリング機能</li>
-                    <li>ニュースレター登録フォーム</li>
-                </ul>
-            </div>
-        </div>
+      <div class="source-info">
+        <h4>参照URL</h4>
+        <ul>
+          <li><a href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" target="_blank">Google Fonts (Inter)</a></li>
+          <li><a href="https://fonts.gstatic.com" target="_blank">https://fonts.gstatic.com</a></li>
+          <li><a href="rss.xml" target="_blank">RSS: rss.xml</a></li>
+          <li><a href="style.css" target="_blank">style.css</a></li>
+          <li><a href="news.js" target="_blank">news.js</a></li>
+        </ul>
+      </div>
     `;
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';

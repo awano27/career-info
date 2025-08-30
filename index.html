@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 </head>
 <body>
     <header class="header">
@@ -20,6 +21,7 @@
                 <li><a href="index.html" class="nav-link active">ダッシュボード</a></li>
                 <li><a href="news.html" class="nav-link">転職ニュース</a></li>
                 <li><a href="docs/requirements.html" class="nav-link">要件定義書</a></li>
+                <li><a href="docs/requirements_v2.html" class="nav-link">要件定義 v2</a></li>
             </ul>
             <div class="nav-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -32,9 +34,16 @@
     <main class="main-content">
         <div class="dashboard-header">
             <h2>転職市場KPI指標ダッシュボード</h2>
-            <p class="update-time">最終更新: 2025年8月21日</p>
+            <p class="update-time">最終更新: 2025年8月21日 ・ 出典: 厚生労働省 等</p>
             <div class="header-actions">
                 <button class="view-source-btn" onclick="showDashboardSource()">📄 ページソース情報</button>
+            </div>
+            <div class="data-tools" style="margin-top: 0.75rem;">
+                <a class="download-btn" href="data/kpi.json" download>JSONをダウンロード</a>
+                <a class="download-btn" href="data/kpi_job_ratio.csv" download>求人倍率CSV</a>
+                <a class="download-btn" href="data/salary_by_industry.csv" download>業界別年収CSV</a>
+                <a class="download-btn" href="data/region_job_share.csv" download>地域別求人数CSV</a>
+                <a class="download-btn" href="data/success_rate_by_age.csv" download>年代別成功率CSV</a>
             </div>
         </div>
 
@@ -122,11 +131,11 @@
     </footer>
 
     <!-- Modal for Source Display -->
-    <div id="sourceModal" class="modal">
+    <div id="sourceModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="sourceModalTitle">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="sourceModalTitle">ソース情報</h3>
-                <button class="close" onclick="closeSourceModal()">&times;</button>
+                <button class="close" onclick="closeSourceModal()" aria-label="閉じる">&times;</button>
             </div>
             <div class="modal-body" id="sourceModalBody">
                 <!-- Content will be inserted here -->

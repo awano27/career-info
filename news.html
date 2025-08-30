@@ -8,6 +8,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="alternate" type="application/rss+xml" title="Career Horizon ニュース" href="rss.xml">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "NewsArticle",
+          "headline": "2025年転職市場レポート：IT人材不足が深刻化",
+          "datePublished": "2025-08-21",
+          "dateModified": "2025-08-21",
+          "articleSection": "市場動向",
+          "author": { "@type": "Organization", "name": "Career Horizon編集部" },
+          "publisher": { "@type": "Organization", "name": "Career Horizon" },
+          "keywords": ["AI","IT人材","レポート"]
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "リモートワーク定着で地方移住転職が増加",
+          "datePublished": "2025-08-20",
+          "dateModified": "2025-08-20",
+          "articleSection": "業界トレンド",
+          "author": { "@type": "Organization", "name": "Career Horizon編集部" },
+          "publisher": { "@type": "Organization", "name": "Career Horizon" },
+          "keywords": ["リモートワーク","地方移住"]
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "30代未経験からデータサイエンティストに転職成功",
+          "datePublished": "2025-08-19",
+          "dateModified": "2025-08-19",
+          "articleSection": "成功事例",
+          "author": { "@type": "Organization", "name": "Career Horizon編集部" },
+          "publisher": { "@type": "Organization", "name": "Career Horizon" },
+          "keywords": ["データサイエンス","学習","ポートフォリオ"]
+        },
+        {
+          "@type": "NewsArticle",
+          "headline": "転職活動で重要な「ポータブルスキル」とは",
+          "datePublished": "2025-08-18",
+          "dateModified": "2025-08-18",
+          "articleSection": "専門家コラム",
+          "author": { "@type": "Person", "name": "キャリアコンサルタント" },
+          "publisher": { "@type": "Organization", "name": "Career Horizon" },
+          "keywords": ["ポータブルスキル","コミュニケーション","問題解決"]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -19,6 +67,7 @@
                 <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
                 <li><a href="news.html" class="nav-link active">転職ニュース</a></li>
                 <li><a href="docs/requirements.html" class="nav-link">要件定義書</a></li>
+                <li><a href="docs/requirements_v2.html" class="nav-link">要件定義 v2</a></li>
             </ul>
             <div class="nav-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -44,6 +93,14 @@
             <button class="category-btn" data-category="success">成功事例</button>
             <button class="category-btn" data-category="expert">専門家コラム</button>
         </div>
+
+        <div class="news-search">
+            <input type="search" class="search-input" placeholder="記事を検索（タイトル・本文）">
+            <span class="search-hint">Enterで確定 / クリアで全件</span>
+        </div>
+        <div class="search-result muted" id="search-result"></div>
+
+        <div class="tag-filters" id="tag-filters"></div>
 
         <div class="news-grid">
             <article class="news-card featured" data-category="market">
@@ -204,11 +261,11 @@
     </footer>
 
     <!-- Modal for Full Articles and Sources -->
-    <div id="articleModal" class="modal">
+    <div id="articleModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="modalTitle">記事タイトル</h3>
-                <button class="close" onclick="closeModal()">&times;</button>
+                <button class="close" onclick="closeModal()" aria-label="閉じる">&times;</button>
             </div>
             <div class="modal-body" id="modalBody">
                 <!-- Content will be inserted here -->

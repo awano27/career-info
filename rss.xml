@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Career Horizon ニュース</title>
+    <link>https://awano27.github.io/career-info/news.html</link>
+    <description>転職・キャリアの最新ニュースと分析</description>
+    <language>ja</language>
+    <item>
+      <title>2025年転職市場レポート：IT人材不足が深刻化</title>
+      <link>https://awano27.github.io/career-info/news.html#article1</link>
+      <pubDate>Thu, 21 Aug 2025 00:00:00 +0900</pubDate>
+      <description>AI・機械学習人材の有効求人倍率が3.2倍に…</description>
+    </item>
+    <item>
+      <title>リモートワーク定着で地方移住転職が増加</title>
+      <link>https://awano27.github.io/career-info/news.html#article2</link>
+      <pubDate>Wed, 20 Aug 2025 00:00:00 +0900</pubDate>
+      <description>リモートワーク定着で地方移住の動きが拡大…</description>
+    </item>
+    <item>
+      <title>30代未経験からデータサイエンティストに転職成功</title>
+      <link>https://awano27.github.io/career-info/news.html#article3</link>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 +0900</pubDate>
+      <description>学習ステップとポートフォリオ構築でキャリア転換に成功…</description>
+    </item>
+    <item>
+      <title>転職活動で重要な「ポータブルスキル」とは</title>
+      <link>https://awano27.github.io/career-info/news.html#article4</link>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 +0900</pubDate>
+      <description>業界横断で活きるスキルの整理と身につけ方…</description>
+    </item>
+  </channel>
+  </rss>
+
