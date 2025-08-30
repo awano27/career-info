@@ -37,6 +37,28 @@ function initializeCharts() {
     }
 
     fetchKPIData().then((kpi) => {
+    // Update last updated and data sources list
+    try {
+        const updateEl = document.querySelector('.update-time');
+        if (updateEl && kpi.lastUpdated) {
+            const srcNames = (kpi.sources || []).map(s => s.name).join(' / ');
+            updateEl.textContent = `最終更新: ${kpi.lastUpdated}` + (srcNames ? ` ・ 出典: ${srcNames}` : '');
+        }
+        const list = document.getElementById('dataSourceList');
+        if (list && Array.isArray(kpi.sources)) {
+            list.innerHTML = '';
+            kpi.sources.forEach(s => {
+                const li = document.createElement('li');
+                li.innerHTML = s.url ? `<a href="${s.url}" target="_blank">${s.name}</a>` : `${s.name}`;
+                list.appendChild(li);
+            });
+            if (kpi.sources.length === 0) {
+                const li = document.createElement('li');
+                li.textContent = 'データソースの情報は現在準備中です';
+                list.appendChild(li);
+            }
+        }
+    } catch (e) { /* noop */ }
     // Job Ratio Trend Chart
     const jobRatioCtx = document.getElementById('jobRatioChart');
     if (jobRatioCtx) {

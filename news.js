@@ -643,6 +643,14 @@ function enhanceNewsCards() {
             content2.appendChild(tagWrap);
             card.setAttribute('data-tags', data.tags.join(','));
         }
+        // source strip
+        if (data.sourceUrl) {
+            const src = document.createElement('div');
+            src.className = 'source-strip';
+            src.innerHTML = `出典: <a href="${data.sourceUrl}" target="_blank">${data.organization || data.source}</a>`;
+            const content3 = card.querySelector('.news-content');
+            content3.appendChild(src);
+        }
     });
 }
 
@@ -762,7 +770,8 @@ if (typeof module !== 'undefined' && module.exports) {
         showSource,
         closeModal,
         showHTMLSource,
-        showPageSource
+        showPageSource,
+        showAllSources
     };
 }
 
@@ -793,4 +802,30 @@ function initializeDelegatedHandlers() {
             setupArticleFocusTrap(modal);
         }
     });
+}
+
+// Aggregate sources
+function showAllSources() {
+    const modal = document.getElementById('articleModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    const articles = getArticleData();
+    const unique = new Map();
+    Object.values(articles).forEach(a => {
+        if (a.sourceUrl && !unique.has(a.sourceUrl)) {
+            unique.set(a.sourceUrl, { title: a.title, org: a.organization || a.source, url: a.sourceUrl });
+        }
+    });
+    const items = Array.from(unique.values());
+    modalTitle.textContent = 'データソース一覧';
+    modalBody.innerHTML = `
+      <div class="source-info">
+        <ul>
+          ${items.map(i => `<li><a href="${i.url}" target="_blank">${i.org || i.url}</a> — ${i.title}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    setupArticleFocusTrap(modal);
 }
