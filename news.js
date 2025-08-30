@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enhance cards with tags/reliability and add tag filters
     enhanceNewsCards();
     initializeTagFilters();
+    // Delegate handlers for dynamically added cards
+    initializeDelegatedHandlers();
     
     // Add fade-in animation to news cards
     animateNewsCards();
@@ -385,6 +387,7 @@ function openFullArticle(event, articleId) {
         document.body.style.overflow = 'hidden';
         const closeBtn = modal.querySelector('.close');
         if (closeBtn) closeBtn.focus();
+        setupArticleFocusTrap(modal);
     }
 }
 
@@ -419,6 +422,7 @@ function showSource(event, articleId) {
         document.body.style.overflow = 'hidden';
         const closeBtn = modal.querySelector('.close');
         if (closeBtn) closeBtn.focus();
+        setupArticleFocusTrap(modal);
     }
 }
 
@@ -426,6 +430,7 @@ function closeModal() {
     const modal = document.getElementById('articleModal');
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
+    removeArticleFocusTrap();
 }
 
 // Close modal when clicking outside
@@ -445,6 +450,31 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+// Focus trap for article modal
+let articleFocusTrapHandler = null;
+function setupArticleFocusTrap(modal) {
+    const selectors = 'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    const focusables = Array.from(modal.querySelectorAll(selectors)).filter(el => !el.hasAttribute('disabled'));
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    articleFocusTrapHandler = function(e) {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+    };
+    document.addEventListener('keydown', articleFocusTrapHandler);
+}
+function removeArticleFocusTrap() {
+    if (articleFocusTrapHandler) {
+        document.removeEventListener('keydown', articleFocusTrapHandler);
+        articleFocusTrapHandler = null;
+    }
+}
 
 // Article data with full content and source information
 function getArticleData() {
@@ -657,6 +687,7 @@ function showHTMLSource(event) {
     `;
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    setupArticleFocusTrap(modal);
 }
 
 function showPageSource() {
@@ -679,6 +710,7 @@ function showPageSource() {
     `;
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    setupArticleFocusTrap(modal);
 }
 
 // Get sample HTML for news card
@@ -732,4 +764,33 @@ if (typeof module !== 'undefined' && module.exports) {
         showHTMLSource,
         showPageSource
     };
+}
+
+// Event delegation for dynamically added/readable content
+function initializeDelegatedHandlers() {
+    const grid = document.querySelector('.news-grid');
+    if (!grid) return;
+    grid.addEventListener('click', function(e) {
+        const link = e.target.closest('a.read-more');
+        if (link && grid.contains(link)) {
+            // If inline onclick is present (top articles), defer to it
+            if (link.getAttribute('onclick')) return;
+            e.preventDefault();
+            const card = link.closest('.news-card');
+            if (!card) return;
+            const modal = document.getElementById('articleModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const title = (card.querySelector('h3')?.textContent) || '記事';
+            const p = card.querySelector('p');
+            const content = p ? p.outerHTML : '';
+            modalTitle.textContent = title;
+            modalBody.innerHTML = `<div class="article-content">${content}</div>`;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            const closeBtn = modal.querySelector('.close');
+            if (closeBtn) closeBtn.focus();
+            setupArticleFocusTrap(modal);
+        }
+    });
 }

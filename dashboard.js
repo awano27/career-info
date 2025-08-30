@@ -57,6 +57,9 @@ function initializeCharts() {
             </label>
         `;
         titleEl.insertAdjacentElement('afterend', controls);
+        const jobBadgeWrap = document.createElement('div');
+        jobBadgeWrap.className = 'controls-right';
+        controls.appendChild(jobBadgeWrap);
 
         const fullLabels = (kpi.metrics?.jobRatio?.months) || ['1月','2月','3月','4月','5月','6月','7月','8月'];
         const fullValues = (kpi.metrics?.jobRatio?.values) || [1.15,1.18,1.22,1.25,1.23,1.26,1.28,1.28];
@@ -79,10 +82,10 @@ function initializeCharts() {
         badge.className = 'metric-badge' + (mom < 0 ? ' negative' : '');
         badge.textContent = `前月比 ${mom >= 0 ? '+' : ''}${mom.toFixed(2)}`;
         badge.id = 'job-mom-badge';
-        titleEl.appendChild(badge);
+        jobBadgeWrap.appendChild(badge);
         const badge2 = document.createElement('span');
         badge2.id = 'job-yoy-badge';
-        titleEl.appendChild(badge2);
+        jobBadgeWrap.appendChild(badge2);
         const updateJobBadges = (vals, prev) => {
             const b1 = document.getElementById('job-mom-badge');
             if (vals.length >= 2) {
@@ -280,6 +283,9 @@ function initializeCharts() {
         controls.className = 'chart-controls';
         controls.innerHTML = `<span class="muted">表示対象:</span>`;
         titleEl.insertAdjacentElement('afterend', controls);
+        const salaryBadgeWrap = document.createElement('div');
+        salaryBadgeWrap.className = 'controls-right';
+        controls.appendChild(salaryBadgeWrap);
 
         const salaryList = (kpi.metrics?.salaryByIndustry) || [];
         const industries = salaryList.map(s => s.industry);
@@ -302,7 +308,7 @@ function initializeCharts() {
         const initial = buildSeries();
         const yoyBadge = document.createElement('span');
         yoyBadge.className = 'metric-badge';
-        titleEl.appendChild(yoyBadge);
+        salaryBadgeWrap.appendChild(yoyBadge);
         const updateYoyBadge = () => {
             const selected = Array.from(controls.querySelectorAll('input[type=checkbox]:checked')).map(i=>i.dataset.ind);
             const diffs = selected
@@ -356,7 +362,22 @@ function initializeCharts() {
                                     content: '平均',
                                     backgroundColor: 'rgba(107,114,128,0.1)',
                                     color: '#374151'
-                                }
+                                },
+                                display: true
+                            },
+                            medianLine: {
+                                type: 'line',
+                                yMin: median(initial.values), yMax: median(initial.values),
+                                borderColor: '#0ea5e9',
+                                borderWidth: 1,
+                                borderDash: [4, 4],
+                                label: {
+                                    enabled: true,
+                                    content: '中央値',
+                                    backgroundColor: 'rgba(14,165,233,0.1)',
+                                    color: '#075985'
+                                },
+                                display: false
                             }
                         }
                     }
@@ -414,12 +435,15 @@ function initializeCharts() {
               </select>
             </label>`;
         titleEl.insertAdjacentElement('afterend', controls);
+        const regionBadgeWrap = document.createElement('div');
+        regionBadgeWrap.className = 'controls-right';
+        controls.appendChild(regionBadgeWrap);
 
         const allRaw = ((kpi.metrics?.regionJobShare) || []);
         const all = allRaw.map(r => ({ label: r.region, val: r.share, prev: r.prev }));
         const yoyBadge = document.createElement('span');
         yoyBadge.className = 'metric-badge';
-        titleEl.appendChild(yoyBadge);
+        regionBadgeWrap.appendChild(yoyBadge);
 
         const build = (count) => {
             let list = [...all].sort((a,b)=>b.val-a.val);
@@ -513,6 +537,9 @@ function initializeCharts() {
         controls.className = 'chart-controls';
         controls.innerHTML = `<span class="muted">年代を選択:</span>`;
         titleEl.insertAdjacentElement('afterend', controls);
+        const ageBadgeWrap = document.createElement('div');
+        ageBadgeWrap.className = 'controls-right';
+        controls.appendChild(ageBadgeWrap);
 
         const ageList = (kpi.metrics?.successRateByAge) || [];
         const labels = ageList.map(a => a.age);
@@ -520,7 +547,7 @@ function initializeCharts() {
         const prevValues = ageList.map(a => a.prev);
         const yoyBadge = document.createElement('span');
         yoyBadge.className = 'metric-badge';
-        titleEl.appendChild(yoyBadge);
+        ageBadgeWrap.appendChild(yoyBadge);
         labels.forEach((lbl, idx) => {
             const label = document.createElement('label');
             label.innerHTML = `<input type="checkbox" checked data-idx="${idx}"> ${lbl}`;
@@ -553,7 +580,7 @@ function initializeCharts() {
         // Min/Max badges
         const statsBadge = document.createElement('span');
         statsBadge.className = 'metric-badge';
-        titleEl.appendChild(statsBadge);
+        ageBadgeWrap.appendChild(statsBadge);
         const updateStats = (idxsSel) => {
             const vals = idxsSel.map(i => values[i]);
             if (!vals.length) { statsBadge.style.display='none'; return; }
@@ -788,12 +815,14 @@ function showDashboardSource() {
     `;
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
+    setupDashFocusTrap(modal);
 }
 
 function closeSourceModal() {
     const modal = document.getElementById('sourceModal');
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
+    removeDashFocusTrap();
 }
 
 // Close modal when clicking outside
@@ -813,6 +842,31 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+// Focus trap for dashboard source modal
+let dashFocusTrapHandler = null;
+function setupDashFocusTrap(modal) {
+    const selectors = 'a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    const focusables = Array.from(modal.querySelectorAll(selectors)).filter(el => !el.hasAttribute('disabled'));
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    dashFocusTrapHandler = function(e) {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) {
+            if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+            if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+    };
+    document.addEventListener('keydown', dashFocusTrapHandler);
+}
+function removeDashFocusTrap() {
+    if (dashFocusTrapHandler) {
+        document.removeEventListener('keydown', dashFocusTrapHandler);
+        dashFocusTrapHandler = null;
+    }
+}
 
 // Export functions for potential module use
 if (typeof module !== 'undefined' && module.exports) {
