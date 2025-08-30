@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リソース集 | Career Horizon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand"><h1>Career Horizon</h1></div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
+        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
+        <li><a href="resources.html" class="nav-link active">リソース集</a></li>
+        <li><a href="glossary.html" class="nav-link">用語集/FAQ</a></li>
+        <li><a href="tools.html" class="nav-link">ツール</a></li>
+        <li><a href="companies.html" class="nav-link">企業研究</a></li>
+      </ul>
+      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h2>キャリア/転職 リソース集</h2>
+      <p class="update-time">最新テンプレートとチェックリスト</p>
+    </div>
+
+    <section class="summary-section">
+      <h3>テンプレート</h3>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <h4>📄 履歴書テンプレート（Googleドキュメント）</h4>
+          <p>読みやすさ/ATS対応を意識したモダンな履歴書フォーマット。</p>
+          <p><a href="docs/templates/resume_template.md" download>ダウンロード（Markdown）</a></p>
+        </div>
+        <div class="summary-card">
+          <h4>📄 職務経歴書テンプレート</h4>
+          <p>成果/数値を中心に、STARで整理する職務経歴書。</p>
+          <p><a href="docs/templates/job_history_template.md" download>ダウンロード（Markdown）</a></p>
+        </div>
+        <div class="summary-card">
+          <h4>✅ 面接チェックリスト</h4>
+          <p>当日持ち物/確認事項/想定問答の最終チェックに。</p>
+          <p><a href="docs/templates/interview_checklist.md" download>ダウンロード（Markdown）</a></p>
+        </div>
+        <div class="summary-card">
+          <h4>💬 年収交渉スクリプト</h4>
+          <p>事前準備/根拠提示/代替案の流れで説得力を高める。</p>
+          <p><a href="docs/templates/salary_negotiation_script.md" download>ダウンロード（Markdown）</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h3>参考ガイド</h3>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <h4>🧭 キャリア方針の決め方</h4>
+          <p>価値観/強み/市場の交点を見つける3ステップ。</p>
+        </div>
+        <div class="summary-card">
+          <h4>🧪 スキル棚卸しワーク</h4>
+          <p>実績→強み→提供価値の言語化ワークシート。</p>
+        </div>
+        <div class="summary-card">
+          <h4>🗂️ ポートフォリオ作成</h4>
+          <p>見せ方/構成/失敗例から学ぶチェックポイント。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
+      document.querySelector('.nav-menu')?.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
+

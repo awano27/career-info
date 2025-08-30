@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ツール | Career Horizon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand"><h1>Career Horizon</h1></div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
+        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
+        <li><a href="resources.html" class="nav-link">リソース集</a></li>
+        <li><a href="glossary.html" class="nav-link">用語集/FAQ</a></li>
+        <li><a href="tools.html" class="nav-link active">ツール</a></li>
+        <li><a href="companies.html" class="nav-link">企業研究</a></li>
+      </ul>
+      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h2>キャリア支援ツール</h2>
+      <p class="update-time">年収シミュレーター / スキル診断（簡易）</p>
+    </div>
+
+    <section class="summary-section">
+      <h3>年収ターゲット・シミュレーター</h3>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <h4>入力</h4>
+          <p><label>現在の年収（万円） <input id="cur-salary" type="number" min="100" max="3000" value="450" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;width:140px;"></label></p>
+          <p><label>上げ幅（%） <input id="inc-pct" type="number" min="0" max="100" value="15" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;width:120px;"></label></p>
+          <p><label>地域係数（1=全国平均） <input id="region-coef" type="number" min="0.6" max="1.5" step="0.05" value="1.00" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;width:120px;"></label></p>
+          <button class="view-source-btn" id="calc-btn">計算する</button>
+        </div>
+        <div class="summary-card">
+          <h4>結果</h4>
+          <p id="result" style="font-size:1.5rem;font-weight:700;">—</p>
+          <p class="muted" id="result-note"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h3>スキル診断（簡易）</h3>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <h4>保有スキルを選択</h4>
+          <p>
+            <label><input type="checkbox" class="skill" value="データ分析"> データ分析</label>
+            <label><input type="checkbox" class="skill" value="プロジェクト管理"> プロジェクト管理</label>
+            <label><input type="checkbox" class="skill" value="Web開発"> Web開発</label>
+            <label><input type="checkbox" class="skill" value="クラウド"> クラウド</label>
+            <label><input type="checkbox" class="skill" value="英語"> 英語</label>
+          </p>
+          <button class="view-source-btn" id="diag-btn">診断する</button>
+        </div>
+        <div class="summary-card">
+          <h4>提案</h4>
+          <p id="diag-result">—</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
+      document.querySelector('.nav-menu')?.classList.toggle('active');
+    });
+    document.getElementById('calc-btn')?.addEventListener('click',()=>{
+      const cur = Number(document.getElementById('cur-salary').value||0);
+      const pct = Number(document.getElementById('inc-pct').value||0)/100;
+      const coef = Number(document.getElementById('region-coef').value||1);
+      if (cur<=0) return;
+      const target = Math.round(cur*(1+pct)*coef);
+      document.getElementById('result').textContent = `${target.toLocaleString()} 万円`;
+      const note = pct>=0.2? 'チャレンジングな水準です。根拠準備を厚めに。' : '実現可能性は十分です。実績と市場データを提示しましょう。';
+      document.getElementById('result-note').textContent = note;
+    });
+    document.getElementById('diag-btn')?.addEventListener('click',()=>{
+      const skills = Array.from(document.querySelectorAll('.skill:checked')).map(el=>el.value);
+      if (!skills.length) { document.getElementById('diag-result').textContent='スキルを選択してください'; return; }
+      const suggestions = [];
+      if (!skills.includes('データ分析')) suggestions.push('データ分析基礎（統計/SQL）');
+      if (!skills.includes('クラウド')) suggestions.push('クラウド基礎（AWS/Azure）');
+      if (!skills.includes('英語')) suggestions.push('英語（Tech英語/読解）');
+      document.getElementById('diag-result').textContent = suggestions.length? `推奨学習: ${suggestions.join('、')}` : '市場価値は高い水準です。実践案件で経験を積みましょう。';
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+{
+  "name": "career-info",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "rss-parser": "^3.12.0"
+  }
+}
+

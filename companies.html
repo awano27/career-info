@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>企業研究 | Career Horizon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand"><h1>Career Horizon</h1></div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
+        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
+        <li><a href="resources.html" class="nav-link">リソース集</a></li>
+        <li><a href="glossary.html" class="nav-link">用語集/FAQ</a></li>
+        <li><a href="tools.html" class="nav-link">ツール</a></li>
+        <li><a href="companies.html" class="nav-link active">企業研究</a></li>
+      </ul>
+      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h2>業界別・企業研究</h2>
+      <p class="update-time">サンプルデータ（参考指標）</p>
+    </div>
+
+    <section class="summary-section">
+      <h3>フィルタ</h3>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <label>業界:
+            <select id="industry-filter" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;">
+              <option value="all">すべて</option>
+              <option value="IT">IT</option>
+              <option value="金融">金融</option>
+              <option value="製造">製造</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h3>主要企業プロファイル</h3>
+      <div class="summary-card">
+        <div style="overflow-x:auto;">
+          <table id="company-table" style="width:100%; border-collapse:collapse;">
+            <thead>
+              <tr>
+                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">企業名</th>
+                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">業界</th>
+                <th style="text-align:right; padding:8px; border-bottom:1px solid var(--border-color);">平均年収（万円）</th>
+                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">採用動向</th>
+                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">面接ポイント</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <p class="muted">注: 値はデモ用です。公式公開値・有価証券報告書等で必ずご確認ください。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
+      document.querySelector('.nav-menu')?.classList.toggle('active');
+    });
+    const rows = [
+      { name:'Tech A', ind:'IT', sal:720, trend:'AI/クラウド強化', tip:'成果/技術深堀り・プロダクト志向' },
+      { name:'Fin B', ind:'金融', sal:800, trend:'DX/データ活用', tip:'定量/ロジカル・セキュリティ意識' },
+      { name:'Manu C', ind:'製造', sal:650, trend:'IoT/EV部品', tip:'現場改善/品質・安全性' },
+      { name:'Tech D', ind:'IT', sal:690, trend:'SaaS/グロース', tip:'ユーザー価値/PMF・仮説検証' }
+    ];
+    const tbody = document.querySelector('#company-table tbody');
+    function render(ind='all'){
+      tbody.innerHTML='';
+      rows.filter(r=> ind==='all' || r.ind===ind).forEach(r=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.name}</td>
+                        <td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.ind}</td>
+                        <td style="padding:8px;border-bottom:1px solid var(--border-color);text-align:right;">${r.sal.toLocaleString()}</td>
+                        <td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.trend}</td>
+                        <td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.tip}</td>`;
+        tbody.appendChild(tr);
+      })
+    }
+    document.getElementById('industry-filter')?.addEventListener('change', (e)=> render(e.target.value));
+    render('all');
+  </script>
+</body>
+</html>
+

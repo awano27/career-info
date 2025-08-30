@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用語集/FAQ | Career Horizon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json" id="faq-jsonld"></script>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="nav-brand"><h1>Career Horizon</h1></div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
+        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
+        <li><a href="resources.html" class="nav-link">リソース集</a></li>
+        <li><a href="glossary.html" class="nav-link active">用語集/FAQ</a></li>
+        <li><a href="tools.html" class="nav-link">ツール</a></li>
+        <li><a href="companies.html" class="nav-link">企業研究</a></li>
+      </ul>
+      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="dashboard-header">
+      <h2>用語集 / よくある質問</h2>
+      <p class="update-time">FAQと主要用語のまとめ</p>
+    </div>
+
+    <section class="summary-section">
+      <h3>用語集</h3>
+      <div class="summary-cards">
+        <div class="summary-card">
+          <h4>KPI（重要業績評価指標）</h4>
+          <p>目標達成度合いを測るための主要な指標。求人倍率/平均年収/転職成功率など。</p>
+        </div>
+        <div class="summary-card">
+          <h4>求人倍率（有効求人倍率）</h4>
+          <p>求人数÷求職者数。1を超えるほど売り手市場。</p>
+        </div>
+        <div class="summary-card">
+          <h4>ポータブルスキル</h4>
+          <p>業界や職種を超えて活用できるスキル（コミュニケーション/問題解決/PMなど）。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary-section">
+      <h3>FAQ</h3>
+      <div class="summary-cards" id="faq-list">
+        <div class="summary-card">
+          <h4>Q. データの出典はどこですか？</h4>
+          <p>A. 厚生労働省/総務省/国税庁/IPAなどの公的機関・公式資料を基にしています。</p>
+        </div>
+        <div class="summary-card">
+          <h4>Q. ニュース記事は本物ですか？</h4>
+          <p>A. 公式発表/報道の要約に加えて、編集部の解説を含みます（出典を明記）。</p>
+        </div>
+        <div class="summary-card">
+          <h4>Q. 相談や面談の予約はできますか？</h4>
+          <p>A. 近日、初回相談予約（オンライン）に対応予定です。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
+      document.querySelector('.nav-menu')?.classList.toggle('active');
+    });
+    // Build FAQPage JSON-LD
+    (function(){
+      const faqs = Array.from(document.querySelectorAll('#faq-list .summary-card')).map(card => {
+        const q = card.querySelector('h4')?.textContent?.replace(/^Q\.[\s　]*/, '') || '';
+        const a = card.querySelector('p')?.textContent?.replace(/^A\.[\s　]*/, '') || '';
+        return { '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } };
+      });
+      const json = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs };
+      document.getElementById('faq-jsonld').textContent = JSON.stringify(json);
+    })();
+  </script>
+</body>
+</html>
+
