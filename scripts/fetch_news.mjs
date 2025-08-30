@@ -41,7 +41,7 @@ async function fetchAll() {
         organization: feed.org,
         period: jpDate(it.isoDate || it.pubDate),
         sampleSize: '',
-        reliability: '★★★★☆（高い）',
+        reliability: '高い',
         updateFrequency: '随時',
         sourceUrl: it.link || feed.url
       }));

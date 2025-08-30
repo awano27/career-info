@@ -1,9 +1,13 @@
-{
-  "name": "career-info",
-  "private": true,
-  "type": "module",
-  "dependencies": {
-    "rss-parser": "^3.12.0"
-  }
+﻿{
+    "name":  "career-info",
+    "private":  true,
+    "type":  "module",
+    "dependencies":  {
+                         "rss-parser":  "^3.12.0"
+                     },
+    "scripts":  {
+                    "fetch:news":  "node scripts/fetch_news.mjs",
+                    "serve":  "npx http-server -c-1 -p 8080 .",
+                    "import:news":  "node scripts/import_text_to_news.mjs"
+                }
 }
-

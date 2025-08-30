@@ -14,3 +14,13 @@ https://www.itmedia.co.jp/business/subtop/rss/business.rdf
 https://techcrunch.com/feed/
 # Panasonic Newsroom Japan – プレスリリース
 https://news.panasonic.com/jp/rss/press/index.xml
+# 朝日新聞デジタル 経済
+https://www.asahi.com/rss/asahi/business.rdf
+# 東洋経済オンライン
+https://toyokeizai.net/list/feed/rss
+# Yahoo!ニュース 経済トピックス
+https://news.yahoo.co.jp/rss/topics/business.xml
+# livedoor ニュース 経済トピックス
+https://news.livedoor.com/topics/rss/eco.xml
+# PR TIMES（全体）
+https://prtimes.jp/index.rdf

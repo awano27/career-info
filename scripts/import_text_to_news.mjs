@@ -14,21 +14,21 @@ const name = basename(filePath).replace(/\.[^.]+$/, '');
 function toJpDateFromIso(iso) {
   const d = new Date(iso);
   if (isNaN(d)) return '';
-  return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
+  return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
 }
 
 // Derive title & date
 let title = titleArg || '';
 if (!title) {
-  const firstLine = (txt.split(/\r?\n/).find(l => l.trim().length>0) || '').trim();
+  const firstLine = (txt.split(/\r?\n/).find(l => l.trim().length > 0) || '').trim();
   title = firstLine.length > 40 ? firstLine.slice(0, 38) + '…' : firstLine || '今日の転職・キャリアニュース ハイライト';
 }
-let isoDate = dateArg || new Date().toISOString().slice(0,10);
+let isoDate = dateArg || new Date().toISOString().slice(0, 10);
 const jpDate = toJpDateFromIso(isoDate);
 
 // Simple HTML body
-const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-const paragraphs = txt.split(/\r?\n\r?\n/).map(p=>`<p>${esc(p).replace(/\r?\n/g,'<br>')}</p>`).join('\n');
+const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const paragraphs = txt.split(/\r?\n\r?\n/).map(p => `<p>${esc(p).replace(/\r?\n/g, '<br>')}</p>`).join('\n');
 
 const id = `dyn-${name}`;
 const item = {
@@ -45,14 +45,14 @@ const item = {
   organization: 'Career Horizon',
   period: jpDate,
   sampleSize: '',
-  reliability: '★★★☆☆（中程度）',
+  reliability: '中程度',
   updateFrequency: '日次',
   sourceUrl: ''
 };
 
 let db = { lastUpdated: new Date().toISOString(), items: [] };
 if (existsSync('data/news.json')) {
-  try { db = JSON.parse(readFileSync('data/news.json','utf8')); } catch {}
+  try { db = JSON.parse(readFileSync('data/news.json', 'utf8')); } catch {}
 }
 db.items = (db.items || []).filter(x => x.id !== id);
 db.items.unshift(item);
