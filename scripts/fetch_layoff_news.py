@@ -18,28 +18,16 @@ JST = timezone(timedelta(hours=9))
 
 
 # Detection keywords (JP + EN). Keep specific to reduce false positives.
+# Broad keywords are still used for quick screening,
+# but final decision relies on regex-based co-occurrence below.
 KEYWORDS = [
     # Japanese
-    "リストラ",
-    "レイオフ",
-    "人員削減",
-    "人員整理",
-    "人員減",
-    "希望退職",
-    "希望退職者",
-    "早期希望退職",
-    "早期退職",
-    "早期優遇退職",
+    "リストラ", "レイオフ", "人員削減", "人員整理", "人員減",
+    "希望退職", "希望退職者", "早期希望退職", "早期退職", "早期優遇退職",
+    "解雇", "整理解雇", "雇用調整", "配置転換", "転籍",
     # English
-    "layoff",
-    "layoffs",
-    "job cut",
-    "job cuts",
-    "job reduction",
-    "reduce workforce",
-    "restructuring",
-    "restructure",
-    "redundancies",
+    "layoff", "layoffs", "job cut", "job cuts", "job reduction",
+    "reduce workforce", "restructuring", "restructure", "redundancies",
 ]
 
 EVENT_MAP = {
@@ -106,20 +94,31 @@ def extract_company(title: str, link: str) -> str:
     return domain.replace("www.", "")
 
 
+_RE_VOL_RET = re.compile(r"(希望|早期)(優遇)?退職")
+_RE_LAYOFF = re.compile(r"(リストラ|レイオフ|整理解雇|解雇|人員\s*(?:削減|整理|減|減少)|従業員\s*(?:削減|整理|減|減少)|社員\s*(?:削減|整理|減|減少)|job\s*cuts?|layoffs?|redundanc(?:y|ies))", re.I)
+_RE_RESTRUCTURE = re.compile(r"(事業|組織|部門|拠点|工場)(の)?(再編|再構築|統合|統廃合|撤退|閉鎖|縮小)")
+_RE_STAFF = re.compile(r"(人員|従業員|社員|職員|ヘッドカウント)")
+
 def detect_event_type(text: str) -> str:
-    t = text.lower()
     # Priority: voluntary retirement > layoff > restructure
-    for kw in ["希望退職", "早期退職", "早期優遇退職"]:
-        if kw in text:
-            return "voluntary_retirement"
-    for kw in ["リストラ", "レイオフ", "人員削減", "人員整理", "layoff", "layoffs", "job cut", "job cuts", "redundancies"]:
-        if kw in text or kw in t:
-            return "layoff"
-    for kw in ["restructure", "restructuring"]:
-        if kw in t:
-            return "restructure"
-    # fallback
+    if _RE_VOL_RET.search(text):
+        return "voluntary_retirement"
+    if _RE_LAYOFF.search(text):
+        return "layoff"
+    # Restructure only if staff context also appears (to reduce false positives)
+    if _RE_RESTRUCTURE.search(text) and _RE_STAFF.search(text):
+        return "restructure"
     return "restructure"
+
+def is_layoff_related(text: str) -> bool:
+    # Decide if the article is about staff reductions / voluntary retirement / restructure with staff impact
+    if _RE_VOL_RET.search(text):
+        return True
+    if _RE_LAYOFF.search(text):
+        return True
+    if _RE_RESTRUCTURE.search(text) and _RE_STAFF.search(text):
+        return True
+    return False
 
 
 def detect_headcount(text: str) -> tuple[int, float]:
@@ -141,9 +140,8 @@ def build_item(entry, region_default: str = "JP") -> dict:
     summary = getattr(entry, "summary", "").strip() or getattr(entry, "description", "").strip()
 
     text = title + "\n" + summary
-    # Filter by keywords (case-insensitive for English)
-    low = text.lower()
-    if not any((kw in text) or (kw.lower() in low) for kw in KEYWORDS):
+    # Use regex-based co-occurrence to reduce false positives
+    if not is_layoff_related(text):
         return {}
 
     dt = extract_date(entry)
