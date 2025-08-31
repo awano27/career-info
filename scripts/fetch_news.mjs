@@ -15,7 +15,9 @@ const feeds = [
   { url: 'https://news.livedoor.com/topics/rss/eco.xml', org: 'livedoor 経済', defCat: '市場動向', defClass: 'market' },
   // HR/キャリア系メディア（公開RSS）
   { url: 'https://hrnote.jp/feed/', org: 'HR NOTE', defCat: '専門家コラム', defClass: 'expert' },
-  { url: 'https://bizspa.jp/feed/', org: 'bizSPA!フレッシュ', defCat: '業界トレンド', defClass: 'industry' },
+  // bizSPA! はRSSのXMLが安定せず除外
+  // { url: 'https://bizspa.jp/feed/', org: 'bizSPA!フレッシュ', defCat: '業界トレンド', defClass: 'industry' },
+  { url: 'https://news.careerconnection.jp/feed/', org: 'キャリコネニュース', defCat: '業界トレンド', defClass: 'industry' },
   { url: 'https://goworkship.com/magazine/feed/', org: 'Workship MAGAZINE', defCat: '専門家コラム', defClass: 'expert' },
   // プレス
   { url: 'https://prtimes.jp/index.rdf', org: 'PR TIMES', defCat: '業界トレンド', defClass: 'industry' }
