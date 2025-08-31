@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-08-31T07:07:47.951Z",
+  "lastUpdated": "2025-08-31T07:20:15.903Z",
   "items": [
     {
       "id": "dyn-20250831-prtimes-jp-main-html-rd-p-000000417-000048039-html",
@@ -62,6 +62,26 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://news.livedoor.com/article/detail/29476412/"
+    },
+    {
+      "id": "dyn-20250830-www-jiji-com-jc-article-k-2025082900996-g-int",
+      "title": "乗り越えた「最大の危機」　「日本製」譲れず、会談のネックに―インド高速鉄道：時事ドットコム",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月30日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "採用"
+      ],
+      "fullContent": "<p>乗り越えた「最大の危機」　「日本製」譲れず、会談のネックに―インド高速鉄道 時事通信 外経部2025年08月30日07時07分配信 東北新幹線の次期車両「Ｅ１０系」の外観イメージ（ＪＲ東日本提供） 【ニューデリー時事】インド初の高速鉄道に新幹線方式の採用が決まってから約１０年。２９日の日印首脳会談で日本製の新型車......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年8月30日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.jiji.com/jc/article?k=2025082900996&g=int"
     },
     {
       "id": "dyn-20250830-toyokeizai-net-articles-900776-utm-source-rss-utm-medium-htt",
@@ -146,6 +166,69 @@
       "sourceUrl": "https://www.asahi.com/articles/AST8M36LWT8MUPQJ00SM.html?ref=rss"
     },
     {
+      "id": "dyn-20250828-thebridge-jp-2025-08-sharedine-raises-21b-series-b-for-chefl",
+      "title": "シェアダイン、シリーズBで総額21億円調達し料理人 SNS「CHEFLINK」海外展開を加速",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年8月28日",
+      "author": "BRIDGE（スタートアップ）",
+      "readTimeMin": 3,
+      "tags": [
+        "キャリア"
+      ],
+      "fullContent": "<p>料理人向けキャリアプラットフォームを手掛けるシェアダインは27日、シリーズBラウンドで総額21億円を調達したと発表した。今回参画した出資者は、みずほキャピタルと三井住友信託銀行で、両社はいずれも本ラウンドからの新規投資家...\nThe post シェアダイン、シリーズBで総額21億円調達し料理人 SNS「CHEFLINK」海外展開を加速 first appeared on BRIDGE（ブリッジ）....</p>",
+      "source": "BRIDGE（スタートアップ）",
+      "organization": "BRIDGE（スタートアップ）",
+      "period": "2025年8月28日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://thebridge.jp/2025/08/sharedine-raises-21b-series-b-for-cheflink-global-expansion"
+    },
+    {
+      "id": "dyn-20250828-thebridge-jp-2025-08-lapras-welcomes-spurcle-as-new-investor",
+      "title": "IT エンジニア採用の LAPRAS にスパークルが新たに資本参画、地方への人材供給を推進",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月28日",
+      "author": "BRIDGE（スタートアップ）",
+      "readTimeMin": 3,
+      "tags": [
+        "転職",
+        "採用",
+        "人材"
+      ],
+      "fullContent": "<p>IT エンジニア向け転職・採用プラットフォーム「LAPRAS」は27日、第三者割当増資と既存株主による株式譲渡（セカンダリー取引）によりスパークルを新規株主として迎え入れたと発表した。同社は調達額を非公開としているが、今...\nThe post IT エンジニア採用の LAPRAS にスパークルが新たに資本参画、地方への人材供給を推進 first appeared on BRIDGE（ブリッジ）....</p>",
+      "source": "BRIDGE（スタートアップ）",
+      "organization": "BRIDGE（スタートアップ）",
+      "period": "2025年8月28日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://thebridge.jp/2025/08/lapras-welcomes-spurcle-as-new-investor-strengthens-regional-talent-ecosystem"
+    },
+    {
+      "id": "dyn-20250826-jinjibu-jp-news-detl-25423-",
+      "title": "「2025年度 企業価値向上に向けた取り組みに関するアンケート」の結果を発表",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月27日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "人材",
+        "育成"
+      ],
+      "fullContent": "<p>約6割の企業が「コスト増加」の影響があると回答。注力する経営テーマは「人材確保・育成」が最多。ESG活動では「人的資本」に注力。コーポレートファイナンス領域より5つのテーマで調査日本の経営コンサルティン......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月27日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25423/"
+    },
+    {
       "id": "dyn-20250826-goworkship-com-magazine-cancer-keep-working02-",
       "title": "がん治療にかかるお金はいくら？フリーランスが知っておきたい医療費・制度・保険の話",
       "category": "専門家コラム",
@@ -166,6 +249,47 @@
       "sourceUrl": "https://goworkship.com/magazine/cancer-keep-working02/"
     },
     {
+      "id": "dyn-20250825-jinjibu-jp-news-detl-25417-",
+      "title": "リモートワークに関する実態調査【人材編】",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月26日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "転職",
+        "人材"
+      ],
+      "fullContent": "<p>出社回帰で約4割のITエンジニアが同職種での転職を検討、根強く残る“リモート希望”の声「日本を、IT先進国に。」をビジョンに掲げるレバテック株式会社は、近年増加する出社回帰の動きを受け、ITエン......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月26日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25417/"
+    },
+    {
+      "id": "dyn-20250825-jinjibu-jp-news-detl-25399-",
+      "title": "「2025年7月度アルバイト・パート平均時給レポート」を発表",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年8月26日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "賃金"
+      ],
+      "fullContent": "<p>・2025年7月の全国平均時給は1,283円、前月比から12円減。・［警備・清掃・ビル管理］の平均時給は1,181円で6ヵ月連続増加・最低賃金が低い県における高時給職種と低時給職種の平均時給の差は400円以上 株式......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月26日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25399/"
+    },
+    {
       "id": "dyn-20250825-goworkship-com-magazine-news-20250825-",
       "title": "フリーランスに突然のがん宣告。仕事はどうする？　他",
       "category": "専門家コラム",
@@ -184,6 +308,46 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://goworkship.com/magazine/news-20250825/"
+    },
+    {
+      "id": "dyn-20250824-jinjibu-jp-news-detl-25413-",
+      "title": "「労働者のスキルに関する日米調査」を実施",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月25日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "求人"
+      ],
+      "fullContent": "<p>スキル習得「意欲なし」日本29.3％に対し米国3.7％企業のスキル習得支援策も、日本は「特になし」22.7％ で米国2.0％と大きな差労働者・企業双方のスキルに対する意識、日米で際立つ差が明らかに世界No.1求人サイ......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月25日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25413/"
+    },
+    {
+      "id": "dyn-20250822-news-yahoo-co-jp-expert-articles-f6dc737719b2402568919b0cc97",
+      "title": "日本の深刻な人手不足への対応は、なぜこんなにも遅れてしまったのか？（中原圭介） - エキスパート - Yahoo!ニュース",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月22日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "人材"
+      ],
+      "fullContent": "<p>私は当時のメディアの政権への忖度に失望し、この番組を最後に東京キー局の出演はすべてお断りしている。（関係者撮影） アベノミクスの成果が、人手不足の目くらましになった人手不足による倒産や廃業が、ここ数年で急激に増え続けている。大企業が高い賃上げ率を維持するなかで、中小零細企業から人材が流出しているた......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年8月22日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.yahoo.co.jp/expert/articles/f6dc737719b2402568919b0cc97b28492df86e76"
     },
     {
       "id": "dyn-20250822-goworkship-com-magazine-tachikawa-cafe-dengen-wifi-",
@@ -226,6 +390,48 @@
       "sourceUrl": "https://goworkship.com/magazine/osaki-cafe-dengen-wifi/"
     },
     {
+      "id": "dyn-20250821-jinjibu-jp-news-detl-25409-",
+      "title": "26卒「大学生キャリア意向調査7月＜就職活動・進路決定＞」を発表",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年8月22日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "就職",
+        "キャリア"
+      ],
+      "fullContent": "<p>内々定保有社数「1社」の割合が前年から30pt以上増加し6割を超え、「1社で決める」学生が増加。就職活動に影響したワードは3年連続で「初任給アップ」がトップ株式会社マイナビ（本社：東京都千代田区、代表取締......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月22日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25409/"
+    },
+    {
+      "id": "dyn-20250821-jinjibu-jp-news-detl-25405-",
+      "title": "2025年度 新入社員の会社生活調査",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年8月22日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "就職",
+        "キャリア"
+      ],
+      "fullContent": "<p>2025年度の新入社員を対象に、就職活動の実態や仕事観、働く意欲や新社会人としての意識、将来のキャリアなどに関するアンケートを実施しました。本学では同調査を1990年度から実施しており、本年度で36回目とな......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月22日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25405/"
+    },
+    {
       "id": "dyn-20250821-goworkship-com-magazine-business-outsourcing-judgment-",
       "title": "「業務委託はやめたほうがいい？」後悔しないために知っておきたいメリット・デメリットと判断基準",
       "category": "専門家コラム",
@@ -244,6 +450,89 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://goworkship.com/magazine/business-outsourcing-judgment/"
+    },
+    {
+      "id": "dyn-20250820-jinjibu-jp-news-detl-25403-",
+      "title": "「働く人の本音調査2025」を実施",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年8月21日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "年収"
+      ],
+      "fullContent": "<p>「年収への満足度」「組織風土との相性」のほか、若手層は「個人の成果」、中堅・ベテラン層は「希望と実態の一致」が鍵に 会社における経営・人事課題の解決および、事業・戦略の推進を支援する株式会社リ......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月21日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25403/"
+    },
+    {
+      "id": "dyn-20250818-jinjibu-jp-news-detl-25378-",
+      "title": "外国人材の日本でのキャリア観に関する実態調査2025",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月19日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "キャリア",
+        "人材",
+        "リスキリング"
+      ],
+      "fullContent": "<p>日本は“選ばれる”国になれるのか？キャリア構築・リスキリングに前向きな外国人材 求められる対応とは教育を中心に人材・介護・保育・IT・美容・スポーツ事業を傘下に持つヒューマンホールディングス......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月19日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25378/"
+    },
+    {
+      "id": "dyn-20250812-jinjibu-jp-news-detl-25361-",
+      "title": "学生を対象に就活観やAI活用に関する調査を実施",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年8月13日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "キャリア"
+      ],
+      "fullContent": "<p>志望職種のAI影響、約6割が認識も就活考慮わずか7％【Z世代就活生300名調査】AI時代に身につけたいスキルは「コミュ力」や「ネットリテラシー」 価値観軸で企業と出会えるZ世代キャリア支援AI「BaseMe（ベー......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月13日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25361/"
+    },
+    {
+      "id": "dyn-20250812-jinjibu-jp-news-detl-25345-",
+      "title": "【外国人材の日本での仕事観とキャリアに関する実態調査2025 vol.1】",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月13日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "キャリア",
+        "人材"
+      ],
+      "fullContent": "<p>外国人材の6割以上が「日本での長期的キャリア形成を希望」ー報酬設計とキャリア支援の在り方が外国人材定着の分かれ目ー教育を中心に人材・介護・保育・IT・美容・スポーツ事業を傘下に持つヒューマンホールディ......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月13日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25345/"
     },
     {
       "id": "dyn-20250811-hrnote-jp-contents-saiyo-mynavi-20250812-utm-source-rss-utm-",
@@ -265,6 +554,29 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://hrnote.jp/contents/saiyo-mynavi-20250812/?utm_source=rss&utm_medium=rss&utm_campaign=saiyo-mynavi-20250812"
+    },
+    {
+      "id": "dyn-20250805-jinjibu-jp-news-detl-25355-",
+      "title": "～新卒採用支援のヒューマネージ、キャリア採用支援分野に本格参入～",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月5日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "採用",
+        "キャリア",
+        "人材",
+        "新卒"
+      ],
+      "fullContent": "<p>新卒シェア No.1 の採用管理システム『i-web』から、『i-web キャリア採用モデル』を新たにリリース！人材の“採用”から“定着”、その先の“活躍”までを支援する人材サービス事......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年8月5日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25355/"
     },
     {
       "id": "dyn-20250728-hrnote-jp-contents-soshiki-proactive-8-20250729-utm-source-r",

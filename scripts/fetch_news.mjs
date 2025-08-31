@@ -28,12 +28,20 @@ const feeds = [
   { url: 'https://news.yahoo.co.jp/rss/topics/science.xml', org: 'Yahoo!ニュース 科学', defCat: '市場動向', defClass: 'market' },
   { url: 'https://news.livedoor.com/topics/rss/eco.xml', org: 'livedoor 経済', defCat: '市場動向', defClass: 'market' },
   { url: 'https://news.livedoor.com/topics/rss/top.xml', org: 'livedoor トップ', defCat: '市場動向', defClass: 'market' },
+  // 省庁
+  { url: 'https://www.fsa.go.jp/fsaNewsListAll_rss2.xml', org: '金融庁 新着', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://www.fsa.go.jp/fsaProcurementList_rss2.xml', org: '金融庁 調達', defCat: '市場動向', defClass: 'market' },
   // HR/キャリア系メディア（公開RSS）
   { url: 'https://hrnote.jp/feed/', org: 'HR NOTE', defCat: '専門家コラム', defClass: 'expert' },
   // bizSPA! はRSSのXMLが安定せず除外
   // { url: 'https://bizspa.jp/feed/', org: 'bizSPA!フレッシュ', defCat: '業界トレンド', defClass: 'industry' },
   { url: 'https://news.careerconnection.jp/feed/', org: 'キャリコネニュース', defCat: '業界トレンド', defClass: 'industry' },
   { url: 'https://goworkship.com/magazine/feed/', org: 'Workship MAGAZINE', defCat: '専門家コラム', defClass: 'expert' },
+  { url: 'https://jinjibu.jp/rss/?mode=news&type=1', org: '日本の人事部（企業人事）', defCat: '業界トレンド', defClass: 'industry' },
+  { url: 'https://jinjibu.jp/rss/?mode=news&type=2', org: '日本の人事部（人事サービス）', defCat: '業界トレンド', defClass: 'industry' },
+  { url: 'https://thebridge.jp/feed', org: 'BRIDGE（スタートアップ）', defCat: '業界トレンド', defClass: 'industry' },
+  // メタ系（カテゴリRSS）
+  { url: 'https://b.hatena.ne.jp/hotentry/economics.rss', org: 'はてな 経済ホット', defCat: '市場動向', defClass: 'market' },
   { url: 'https://www.jiji.com/rss/ranking.rdf', org: '時事通信（ランキング）', defCat: '市場動向', defClass: 'market' },
   // ダイヤモンド、はてな（ビジネス）RSSは形式/可用性が不安定なため除外
   // プレス
