@@ -73,14 +73,15 @@ function buildJobRatioChart(kpi) {
   const badgeWrap = document.createElement('div'); badgeWrap.className = 'controls-right'; controls.appendChild(badgeWrap);
   const momBadge = document.createElement('span'); momBadge.className = 'metric-badge'; momBadge.id = 'job-mom-badge'; badgeWrap.appendChild(momBadge);
   const yoyBadge = document.createElement('span'); yoyBadge.className = 'metric-badge'; yoyBadge.id = 'job-yoy-badge'; badgeWrap.appendChild(yoyBadge);
+  function last(arr){ return (arr && arr.length) ? arr[arr.length - 1] : undefined; }
   function updateBadges(vals, prevVals){
-    if (vals.length >= 2) { const m = vals.at(-1) - vals.at(-2); momBadge.classList.toggle('negative', m < 0); momBadge.textContent = `前月比${m>=0?'+':''}${m.toFixed(2)}`; momBadge.style.display=''; } else momBadge.style.display='none';
-    if (prevVals.length === vals.length && vals.length){ const y = vals.at(-1) - prevVals.at(-1); yoyBadge.classList.toggle('negative', y < 0); yoyBadge.textContent = `前年比${y>=0?'+':''}${y.toFixed(2)}`; yoyBadge.style.display=''; } else yoyBadge.style.display='none';
+    if (vals.length >= 2) { const m = vals[vals.length - 1] - vals[vals.length - 2]; momBadge.classList.toggle('negative', m < 0); momBadge.textContent = `前月比${m>=0?'+':''}${m.toFixed(2)}`; momBadge.style.display=''; } else momBadge.style.display='none';
+    if (prevVals.length === vals.length && vals.length){ const y = vals[vals.length - 1] - prevVals[prevVals.length - 1]; yoyBadge.classList.toggle('negative', y < 0); yoyBadge.textContent = `前年比${y>=0?'+':''}${y.toFixed(2)}`; yoyBadge.style.display=''; } else yoyBadge.style.display='none';
   }
   updateBadges(data, prev);
 
   const chart = new Chart(el, { type: 'line', data: { labels, datasets: [{ label: '有効求人倍率', data, borderColor: '#337ab7', backgroundColor: 'rgba(51,122,183,.1)', borderWidth: 3, fill: true, tension: .4 }] }, options: {
-    responsive:true, maintainAspectRatio:false, interaction:{intersect:false}, plugins:{ legend:{display:false}, tooltip:{backgroundColor:'rgba(0,0,0,.8)',titleColor:'#fff',bodyColor:'#fff'}, annotation:{ annotations:{ threshold:{ type:'line', yMin:1.20, yMax:1.20, borderColor:'#ef4444', borderWidth:1, borderDash:[4,4], label:{enabled:true, content:'目標 1.20', backgroundColor:'rgba(239,68,68,.08)', color:'#ef4444'}, display:true }, latest:{ type:'line', xMin:labels.at(-1), xMax:labels.at(-1), borderColor:'#10b981', borderWidth:1, label:{enabled:true, content:'最新', backgroundColor:'rgba(16,185,129,.08)', color:'#0f5132'}, display:true } } } }, scales:{ x:{ grid:{display:false}}, y:{ beginAtZero:false, min:1.0, max:1.4 } } } });
+    responsive:true, maintainAspectRatio:false, interaction:{intersect:false}, plugins:{ legend:{display:false}, tooltip:{backgroundColor:'rgba(0,0,0,.8)',titleColor:'#fff',bodyColor:'#fff'}, annotation:{ annotations:{ threshold:{ type:'line', yMin:1.20, yMax:1.20, borderColor:'#ef4444', borderWidth:1, borderDash:[4,4], label:{enabled:true, content:'目標 1.20', backgroundColor:'rgba(239,68,68,.08)', color:'#ef4444'}, display:true }, latest:{ type:'line', xMin:labels[labels.length - 1], xMax:labels[labels.length - 1], borderColor:'#10b981', borderWidth:1, label:{enabled:true, content:'最新', backgroundColor:'rgba(16,185,129,.08)', color:'#0f5132'}, display:true } } } }, scales:{ x:{ grid:{display:false}}, y:{ beginAtZero:false, min:1.0, max:1.4 } } } });
 
   controls.querySelector('#maToggle')?.addEventListener('change', e => {
     const ex = chart.data.datasets.find(d => d._isMA);
@@ -100,7 +101,7 @@ function buildJobRatioChart(kpi) {
   controls.querySelector('#periodSelect')?.addEventListener('change', e => {
     const per = e.target.value; const srcL = months, srcV = values, srcP = prevYear;
     if (per === '6' && srcV.length > 6) { const st = srcV.length - 6; labels = srcL.slice(st); data = srcV.slice(st); prev = srcP.length===srcV.length?srcP.slice(st):[]; } else { labels = srcL.slice(); data = srcV.slice(); prev = srcP.slice(); }
-    chart.data.labels = labels; chart.data.datasets[0].data = data; const maDs = chart.data.datasets.find(d=>d._isMA); if (maDs) maDs.data = movingAverage(data,3); const yoyDs = chart.data.datasets.find(d=>d._isYOY); if (yoyDs && prev.length===data.length) yoyDs.data = prev; const ann = chart.options.plugins?.annotation?.annotations; if (ann?.latest){ ann.latest.xMin = labels.at(-1); ann.latest.xMax = labels.at(-1);} chart.update(); updateBadges(data, prev);
+    chart.data.labels = labels; chart.data.datasets[0].data = data; const maDs = chart.data.datasets.find(d=>d._isMA); if (maDs) maDs.data = movingAverage(data,3); const yoyDs = chart.data.datasets.find(d=>d._isYOY); if (yoyDs && prev.length===data.length) yoyDs.data = prev; const ann = chart.options.plugins?.annotation?.annotations; if (ann?.latest){ const lastLabel = labels[labels.length - 1]; ann.latest.xMin = lastLabel; ann.latest.xMax = lastLabel;} chart.update(); updateBadges(data, prev);
   });
 }
 
