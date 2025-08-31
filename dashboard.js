@@ -38,6 +38,8 @@ function initializeCharts() {
 
     // KPI summary for turnover (national average)
     try { updateTurnoverKpi(kpi); } catch {}
+    // KPI cards (4枚) の更新
+    try { updateKpiCards(kpi); } catch {}
 
     buildJobRatioChart(kpi);
     buildSalaryChart(kpi);
@@ -172,6 +174,46 @@ function updateTurnoverKpi(kpi){
   if (ch) ch.textContent = [momTxt, yoyTxt].filter(Boolean).join(' ｜ ');
   const trend = wrap.querySelector('.kpi-trend');
   if (trend && mom != null) trend.textContent = mom > 0 ? '↗' : (mom < 0 ? '↘' : '→');
+}
+
+function updateKpiCards(kpi){
+  const cards = document.querySelectorAll('.kpi-grid .kpi-card');
+  if (!cards || cards.length < 4) return;
+
+  const metrics = kpi.metrics || {};
+  // 1) 有効求人倍率
+  const jr = metrics.jobRatio || {};
+  const jrVals = Array.isArray(jr.values) ? jr.values : [];
+  const jrPrevY = Array.isArray(jr.prevYearValues) ? jr.prevYearValues : [];
+  const jrLatest = jrVals.length ? jrVals[jrVals.length - 1] : null;
+  const jrPrev = jrVals.length >= 2 ? jrVals[jrVals.length - 2] : null;
+  const jrYoy = (jrPrevY.length === jrVals.length && jrLatest != null) ? (jrLatest - jrPrevY[jrPrevY.length - 1]) : null;
+  setKpi(cards[0], jrLatest != null ? `${jrLatest.toFixed(2)} 倍` : '—', changeText(diffOrNull(jrLatest, jrPrev), jrYoy));
+
+  // 2) 平均年収（業界平均の平均値）
+  const sal = Array.isArray(metrics.salaryByIndustry) ? metrics.salaryByIndustry : [];
+  const salAvg = avg(sal.map(x => x.avg));
+  const salPrev = avg(sal.map(x => x.prev));
+  setKpi(cards[1], isNum(salAvg) ? `${Math.round(salAvg).toLocaleString('ja-JP')} 万円` : '—', diffText(isNum(salAvg) && isNum(salPrev) ? (salAvg - salPrev) : null));
+
+  // 3) 転職成功率（年代平均）
+  const sr = Array.isArray(metrics.successRateByAge) ? metrics.successRateByAge : [];
+  const srAvg = avg(sr.map(x => x.rate));
+  const srPrev = avg(sr.map(x => x.prev));
+  setKpi(cards[2], isNum(srAvg) ? `${srAvg.toFixed(1)} %` : '—', diffText(isNum(srAvg) && isNum(srPrev) ? (srAvg - srPrev) : null));
+
+  // 4) 新規求人数（代替: 関東シェア）
+  const rg = Array.isArray(metrics.regionJobShare) ? metrics.regionJobShare : [];
+  const kanto = rg.find(x => x.region === '関東');
+  const kShare = kanto && isNum(kanto.share) ? Number(kanto.share) : null;
+  const kPrev = kanto && isNum(kanto.prev) ? Number(kanto.prev) : null;
+  setKpi(cards[3], kShare != null ? `${kShare.toFixed(0)} %` : '—', diffText((kShare != null && kPrev != null) ? (kShare - kPrev) : null));
+
+  function isNum(n){ return typeof n === 'number' && !isNaN(n); }
+  function diffOrNull(a,b){ return (isNum(a) && isNum(b)) ? (a-b) : null; }
+  function setKpi(card, valueText, change){ if(!card) return; const v=card.querySelector('.kpi-value'); const c=card.querySelector('.kpi-change'); if(v) v.textContent = valueText ?? '—'; if(c) c.textContent = change ?? '—'; }
+  function diffText(delta){ if(!isNum(delta)) return '—'; const d=delta; const sign=d>0?'+':(d<0?'':'±'); return `前期比 ${sign}${Math.abs(d).toFixed(2)}`; }
+  function changeText(mom,yoy){ const a = isNum(mom) ? `前月比 ${mom>=0?'+':''}${mom.toFixed(2)}` : null; const b = isNum(yoy) ? `前年同月比 ${yoy>=0?'+':''}${yoy.toFixed(2)}` : null; return [a,b].filter(Boolean).join(' ｜ ') || '—'; }
 }
 
 function buildTurnoverRegionChart(kpi){
