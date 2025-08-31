@@ -36,11 +36,15 @@ function initializeCharts() {
       }
     } catch {}
 
+    // KPI summary for turnover (national average)
+    try { updateTurnoverKpi(kpi); } catch {}
+
     buildJobRatioChart(kpi);
     buildSalaryChart(kpi);
     buildRegionChart(kpi);
     buildAgeChart(kpi);
     buildTurnoverRegionChart(kpi);
+    buildTurnoverMap(kpi);
   }).catch(err => console.warn('KPI data load failed:', err));
 }
 
@@ -148,6 +152,27 @@ function buildAgeChart(kpi){
   controls.addEventListener('change',()=>{ const next=build(); chart.data.labels=next.labels; chart.data.datasets[0].data=next.values; chart.update(); updateYoy(next.idxs); updateStats(next.idxs); });
 }
 
+function updateTurnoverKpi(kpi){
+  const wrap = document.getElementById('kpi-turnover'); if (!wrap) return;
+  const list = (kpi.metrics?.turnoverRateByRegion) || [];
+  if (!Array.isArray(list) || list.length === 0) return;
+  const now = list.map(x => Number(x.rate)).filter(n => !isNaN(n));
+  const pm = list.map(x => Number(x.prevMonth)).filter(n => !isNaN(n));
+  const py = list.map(x => Number(x.prev)).filter(n => !isNaN(n));
+  const nowAvg = avg(now);
+  const pmAvg = pm.length ? avg(pm) : null;
+  const pyAvg = py.length ? avg(py) : null;
+  const val = wrap.querySelector('.kpi-value'); if (val) val.textContent = `${nowAvg.toFixed(1)} %`;
+  const ch = wrap.querySelector('.kpi-change');
+  const mom = (pmAvg != null) ? (nowAvg - pmAvg) : null;
+  const yoy = (pyAvg != null) ? (nowAvg - pyAvg) : null;
+  const momTxt = (mom != null) ? `前月比 ${mom>=0?'+':''}${mom.toFixed(2)}pt` : null;
+  const yoyTxt = (yoy != null) ? `前年比 ${yoy>=0?'+':''}${yoy.toFixed(2)}pt` : null;
+  if (ch) ch.textContent = [momTxt, yoyTxt].filter(Boolean).join(' ｜ ');
+  const trend = wrap.querySelector('.kpi-trend');
+  if (trend && mom != null) trend.textContent = mom > 0 ? '↗' : (mom < 0 ? '↘' : '→');
+}
+
 function buildTurnoverRegionChart(kpi){
   const el = document.getElementById('turnoverRegionChart'); if (!el) return;
   const container = el.closest('.chart-container'); const titleEl = container?.querySelector('h3');
@@ -185,13 +210,42 @@ function buildTurnoverRegionChart(kpi){
   });
 }
 
+async function buildTurnoverMap(kpi){
+  const el = document.getElementById('turnoverMap'); if (!el) return;
+  const list = (kpi.metrics?.turnoverRateByPrefecture) || null;
+  const container = el.closest('.chart-container');
+  if (!Array.isArray(list) || list.length === 0) {
+    const info = document.createElement('div'); info.className = 'muted'; info.style.marginTop = '8px'; info.textContent = '都道府県別の離職率データは現在準備中です。';
+    container?.appendChild(info); return;
+  }
+  try {
+    const res = await fetch('https://cdn.jsdelivr.net/npm/japan-geojson@0.2.0/japan.geojson', { cache: 'force-cache' });
+    if (!res.ok) throw new Error('geojson load failed');
+    const geo = await res.json();
+    const valMap = new Map(list.map(p => [p.pref, Number(p.rate)]));
+    const data = geo.features.map(f => {
+      const name = f.properties?.name_ja || f.properties?.nam_ja || f.properties?.name || '';
+      return { feature: f, value: valMap.get(name) ?? null };
+    });
+    const values = data.map(d => d.value).filter(v => v != null);
+    const min = Math.min(...values), max = Math.max(...values);
+    new Chart(el, {
+      type: 'choropleth',
+      data: { labels: data.map(d => d.feature.properties?.name_ja || ''), datasets: [{ label: '離職率(%)', outline: geo, data }] },
+      options: { showOutline: true, showGraticule: false, plugins: { legend: { position: 'bottom' } }, scales: { projection: { axis: 'x', projection: 'mercator' }, color: { quantize: 5, legend: { position: 'bottom' }, interpolator: (t)=> `rgba(217,119,6,${0.2 + 0.8*t})`, domain: [min, max] } } }
+    });
+  } catch (e) {
+    const info = document.createElement('div'); info.className = 'muted'; info.style.marginTop = '8px'; info.textContent = '地図ロードに失敗しました。ネットワークを確認してください。'; container?.appendChild(info);
+  }
+}
+
 // Utilities & helpers
 function movingAverage(arr, p){ const out=[]; for(let i=0;i<arr.length;i++){ const s=Math.max(0,i-p+1); const sl=arr.slice(s,i+1); out.push(Number((sl.reduce((a,b)=>a+b,0)/sl.length).toFixed(2))); } return out; }
 function avg(arr){ if(!arr||!arr.length) return 0; return arr.reduce((a,b)=>a+b,0)/arr.length; }
 function median(arr){ if(!arr||!arr.length) return 0; const a=arr.slice().sort((x,y)=>x-y); const m=Math.floor(a.length/2); return a.length%2===0? (a[m-1]+a[m])/2 : a[m]; }
 
 function fetchKPIData(){ const isFile = typeof location!=='undefined' && location.protocol==='file:'; if(isFile) return Promise.resolve(defaultKpiData()); return fetch('data/kpi.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }).catch(()=>defaultKpiData()); }
-function defaultKpiData(){ return { lastUpdated: '2025-08-30', sources:[{name:'厚生労働省',url:'https://www.mhlw.go.jp/'}], metrics:{ jobRatio:{ months:['1月','2月','3月','4月','5月','6月','7月','8月'], values:[1.15,1.18,1.22,1.25,1.23,1.26,1.28,1.28], prevYearValues:[1.10,1.12,1.15,1.18,1.17,1.19,1.22,1.24] }, salaryByIndustry:[ {industry:'IT・通信',avg:580,prev:560}, {industry:'金融・保険',avg:520,prev:505}, {industry:'製造業',avg:480,prev:470}, {industry:'小売・流通',avg:510,prev:500}, {industry:'建設・不動産',avg:450,prev:445}, {industry:'コンサル',avg:650,prev:620} ], regionJobShare:[ {region:'関東',share:45,prev:44}, {region:'関西',share:25,prev:24}, {region:'中部',share:12,prev:12}, {region:'九州',share:8,prev:8}, {region:'東北',share:5,prev:6}, {region:'その他',share:5,prev:6} ], turnoverRateByRegion:[ {region:'関東',rate:11.5,prev:11.2}, {region:'関西',rate:10.8,prev:10.6}, {region:'中部',rate:9.7,prev:9.5}, {region:'九州',rate:8.9,prev:8.8}, {region:'東北',rate:8.4,prev:8.6}, {region:'その他',rate:7.9,prev:8.1} ], successRateByAge:[ {age:'20代前半',rate:75,prev:74}, {age:'20代後半',rate:82,prev:80}, {age:'30代前半',rate:78,prev:77}, {age:'30代後半',rate:65,prev:66}, {age:'40代前半',rate:55,prev:54}, {age:'40代後半',rate:45,prev:46} ] } }; }
+function defaultKpiData(){ return { lastUpdated: '2025-08-30', sources:[{name:'厚生労働省',url:'https://www.mhlw.go.jp/'}], metrics:{ jobRatio:{ months:['1月','2月','3月','4月','5月','6月','7月','8月'], values:[1.15,1.18,1.22,1.25,1.23,1.26,1.28,1.28], prevYearValues:[1.10,1.12,1.15,1.18,1.17,1.19,1.22,1.24] }, salaryByIndustry:[ {industry:'IT・通信',avg:580,prev:560}, {industry:'金融・保険',avg:520,prev:505}, {industry:'製造業',avg:480,prev:470}, {industry:'小売・流通',avg:510,prev:500}, {industry:'建設・不動産',avg:450,prev:445}, {industry:'コンサル',avg:650,prev:620} ], regionJobShare:[ {region:'関東',share:45,prev:44}, {region:'関西',share:25,prev:24}, {region:'中部',share:12,prev:12}, {region:'九州',share:8,prev:8}, {region:'東北',share:5,prev:6}, {region:'その他',share:5,prev:6} ], turnoverRateByRegion:[ {region:'関東',rate:11.5,prevMonth:11.4,prev:11.2}, {region:'関西',rate:10.8,prevMonth:10.7,prev:10.6}, {region:'中部',rate:9.7,prevMonth:9.6,prev:9.5}, {region:'九州',rate:8.9,prevMonth:8.9,prev:8.8}, {region:'東北',rate:8.4,prevMonth:8.5,prev:8.6}, {region:'その他',rate:7.9,prevMonth:8.0,prev:8.1} ], successRateByAge:[ {age:'20代前半',rate:75,prev:74}, {age:'20代後半',rate:82,prev:80}, {age:'30代前半',rate:78,prev:77}, {age:'30代後半',rate:65,prev:66}, {age:'40代前半',rate:55,prev:54}, {age:'40代後半',rate:45,prev:46} ] } }; }
 
 function animateKPICards(){ const kpiCards=document.querySelectorAll('.kpi-card'); const ob=new IntersectionObserver((entries)=>{ entries.forEach((entry,idx)=>{ if(entry.isIntersecting){ setTimeout(()=>{ entry.target.classList.add('fade-in'); animateKPIValue(entry.target.querySelector('.kpi-value')); }, idx*100); } }); },{threshold:.1}); kpiCards.forEach(c=>ob.observe(c)); }
 function animateKPIValue(el){ if(!el) return; const text=el.textContent; const m=text.match(/[\d.,]+/); if(!m) return; const raw=m[0]; const cleaned=raw.replace(/,/g,''); const finalValue=parseFloat(cleaned); const suffix=text.replace(raw,''); const decimals=(cleaned.split('.')[1]||'').length; let cur=0; const inc=finalValue/30; const duration=1000; const step=duration/30; const timer=setInterval(()=>{ cur+=inc; if(cur>=finalValue){ cur=finalValue; clearInterval(timer);} const disp=Number(cur).toLocaleString(undefined,{minimumFractionDigits:decimals,maximumFractionDigits:decimals}); el.textContent=disp+suffix; },step); }
