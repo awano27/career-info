@@ -1,65 +1,109 @@
 {
-  "lastUpdated": "2025-08-30T09:54:12.563Z",
+  "lastUpdated": "2025-08-31T04:55:01.428Z",
   "items": [
     {
-      "id": "dyn-20250830-prtimes-jp-main-html-rd-p-000000833-000080658-html",
-      "title": "採用難を解決する実践メソッド満載！ 『採用マーケティングの教科書』本日刊行",
+      "id": "dyn-20250831-prtimes-jp-main-html-rd-p-000002242-000002955-html",
+      "title": "マイナビ転職「新入社員の意識調査（2025）」",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年8月30日",
+      "date": "2025年8月31日",
       "author": "PR TIMES",
       "readTimeMin": 3,
       "tags": [
-        "採用"
+        "転職"
       ],
-      "fullContent": "<p>[クロスメディアグループ株式会社]\n[画像1: https://prcdn.freetls.fastly.net/release_image/80658/833/80658-833-a7c04a0921fb1a1749c51f3c622a9b8a-970x600.jpg?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds&amp;am......</p>",
+      "fullContent": "<p>[マイナビ]\n[画像1: https://prcdn.freetls.fastly.net/release_image/2955/2242/2955-2242-7a094e0e090bb9f1ba60b344870cae1f-1202x679.png?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds&amp;a......</p>",
       "source": "PR TIMES",
       "organization": "PR TIMES",
-      "period": "2025年8月30日",
+      "period": "2025年8月31日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000833.000080658.html"
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000002242.000002955.html"
     },
     {
-      "id": "dyn-20250830-prtimes-jp-main-html-rd-p-000000016-000143494-html",
-      "title": "“売れる”をつくる化粧品OEMのベイコスメティックス、事業拡大の核となる「東京ラボ」を新設し、大規模採用を開始",
+      "id": "dyn-20250831-prtimes-jp-main-html-rd-p-000000329-000023589-html",
+      "title": "物流企業向けにパーソナリティ診断を活用した組織開発・人材育成サービスで協業を開始。",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年8月30日",
+      "date": "2025年8月31日",
       "author": "PR TIMES",
       "readTimeMin": 3,
       "tags": [
-        "採用"
+        "人材",
+        "育成"
       ],
-      "fullContent": "<p>[株式会社ベイコスメティックス]\n株式会社ベイコスメティックス（本社：大阪府大阪市、代表取締役社長：加藤聡太）は、事業の飛躍的な成長を背景に、新たな研究開発拠点「東京ラボ」を設立したことをお知らせします。\n本ラボは、目まぐるしく変化......</p>",
+      "fullContent": "<p>[株式会社スタメン]\n[画像1: https://prcdn.freetls.fastly.net/release_image/23589/329/23589-329-f57fd3c8fdb848e31e68567b11dee5a1-1920x1080.png?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds&amp;......</p>",
       "source": "PR TIMES",
       "organization": "PR TIMES",
-      "period": "2025年8月30日",
+      "period": "2025年8月31日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000016.000143494.html"
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000329.000023589.html"
     },
     {
-      "id": "dyn-20250829-www3-nhk-or-jp-news-html-20250829-k10014906711000-html",
-      "title": "7月の完全失業率2.3％ 新型コロナ前以来の低水準",
+      "id": "dyn-20250831-news-livedoor-com-article-detail-29476412-",
+      "title": "ピーク年収2000万円の元大企業部長 再就職先の「意外な場所」",
       "category": "市場動向",
       "categoryClass": "market",
-      "date": "2025年8月29日",
-      "author": "NHK 経済",
+      "date": "2025年8月31日",
+      "author": "livedoor 経済",
       "readTimeMin": 3,
       "tags": [
-        "失業"
+        "就職",
+        "年収"
       ],
-      "fullContent": "<p>総務省によりますと7月の全国の完全失業率は2.3％で、前の月より0.2ポイント改善し、新型コロナが流行する前の2019年12月以来、5年7か月ぶりの低い水準となっています。...</p>",
-      "source": "NHK 経済",
-      "organization": "NHK 経済",
-      "period": "2025年8月29日",
+      "fullContent": "<p>記事を読む...</p>",
+      "source": "livedoor 経済",
+      "organization": "livedoor 経済",
+      "period": "2025年8月31日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "http://www3.nhk.or.jp/news/html/20250829/k10014906711000.html"
+      "sourceUrl": "https://news.livedoor.com/article/detail/29476412/"
+    },
+    {
+      "id": "dyn-20250830-toyokeizai-net-articles-900776-utm-source-rss-utm-medium-htt",
+      "title": "平均勤続年数｢12.4年｣に日本再生のカギがある | 野口悠紀雄「経済最前線の先を見る」 | 東洋経済オンライン",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月30日",
+      "author": "東洋経済",
+      "readTimeMin": 3,
+      "tags": [
+        "転職",
+        "雇用"
+      ],
+      "fullContent": "<p>平均勤続年数や転職経験率で見ると、日本の雇用者の企業間移動は諸外国に比べて低い。これまでの日本では…...</p>",
+      "source": "東洋経済",
+      "organization": "東洋経済",
+      "period": "2025年8月30日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://toyokeizai.net/articles/-/900776?utm_source=rss&utm_medium=http&utm_campaign=link_back"
+    },
+    {
+      "id": "dyn-20250830-news-livedoor-com-article-detail-29465850-",
+      "title": "8カ月→1年→1カ月→2年→現在 転職を4回経験した20卒の本音",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年8月30日",
+      "author": "livedoor 経済",
+      "readTimeMin": 3,
+      "tags": [
+        "転職",
+        "新卒"
+      ],
+      "fullContent": "<p>ざっくり言うと\n「新卒応援チャンネル【さざえ】」に、4回転職した2020年卒の人が出演した\n新卒で入社した商社を8カ月で退職したのは、セクハラが原因だったと告白\nもともと辞めたい気持ちがあったといい、タイミングが良かったとも明かした\n記事を読む...</p>",
+      "source": "livedoor 経済",
+      "organization": "livedoor 経済",
+      "period": "2025年8月30日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.livedoor.com/article/detail/29465850/"
     },
     {
       "id": "dyn-20250829-www-mhlw-go-jp-stf-newpage-62174-html",
@@ -86,7 +130,7 @@
       "title": "揺らぐ終身雇用 「60代以降も働く」ニーズにどう応える",
       "category": "市場動向",
       "categoryClass": "market",
-      "date": "2025年8月30日",
+      "date": "2025年8月29日",
       "author": "朝日新聞 経済",
       "readTimeMin": 3,
       "tags": [
@@ -95,7 +139,7 @@
       "fullContent": "<p>...</p>",
       "source": "朝日新聞 経済",
       "organization": "朝日新聞 経済",
-      "period": "2025年8月30日",
+      "period": "2025年8月29日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
@@ -206,7 +250,7 @@
       "title": "採用担当者の工数を軽減できるマイナビの採用方法とは？",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年8月12日",
+      "date": "2025年8月11日",
       "author": "HR NOTE",
       "readTimeMin": 3,
       "tags": [
@@ -216,7 +260,7 @@
       "fullContent": "<p>中途採用のニーズが高まる一方で、採用担当者の負担が年々増加しています。しかし、実際の現場では応募者対応や日程調整といった事務作業が煩雑で、採用の質やスピードに課題を抱える企業も少なくありません。 本記事では、中途採用を幅 […]\nThe post 採用担当者の工数を軽減できるマイナビの採用方法とは？ first appeared on HR NOTE....</p>",
       "source": "HR NOTE",
       "organization": "HR NOTE",
-      "period": "2025年8月12日",
+      "period": "2025年8月11日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
@@ -227,7 +271,7 @@
       "title": "プロアクティブ人材育成 実践ステップ⑥：育成施策の展開にあたって｜「プロアクティブ人材」育成実践術 #8",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年7月29日",
+      "date": "2025年7月28日",
       "author": "HR NOTE",
       "readTimeMin": 3,
       "tags": [
@@ -237,7 +281,7 @@
       "fullContent": "<p>【連載】「プロアクティブ人材」育成実践術 01｜人的資本経営を成果に結びつけるために重要な「プロアクティブ人材」とは？ 02｜なぜ人材のプロアクティブ化が重要なのか？ 03｜プロアクティブ人材育成 実践ステップ①：プロア […]\nThe post プロアクティブ人材育成 実践ステップ⑥：育成施策の展開にあたって｜「プロアクティブ人材」育成実践術 #8 first appeared on HR NOTE....</p>",
       "source": "HR NOTE",
       "organization": "HR NOTE",
-      "period": "2025年7月29日",
+      "period": "2025年7月28日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
@@ -248,7 +292,7 @@
       "title": "プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年7月25日",
+      "date": "2025年7月24日",
       "author": "HR NOTE",
       "readTimeMin": 3,
       "tags": [
@@ -258,7 +302,7 @@
       "fullContent": "<p>連載の第6回では、現場の管理職が自身の部下に対する見方、およびそれに起因する自身の行動の癖を知ることで、個人・チームへの働きかけを変えていくことの重要性を解説しました。 第7回では、人材のプロアクティブ化を図るために自社 […]\nThe post プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7 first appeared on HR NOTE....</p>",
       "source": "HR NOTE",
       "organization": "HR NOTE",
-      "period": "2025年7月25日",
+      "period": "2025年7月24日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
@@ -289,7 +333,7 @@
       "title": "「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年7月23日",
+      "date": "2025年7月22日",
       "author": "HR NOTE",
       "readTimeMin": 3,
       "tags": [
@@ -300,7 +344,7 @@
       "fullContent": "<p>AIの登場により、Z世代の就職活動に、かつてない大きな変化が起こりつつあります。AIを活用した自己分析やエントリーシート（ES）作成はすでに常識となり、今後さらに多様な変化が予想されます。 新卒採用の現場では、Z世代就活 […]\nThe post 「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井 first appeared on HR NOTE....</p>",
       "source": "HR NOTE",
       "organization": "HR NOTE",
-      "period": "2025年7月23日",
+      "period": "2025年7月22日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
