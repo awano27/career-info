@@ -85,34 +85,32 @@ function buildJobRatioChart(kpi) {
   const chart = new Chart(el, { type: 'line', data: { labels, datasets: [{ label: '有効求人倍率', data, borderColor: '#337ab7', backgroundColor: 'rgba(51,122,183,.1)', borderWidth: 3, fill: true, tension: .4 }] }, options: {
     responsive:true, maintainAspectRatio:false, interaction:{intersect:false}, plugins:{ legend:{display:false}, tooltip:{backgroundColor:'rgba(0,0,0,.8)',titleColor:'#fff',bodyColor:'#fff'}, annotation:{ annotations:{ threshold:{ type:'line', yMin:1.20, yMax:1.20, borderColor:'#ef4444', borderWidth:1, borderDash:[4,4], label:{enabled:true, content:'目標 1.20', backgroundColor:'rgba(239,68,68,.08)', color:'#ef4444'}, display:true }, latest:{ type:'line', xMin:labels[labels.length - 1], xMax:labels[labels.length - 1], borderColor:'#10b981', borderWidth:1, label:{enabled:true, content:'最新', backgroundColor:'rgba(16,185,129,.08)', color:'#0f5132'}, display:true } } } }, scales:{ x:{ grid:{display:false}}, y:{ beginAtZero:false, min:1.0, max:1.4 } } } });
 
-  controls.querySelector('#maToggle')?.addEventListener('change', e => {
+  { const t = controls.querySelector('#maToggle'); if (t) t.addEventListener('change', e => {
     const ex = chart.data.datasets.find(d => d._isMA);
     if (e.target.checked && !ex) chart.data.datasets.push({ label:'移動平均（3ヶ月）', data:movingAverage(data,3), borderColor:'#5cb85c', backgroundColor:'rgba(92,184,92,.08)', borderWidth:2, fill:false, tension:.3, pointRadius:0, _isMA:true });
     if (!e.target.checked && ex) chart.data.datasets = chart.data.datasets.filter(d=>!d._isMA);
     chart.update();
-  });
-  controls.querySelector('#yoyToggle')?.addEventListener('change', e => {
+  }); }
+  { const t2 = controls.querySelector('#yoyToggle'); if (t2) t2.addEventListener('change', e => {
     const idx = chart.data.datasets.findIndex(d=>d._isYOY);
     if (e.target.checked && prev.length === data.length && idx === -1) chart.data.datasets.push({ label:'前年', data:prev, borderColor:'#9ca3af', backgroundColor:'transparent', borderWidth:2, fill:false, tension:.3, pointRadius:0, borderDash:[6,4], _isYOY:true });
     if (!e.target.checked && idx !== -1) chart.data.datasets.splice(idx,1);
     chart.update();
-  });
-  controls.querySelector('#annoToggle')?.addEventListener('change', e => {
-    const ann = chart.options.plugins?.annotation?.annotations; if (!ann) return; Object.values(ann).forEach(a => a.display = e.target.checked); chart.update();
-  });
-  controls.querySelector('#periodSelect')?.addEventListener('change', e => {
+  }); }
+  { const t3 = controls.querySelector('#annoToggle'); if (t3) t3.addEventListener('change', e => { const ann = chart.options && chart.options.plugins && chart.options.plugins.annotation && chart.options.plugins.annotation.annotations; if (!ann) return; Object.values(ann).forEach(a => a.display = e.target.checked); chart.update(); }); }
+  { const sel = controls.querySelector('#periodSelect'); if (sel) sel.addEventListener('change', e => {
     const per = e.target.value; const srcL = months, srcV = values, srcP = prevYear;
     if (per === '6' && srcV.length > 6) { const st = srcV.length - 6; labels = srcL.slice(st); data = srcV.slice(st); prev = srcP.length===srcV.length?srcP.slice(st):[]; } else { labels = srcL.slice(); data = srcV.slice(); prev = srcP.slice(); }
-    chart.data.labels = labels; chart.data.datasets[0].data = data; const maDs = chart.data.datasets.find(d=>d._isMA); if (maDs) maDs.data = movingAverage(data,3); const yoyDs = chart.data.datasets.find(d=>d._isYOY); if (yoyDs && prev.length===data.length) yoyDs.data = prev; const ann = chart.options.plugins?.annotation?.annotations; if (ann?.latest){ const lastLabel = labels[labels.length - 1]; ann.latest.xMin = lastLabel; ann.latest.xMax = lastLabel;} chart.update(); updateBadges(data, prev);
-  });
+    chart.data.labels = labels; chart.data.datasets[0].data = data; const maDs = chart.data.datasets.find(d=>d._isMA); if (maDs) maDs.data = movingAverage(data,3); const yoyDs = chart.data.datasets.find(d=>d._isYOY); if (yoyDs && prev.length===data.length) yoyDs.data = prev; const ann = chart.options && chart.options.plugins && chart.options.plugins.annotation && chart.options.plugins.annotation.annotations; if (ann && ann.latest){ const lastLabel = labels[labels.length - 1]; ann.latest.xMin = lastLabel; ann.latest.xMax = lastLabel;} chart.update(); updateBadges(data, prev);
+  }); }
 }
 
 function buildSalaryChart(kpi){
   const el = document.getElementById('salaryChart'); if (!el) return;
-  const list = (kpi.metrics?.salaryByIndustry)||[];
+  const list = (kpi.metrics && kpi.metrics.salaryByIndustry) ? kpi.metrics.salaryByIndustry : [];
   const industries = list.map(s=>s.industry); const dataMap = Object.fromEntries(list.map(s=>[s.industry,s.avg])); const prevMap = Object.fromEntries(list.filter(s=>typeof s.prev!=="undefined").map(s=>[s.industry,s.prev]));
-  const container = el.closest('.chart-container'); const titleEl = container?.querySelector('h3');
-  const controls = document.createElement('div'); controls.className='chart-controls'; controls.innerHTML = `<span class="muted">表示対象:</span>`; titleEl?.insertAdjacentElement('afterend', controls);
+  const container = el.closest('.chart-container'); const titleEl = container ? container.querySelector('h3') : null;
+  const controls = document.createElement('div'); controls.className='chart-controls'; controls.innerHTML = `<span class="muted">表示対象:</span>`; if (titleEl) titleEl.insertAdjacentElement('afterend', controls);
   const right = document.createElement('div'); right.className='controls-right'; controls.appendChild(right);
   industries.forEach(name=>{ const l=document.createElement('label'); l.innerHTML=`<input type="checkbox" checked data-ind="${name}"> ${name}`; controls.appendChild(l); });
   const yoyBadge = document.createElement('span'); yoyBadge.className='metric-badge'; right.appendChild(yoyBadge);
@@ -120,30 +118,30 @@ function buildSalaryChart(kpi){
   const initial = buildSeries(); updateSalaryYoy();
   const chart = new Chart(el,{type:'bar',data:{labels:initial.labels,datasets:[{label:'平均年収（万円）',data:initial.values,backgroundColor:['#337ab7','#5cb85c','#f0ad4e','#d9534f','#2e6da4','#5bc0de'],borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},annotation:{annotations:{avgLine:{type:'line',yMin:avg(initial.values),yMax:avg(initial.values),borderColor:'#6b7280',borderWidth:1,borderDash:[6,4],label:{enabled:true,content:'平均',backgroundColor:'rgba(107,114,128,.08)',color:'#374151'},display:true},medianLine:{type:'line',yMin:median(initial.values),yMax:median(initial.values),borderColor:'#0ea5e9',borderWidth:1,borderDash:[4,4],label:{enabled:true,content:'中央値',backgroundColor:'rgba(14,165,233,.08)',color:'#075985'},display:false}}}},scales:{y:{beginAtZero:true,max:700}}});
   const avgToggle=document.createElement('label'); avgToggle.innerHTML='<input type="checkbox" id="avgToggle" checked> 平均ライン'; const medToggle=document.createElement('label'); medToggle.innerHTML='<input type="checkbox" id="medianToggle"> 中央値ライン'; controls.appendChild(avgToggle); controls.appendChild(medToggle);
-  controls.addEventListener('change',()=>{ const next=buildSeries(); chart.data.labels=next.labels; chart.data.datasets[0].data=next.values; const a=chart.options.plugins?.annotation?.annotations; if(a){ a.avgLine.yMin=a.avgLine.yMax=avg(next.values); a.medianLine.yMin=a.medianLine.yMax=median(next.values); a.avgLine.display=controls.querySelector('#avgToggle')?.checked; a.medianLine.display=controls.querySelector('#medianToggle')?.checked; } chart.update(); updateSalaryYoy(); });
+  controls.addEventListener('change',()=>{ const next=buildSeries(); chart.data.labels=next.labels; chart.data.datasets[0].data=next.values; const a = chart.options && chart.options.plugins && chart.options.plugins.annotation && chart.options.plugins.annotation.annotations; if(a){ a.avgLine.yMin=a.avgLine.yMax=avg(next.values); a.medianLine.yMin=a.medianLine.yMax=median(next.values); const avgEl = controls.querySelector('#avgToggle'); const medEl = controls.querySelector('#medianToggle'); a.avgLine.display=avgEl?avgEl.checked:false; a.medianLine.display=medEl?medEl.checked:false; } chart.update(); updateSalaryYoy(); });
   function updateSalaryYoy(){ const sel=Array.from(controls.querySelectorAll('input[type=checkbox]:checked')).map(i=>i.dataset.ind); const diffs=sel.filter(n=>typeof prevMap[n]!=='undefined').map(n=>dataMap[n]-prevMap[n]); if(diffs.length){ const av=diffs.reduce((a,b)=>a+b,0)/diffs.length; yoyBadge.classList.toggle('negative', av<0); yoyBadge.textContent=`前年比${av>=0?'+':''}${Math.round(av)}万円`; yoyBadge.style.display=''; } else { yoyBadge.style.display='none'; } }
 }
 
 function buildRegionChart(kpi){
-  const el=document.getElementById('regionChart'); if(!el) return; const container=el.closest('.chart-container'); const titleEl=container?.querySelector('h3');
-  const controls=document.createElement('div'); controls.className='chart-controls'; controls.innerHTML=`<label>表示数:<select id="regionCount"><option value="all">全て</option><option value="3">上位3</option><option value="5">上位5</option></select></label>`; titleEl?.insertAdjacentElement('afterend',controls);
+  const el=document.getElementById('regionChart'); if(!el) return; const container=el.closest('.chart-container'); const titleEl=container?container.querySelector('h3'):null;
+  const controls=document.createElement('div'); controls.className='chart-controls'; controls.innerHTML=`<label>表示数:<select id="regionCount"><option value="all">全て</option><option value="3">上位3</option><option value="5">上位5</option></select></label>`; if(titleEl) titleEl.insertAdjacentElement('afterend',controls);
   const right=document.createElement('div'); right.className='controls-right'; controls.appendChild(right);
-  const list=(kpi.metrics?.regionJobShare)||[]; const all=list.map(r=>({label:r.region,val:r.share,prev:r.prev}));
+  const list=(kpi.metrics && kpi.metrics.regionJobShare)?kpi.metrics.regionJobShare:[]; const all=list.map(r=>({label:r.region,val:r.share,prev:r.prev}));
   const yoyBadge=document.createElement('span'); yoyBadge.className='metric-badge'; right.appendChild(yoyBadge);
-  const overlay=document.createElement('div'); overlay.className='chart-center-overlay'; container?.appendChild(overlay);
+  const overlay=document.createElement('div'); overlay.className='chart-center-overlay'; if(container) container.appendChild(overlay);
   function build(count){ let arr=[...all].sort((a,b)=>b.val-a.val); if(count!=='all') arr=arr.slice(0,Number(count)); return {labels:arr.map(x=>x.label), values:arr.map(x=>x.val)} }
   function updateOverlay(labelsSel, valuesSel){ let idx=0; for(let i=1;i<valuesSel.length;i++) if(valuesSel[i]>valuesSel[idx]) idx=i; overlay.textContent=`トップ ${labelsSel[idx]||''} ${valuesSel[idx]||0}%`; }
   function updateYoy(labelsSel){ const diffs=labelsSel.map(n=>{ const it=all.find(x=>x.label===n); return (it&&typeof it.prev!=='undefined')? (it.val-it.prev):null;}).filter(v=>v!==null); if(diffs.length){ const av=diffs.reduce((a,b)=>a+b,0)/diffs.length; yoyBadge.classList.toggle('negative', av<0); yoyBadge.textContent=`前年比${av>=0?'+':''}${av.toFixed(1)}pt`; yoyBadge.style.display=''; } else yoyBadge.style.display='none'; }
   const initial=build('all'); const chart=new Chart(el,{type:'doughnut',data:{labels:initial.labels,datasets:[{data:initial.values,backgroundColor:['#337ab7','#5cb85c','#f0ad4e','#d9534f','#2e6da4','#5bc0de'],borderWidth:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{padding:20,usePointStyle:true}}}}});
   updateOverlay(initial.labels, initial.values); updateYoy(initial.labels);
-  controls.querySelector('#regionCount')?.addEventListener('change', e=>{ const next=build(e.target.value); chart.data.labels=next.labels; chart.data.datasets[0].data=next.values; chart.update(); updateOverlay(next.labels,next.values); updateYoy(next.labels); });
+  { const rr=controls.querySelector('#regionCount'); if(rr) rr.addEventListener('change', e=>{ const next=build(e.target.value); chart.data.labels=next.labels; chart.data.datasets[0].data=next.values; chart.update(); updateOverlay(next.labels,next.values); updateYoy(next.labels); }); }
 }
 
 function buildAgeChart(kpi){
-  const el=document.getElementById('ageChart'); if(!el) return; const container=el.closest('.chart-container'); const titleEl=container?.querySelector('h3');
-  const controls=document.createElement('div'); controls.className='chart-controls'; controls.innerHTML = `<span class="muted">年代を選択</span>`; titleEl?.insertAdjacentElement('afterend',controls);
+  const el=document.getElementById('ageChart'); if(!el) return; const container=el.closest('.chart-container'); const titleEl=container?container.querySelector('h3'):null;
+  const controls=document.createElement('div'); controls.className='chart-controls'; controls.innerHTML = `<span class="muted">年代を選択</span>`; if(titleEl) titleEl.insertAdjacentElement('afterend',controls);
   const right=document.createElement('div'); right.className='controls-right'; controls.appendChild(right);
-  const list=(kpi.metrics?.successRateByAge)||[]; const labels=list.map(a=>a.age); const values=list.map(a=>a.rate); const prev=list.map(a=>a.prev);
+  const list=(kpi.metrics && kpi.metrics.successRateByAge)?kpi.metrics.successRateByAge:[]; const labels=list.map(a=>a.age); const values=list.map(a=>a.rate); const prev=list.map(a=>a.prev);
   labels.forEach((lbl,idx)=>{ const l=document.createElement('label'); l.innerHTML=`<input type="checkbox" checked data-idx="${idx}"> ${lbl}`; controls.appendChild(l); });
   const yoyBadge=document.createElement('span'); yoyBadge.className='metric-badge'; right.appendChild(yoyBadge);
   const statsBadge=document.createElement('span'); statsBadge.className='metric-badge'; right.appendChild(statsBadge);
@@ -157,7 +155,7 @@ function buildAgeChart(kpi){
 
 function updateTurnoverKpi(kpi){
   const wrap = document.getElementById('kpi-turnover'); if (!wrap) return;
-  const list = (kpi.metrics?.turnoverRateByRegion) || [];
+  const list = (kpi.metrics && kpi.metrics.turnoverRateByRegion) ? kpi.metrics.turnoverRateByRegion : [];
   if (!Array.isArray(list) || list.length === 0) return;
   const now = list.map(x => Number(x.rate)).filter(n => !isNaN(n));
   const pm = list.map(x => Number(x.prevMonth)).filter(n => !isNaN(n));
