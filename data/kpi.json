@@ -29,12 +29,12 @@
       { "region": "その他", "share": 5, "prev": 6 }
     ],
     "turnoverRateByRegion": [
-      { "region": "関東", "rate": 11.5, "prev": 11.2 },
-      { "region": "関西", "rate": 10.8, "prev": 10.6 },
-      { "region": "中部", "rate": 9.7, "prev": 9.5 },
-      { "region": "九州", "rate": 8.9, "prev": 8.8 },
-      { "region": "東北", "rate": 8.4, "prev": 8.6 },
-      { "region": "その他", "rate": 7.9, "prev": 8.1 }
+      { "region": "関東", "rate": 11.5, "prevMonth": 11.4, "prev": 11.2 },
+      { "region": "関西", "rate": 10.8, "prevMonth": 10.7, "prev": 10.6 },
+      { "region": "中部", "rate": 9.7,  "prevMonth": 9.6,  "prev": 9.5 },
+      { "region": "九州", "rate": 8.9,  "prevMonth": 8.9,  "prev": 8.8 },
+      { "region": "東北", "rate": 8.4,  "prevMonth": 8.5,  "prev": 8.6 },
+      { "region": "その他", "rate": 7.9,  "prevMonth": 8.0,  "prev": 8.1 }
     ],
     "successRateByAge": [
       { "age": "20代前半", "rate": 75, "prev": 74 },
