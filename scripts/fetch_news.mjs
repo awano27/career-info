@@ -1,7 +1,14 @@
 import Parser from 'rss-parser';
 import { writeFileSync, mkdirSync, existsSync } from 'fs';
 
-const parser = new Parser({ timeout: 20000 });
+const parser = new Parser({
+  timeout: 20000,
+  requestOptions: {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36 CareerInfoBot/1.0'
+    }
+  }
+});
 
 // Feeds focusing on career/転職/就職/雇用 関連（RSS/Atom）
 const feeds = [

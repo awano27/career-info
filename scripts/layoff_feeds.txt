@@ -20,6 +20,8 @@ https://www.itmedia.co.jp/business/subtop/rss/business.rdf
 https://techcrunch.com/feed/
 # Panasonic Newsroom Japan – プレスリリース
 https://news.panasonic.com/jp/rss/press/index.xml
+# Toyota – all news (JP)
+https://global.toyota/export/jp/allnews_rss.xml
 # 朝日新聞デジタル 経済
 https://www.asahi.com/rss/asahi/business.rdf
 # 東洋経済オンライン
