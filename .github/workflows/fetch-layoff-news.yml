@@ -8,6 +8,8 @@ on:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       TZ: Asia/Tokyo
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
