@@ -19,6 +19,7 @@ const feeds = [
   // { url: 'https://bizspa.jp/feed/', org: 'bizSPA!フレッシュ', defCat: '業界トレンド', defClass: 'industry' },
   { url: 'https://news.careerconnection.jp/feed/', org: 'キャリコネニュース', defCat: '業界トレンド', defClass: 'industry' },
   { url: 'https://goworkship.com/magazine/feed/', org: 'Workship MAGAZINE', defCat: '専門家コラム', defClass: 'expert' },
+  { url: 'https://www.jiji.com/rss/ranking.rdf', org: '時事通信（ランキング）', defCat: '市場動向', defClass: 'market' },
   // ダイヤモンド、はてな（ビジネス）RSSは形式/可用性が不安定なため除外
   // プレス
   { url: 'https://prtimes.jp/index.rdf', org: 'PR TIMES', defCat: '業界トレンド', defClass: 'industry' }
