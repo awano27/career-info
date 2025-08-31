@@ -14,12 +14,20 @@ const parser = new Parser({
 const feeds = [
   // 公式/公共
   { url: 'https://www.mhlw.go.jp/stf/news.rdf', org: '厚生労働省', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://www.mhlw.go.jp/stf/kinkyu.rdf', org: '厚生労働省（緊急）', defCat: '市場動向', defClass: 'market' },
   { url: 'https://www3.nhk.or.jp/rss/news/cat5.xml', org: 'NHK 経済', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://www3.nhk.or.jp/rss/news/cat0.xml', org: 'NHK 主要', defCat: '市場動向', defClass: 'market' },
   // 経済一般
   { url: 'https://www.asahi.com/rss/asahi/business.rdf', org: '朝日新聞 経済', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://rss.asahi.com/rss/asahi/newsheadlines.rdf', org: '朝日新聞 速報', defCat: '市場動向', defClass: 'market' },
   { url: 'https://toyokeizai.net/list/feed/rss', org: '東洋経済', defCat: '業界トレンド', defClass: 'industry' },
+  { url: 'https://news.yahoo.co.jp/rss/topics/top-picks.xml', org: 'Yahoo!ニュース ピックアップ', defCat: '市場動向', defClass: 'market' },
   { url: 'https://news.yahoo.co.jp/rss/topics/business.xml', org: 'Yahoo!ニュース 経済', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://news.yahoo.co.jp/rss/topics/domestic.xml', org: 'Yahoo!ニュース 国内', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://news.yahoo.co.jp/rss/topics/world.xml', org: 'Yahoo!ニュース 国際', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://news.yahoo.co.jp/rss/topics/science.xml', org: 'Yahoo!ニュース 科学', defCat: '市場動向', defClass: 'market' },
   { url: 'https://news.livedoor.com/topics/rss/eco.xml', org: 'livedoor 経済', defCat: '市場動向', defClass: 'market' },
+  { url: 'https://news.livedoor.com/topics/rss/top.xml', org: 'livedoor トップ', defCat: '市場動向', defClass: 'market' },
   // HR/キャリア系メディア（公開RSS）
   { url: 'https://hrnote.jp/feed/', org: 'HR NOTE', defCat: '専門家コラム', defClass: 'expert' },
   // bizSPA! はRSSのXMLが安定せず除外
@@ -73,11 +81,24 @@ function escapeHtml(s) {
   return String(s || '').replace(/[&<>"']/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#039;'}[m]));
 }
 
+async function parseWithRetry(url, tries = 2) {
+  let lastErr;
+  for (let i = 0; i < tries; i++) {
+    try {
+      return await parser.parseURL(url);
+    } catch (e) {
+      lastErr = e;
+      await new Promise(r => setTimeout(r, 500 * (i + 1)));
+    }
+  }
+  throw lastErr;
+}
+
 async function fetchAll() {
   const all = [];
   for (const feed of feeds) {
     try {
-      const res = await parser.parseURL(feed.url);
+      const res = await parseWithRetry(feed.url, 2);
       const entries = (res.items || []).slice(0, 20);
       for (const it of entries) {
         const title = it.title || '';
