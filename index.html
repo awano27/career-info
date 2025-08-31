@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo@4"></script>
 </head>
 <body>
   <header class="header">
@@ -50,7 +48,6 @@
         <a class="download-btn" href="data/salary_by_industry.csv" download>業界別年収CSV</a>
         <a class="download-btn" href="data/region_job_share.csv" download>地域別求人数CSV</a>
         <a class="download-btn" href="data/success_rate_by_age.csv" download>年代別成功率CSV</a>
-        <a class="download-btn" href="data/turnover_rate_by_region.csv" download>地域別離職率CSV</a>
       </div>
     </div>
 
@@ -75,11 +72,6 @@
         <div class="kpi-value">—</div>
         <div class="kpi-change">—</div>
       </div>
-      <div class="kpi-card" id="kpi-turnover">
-        <div class="kpi-header"><h3>離職率（全国平均）</h3><span class="kpi-trend stable">→</span></div>
-        <div class="kpi-value">—</div>
-        <div class="kpi-change">—</div>
-      </div>
     </div>
 
     <div class="chart-grid">
@@ -87,8 +79,6 @@
       <div class="chart-container"><h3>業界別平均年収</h3><canvas id="salaryChart"></canvas></div>
       <div class="chart-container"><h3>地域別求人数</h3><canvas id="regionChart"></canvas></div>
       <div class="chart-container"><h3>年代別転職成功率</h3><canvas id="ageChart"></canvas></div>
-      <div class="chart-container"><h3>地域別離職率</h3><canvas id="turnoverRegionChart"></canvas></div>
-      <div class="chart-container"><h3>都道府県離職率ヒートマップ</h3><canvas id="turnoverMap"></canvas></div>
     </div>
 
     <div class="summary-section">
@@ -113,6 +103,7 @@
     </div>
   </div>
 
-  <script src="dashboard.js?v=20250831"></script>
+  <script src="dashboard.js"></script>
 </body>
 </html>
+
