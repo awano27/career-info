@@ -1,85 +1,130 @@
 {
-  "lastUpdated": "2025-09-02T03:38:13.237Z",
+  "lastUpdated": "2025-09-03T03:26:34.846Z",
   "items": [
     {
-      "id": "dyn-20250902-prtimes-jp-main-html-rd-p-000017612-000007006-html",
-      "title": "著者がテレ東「ガイアの夜明け」出演で話題に――日本人のための長期投資の哲学と方法論を説く『武器としての投資 AI時代を生き抜く資産とキャリアの築き方』が2025年9月2日（火）発売！",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月2日",
-      "author": "PR TIMES",
+      "id": "dyn-20250903-togetter-com-li-2597790",
+      "title": "最終面接でいきなり「君と話すことはないから帰れ」と言われ「お待ちください！私はお役に立てます！」と下弦の鬼ムーブをしたらビルを出てすぐ内定通知が来た話",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月3日",
+      "author": "はてな 経済ホット",
       "readTimeMin": 3,
       "tags": [
-        "キャリア"
+        "転職",
+        "内定"
       ],
-      "fullContent": "<p>[株式会社KADOKAWA]\n株式会社KADOKAWA（本社：東京都千代田区、取締役 代表執行役社長 CEO：夏野剛）は、2025年9月2日（火）に、投資信託「おおぶね」を運営する農林中金バリューインベストメンツ株式会社常務取締役・最高投資責任者......</p>",
-      "source": "PR TIMES",
-      "organization": "PR TIMES",
-      "period": "2025年9月2日",
+      "fullContent": "<p>くにもと｜転職の“迷い”を祓う神主 @career_kunimo リクルートの最終面接で、実際に使った技です。 「最後に質問は？」と聞かれた瞬間、こう尋ねました。 「これまでのお仕事で、一番ご苦労された経験は何ですか？」 統括部長は、少しうれしそうに武勇伝を語り出し、会議室の空気がふっとやわらぎました（すみません、内......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年9月3日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000017612.000007006.html"
+      "sourceUrl": "https://togetter.com/li/2597790"
     },
     {
-      "id": "dyn-20250902-prtimes-jp-main-html-rd-p-000000311-000049680-html",
-      "title": "【美容室 Ash】K-POPヘアメイク×就活×サステナブル　美容学生の新しいキャリア体験イベント「NEO GLAM by Ash」開催",
+      "id": "dyn-20250903-goworkship-com-magazine-nishihunabashi-cafe-dengen-wifi-",
+      "title": "【西船橋駅】電源＆Wi-Fiの使えるカフェ4選！勉強・仕事・ノマドワークにおすすめ",
       "category": "専門家コラム",
       "categoryClass": "expert",
-      "date": "2025年9月2日",
-      "author": "PR TIMES",
+      "date": "2025年9月3日",
+      "author": "Workship MAGAZINE",
       "readTimeMin": 3,
       "tags": [
-        "キャリア"
+        "副業"
       ],
-      "fullContent": "<p>[株式会社アルテジェネシス]\n[画像1: https://prcdn.freetls.fastly.net/release_image/49680/311/49680-311-d0a90bf9128e24f0a68bb56704236cc3-2437x1427.jpg?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds&amp;......</p>",
-      "source": "PR TIMES",
-      "organization": "PR TIMES",
-      "period": "2025年9月2日",
+      "fullContent": "<p>JR総武線・武蔵野線・京葉線、東京メトロ東西線、東葉高速鉄道が乗り入れる西船橋駅。 千葉県でも有数のターミナル駅でありながら、駅周辺は昔ながらの飲食店や居酒屋が多く、カフェは比較的少なめなのが特徴です。 とはいえ、駅前に […]\nこの記事の続きはこちら 【西船橋駅】電源＆Wi-Fiの使えるカフェ4選！勉強・仕事・ノマドワークにおすすめ Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
+      "source": "Workship MAGAZINE",
+      "organization": "Workship MAGAZINE",
+      "period": "2025年9月3日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000311.000049680.html"
+      "sourceUrl": "https://goworkship.com/magazine/nishihunabashi-cafe-dengen-wifi/"
     },
     {
-      "id": "dyn-20250902-prtimes-jp-main-html-rd-p-000000014-000139861-html",
-      "title": "【スウェーデン視察レポート】 スウェーデンの障害者雇用に学ぶ「みんなみんなみんな咲く」共生社会づくりのヒント",
+      "id": "dyn-20250903-goworkship-com-magazine-engineer-job-disappear-",
+      "title": "エンジニアの仕事はなくなる？AI時代にも価値を発揮する職種・スキル・働き方",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年9月3日",
+      "author": "Workship MAGAZINE",
+      "readTimeMin": 3,
+      "tags": [
+        "働き方",
+        "副業"
+      ],
+      "fullContent": "<p>生成AIの進化により、「このままではエンジニアの仕事がなくなってしまうのでは…」と不安を感じているエンジニアも多いのではないでしょうか。実際、単純なコーディングや定型業務は急速に自動化が進み、エンジニアが「なくなる仕事」 […]\nこの記事の続きはこちら エンジニアの仕事はなくなる？AI時代にも価値を発揮する職種・スキル・働き方 Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
+      "source": "Workship MAGAZINE",
+      "organization": "Workship MAGAZINE",
+      "period": "2025年9月3日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://goworkship.com/magazine/engineer-job-disappear/"
+    },
+    {
+      "id": "dyn-20250902-news-careerconnection-jp-career-general-230112-",
+      "title": "「36協定？ 私は結んでません」週6日勤務を強いる社長を“正論”で黙らせた女性",
       "category": "業界トレンド",
       "categoryClass": "industry",
       "date": "2025年9月2日",
-      "author": "PR TIMES",
+      "author": "キャリコネニュース",
       "readTimeMin": 3,
       "tags": [
-        "雇用"
-      ],
-      "fullContent": "<p>[ウィズダイバーシティ有限責任事業組合]\n[画像1: https://prcdn.freetls.fastly.net/release_image/139861/14/139861-14-49c35be91095f0247bf3b2b71b3a6f83-1999x1500.jpg?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds&amp;......</p>",
-      "source": "PR TIMES",
-      "organization": "PR TIMES",
-      "period": "2025年9月2日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000014.000139861.html"
-    },
-    {
-      "id": "dyn-20250902-news-livedoor-com-article-detail-29488471-",
-      "title": "「中途半端にするとリスク増」一時停止の絶対ダメな考え方指摘",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月2日",
-      "author": "livedoor 経済",
-      "readTimeMin": 3,
-      "tags": [
+        "採用",
         "中途"
       ],
-      "fullContent": "<p>記事を読む...</p>",
-      "source": "livedoor 経済",
-      "organization": "livedoor 経済",
+      "fullContent": "<p>労働者として正しい知識で経営トップに対抗した結果、待遇改善に繋がったという体験談が寄せられた。事務職の50代女性は、中途採用で最近働き始めた会社での出来事を投稿で明かした。（文：長田コウ） 面接の際に社長から「土曜日は仕 […]\nThe post 「36協定？ 私は結んでません」週6日勤務を強いる社長を“正論”で黙らせた女性 first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
       "period": "2025年9月2日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29488471/"
+      "sourceUrl": "https://news.careerconnection.jp/career/general/230112/"
+    },
+    {
+      "id": "dyn-20250902-news-careerconnection-jp-career-general-230011-",
+      "title": "面接官が「10分以上」遅刻して謝罪なし→呆れた30代男性、ふてくされて回答するも結果は“合格”",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月2日",
+      "author": "キャリコネニュース",
+      "readTimeMin": 3,
+      "tags": [
+        "採用",
+        "年収",
+        "中途"
+      ],
+      "fullContent": "<p>採用面接は、応募者が企業を見極める場でもあることを忘れてはならない。投稿を寄せた茨城県の30代男性（専門職／年収700万円）は、中途採用のオンライン面接で体験した不快な出来事を書いている。 その日、面接の時間になっても面 […]\nThe post 面接官が「10分以上」遅刻して謝罪なし→呆れた30代男性、ふてくされて回答するも結果は“合格” first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
+      "period": "2025年9月2日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.careerconnection.jp/career/general/230011/"
+    },
+    {
+      "id": "dyn-20250902-jinjibu-jp-news-detl-25419-",
+      "title": "メンタルヘルス不調による休職者の実態調査を実施",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月2日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "転職"
+      ],
+      "fullContent": "<p>メンタル不調による休職後、20代の7割が退職 転職後の再休職もレバレジーズ株式会社が運営する障がい者就労支援サービス「ワークリア」は、職場におけるメンタルヘルス不調の増加を受け、正社員として勤務してい......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年9月2日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25419/"
     },
     {
       "id": "dyn-20250902-goworkship-com-magazine-hunabashi-cafe-dengen-wifi-",
@@ -164,213 +209,6 @@
       "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_62693.html"
     },
     {
-      "id": "dyn-20250901-www-mhlw-go-jp-stf-newpage-62111-html",
-      "title": "建設業の人材確保・育成に向けた取組を進めていきます～厚生労働省・国土交通省の令和８年度予算概算要求の概要～",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月1日",
-      "author": "厚生労働省",
-      "readTimeMin": 3,
-      "tags": [
-        "人材",
-        "育成"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "厚生労働省",
-      "organization": "厚生労働省",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_62111.html"
-    },
-    {
-      "id": "dyn-20250901-www-mhlw-go-jp-stf-kouseiroudoushou-saiyou-hijoukin-hj-iyaku",
-      "title": "採用情報（期間業務職員（医薬局）募集情報",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月1日",
-      "author": "厚生労働省",
-      "readTimeMin": 3,
-      "tags": [
-        "採用"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "厚生労働省",
-      "organization": "厚生労働省",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-iyakukyoku.html"
-    },
-    {
-      "id": "dyn-20250901-www-asahi-com-articles-AST913S3QT91PIHB00FM-html-ref-rss",
-      "title": "元なでしこリーガー、兵庫県職員になる　ネクストキャリア採用第1号",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月1日",
-      "author": "朝日新聞 速報",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "キャリア"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 速報",
-      "organization": "朝日新聞 速報",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "http://www.asahi.com/articles/AST913S3QT91PIHB00FM.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250901-toyokeizai-net-articles-902101-utm-source-rss-utm-medium-htt",
-      "title": "なぜ？パートが｢正社員より稼ぐ｣逆転現象の虚実 | 就職・転職 | 東洋経済オンライン",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月1日",
-      "author": "東洋経済",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "就職"
-      ],
-      "fullContent": "<p>まいばすけっと・IKEA・コストコといった小売り店で、パートの時給が急上昇しています。非正規労働者の中…...</p>",
-      "source": "東洋経済",
-      "organization": "東洋経済",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://toyokeizai.net/articles/-/902101?utm_source=rss&utm_medium=http&utm_campaign=link_back"
-    },
-    {
-      "id": "dyn-20250901-tenshoku-mynavi-jp-knowhow-trend-01-",
-      "title": "村木厚子が振り返る「20代の決断」。就職・結婚・昇進、すべてが「想定外」だった - ミーツキャリアbyマイナビ転職",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月1日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "就職",
-        "キャリア"
-      ],
-      "fullContent": "<p>応募企業の探し方や履歴書の書き方、面接のポイントから円満退職の 秘けつまで。あなたの転職を成功に導くためのノウハウを紹介！ 人生は決断の連続。就職や転職、さらには結婚、子育てなど、さまざまな局面で選択を迫られます。時には深く悩み、逡巡することもあるでしょう。 充実したキャリア、人生を歩んでいるように......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://tenshoku.mynavi.jp/knowhow/trend/01/"
-    },
-    {
-      "id": "dyn-20250901-posfie-com-petaritape-p-PSwiWqm",
-      "title": "転職面接で「トヨタはコンサルのスキルを盗んで、契約を切ろうとしてくるから、常にバリューを発揮していくプレッシャーに晒されるし社内は怒号が飛んでる」って聞いて辞退した→トヨタ社員は下手なコンサルより優秀そう",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月1日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "キャリア"
-      ],
-      "fullContent": "<p>皆川R @minagawa_rr 現役コンサル｜皆川Rチャンネル(Youtube)でコンサル情報発信｜キャリアの悩み・コンサル転職支援の無料電話相談➡careernexusx.com/phon｜質問箱➡mond.how/ja/minagawa_rr｜面接体験談募集:謝礼有➡https://careernexus youtube.com/@minagawa_r 皆川R @minagawa_rr トヨタはコンサルのスキルを盗んで......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://posfie.com/@petaritape/p/PSwiWqm"
-    },
-    {
-      "id": "dyn-20250901-posfie-com-blackstaragent-p-hKheRdY",
-      "title": "「実質賃金の低下と株主配当金の増加が見事に反比例していることがハッキリと見てとれる」日本全体の没落衰退、失われた30年になった原因がここに集約されてる話",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月1日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "賃金"
-      ],
-      "fullContent": "<p>桃太郎＋ @momotro018 物凄くエグい図が手に入ったので紹介。 実質賃金の低下と株主配当金の増加が見事に反比例していることがハッキリと見てとれる。 日本全体の没落衰退、失われた30年になった原因がここに集約されてる。 個人としては株で億り人を目指しやすいのだろうが、日本全体で考えたら確実に地獄行きだからな......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://posfie.com/@blackstaragent/p/hKheRdY"
-    },
-    {
-      "id": "dyn-20250901-news-yahoo-co-jp-pickup-6551129-source-rss",
-      "title": "就職氷河期の中国 若者の失業率増",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月1日",
-      "author": "Yahoo!ニュース 国際",
-      "readTimeMin": 3,
-      "tags": [
-        "就職",
-        "失業"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "Yahoo!ニュース 国際",
-      "organization": "Yahoo!ニュース 国際",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.yahoo.co.jp/pickup/6551129?source=rss"
-    },
-    {
-      "id": "dyn-20250901-news-livedoor-com-article-detail-29487671-",
-      "title": "韓国でデビューしたばかりのアイドルが給料明かす「ないですね。ゼロです」",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月1日",
-      "author": "livedoor 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "給料"
-      ],
-      "fullContent": "<p>記事を読む...</p>",
-      "source": "livedoor 経済",
-      "organization": "livedoor 経済",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29487671/"
-    },
-    {
-      "id": "dyn-20250901-news-livedoor-com-article-detail-29483419-",
-      "title": "新型アクアが大幅改良モデルを発表 改良のポイントは2つのポイント",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月1日",
-      "author": "livedoor 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "採用"
-      ],
-      "fullContent": "<p>ざっくり言うと\nトヨタは1日、コンパクトカー「アクア」の大幅改良モデルを発表した\n「スムーズストップ制御」をトヨタのコンパクトカーとして初採用\n「センチュリー」や「アルファード」に搭載される制御を搭載している\n記事を読む...</p>",
-      "source": "livedoor 経済",
-      "organization": "livedoor 経済",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29483419/"
-    },
-    {
       "id": "dyn-20250901-news-careerconnection-jp-column-230149-",
       "title": "「自分がやった方が早い」はもう卒業！　部下も管理職も楽になる“仕事の任せ方”3つのステップ",
       "category": "業界トレンド",
@@ -451,129 +289,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://goworkship.com/magazine/hamamatsucho-cafe-dengen-wifi/"
-    },
-    {
-      "id": "dyn-20250901-goworkship-com-magazine-freelance-support-",
-      "title": "2025年9月 個人事業主&フリーランス向け給付金/補助金/助成金まとめ",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月1日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "副業"
-      ],
-      "fullContent": "<p>個人事業主やフリーランスにとって、資金繰りは大きな課題です。 この記事では2025年9月現在、個人事業主／フリーランスが受けられる給付金や補助金、助成金などの支援制度をまとめてご紹介します。（情報は随時更新中！） 【今回 […]\nこの記事の続きはこちら 2025年9月 個人事業主&amp;フリーランス向け給付金/補助金/助成金まとめ Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/freelance-support/"
-    },
-    {
-      "id": "dyn-20250901-goworkship-com-magazine-freelance-engineer-reality-truth-",
-      "title": "フリーランスエンジニアの現実｜後悔しないために知っておくべき成功と失敗の分かれ道",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月1日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "働き方",
-        "副業"
-      ],
-      "fullContent": "<p>フリーランスエンジニアと聞くと、「自由な働き方」や「会社員以上の高収入」といった魅力的なイメージが浮かびますよね。ですが同時に、「実際の働き方や収入はどうなの？」「後悔している人もいるのでは？」と不安を感じている方も多い […]\nこの記事の続きはこちら フリーランスエンジニアの現実｜後悔しないために知っておくべき成功と失敗の分かれ道 Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月1日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/freelance-engineer-reality-truth/"
-    },
-    {
-      "id": "dyn-20250831-www-itmedia-co-jp-business-articles-2509-01-news019-html",
-      "title": "日本のビジネスパーソンの50％以上が「何も学んでいない」　キャリア意識の欠如が引き起こす危機",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年8月31日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "キャリア",
-        "学び直し",
-        "リスキリング"
-      ],
-      "fullContent": "<p>個人と企業の競争力を維持するために不可欠とされているリスキリング（学び直し）。日本におけるリスキリングへの意識は、世界に大きく後れを取っているという。Indeed Japan（以下、Indeed）とインディードリクルートパートナーズは「労働者のスキル」に関する調査結果を発表した。 Indeedが4～5月に実施した日米比較調......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年8月31日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.itmedia.co.jp/business/articles/2509/01/news019.html"
-    },
-    {
-      "id": "dyn-20250831-news-careerconnection-jp-lifestyle-230070-",
-      "title": "「簡単なものでいいから冷やし中華作って」深夜に来訪した彼氏の要求にドン引き→彼女が叩きつけたのは…",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年8月31日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>恋人の金銭感覚や食に対する価値観の違いは、関係に大きな溝を生むことがある。投稿を寄せた大阪府の30代女性（ITエンジニア／年収500万円）は、5年ほど前に交際していた彼氏との苦い思い出を振り返った。（文：長田コウ） 当時 […]\nThe post 「簡単なものでいいから冷やし中華作って」深夜に来訪した彼氏の要求にドン引き→彼女が叩きつけたのは… first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年8月31日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/lifestyle/230070/"
-    },
-    {
-      "id": "dyn-20250831-news-careerconnection-jp-career-general-229871-",
-      "title": "「お前がいても変わらない」新人時代に言われてショック…かと思いきや、ポジティブ変換した女性",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年8月31日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>新入社員の頃は、上司や先輩からの何気ない一言に傷ついたり、逆に開き直ったりした経験がある人もいるだろう。投稿を寄せた東京都の30代女性（Web・インターネット・ゲーム／年収300万円）は、新人時代の忘れられない出来事を振 […]\nThe post 「お前がいても変わらない」新人時代に言われてショック…かと思いきや、ポジティブ変換した女性 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年8月31日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/229871/"
-    },
-    {
-      "id": "dyn-20250831-news-careerconnection-jp-career-general-229835-",
-      "title": "ミスの指摘に逆ギレの係長、退職届を出したら態度が豹変「急に優しくなって面白かった」",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年8月31日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>職場で理不尽な目に遭ったとき、どう立ち向かうのが最善か。投稿を寄せた栃木県の40代女性（技能工・設備・交通・運輸／年収600万円）は、以前勤めていた会社での苦い経験を明かした。 当時、30代の男性係長のミスに気付いた女性 […]\nThe post ミスの指摘に逆ギレの係長、退職届を出したら態度が豹変「急に優しくなって面白かった」 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年8月31日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/229835/"
     },
     {
       "id": "dyn-20250831-jinjibu-jp-news-detl-25443-",
@@ -804,25 +519,109 @@
       "sourceUrl": "https://jinjibu.jp/news/detl/25361/"
     },
     {
-      "id": "dyn-20250812-jinjibu-jp-news-detl-25345-",
-      "title": "【外国人材の日本での仕事観とキャリアに関する実態調査2025 vol.1】",
+      "id": "dyn-20250811-hrnote-jp-contents-saiyo-mynavi-20250812-utm-source-rss-utm-",
+      "title": "採用担当者の工数を軽減できるマイナビの採用方法とは？",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年8月12日",
-      "author": "日本の人事部（人事サービス）",
+      "date": "2025年8月11日",
+      "author": "HR NOTE",
       "readTimeMin": 3,
       "tags": [
-        "キャリア",
-        "人材"
+        "採用",
+        "中途"
       ],
-      "fullContent": "<p>外国人材の6割以上が「日本での長期的キャリア形成を希望」ー報酬設計とキャリア支援の在り方が外国人材定着の分かれ目ー教育を中心に人材・介護・保育・IT・美容・スポーツ事業を傘下に持つヒューマンホールディ......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年8月12日",
+      "fullContent": "<p>中途採用のニーズが高まる一方で、採用担当者の負担が年々増加しています。しかし、実際の現場では応募者対応や日程調整といった事務作業が煩雑で、採用の質やスピードに課題を抱える企業も少なくありません。 本記事では、中途採用を幅 […]\nThe post 採用担当者の工数を軽減できるマイナビの採用方法とは？ first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年8月11日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25345/"
+      "sourceUrl": "https://hrnote.jp/contents/saiyo-mynavi-20250812/?utm_source=rss&utm_medium=rss&utm_campaign=saiyo-mynavi-20250812"
+    },
+    {
+      "id": "dyn-20250728-hrnote-jp-contents-soshiki-proactive-8-20250729-utm-source-r",
+      "title": "プロアクティブ人材育成 実践ステップ⑥：育成施策の展開にあたって｜「プロアクティブ人材」育成実践術 #8",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年7月28日",
+      "author": "HR NOTE",
+      "readTimeMin": 3,
+      "tags": [
+        "人材",
+        "育成"
+      ],
+      "fullContent": "<p>【連載】「プロアクティブ人材」育成実践術 01｜人的資本経営を成果に結びつけるために重要な「プロアクティブ人材」とは？ 02｜なぜ人材のプロアクティブ化が重要なのか？ 03｜プロアクティブ人材育成 実践ステップ①：プロア […]\nThe post プロアクティブ人材育成 実践ステップ⑥：育成施策の展開にあたって｜「プロアクティブ人材」育成実践術 #8 first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年7月28日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://hrnote.jp/contents/soshiki-proactive-8-20250729/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-proactive-8-20250729"
+    },
+    {
+      "id": "dyn-20250724-hrnote-jp-contents-soshiki-proactive-7-20250725-utm-source-r",
+      "title": "プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年7月24日",
+      "author": "HR NOTE",
+      "readTimeMin": 3,
+      "tags": [
+        "人材",
+        "育成"
+      ],
+      "fullContent": "<p>連載の第6回では、現場の管理職が自身の部下に対する見方、およびそれに起因する自身の行動の癖を知ることで、個人・チームへの働きかけを変えていくことの重要性を解説しました。 第7回では、人材のプロアクティブ化を図るために自社 […]\nThe post プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7 first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年7月24日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://hrnote.jp/contents/soshiki-proactive-7-20250725/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-proactive-7-20250725"
+    },
+    {
+      "id": "dyn-20250722-hrnote-jp-contents-soshiki-newhorizoncollective-event-202507",
+      "title": "セカンドキャリアを開拓する。中高年シニアの活躍の場を広げることこそ、企業にとっても、社会の未来にとっても、成長の鍵に",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年7月22日",
+      "author": "HR NOTE",
+      "readTimeMin": 3,
+      "tags": [
+        "キャリア"
+      ],
+      "fullContent": "<p>人生100年時代を見据え、セカンドキャリアの開拓を支援する「ライフシフトプラットフォーム」（以下、LSP）は、2021年にスタートし、5年目を迎えました。本記事では、2025年5月29日に開催されたLSPの活動報告会の様 […]\nThe post セカンドキャリアを開拓する。中高年シニアの活躍の場を広げることこそ、企業にとっても、社会の未来にとっても、成長の鍵に first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年7月22日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://hrnote.jp/contents/soshiki-newhorizoncollective-event-20250722/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-newhorizoncollective-event-20250722"
+    },
+    {
+      "id": "dyn-20250722-hrnote-jp-contents-saiyo-allesgood-ai-20250723-utm-source-rs",
+      "title": "「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年7月22日",
+      "author": "HR NOTE",
+      "readTimeMin": 3,
+      "tags": [
+        "就職",
+        "採用",
+        "新卒"
+      ],
+      "fullContent": "<p>AIの登場により、Z世代の就職活動に、かつてない大きな変化が起こりつつあります。AIを活用した自己分析やエントリーシート（ES）作成はすでに常識となり、今後さらに多様な変化が予想されます。 新卒採用の現場では、Z世代就活 […]\nThe post 「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井 first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年7月22日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://hrnote.jp/contents/saiyo-allesgood-ai-20250723/?utm_source=rss&utm_medium=rss&utm_campaign=saiyo-allesgood-ai-20250723"
     }
   ]
 }
