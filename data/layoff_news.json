@@ -1,5 +1,68 @@
 [
   {
+    "id": "2025-09-09-三菱電機-n",
+    "date": "2025-09-09",
+    "company": "三菱電機",
+    "event_type": "voluntary_retirement",
+    "headcount_affected": 0,
+    "headcount_confidence": 0.5,
+    "summary": "2年連続で過去最高益となり好調な業績が続いている電機大手の三菱電機が、53歳以上の社員などを対象に希望退職を募集すると発表しました。若手の割合を増やして会社の成長につなげるねらいで、業績の悪化に伴う経営合理化とは異なる理由で、人員の削減に踏",
+    "source_urls": [
+      "http://www3.nhk.or.jp/news/html/20250909/k10014917211000.html"
+    ],
+    "region": "JP",
+    "sector": "Unknown",
+    "listed_flag": false,
+    "tags": [
+      "希望退職"
+    ],
+    "_meta": {
+      "source_domain": "www3.nhk.or.jp"
+    }
+  },
+  {
+    "id": "2025-09-08-希望退職実施-n",
+    "date": "2025-09-08",
+    "company": "希望退職実施",
+    "event_type": "voluntary_retirement",
+    "headcount_affected": 0,
+    "headcount_confidence": 0.5,
+    "summary": "三菱電機が希望退職実施　募集人数定めず、好業績でも若返り図る狙い",
+    "source_urls": [
+      "https://www.asahi.com/articles/AST983G63T98ULFA028M.html?ref=rss"
+    ],
+    "region": "JP",
+    "sector": "Unknown",
+    "listed_flag": false,
+    "tags": [
+      "希望退職"
+    ],
+    "_meta": {
+      "source_domain": "www.asahi.com"
+    }
+  },
+  {
+    "id": "2025-09-08-newsyahoocojp-n",
+    "date": "2025-09-08",
+    "company": "news.yahoo.co.jp",
+    "event_type": "layoff",
+    "headcount_affected": 0,
+    "headcount_confidence": 0.5,
+    "summary": "三菱電機「黒字リストラ」実施へ",
+    "source_urls": [
+      "https://news.yahoo.co.jp/pickup/6551814?source=rss"
+    ],
+    "region": "JP",
+    "sector": "Unknown",
+    "listed_flag": false,
+    "tags": [
+      "リストラ"
+    ],
+    "_meta": {
+      "source_domain": "news.yahoo.co.jp"
+    }
+  },
+  {
     "id": "2025-08-30-techcrunchcom-n",
     "date": "2025-08-30",
     "company": "techcrunch.com",
