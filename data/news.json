@@ -1,45 +1,393 @@
 {
-  "lastUpdated": "2025-09-07T03:32:45.691Z",
+  "lastUpdated": "2025-09-08T03:38:07.013Z",
   "items": [
     {
-      "id": "dyn-20250907-prtimes-jp-main-html-rd-p-000000013-000124147-html",
-      "title": "ユニコーンファーム、スタートアップ・新規事業の成長支援者を育成するオンラインスクールSAA（Startup Advisor Academy）が「専門実践教育訓練給付制度 厚生労働大臣指定講座」に採択",
+      "id": "dyn-20250908-www-mhlw-go-jp-stf-newpage-63136-html",
+      "title": "第83回労働政策審議会雇用環境・均等分科会の資料を掲載しました。",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月8日",
+      "author": "厚生労働省",
+      "readTimeMin": 3,
+      "tags": [
+        "雇用"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "厚生労働省",
+      "organization": "厚生労働省",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_63136.html"
+    },
+    {
+      "id": "dyn-20250908-www-mhlw-go-jp-stf-kouseiroudoushou-saiyou-ninkituki-ninki-j",
+      "title": "採用情報（任期付職員（自立推進指導官）募集情報）",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年9月7日",
+      "date": "2025年9月8日",
+      "author": "厚生労働省",
+      "readTimeMin": 3,
+      "tags": [
+        "採用"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "厚生労働省",
+      "organization": "厚生労働省",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-jiritsusuishinshidoukan.html"
+    },
+    {
+      "id": "dyn-20250908-www-asahi-com-articles-AST953RPNT95ULFA01CM-html-ref-rss",
+      "title": "「隣県超え」連鎖、激変した九州の最賃審議　背景に人材流出の切迫感",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月8日",
+      "author": "朝日新聞 速報",
+      "readTimeMin": 3,
+      "tags": [
+        "人材"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "朝日新聞 速報",
+      "organization": "朝日新聞 速報",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "http://www.asahi.com/articles/AST953RPNT95ULFA01CM.html?ref=rss"
+    },
+    {
+      "id": "dyn-20250908-www-asahi-com-articles-AST953RPNT95ULFA01CM-html-ref-rss",
+      "title": "「隣県超え」連鎖、激変した九州の最賃審議　背景に人材流出の切迫感",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月8日",
+      "author": "朝日新聞 経済",
+      "readTimeMin": 3,
+      "tags": [
+        "人材"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "朝日新聞 経済",
+      "organization": "朝日新聞 経済",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.asahi.com/articles/AST953RPNT95ULFA01CM.html?ref=rss"
+    },
+    {
+      "id": "dyn-20250908-www-asahi-com-articles-AST9522NHT95ULFA015M-html-ref-rss",
+      "title": "新卒一括採用はもう古いのか　富士通、日立、NEC…人材確保に変化",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月8日",
+      "author": "朝日新聞 速報",
+      "readTimeMin": 3,
+      "tags": [
+        "採用",
+        "人材",
+        "新卒"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "朝日新聞 速報",
+      "organization": "朝日新聞 速報",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "http://www.asahi.com/articles/AST9522NHT95ULFA015M.html?ref=rss"
+    },
+    {
+      "id": "dyn-20250908-www-asahi-com-articles-AST9522NHT95ULFA015M-html-ref-rss",
+      "title": "新卒一括採用はもう古いのか　富士通、日立、NEC…人材確保に変化",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月8日",
+      "author": "朝日新聞 経済",
+      "readTimeMin": 3,
+      "tags": [
+        "採用",
+        "人材",
+        "新卒"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "朝日新聞 経済",
+      "organization": "朝日新聞 経済",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.asahi.com/articles/AST9522NHT95ULFA015M.html?ref=rss"
+    },
+    {
+      "id": "dyn-20250908-toyokeizai-net-articles-901693-utm-source-rss-utm-medium-htt",
+      "title": "税と社会保険…2つの｢年収の壁｣の厄介な\"隙間\" | リーダーシップ・教養・資格・スキル | 東洋経済オンライン",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月8日",
+      "author": "東洋経済",
+      "readTimeMin": 3,
+      "tags": [
+        "年収"
+      ],
+      "fullContent": "<p>2025年度の税制改正で、所得税の非課税枠のいわゆる「年収103万円の壁」が160万円に引き上げられました。…...</p>",
+      "source": "東洋経済",
+      "organization": "東洋経済",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://toyokeizai.net/articles/-/901693?utm_source=rss&utm_medium=http&utm_campaign=link_back"
+    },
+    {
+      "id": "dyn-20250908-prtimes-jp-main-html-rd-p-000000837-000035599-html",
+      "title": "特定技能の支援業務管理システム「Linkus(リンクス)」特定技能の在留資格オンライン申請を促進する新機能を追加！",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月8日",
       "author": "PR TIMES",
+      "readTimeMin": 3,
+      "tags": [
+        "雇用"
+      ],
+      "fullContent": "<p>[BEENOS株式会社]\nBEENOS株式会社の連結子会社で、特定技能雇用を包括支援するBEENOS HR Link株式会社（以下「BEENOS HR Link」）が運営する特定技能の支援業務管理システム「Linkus(リンクス)」は、在留資格のオンライン申請をよ......</p>",
+      "source": "PR TIMES",
+      "organization": "PR TIMES",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000837.000035599.html"
+    },
+    {
+      "id": "dyn-20250908-goworkship-com-magazine-news-20250908-",
+      "title": "フリーランスのがん治療費はいくら？実際にかかったお金と使える制度・保険まとめ　他",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年9月8日",
+      "author": "Workship MAGAZINE",
+      "readTimeMin": 3,
+      "tags": [
+        "副業"
+      ],
+      "fullContent": "<p>こんにちは、Workship MAGAZINE編集部の猫宮です。 最近のニュースから、フリーランス・副業者のみなさんに役立つものを抜粋してご紹介します。よろしくお願いします。 （過去のフリーランス・副業ニュースはこちら） […]\nこの記事の続きはこちら フリーランスのがん治療費はいくら？実際にかかったお金と使える制度・保険まとめ　他 Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
+      "source": "Workship MAGAZINE",
+      "organization": "Workship MAGAZINE",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://goworkship.com/magazine/news-20250908/"
+    },
+    {
+      "id": "dyn-20250908-goworkship-com-magazine-ebisu-cafe-dengen-wifi-",
+      "title": "【恵比寿駅】電源＆Wi-Fiの使えるカフェ14選！勉強・仕事・ノマドワークにおすすめ",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年9月8日",
+      "author": "Workship MAGAZINE",
+      "readTimeMin": 3,
+      "tags": [
+        "副業"
+      ],
+      "fullContent": "<p>恵比寿駅周辺には、駅直結の商業施設内をはじめ、電源やWi-Fiが利用できるカフェが数多くそろっています。 移動の合間に立ち寄れる店舗から、腰を据えて作業できる落ち着いたカフェまで幅広くあり、用途や気分に合わせて選べるのが […]\nこの記事の続きはこちら 【恵比寿駅】電源＆Wi-Fiの使えるカフェ14選！勉強・仕事・ノマドワークにおすすめ Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
+      "source": "Workship MAGAZINE",
+      "organization": "Workship MAGAZINE",
+      "period": "2025年9月8日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://goworkship.com/magazine/ebisu-cafe-dengen-wifi/"
+    },
+    {
+      "id": "dyn-20250907-www-mhlw-go-jp-content-11601000-001301676-pdf",
+      "title": "育成就労制度の概要",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月7日",
+      "author": "はてな 経済ホット",
       "readTimeMin": 3,
       "tags": [
         "育成"
       ],
-      "fullContent": "<p>[ユニコーンファーム ]\n株式会社ユニコーンファーム（本社：東京都渋谷区、代表：田所雅之、以下「当社」）は、スタートアップ及び新規事業の成長支援をする「スタートアップアドバイザー」育成のためのオンラインスクールSAA(Startup A......</p>",
-      "source": "PR TIMES",
-      "organization": "PR TIMES",
+      "fullContent": "<p>...</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
       "period": "2025年9月7日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000013.000124147.html"
+      "sourceUrl": "https://www.mhlw.go.jp/content/11601000/001301676.pdf"
     },
     {
-      "id": "dyn-20250907-news-livedoor-com-article-detail-29523628-",
-      "title": "子育て世帯が250万円の借入で黒字に 働き方・住まい方を大胆に変更",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
+      "id": "dyn-20250907-www-asahi-com-articles-AST974PYDT97PQIP036M-html-ref-rss",
+      "title": "阪神・黄金時代到来へ　勝利と育成、藤川監督が見せたマネジメント力",
+      "category": "市場動向",
+      "categoryClass": "market",
       "date": "2025年9月7日",
-      "author": "livedoor 経済",
+      "author": "朝日新聞 速報",
       "readTimeMin": 3,
       "tags": [
-        "働き方"
+        "育成"
       ],
-      "fullContent": "<p>記事を読む...</p>",
-      "source": "livedoor 経済",
-      "organization": "livedoor 経済",
+      "fullContent": "<p>...</p>",
+      "source": "朝日新聞 速報",
+      "organization": "朝日新聞 速報",
       "period": "2025年9月7日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29523628/"
+      "sourceUrl": "http://www.asahi.com/articles/AST974PYDT97PQIP036M.html?ref=rss"
+    },
+    {
+      "id": "dyn-20250907-toyokeizai-net-articles-903325-utm-source-rss-utm-medium-htt",
+      "title": "就活生1.4万人が選ぶ｢人気企業300社ランキング｣ | 就職四季報プラスワン | 東洋経済オンライン",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月7日",
+      "author": "東洋経済",
+      "readTimeMin": 3,
+      "tags": [
+        "就職",
+        "採用"
+      ],
+      "fullContent": "<p>深刻な人手不足を背景に、企業の採用活動は学生優位の「売り手市場」が続いている。リクルートワークス研…...</p>",
+      "source": "東洋経済",
+      "organization": "東洋経済",
+      "period": "2025年9月7日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://toyokeizai.net/articles/-/903325?utm_source=rss&utm_medium=http&utm_campaign=link_back"
+    },
+    {
+      "id": "dyn-20250907-news-careerconnection-jp-career-general-230305-",
+      "title": "上司「残業しないと生活できないだろ？」→激務で体調悪すぎの女性がとった対抗策",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月7日",
+      "author": "キャリコネニュース",
+      "readTimeMin": 3,
+      "tags": [
+        "年収"
+      ],
+      "fullContent": "<p>部下の体調を気遣うどころか、心ない言葉を浴びせる上司もいるようだ。投稿を寄せた埼玉県の30代女性（素材・化学・食品・医薬品技術職／年収350万円）は、「正社員だったころ」の辛い出来事を振り返った。 当時、毎日残業の激務だ […]\nThe post 上司「残業しないと生活できないだろ？」→激務で体調悪すぎの女性がとった対抗策 first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
+      "period": "2025年9月7日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.careerconnection.jp/career/general/230305/"
+    },
+    {
+      "id": "dyn-20250907-news-careerconnection-jp-career-general-230287-",
+      "title": "発注ミスで「200万円近い損害」を“なかったこと”に…　会社のヤバい体質に驚愕した男性",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月7日",
+      "author": "キャリコネニュース",
+      "readTimeMin": 3,
+      "tags": [
+        "年収"
+      ],
+      "fullContent": "<p>会社の危機管理能力が問われる出来事は、思わぬところで発覚するものだ。投稿を寄せた神奈川県の40代男性（営業／年収550万円）は、取引先とのやり取りの中で、自社のずさんな体質を目の当たりにした事を明かす。 あるとき、取引先 […]\nThe post 発注ミスで「200万円近い損害」を“なかったこと”に…　会社のヤバい体質に驚愕した男性 first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
+      "period": "2025年9月7日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.careerconnection.jp/career/general/230287/"
+    },
+    {
+      "id": "dyn-20250907-news-careerconnection-jp-career-230295-",
+      "title": "ラッキー？ 面接で「もう決まったから」と即不採用→しかし面接官の“次の一言”でまさかの展開へ",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月7日",
+      "author": "キャリコネニュース",
+      "readTimeMin": 3,
+      "tags": [
+        "採用"
+      ],
+      "fullContent": "<p>採用面接で理不尽な目に遭ったという人は少なくない。しかし、ときには予想外のラッキーな展開が待っていることもあるようだ。投稿を寄せた大阪府の30代女性は、ある予備校グループの事務員募集に応募した。 自宅から近い分校へ面接に […]\nThe post ラッキー？ 面接で「もう決まったから」と即不採用→しかし面接官の“次の一言”でまさかの展開へ first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
+      "period": "2025年9月7日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.careerconnection.jp/career/230295/"
+    },
+    {
+      "id": "dyn-20250907-jinjibu-jp-news-detl-25474-",
+      "title": "AIネイティブ世代の就職活動と生成AI利用における調査レポートを発表",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月7日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "転職",
+        "就職",
+        "採用"
+      ],
+      "fullContent": "<p>AIネイティブ世代の就活最前線：26卒の8割超が生成AIを活用、採用戦略の再構築が急務にITエンジニア向け転職・就職・学習プラットフォーム「paiza（パイザ）」を運営するpaiza株式会社（東京都港区、代表取締役社......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年9月7日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25474/"
+    },
+    {
+      "id": "dyn-20250907-jinjibu-jp-news-detl-25472-",
+      "title": "スキマバイトアプリの活用状況に関するアンケート調査を実施",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月7日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "採用",
+        "人材"
+      ],
+      "fullContent": "<p>スキマバイトアプリを利用したことがある人は全体の17.1％、スキマバイトアプリの名称を知っている人は全体の58.4％～一般企業・団体で人材採用に携わったことがある1,000名へのアンケート調査結果～株式会社矢野......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年9月7日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25472/"
+    },
+    {
+      "id": "dyn-20250907-anond-hatelabo-jp-20250907201648",
+      "title": "出稼ぎで農業をするとしたら",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月7日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "賃金"
+      ],
+      "fullContent": "<p>日本とオーストラリアどっちがいいんだろう。と思ったのでメモ。 「賃金」 日本 ✗ オーストラリア ◎ 「環境」 日本 〇（日本語でおk） オーストラリア △（英語さえなんとかなれば） 「経験値」 日本 〇 オーストラリア ◎（貴重な体験になる） 「結論」 日本 4点 オーストラリア 7点 オーストラリア行くか。...</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年9月7日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://anond.hatelabo.jp/20250907201648"
     },
     {
       "id": "dyn-20250906-toyokeizai-net-articles-901809-utm-source-rss-utm-medium-htt",
@@ -60,46 +408,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://toyokeizai.net/articles/-/901809?utm_source=rss&utm_medium=http&utm_campaign=link_back"
-    },
-    {
-      "id": "dyn-20250906-togetter-com-li-2599156",
-      "title": "転職先の会社で三連休の前に「あの…祝日は休みですか…？」と恐る恐る尋ねたら慰められた→転職後にドン引きされた前職の勝手なルールたち",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月6日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "転職"
-      ],
-      "fullContent": "<p>ぬし🏳️‍🌈🏳️‍⚧️ @qmsd_ 私も転職してはじめての三連休前の金曜に先輩に「あの…聞いていいのか分からないんですけど…祝日ってお休み…？ですか…？」って聞いたら「可哀想に、もう大丈夫だよ…」って言われたことある 2025-09-05 15:09:50 ぬし🏳️‍🌈🏳️‍⚧️ @qmsd_ あと体調崩して一時的に派遣社員やってたとき、初日に18時ちょうどに８......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月6日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://togetter.com/li/2599156"
-    },
-    {
-      "id": "dyn-20250906-news-yahoo-co-jp-pickup-6551566-source-rss",
-      "title": "最低賃金 なぜ各県で大幅上積み",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月6日",
-      "author": "Yahoo!ニュース 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "賃金"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "Yahoo!ニュース 経済",
-      "organization": "Yahoo!ニュース 経済",
-      "period": "2025年9月6日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.yahoo.co.jp/pickup/6551566?source=rss"
     },
     {
       "id": "dyn-20250906-news-careerconnection-jp-career-general-230312-",
@@ -224,170 +532,6 @@
       "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_62313.html"
     },
     {
-      "id": "dyn-20250905-www-bloomberg-co-jp-news-articles-2025-09-05-T2486SGOYMTD00",
-      "title": "米雇用者数、８月は２万2000人増にとどまる－失業率は4.3％に上昇",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "雇用",
-        "失業",
-        "雇用統計",
-        "労働市場"
-      ],
-      "fullContent": "<p>８月の米雇用統計では、雇用者数の伸びが大きく鈍化し、失業率は2021年以来の高水準に上昇した。労働市場が本格的な悪化局面に差しかかっているとの懸念が強まった。 非農業部門雇用者数（事業所調査、季節調整済み）は前月比２万2000人増エコノミスト予想の中央値は７万5000人増前月は７万9000人増（速報値７万3000人増......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.bloomberg.co.jp/news/articles/2025-09-05/T2486SGOYMTD00"
-    },
-    {
-      "id": "dyn-20250905-www-asahi-com-articles-AST954S40T95UHBI02BM-html-ref-rss",
-      "title": "NYダウ、雇用統計悪化で220ドル安　取引時間中の最高値更新も",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "雇用",
-        "雇用統計"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST954S40T95UHBI02BM.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250905-www-asahi-com-articles-AST9533XST95ULFA01MM-html-ref-rss",
-      "title": "最低賃金、働く人への恩恵いつ？　高水準の引き上げ、発効日に地域差",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "賃金"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST9533XST95ULFA01MM.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250905-www-asahi-com-articles-AST952D4JT95ULFA01NM-html-ref-rss",
-      "title": "最低賃金引き上げ、「政治介入が悪い方向に」 北大・安部教授に聞く",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "朝日新聞 速報",
-      "readTimeMin": 3,
-      "tags": [
-        "賃金"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 速報",
-      "organization": "朝日新聞 速報",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "http://www.asahi.com/articles/AST952D4JT95ULFA01NM.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250905-www-asahi-com-articles-AST952D4JT95ULFA01NM-html-ref-rss",
-      "title": "最低賃金引き上げ、「政治介入が悪い方向に」 北大・安部教授に聞く",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "賃金"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST952D4JT95ULFA01NM.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250905-www-asahi-com-articles-AST95262ZT95ULFA013M-html-ref-rss",
-      "title": "最低賃金引き上げで続く「政治介入」　経済学者がプラスと考える理由",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "賃金"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST95262ZT95ULFA013M.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250905-www-asahi-com-articles-AST950GH7T95ULFA02NM-html-ref-rss",
-      "title": "最低賃金、全都道府県で初の1千円超　全国平均過去最高の1121円",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "賃金"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST950GH7T95ULFA02NM.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250905-toyokeizai-net-articles-901805-utm-source-rss-utm-medium-htt",
-      "title": "交際相手にときめかない…30代女性が出した答え | 夢なし先生の進路指導 | 東洋経済オンライン",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月5日",
-      "author": "東洋経済",
-      "readTimeMin": 3,
-      "tags": [
-        "キャリア"
-      ],
-      "fullContent": "<p>元キャリアコンサルタントの高校教師・高梨（たかなし）は、生徒から「夢なし先生」と呼ばれている。彼は…...</p>",
-      "source": "東洋経済",
-      "organization": "東洋経済",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://toyokeizai.net/articles/-/901805?utm_source=rss&utm_medium=http&utm_campaign=link_back"
-    },
-    {
       "id": "dyn-20250905-news-careerconnection-jp-lifestyle-money-229856-",
       "title": "友人に40万円貸したら音信不通に…年収800万円の女性が「少額訴訟か督促状か」迫った結果",
       "category": "市場動向",
@@ -426,46 +570,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://goworkship.com/magazine/kamata-cafe-dengen-wifi/"
-    },
-    {
-      "id": "dyn-20250904-news-careerconnection-jp-career-general-230254-",
-      "title": "「酷すぎる、えーん…しくしく」30代女性、同期の幼稚なSNS投稿で面倒な事態に",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月4日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>職場の同僚との距離感は時として悩みの種となる。あまりに親密になるとトラブルに発展することもあるようだ。投稿を寄せた東京都の30代女性（営業／年収900万円）は、「同期の女子A」との間に起きたトラブルを振り返った。 Aさん […]\nThe post 「酷すぎる、えーん…しくしく」30代女性、同期の幼稚なSNS投稿で面倒な事態に first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月4日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/230254/"
-    },
-    {
-      "id": "dyn-20250904-news-careerconnection-jp-career-general-230229-",
-      "title": "「私の給与超えられるわけないでしょ」と豪語する先輩、毎日ネットサーフィンで仕事をしないのに給料は上",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月4日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "給料"
-      ],
-      "fullContent": "<p>仕事量や成果に対して給与が見合っていない、と不満を抱える人は少なくないだろう。関東在住の40代女性（事務・管理）は、「この同僚ダメだなと思った瞬間」について投稿を寄せた。 女性の職場には、自身より1年早く配属された「10 […]\nThe post 「私の給与超えられるわけないでしょ」と豪語する先輩、毎日ネットサーフィンで仕事をしないのに給料は上 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月4日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/230229/"
     },
     {
       "id": "dyn-20250904-jinjibu-jp-news-detl-25435-",
@@ -527,47 +631,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://goworkship.com/magazine/freelance-jobs-list/"
-    },
-    {
-      "id": "dyn-20250903-goworkship-com-magazine-nishihunabashi-cafe-dengen-wifi-",
-      "title": "【西船橋駅】電源＆Wi-Fiの使えるカフェ4選！勉強・仕事・ノマドワークにおすすめ",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月3日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "副業"
-      ],
-      "fullContent": "<p>JR総武線・武蔵野線・京葉線、東京メトロ東西線、東葉高速鉄道が乗り入れる西船橋駅。 千葉県でも有数のターミナル駅でありながら、駅周辺は昔ながらの飲食店や居酒屋が多く、カフェは比較的少なめなのが特徴です。 とはいえ、駅前に […]\nこの記事の続きはこちら 【西船橋駅】電源＆Wi-Fiの使えるカフェ4選！勉強・仕事・ノマドワークにおすすめ Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月3日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/nishihunabashi-cafe-dengen-wifi/"
-    },
-    {
-      "id": "dyn-20250903-goworkship-com-magazine-engineer-job-disappear-",
-      "title": "エンジニアの仕事はなくなる？AI時代にも価値を発揮する職種・スキル・働き方",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月3日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "働き方",
-        "副業"
-      ],
-      "fullContent": "<p>生成AIの進化により、「このままではエンジニアの仕事がなくなってしまうのでは…」と不安を感じているエンジニアも多いのではないでしょうか。実際、単純なコーディングや定型業務は急速に自動化が進み、エンジニアが「なくなる仕事」 […]\nこの記事の続きはこちら エンジニアの仕事はなくなる？AI時代にも価値を発揮する職種・スキル・働き方 Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月3日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/engineer-job-disappear/"
     },
     {
       "id": "dyn-20250902-jinjibu-jp-news-detl-25419-",
@@ -754,69 +817,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://jinjibu.jp/news/detl/25405/"
-    },
-    {
-      "id": "dyn-20250820-jinjibu-jp-news-detl-25403-",
-      "title": "「働く人の本音調査2025」を実施",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年8月20日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>「年収への満足度」「組織風土との相性」のほか、若手層は「個人の成果」、中堅・ベテラン層は「希望と実態の一致」が鍵に 会社における経営・人事課題の解決および、事業・戦略の推進を支援する株式会社リ......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年8月20日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25403/"
-    },
-    {
-      "id": "dyn-20250818-jinjibu-jp-news-detl-25378-",
-      "title": "外国人材の日本でのキャリア観に関する実態調査2025",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年8月18日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "キャリア",
-        "人材",
-        "リスキリング"
-      ],
-      "fullContent": "<p>日本は“選ばれる”国になれるのか？キャリア構築・リスキリングに前向きな外国人材 求められる対応とは教育を中心に人材・介護・保育・IT・美容・スポーツ事業を傘下に持つヒューマンホールディングス......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年8月18日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25378/"
-    },
-    {
-      "id": "dyn-20250811-hrnote-jp-contents-saiyo-mynavi-20250812-utm-source-rss-utm-",
-      "title": "採用担当者の工数を軽減できるマイナビの採用方法とは？",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年8月11日",
-      "author": "HR NOTE",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "中途"
-      ],
-      "fullContent": "<p>中途採用のニーズが高まる一方で、採用担当者の負担が年々増加しています。しかし、実際の現場では応募者対応や日程調整といった事務作業が煩雑で、採用の質やスピードに課題を抱える企業も少なくありません。 本記事では、中途採用を幅 […]\nThe post 採用担当者の工数を軽減できるマイナビの採用方法とは？ first appeared on HR NOTE....</p>",
-      "source": "HR NOTE",
-      "organization": "HR NOTE",
-      "period": "2025年8月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://hrnote.jp/contents/saiyo-mynavi-20250812/?utm_source=rss&utm_medium=rss&utm_campaign=saiyo-mynavi-20250812"
     }
   ]
 }
