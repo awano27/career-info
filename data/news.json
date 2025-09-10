@@ -1,6 +1,46 @@
 {
-  "lastUpdated": "2025-09-09T03:33:08.189Z",
+  "lastUpdated": "2025-09-10T03:26:56.527Z",
   "items": [
+    {
+      "id": "dyn-20250910-news-livedoor-com-article-detail-29543713-",
+      "title": "Microsoftが正式に週3日のオフィス勤務を要請「最適な働き方のデータ得た」",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年9月10日",
+      "author": "livedoor 経済",
+      "readTimeMin": 3,
+      "tags": [
+        "働き方"
+      ],
+      "fullContent": "<p>記事を読む...</p>",
+      "source": "livedoor 経済",
+      "organization": "livedoor 経済",
+      "period": "2025年9月10日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.livedoor.com/article/detail/29543713/"
+    },
+    {
+      "id": "dyn-20250910-goworkship-com-magazine-ai-job-research-",
+      "title": "AIによって代替される職業とは？最新の調査結果をチェック",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年9月10日",
+      "author": "Workship MAGAZINE",
+      "readTimeMin": 3,
+      "tags": [
+        "副業"
+      ],
+      "fullContent": "<p>「人間の仕事がAIによって奪われる」――ここ数年で本当によく言われるようになりましたよね。読者の皆さんの中にも、AIに対して強い危機感を覚えている方が多いのではないでしょうか。 実際、複数の信頼性ある調査が、「将来的に多 […]\nこの記事の続きはこちら AIによって代替される職業とは？最新の調査結果をチェック Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
+      "source": "Workship MAGAZINE",
+      "organization": "Workship MAGAZINE",
+      "period": "2025年9月10日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://goworkship.com/magazine/ai-job-research/"
+    },
     {
       "id": "dyn-20250909-www-mhlw-go-jp-stf-seisakunitsuite-bunya-koyou-roudou-jinzai",
       "title": "キャリアコンサルタントになりたい方へ（第29回キャリアコンサルタント試験結果の概要）",
@@ -42,15 +82,37 @@
       "sourceUrl": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/hijoukin/hj-hokenkyoku02.html"
     },
     {
-      "id": "dyn-20250909-news-livedoor-com-article-detail-29535877-",
-      "title": "最低賃金引き上げが招くバイト・パート現場の「時給逆転現象」社労士が解説",
+      "id": "dyn-20250909-www-bloomberg-co-jp-news-articles-2025-09-09-T2BKN0GP9VCY00",
+      "title": "米労働統計局、上級職の3分の1が空席－局長解任前から課題山積",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月9日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "雇用",
+        "雇用統計"
+      ],
+      "fullContent": "<p>雇用やインフレに関する主要統計を作成する米労働省労働統計局（BLS）では、深刻な人手不足が続いている。 BLSのウェブサイトによると、同局の上級職のうち3分の1が空席となっている。局長職は暫定的に埋められているものの、雇用統計の各分野や地方事務所の運営を監督する複数の幹部ポストがいまだ空席のままとなってい......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年9月9日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.bloomberg.co.jp/news/articles/2025-09-09/T2BKN0GP9VCY00"
+    },
+    {
+      "id": "dyn-20250909-news-livedoor-com-article-detail-29543327-",
+      "title": "「就職氷河期世代」もう氷河期支援はいらないと雇用のプロが言い切る理由",
       "category": "市場動向",
       "categoryClass": "market",
       "date": "2025年9月9日",
       "author": "livedoor 経済",
       "readTimeMin": 3,
       "tags": [
-        "賃金"
+        "就職",
+        "雇用"
       ],
       "fullContent": "<p>記事を読む...</p>",
       "source": "livedoor 経済",
@@ -59,7 +121,47 @@
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29535877/"
+      "sourceUrl": "https://news.livedoor.com/article/detail/29543327/"
+    },
+    {
+      "id": "dyn-20250909-news-careerconnection-jp-career-general-230035-",
+      "title": "毎日しんどい…「教えるの忘れてた」の係長　後出し指導のせいで“私のミスにされる”日々",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月9日",
+      "author": "キャリコネニュース",
+      "readTimeMin": 3,
+      "tags": [
+        "中途"
+      ],
+      "fullContent": "<p>新しい会社で早く戦力になりたいと願う新人にとって、教育係が「教えるのが下手」だと致命的だ。投稿を寄せた関東在住の40代女性（管理・事務）は数か月前に中途入社したが、上司の「教え方」に頭を悩ませている。 「部署に教え方が下 […]\nThe post 毎日しんどい…「教えるの忘れてた」の係長　後出し指導のせいで“私のミスにされる”日々 first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
+      "period": "2025年9月9日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.careerconnection.jp/career/general/230035/"
+    },
+    {
+      "id": "dyn-20250909-jinjibu-jp-news-detl-25481-",
+      "title": "「中小企業における若手社員育成に関する調査」を実施",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月9日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "育成"
+      ],
+      "fullContent": "<p>中小企業経営者の約8割が若手社員の育成に課題を感じている！株式会社CRAYONZ（本社：東京都港区、代表取締役社長：日髙 心陽）は、若手社員が在籍している中小企業の経営者を対象に「中小企業における若手社員育......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年9月9日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25481/"
     },
     {
       "id": "dyn-20250909-goworkship-com-magazine-recruitment-difficulties-transition-",
@@ -125,26 +227,6 @@
       "sourceUrl": "http://www3.nhk.or.jp/news/html/20250909/k10014917211000.html"
     },
     {
-      "id": "dyn-20250908-www-mhlw-go-jp-stf-newpage-63136-html",
-      "title": "第83回労働政策審議会雇用環境・均等分科会の資料を掲載しました。",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月8日",
-      "author": "厚生労働省",
-      "readTimeMin": 3,
-      "tags": [
-        "雇用"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "厚生労働省",
-      "organization": "厚生労働省",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_63136.html"
-    },
-    {
       "id": "dyn-20250908-www-mhlw-go-jp-stf-newpage-51546-html",
       "title": "経済社会情勢の変化に対応したキャリアコンサルティングの実現に関する研究会（第５回議事録）",
       "category": "専門家コラム",
@@ -165,64 +247,24 @@
       "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_51546.html"
     },
     {
-      "id": "dyn-20250908-www-mhlw-go-jp-stf-kouseiroudoushou-saiyou-ninkituki-ninki-j",
-      "title": "採用情報（任期付職員（自立推進指導官）募集情報）",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月8日",
-      "author": "厚生労働省",
-      "readTimeMin": 3,
-      "tags": [
-        "採用"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "厚生労働省",
-      "organization": "厚生労働省",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.mhlw.go.jp/stf/kouseiroudoushou/saiyou/ninkituki/ninki-jiritsusuishinshidoukan.html"
-    },
-    {
-      "id": "dyn-20250908-www-asahi-com-articles-AST983G63T98ULFA028M-html-ref-rss",
-      "title": "三菱電機が希望退職実施　募集人数定めず、好業績でも若返り図る狙い",
+      "id": "dyn-20250908-www-bloomberg-co-jp-news-articles-2025-09-08-T29UBEGP9VCX00",
+      "title": "現代自動車の米工場摘発、トランプ大統領の国内投資拡大計画と矛盾",
       "category": "市場動向",
       "categoryClass": "market",
       "date": "2025年9月8日",
-      "author": "朝日新聞 速報",
+      "author": "はてな 経済ホット",
       "readTimeMin": 3,
       "tags": [
-        "希望退職"
+        "雇用"
       ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 速報",
-      "organization": "朝日新聞 速報",
+      "fullContent": "<p>トランプ米大統領は、外国企業に米国での雇用と生産を強制することを経済政策の柱としてきた。先週、ジョージア州にある現代自動車とＬＧエナジーソリューションの合弁電池工場で行われた大規模な移民取り締まりは、同氏の戦略とは大きく矛盾するものだ。 業界アナリストによると、現代自動車の施設は、トランプ氏がリシ......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
       "period": "2025年9月8日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "http://www.asahi.com/articles/AST983G63T98ULFA028M.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250908-www-asahi-com-articles-AST983G63T98ULFA028M-html-ref-rss",
-      "title": "三菱電機が希望退職実施　募集人数定めず、好業績でも若返り図る狙い",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月8日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "希望退職"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST983G63T98ULFA028M.html?ref=rss"
+      "sourceUrl": "https://www.bloomberg.co.jp/news/articles/2025-09-08/T29UBEGP9VCX00"
     },
     {
       "id": "dyn-20250908-www-asahi-com-articles-AST974PYDT97PQIP036M-html-ref-rss",
@@ -243,88 +285,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "http://www.asahi.com/articles/AST974PYDT97PQIP036M.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250908-www-asahi-com-articles-AST953RPNT95ULFA01CM-html-ref-rss",
-      "title": "「隣県超え」連鎖、激変した九州の最賃審議　背景に人材流出の切迫感",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月8日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "人材"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST953RPNT95ULFA01CM.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250908-www-asahi-com-articles-AST9522NHT95ULFA015M-html-ref-rss",
-      "title": "新卒一括採用はもう古いのか　富士通、日立、NEC…人材確保に変化",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月8日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "人材",
-        "新卒"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST9522NHT95ULFA015M.html?ref=rss"
-    },
-    {
-      "id": "dyn-20250908-toyokeizai-net-articles-903177-utm-source-rss-utm-medium-htt",
-      "title": "10年間で残業時間が大きく減った会社ランキング | CSR企業総覧 | 東洋経済オンライン",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月8日",
-      "author": "東洋経済",
-      "readTimeMin": 3,
-      "tags": [
-        "働き方"
-      ],
-      "fullContent": "<p>社員のワーク・ライフ・バランスを重視する流れで働き方改革が進んでいる。大手中心に積極的に残業削減に…...</p>",
-      "source": "東洋経済",
-      "organization": "東洋経済",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://toyokeizai.net/articles/-/903177?utm_source=rss&utm_medium=http&utm_campaign=link_back"
-    },
-    {
-      "id": "dyn-20250908-toyokeizai-net-articles-901693-utm-source-rss-utm-medium-htt",
-      "title": "税と社会保険…2つの｢年収の壁｣の厄介な\"隙間\" | リーダーシップ・教養・資格・スキル | 東洋経済オンライン",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月8日",
-      "author": "東洋経済",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>2025年度の税制改正で、所得税の非課税枠のいわゆる「年収103万円の壁」が160万円に引き上げられました。…...</p>",
-      "source": "東洋経済",
-      "organization": "東洋経済",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://toyokeizai.net/articles/-/901693?utm_source=rss&utm_medium=http&utm_campaign=link_back"
     },
     {
       "id": "dyn-20250908-news-careerconnection-jp-career-general-230417-",
@@ -451,66 +411,6 @@
       "sourceUrl": "https://goworkship.com/magazine/ebisu-cafe-dengen-wifi/"
     },
     {
-      "id": "dyn-20250907-news-careerconnection-jp-career-general-230305-",
-      "title": "上司「残業しないと生活できないだろ？」→激務で体調悪すぎの女性がとった対抗策",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月7日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>部下の体調を気遣うどころか、心ない言葉を浴びせる上司もいるようだ。投稿を寄せた埼玉県の30代女性（素材・化学・食品・医薬品技術職／年収350万円）は、「正社員だったころ」の辛い出来事を振り返った。 当時、毎日残業の激務だ […]\nThe post 上司「残業しないと生活できないだろ？」→激務で体調悪すぎの女性がとった対抗策 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月7日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/230305/"
-    },
-    {
-      "id": "dyn-20250907-news-careerconnection-jp-career-general-230287-",
-      "title": "発注ミスで「200万円近い損害」を“なかったこと”に…　会社のヤバい体質に驚愕した男性",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月7日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>会社の危機管理能力が問われる出来事は、思わぬところで発覚するものだ。投稿を寄せた神奈川県の40代男性（営業／年収550万円）は、取引先とのやり取りの中で、自社のずさんな体質を目の当たりにした事を明かす。 あるとき、取引先 […]\nThe post 発注ミスで「200万円近い損害」を“なかったこと”に…　会社のヤバい体質に驚愕した男性 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月7日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/230287/"
-    },
-    {
-      "id": "dyn-20250907-news-careerconnection-jp-career-230295-",
-      "title": "ラッキー？ 面接で「もう決まったから」と即不採用→しかし面接官の“次の一言”でまさかの展開へ",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月7日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "採用"
-      ],
-      "fullContent": "<p>採用面接で理不尽な目に遭ったという人は少なくない。しかし、ときには予想外のラッキーな展開が待っていることもあるようだ。投稿を寄せた大阪府の30代女性は、ある予備校グループの事務員募集に応募した。 自宅から近い分校へ面接に […]\nThe post ラッキー？ 面接で「もう決まったから」と即不採用→しかし面接官の“次の一言”でまさかの展開へ first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月7日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/230295/"
-    },
-    {
       "id": "dyn-20250907-jinjibu-jp-news-detl-25474-",
       "title": "AIネイティブ世代の就職活動と生成AI利用における調査レポートを発表",
       "category": "業界トレンド",
@@ -552,67 +452,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://jinjibu.jp/news/detl/25472/"
-    },
-    {
-      "id": "dyn-20250905-www-mhlw-go-jp-stf-newpage-62515-html",
-      "title": "第71回労働政策審議会人材開発分科会監理団体審査部会 開催案内",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月5日",
-      "author": "厚生労働省",
-      "readTimeMin": 3,
-      "tags": [
-        "人材"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "厚生労働省",
-      "organization": "厚生労働省",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_62515.html"
-    },
-    {
-      "id": "dyn-20250905-www-mhlw-go-jp-stf-newpage-62313-html",
-      "title": "「第24回労働政策審議会　職業安定分科会　雇用環境・均等分科会　同一労働同一賃金部会」（ペーパーレス）を開催します（開催案内）",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月5日",
-      "author": "厚生労働省",
-      "readTimeMin": 3,
-      "tags": [
-        "雇用",
-        "賃金"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "厚生労働省",
-      "organization": "厚生労働省",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_62313.html"
-    },
-    {
-      "id": "dyn-20250905-goworkship-com-magazine-kamata-cafe-dengen-wifi-",
-      "title": "【蒲田駅】電源＆Wi-Fiの使えるカフェ15選！勉強・仕事・ノマドワークにおすすめ",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月5日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "副業"
-      ],
-      "fullContent": "<p>蒲田駅は、JR線・東急線・京急線が交わるターミナル駅です。 駅直結の「グランデュオ」や「京急プラザ」には利便性の高いカフェが集まり、周辺には昔ながらの喫茶店や大学生に人気の穴場スポットまで揃っています。 活気ある商店街や […]\nこの記事の続きはこちら 【蒲田駅】電源＆Wi-Fiの使えるカフェ15選！勉強・仕事・ノマドワークにおすすめ Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月5日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/kamata-cafe-dengen-wifi/"
     },
     {
       "id": "dyn-20250904-jinjibu-jp-news-detl-25435-",
@@ -760,26 +599,6 @@
       "sourceUrl": "https://jinjibu.jp/news/detl/25399/"
     },
     {
-      "id": "dyn-20250824-jinjibu-jp-news-detl-25413-",
-      "title": "「労働者のスキルに関する日米調査」を実施",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年8月24日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "求人"
-      ],
-      "fullContent": "<p>スキル習得「意欲なし」日本29.3％に対し米国3.7％企業のスキル習得支援策も、日本は「特になし」22.7％ で米国2.0％と大きな差労働者・企業双方のスキルに対する意識、日米で際立つ差が明らかに世界No.1求人サイ......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年8月24日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25413/"
-    },
-    {
       "id": "dyn-20250811-hrnote-jp-contents-saiyo-mynavi-20250812-utm-source-rss-utm-",
       "title": "採用担当者の工数を軽減できるマイナビの採用方法とは？",
       "category": "業界トレンド",
@@ -820,6 +639,69 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://hrnote.jp/contents/soshiki-proactive-8-20250729/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-proactive-8-20250729"
+    },
+    {
+      "id": "dyn-20250724-hrnote-jp-contents-soshiki-proactive-7-20250725-utm-source-r",
+      "title": "プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年7月24日",
+      "author": "HR NOTE",
+      "readTimeMin": 3,
+      "tags": [
+        "人材",
+        "育成"
+      ],
+      "fullContent": "<p>連載の第6回では、現場の管理職が自身の部下に対する見方、およびそれに起因する自身の行動の癖を知ることで、個人・チームへの働きかけを変えていくことの重要性を解説しました。 第7回では、人材のプロアクティブ化を図るために自社 […]\nThe post プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7 first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年7月24日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://hrnote.jp/contents/soshiki-proactive-7-20250725/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-proactive-7-20250725"
+    },
+    {
+      "id": "dyn-20250722-hrnote-jp-contents-soshiki-newhorizoncollective-event-202507",
+      "title": "セカンドキャリアを開拓する。中高年シニアの活躍の場を広げることこそ、企業にとっても、社会の未来にとっても、成長の鍵に",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年7月22日",
+      "author": "HR NOTE",
+      "readTimeMin": 3,
+      "tags": [
+        "キャリア"
+      ],
+      "fullContent": "<p>人生100年時代を見据え、セカンドキャリアの開拓を支援する「ライフシフトプラットフォーム」（以下、LSP）は、2021年にスタートし、5年目を迎えました。本記事では、2025年5月29日に開催されたLSPの活動報告会の様 […]\nThe post セカンドキャリアを開拓する。中高年シニアの活躍の場を広げることこそ、企業にとっても、社会の未来にとっても、成長の鍵に first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年7月22日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://hrnote.jp/contents/soshiki-newhorizoncollective-event-20250722/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-newhorizoncollective-event-20250722"
+    },
+    {
+      "id": "dyn-20250722-hrnote-jp-contents-saiyo-allesgood-ai-20250723-utm-source-rs",
+      "title": "「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年7月22日",
+      "author": "HR NOTE",
+      "readTimeMin": 3,
+      "tags": [
+        "就職",
+        "採用",
+        "新卒"
+      ],
+      "fullContent": "<p>AIの登場により、Z世代の就職活動に、かつてない大きな変化が起こりつつあります。AIを活用した自己分析やエントリーシート（ES）作成はすでに常識となり、今後さらに多様な変化が予想されます。 新卒採用の現場では、Z世代就活 […]\nThe post 「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井 first appeared on HR NOTE....</p>",
+      "source": "HR NOTE",
+      "organization": "HR NOTE",
+      "period": "2025年7月22日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://hrnote.jp/contents/saiyo-allesgood-ai-20250723/?utm_source=rss&utm_medium=rss&utm_campaign=saiyo-allesgood-ai-20250723"
     }
   ]
 }
