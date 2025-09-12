@@ -1,56 +1,178 @@
 {
-  "lastUpdated": "2025-09-11T03:31:43.951Z",
+  "lastUpdated": "2025-09-12T03:26:27.788Z",
   "items": [
     {
-      "id": "dyn-20250911-www-jiji-com-jc-article-k-2025091100301-g-int-m-rss",
-      "title": "ＦＢＩ長官を不当解雇で提訴　元高官「政権の圧力屈す」―米",
+      "id": "dyn-20250912-www3-nhk-or-jp-news-html-20250912-k10014920701000-html",
+      "title": "株価 取り引き時間中の史上最高値を更新",
       "category": "市場動向",
       "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "時事通信（ランキング）",
+      "date": "2025年9月12日",
+      "author": "NHK 経済",
       "readTimeMin": 3,
       "tags": [
-        "解雇"
+        "雇用"
+      ],
+      "fullContent": "<p>12日の東京株式市場は、11日にアメリカで発表された物価や雇用の統計をきっかけにFRB＝連邦準備制度理事会が来週の会合で利下げに踏み切るという観測が一段と強まり、日本経済にも追い風になるという見方から買い注文が増えて、日経平均株価は取り引き時間中の史上最高値を更新しました。...</p>",
+      "source": "NHK 経済",
+      "organization": "NHK 経済",
+      "period": "2025年9月12日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "http://www3.nhk.or.jp/news/html/20250912/k10014920701000.html"
+    },
+    {
+      "id": "dyn-20250912-www-mhlw-go-jp-stf-newpage-63038-html",
+      "title": "令和６年能登半島地震関係 石川県奥能登２市２町における労働保険料、障害者雇用納付金などの、 申告・納期限の延長後の期限を令和７年10月31日と決定し、延長措置は終了します",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月12日",
+      "author": "厚生労働省",
+      "readTimeMin": 3,
+      "tags": [
+        "雇用"
       ],
       "fullContent": "<p>...</p>",
-      "source": "時事通信（ランキング）",
-      "organization": "時事通信（ランキング）",
+      "source": "厚生労働省",
+      "organization": "厚生労働省",
+      "period": "2025年9月12日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_63038.html"
+    },
+    {
+      "id": "dyn-20250912-prtimes-jp-main-html-rd-p-000000152-000139013-html",
+      "title": "【SHANLING】チタンコーティングダイナミックドライバー搭載、2DD+1BAハイブリッド構成を採用した「SONO」のNewモデル『SONO S』が９月19日(金)より発売開始",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月12日",
+      "author": "PR TIMES",
+      "readTimeMin": 3,
+      "tags": [
+        "採用"
+      ],
+      "fullContent": "<p>[MUSIN]\n[画像1: https://prcdn.freetls.fastly.net/release_image/139013/152/139013-152-9f1bbe98aaa03a0e924a87714393fd89-1464x600.jpg?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds......</p>",
+      "source": "PR TIMES",
+      "organization": "PR TIMES",
+      "period": "2025年9月12日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000152.000139013.html"
+    },
+    {
+      "id": "dyn-20250912-prtimes-jp-main-html-rd-p-000000070-000032609-html",
+      "title": "美STAR 「第1回 美容クリニック転職セミナー」を9月19日（金）に開催！キャリアアドバイザーが「選ばれる美容看護師の共通点」を解説",
+      "category": "専門家コラム",
+      "categoryClass": "expert",
+      "date": "2025年9月12日",
+      "author": "PR TIMES",
+      "readTimeMin": 3,
+      "tags": [
+        "転職",
+        "キャリア"
+      ],
+      "fullContent": "<p>[株式会社セントラルメディエンス]\n　医療従事者のマッチングや医療部材の卸、経営支援等の医療機関のトータルサポート事業を展開する株式会社セントラルメディエンス（本社：東京都港区、代表取締役：中川隆太郎、以下「当社」）は、9月19日（金）......</p>",
+      "source": "PR TIMES",
+      "organization": "PR TIMES",
+      "period": "2025年9月12日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000070.000032609.html"
+    },
+    {
+      "id": "dyn-20250911-www-rodo-co-jp-news-205251-",
+      "title": "能力不足解雇が有効に　新卒入社10年目で　東京地裁｜労働新聞 ニュース｜労働新聞社",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月11日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "新卒",
+        "解雇"
+      ],
+      "fullContent": "<p>クリップ数が上限数の100に達しているため、クリップできませんでした。クリップ数を減らしてから再度クリップ願います。 マイクリップ一覧へ 特別支援体制も効果なく 大手素材メーカーで働いていた労働者が能力不足による解雇は違法と訴えた裁判で、東京地方裁判所（角谷昌毅裁判長）は解雇を有効と判断した。約９年間......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
       "period": "2025年9月11日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://www.jiji.com/jc/article?k=2025091100301&g=int&m=rss"
+      "sourceUrl": "https://www.rodo.co.jp/news/205251/"
     },
     {
-      "id": "dyn-20250911-toyokeizai-net-articles-902754-utm-source-rss-utm-medium-htt",
-      "title": "キャリアを左右するのは学歴よりも\"学習歴\" | 非学歴エリートの熱血キャリア相談 | 東洋経済オンライン",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
+      "id": "dyn-20250911-toyokeizai-net-articles-903704-utm-source-rss-utm-medium-htt",
+      "title": "中国で\"親から給料貰う\"｢専業子供｣が流行る背景 | 中国･台湾 | 東洋経済オンライン",
+      "category": "市場動向",
+      "categoryClass": "market",
       "date": "2025年9月11日",
       "author": "東洋経済",
       "readTimeMin": 3,
       "tags": [
-        "キャリア"
+        "給料"
       ],
-      "fullContent": "<p>学歴より重要な「学習歴」について考える学歴に関する論争は非常に昔から存在し、さまざまな立場からの意…...</p>",
+      "fullContent": "<p>「専業主婦」という言葉には耳なじみがあると思うが、「専業子供」は聞いたことがあるだろうか？これは中…...</p>",
       "source": "東洋経済",
       "organization": "東洋経済",
       "period": "2025年9月11日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://toyokeizai.net/articles/-/902754?utm_source=rss&utm_medium=http&utm_campaign=link_back"
+      "sourceUrl": "https://toyokeizai.net/articles/-/903704?utm_source=rss&utm_medium=http&utm_campaign=link_back"
     },
     {
-      "id": "dyn-20250911-news-livedoor-com-article-detail-29551606-",
-      "title": "「転職や働くことについてのアンケート調査」結果を発表",
+      "id": "dyn-20250911-posfie-com-petaritape-p-ebBEASZ",
+      "title": "会社へ損害を与える「リベンジ退職」が増加→「社内ツールの掲示板に、退職する人（管理職）が自分の給与明細貼ってた。給与の低さにびっくりして会社全体の士気がダダ下がりした」",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月11日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "解雇"
+      ],
+      "fullContent": "<p>ゆるふわ怪電波☆埼玉 @yuruhuwa_kdenpa 中卒。バイトを解雇され日雇いに。月給9万円 抑うつ状態 多重債務者 40代男性 体重113kgハゲ童貞 友人宅で暮らしながら婚活中 毎日電波にのって放送されるニュースの感想を書きつつ集団ストーカー対策を実践中（有資格者：4等うどん技師）ご飯記録(@http_kouryonin) メモ帳(@yuruh......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年9月11日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://posfie.com/@petaritape/p/ebBEASZ"
+    },
+    {
+      "id": "dyn-20250911-news-yahoo-co-jp-pickup-6552169-source-rss",
+      "title": "就職難の中国「専業子供」が流行",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月11日",
+      "author": "Yahoo!ニュース 国際",
+      "readTimeMin": 3,
+      "tags": [
+        "就職"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "Yahoo!ニュース 国際",
+      "organization": "Yahoo!ニュース 国際",
+      "period": "2025年9月11日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.yahoo.co.jp/pickup/6552169?source=rss"
+    },
+    {
+      "id": "dyn-20250911-news-livedoor-com-article-detail-29558022-",
+      "title": "年収10倍の住宅ローンを負う20代 若者が高級マンションを買うワケ",
       "category": "市場動向",
       "categoryClass": "market",
       "date": "2025年9月11日",
       "author": "livedoor 経済",
       "readTimeMin": 3,
       "tags": [
-        "転職"
+        "年収"
       ],
       "fullContent": "<p>記事を読む...</p>",
       "source": "livedoor 経済",
@@ -59,27 +181,68 @@
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29551606/"
+      "sourceUrl": "https://news.livedoor.com/article/detail/29558022/"
     },
     {
-      "id": "dyn-20250911-news-livedoor-com-article-detail-29551289-",
-      "title": "物価高に賃金が追いつかない...行き過ぎた節約術に潜む思わぬ落とし穴",
+      "id": "dyn-20250911-news-livedoor-com-article-detail-29557407-",
+      "title": "昇進できない理由が「他の女性社員の給与を超えちゃう」転職して大正解",
       "category": "市場動向",
       "categoryClass": "market",
       "date": "2025年9月11日",
       "author": "livedoor 経済",
       "readTimeMin": 3,
       "tags": [
-        "賃金"
+        "転職"
       ],
-      "fullContent": "<p>ざっくり言うと\n行き過ぎた節約術に潜む思わぬ落とし穴についてFPが解説している\n公共施設の水道から水を無断で持ち去る行為は「窃盗罪」にあたるという\nムダを省いて消費を切り詰める「ムダを省いて消費を切り詰めること」だそう\n記事を読む...</p>",
+      "fullContent": "<p>ざっくり言うと\nある50代女性は資格職として入社したが、いつまでも平社員のままだった\n社長は「あなたを昇進させると彼女の給与を超えてしまうから」と説明\n女性は憤り、会社の姿勢に愛想が尽きて転職を決意したという\n記事を読む...</p>",
       "source": "livedoor 経済",
       "organization": "livedoor 経済",
       "period": "2025年9月11日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29551289/"
+      "sourceUrl": "https://news.livedoor.com/article/detail/29557407/"
+    },
+    {
+      "id": "dyn-20250911-news-careerconnection-jp-career-general-230524-",
+      "title": "外回り営業マンのサボり術、商談終了後にラーメン → 食べ終わったら商談終了の報告 → 直帰",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月11日",
+      "author": "キャリコネニュース",
+      "readTimeMin": 3,
+      "tags": [
+        "年収"
+      ],
+      "fullContent": "<p>少し息抜きを入れるほうが、仕事が捗るという人は少なくないだろう。業務に支障が出ない範囲で、うまく時間を使っている人たちの「サボり術」に関する投稿が寄せられた。 大阪府に住む営業職の30代男性（年収850万円）は、外回り中 […]\nThe post 外回り営業マンのサボり術、商談終了後にラーメン → 食べ終わったら商談終了の報告 → 直帰 first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
+      "period": "2025年9月11日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.careerconnection.jp/career/general/230524/"
+    },
+    {
+      "id": "dyn-20250911-news-careerconnection-jp-career-general-230507-",
+      "title": "昇進できない理由が「他の女性社員の給与を超えちゃうから」だった女性、さっさと転職して大正解",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月11日",
+      "author": "キャリコネニュース",
+      "readTimeMin": 3,
+      "tags": [
+        "転職",
+        "年収"
+      ],
+      "fullContent": "<p>働きぶりが正当に評価されなければ、モチベーションは下がる一方だ。もし、あなたが今そんな職場にいるなら、転職を視野に入れたほうがいいだろう。 東京都在住の50代女性（営業／年収500万円）は、これまで一生懸命働き、常に上位 […]\nThe post 昇進できない理由が「他の女性社員の給与を超えちゃうから」だった女性、さっさと転職して大正解 first appeared on キャリコネニュース....</p>",
+      "source": "キャリコネニュース",
+      "organization": "キャリコネニュース",
+      "period": "2025年9月11日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://news.careerconnection.jp/career/general/230507/"
     },
     {
       "id": "dyn-20250911-news-careerconnection-jp-career-228072-",
@@ -100,6 +263,47 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://news.careerconnection.jp/career/228072/"
+    },
+    {
+      "id": "dyn-20250911-jinjibu-jp-news-detl-25502-",
+      "title": "「ミドル・シニア人材の採用」に関する意識調査",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月11日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "採用",
+        "人材"
+      ],
+      "fullContent": "<p>即戦力として45歳以上を採る時代の幕開け。経営者/人事の8割超がミドル・シニア人材の採用を「強化したい」と回答株式会社プロフェッショナルバンク（所在地：東京都千代田区、代表取締役：呑田 好和）のHR研究所......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年9月11日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25502/"
+    },
+    {
+      "id": "dyn-20250911-jinjibu-jp-news-detl-25484-",
+      "title": "「リファラル採用に関するアンケート調査」を実施",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月11日",
+      "author": "日本の人事部（人事サービス）",
+      "readTimeMin": 3,
+      "tags": [
+        "採用"
+      ],
+      "fullContent": "<p>8割の企業が導入も“成果に壁” リファラル採用の最大課題は“社内広報” リファラル採用を活性化させるクラウドサービス「Refcome（リフカム）」を提供する株式会社ウィルオブ・パート......</p>",
+      "source": "日本の人事部（人事サービス）",
+      "organization": "日本の人事部（人事サービス）",
+      "period": "2025年9月11日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://jinjibu.jp/news/detl/25484/"
     },
     {
       "id": "dyn-20250910-news-careerconnection-jp-career-general-230496-",
@@ -436,27 +640,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://jinjibu.jp/news/detl/25440/"
-    },
-    {
-      "id": "dyn-20250826-jinjibu-jp-news-detl-25423-",
-      "title": "「2025年度 企業価値向上に向けた取り組みに関するアンケート」の結果を発表",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年8月26日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "人材",
-        "育成"
-      ],
-      "fullContent": "<p>約6割の企業が「コスト増加」の影響があると回答。注力する経営テーマは「人材確保・育成」が最多。ESG活動では「人的資本」に注力。コーポレートファイナンス領域より5つのテーマで調査日本の経営コンサルティン......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年8月26日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25423/"
     },
     {
       "id": "dyn-20250811-hrnote-jp-contents-saiyo-mynavi-20250812-utm-source-rss-utm-",
