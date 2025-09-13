@@ -1,25 +1,25 @@
 {
-  "lastUpdated": "2025-09-12T03:26:27.788Z",
+  "lastUpdated": "2025-09-13T03:20:35.152Z",
   "items": [
     {
-      "id": "dyn-20250912-www3-nhk-or-jp-news-html-20250912-k10014920701000-html",
-      "title": "株価 取り引き時間中の史上最高値を更新",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月12日",
-      "author": "NHK 経済",
+      "id": "dyn-20250913-prtimes-jp-main-html-rd-p-000000377-000071141-html",
+      "title": "敬老の日、シニア人材の再活躍の場を拡大へ　シニアプロフェッショナル人材サービス「Avanti MOH」",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月13日",
+      "author": "PR TIMES",
       "readTimeMin": 3,
       "tags": [
-        "雇用"
+        "人材"
       ],
-      "fullContent": "<p>12日の東京株式市場は、11日にアメリカで発表された物価や雇用の統計をきっかけにFRB＝連邦準備制度理事会が来週の会合で利下げに踏み切るという観測が一段と強まり、日本経済にも追い風になるという見方から買い注文が増えて、日経平均株価は取り引き時間中の史上最高値を更新しました。...</p>",
-      "source": "NHK 経済",
-      "organization": "NHK 経済",
-      "period": "2025年9月12日",
+      "fullContent": "<p>[パーソルテンプスタッフ株式会社]\n総合人材サービスのパーソルグループの株式会社アヴァンティスタッフ（本社: 東京都中央区、代表取締役社長: 黒川 良太、以下アヴァンティスタッフ）は、2025年9月15日（月・祝）の敬老の日に合わせて、当社のシ......</p>",
+      "source": "PR TIMES",
+      "organization": "PR TIMES",
+      "period": "2025年9月13日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "http://www3.nhk.or.jp/news/html/20250912/k10014920701000.html"
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000377.000071141.html"
     },
     {
       "id": "dyn-20250912-www-mhlw-go-jp-stf-newpage-63038-html",
@@ -42,166 +42,85 @@
       "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_63038.html"
     },
     {
-      "id": "dyn-20250912-prtimes-jp-main-html-rd-p-000000152-000139013-html",
-      "title": "【SHANLING】チタンコーティングダイナミックドライバー搭載、2DD+1BAハイブリッド構成を採用した「SONO」のNewモデル『SONO S』が９月19日(金)より発売開始",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
+      "id": "dyn-20250912-www-asahi-com-articles-AST9D4V4WT9DUTIL01ZM-html-ref-rss",
+      "title": "元勤務先の役員刺した疑いで逮捕　雇用めぐりトラブルか　東京・赤坂",
+      "category": "市場動向",
+      "categoryClass": "market",
       "date": "2025年9月12日",
-      "author": "PR TIMES",
+      "author": "朝日新聞 速報",
       "readTimeMin": 3,
       "tags": [
-        "採用"
-      ],
-      "fullContent": "<p>[MUSIN]\n[画像1: https://prcdn.freetls.fastly.net/release_image/139013/152/139013-152-9f1bbe98aaa03a0e924a87714393fd89-1464x600.jpg?width=536&amp;quality=85%2C75&amp;format=jpeg&amp;auto=webp&amp;fit=bounds......</p>",
-      "source": "PR TIMES",
-      "organization": "PR TIMES",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000152.000139013.html"
-    },
-    {
-      "id": "dyn-20250912-prtimes-jp-main-html-rd-p-000000070-000032609-html",
-      "title": "美STAR 「第1回 美容クリニック転職セミナー」を9月19日（金）に開催！キャリアアドバイザーが「選ばれる美容看護師の共通点」を解説",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月12日",
-      "author": "PR TIMES",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "キャリア"
-      ],
-      "fullContent": "<p>[株式会社セントラルメディエンス]\n　医療従事者のマッチングや医療部材の卸、経営支援等の医療機関のトータルサポート事業を展開する株式会社セントラルメディエンス（本社：東京都港区、代表取締役：中川隆太郎、以下「当社」）は、9月19日（金）......</p>",
-      "source": "PR TIMES",
-      "organization": "PR TIMES",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000070.000032609.html"
-    },
-    {
-      "id": "dyn-20250911-www-rodo-co-jp-news-205251-",
-      "title": "能力不足解雇が有効に　新卒入社10年目で　東京地裁｜労働新聞 ニュース｜労働新聞社",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月11日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "新卒",
-        "解雇"
-      ],
-      "fullContent": "<p>クリップ数が上限数の100に達しているため、クリップできませんでした。クリップ数を減らしてから再度クリップ願います。 マイクリップ一覧へ 特別支援体制も効果なく 大手素材メーカーで働いていた労働者が能力不足による解雇は違法と訴えた裁判で、東京地方裁判所（角谷昌毅裁判長）は解雇を有効と判断した。約９年間......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.rodo.co.jp/news/205251/"
-    },
-    {
-      "id": "dyn-20250911-toyokeizai-net-articles-903704-utm-source-rss-utm-medium-htt",
-      "title": "中国で\"親から給料貰う\"｢専業子供｣が流行る背景 | 中国･台湾 | 東洋経済オンライン",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "東洋経済",
-      "readTimeMin": 3,
-      "tags": [
-        "給料"
-      ],
-      "fullContent": "<p>「専業主婦」という言葉には耳なじみがあると思うが、「専業子供」は聞いたことがあるだろうか？これは中…...</p>",
-      "source": "東洋経済",
-      "organization": "東洋経済",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://toyokeizai.net/articles/-/903704?utm_source=rss&utm_medium=http&utm_campaign=link_back"
-    },
-    {
-      "id": "dyn-20250911-posfie-com-petaritape-p-ebBEASZ",
-      "title": "会社へ損害を与える「リベンジ退職」が増加→「社内ツールの掲示板に、退職する人（管理職）が自分の給与明細貼ってた。給与の低さにびっくりして会社全体の士気がダダ下がりした」",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "解雇"
-      ],
-      "fullContent": "<p>ゆるふわ怪電波☆埼玉 @yuruhuwa_kdenpa 中卒。バイトを解雇され日雇いに。月給9万円 抑うつ状態 多重債務者 40代男性 体重113kgハゲ童貞 友人宅で暮らしながら婚活中 毎日電波にのって放送されるニュースの感想を書きつつ集団ストーカー対策を実践中（有資格者：4等うどん技師）ご飯記録(@http_kouryonin) メモ帳(@yuruh......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://posfie.com/@petaritape/p/ebBEASZ"
-    },
-    {
-      "id": "dyn-20250911-news-yahoo-co-jp-pickup-6552169-source-rss",
-      "title": "就職難の中国「専業子供」が流行",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "Yahoo!ニュース 国際",
-      "readTimeMin": 3,
-      "tags": [
-        "就職"
+        "雇用"
       ],
       "fullContent": "<p>...</p>",
-      "source": "Yahoo!ニュース 国際",
-      "organization": "Yahoo!ニュース 国際",
-      "period": "2025年9月11日",
+      "source": "朝日新聞 速報",
+      "organization": "朝日新聞 速報",
+      "period": "2025年9月12日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.yahoo.co.jp/pickup/6552169?source=rss"
+      "sourceUrl": "http://www.asahi.com/articles/AST9D4V4WT9DUTIL01ZM.html?ref=rss"
     },
     {
-      "id": "dyn-20250911-news-livedoor-com-article-detail-29558022-",
-      "title": "年収10倍の住宅ローンを負う20代 若者が高級マンションを買うワケ",
+      "id": "dyn-20250912-www-asahi-com-articles-AST9D2JPGT9DUTFK00FM-html-ref-rss",
+      "title": "国内AI開発、政府が後押しへ　安全保障リスク対応　雇用影響も分析",
       "category": "市場動向",
       "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "livedoor 経済",
+      "date": "2025年9月12日",
+      "author": "朝日新聞 経済",
       "readTimeMin": 3,
       "tags": [
-        "年収"
+        "雇用"
       ],
-      "fullContent": "<p>記事を読む...</p>",
-      "source": "livedoor 経済",
-      "organization": "livedoor 経済",
-      "period": "2025年9月11日",
+      "fullContent": "<p>...</p>",
+      "source": "朝日新聞 経済",
+      "organization": "朝日新聞 経済",
+      "period": "2025年9月12日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29558022/"
+      "sourceUrl": "https://www.asahi.com/articles/AST9D2JPGT9DUTFK00FM.html?ref=rss"
     },
     {
-      "id": "dyn-20250911-news-livedoor-com-article-detail-29557407-",
-      "title": "昇進できない理由が「他の女性社員の給与を超えちゃう」転職して大正解",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "livedoor 経済",
+      "id": "dyn-20250912-news-yahoo-co-jp-pickup-6552245-source-rss",
+      "title": "公明代表が続投表明 人材難あらわ",
+      "category": "業界トレンド",
+      "categoryClass": "industry",
+      "date": "2025年9月12日",
+      "author": "Yahoo!ニュース 国内",
       "readTimeMin": 3,
       "tags": [
-        "転職"
+        "人材"
       ],
-      "fullContent": "<p>ざっくり言うと\nある50代女性は資格職として入社したが、いつまでも平社員のままだった\n社長は「あなたを昇進させると彼女の給与を超えてしまうから」と説明\n女性は憤り、会社の姿勢に愛想が尽きて転職を決意したという\n記事を読む...</p>",
-      "source": "livedoor 経済",
-      "organization": "livedoor 経済",
-      "period": "2025年9月11日",
+      "fullContent": "<p>...</p>",
+      "source": "Yahoo!ニュース 国内",
+      "organization": "Yahoo!ニュース 国内",
+      "period": "2025年9月12日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.livedoor.com/article/detail/29557407/"
+      "sourceUrl": "https://news.yahoo.co.jp/pickup/6552245?source=rss"
+    },
+    {
+      "id": "dyn-20250912-eulabourlaw-cocolog-nifty-com-blog-2025-09-post-b5fe0e-html",
+      "title": "政治家もメディアも解雇規制を誤解している－問題は法ではなく雇用システム@『中央公論』2024年12月号 - hamachanブログ(EU労働法政策雑記帳)",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月12日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "雇用",
+        "解雇"
+      ],
+      "fullContent": "<p>本日、小泉進次郎氏が自民党総裁選への出馬の意向を固めたと報じられています。 小泉進次郎氏、自民総裁選に立候補の意向固める　来週会見で調整 小泉進次郎農林水産相（44）は12日、自民党総裁選（22日告示、10月4日投開票）に立候補する意向を固め、周囲に伝えた。13日に地元の神奈川県横須賀市で支援者と意見交換し、......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年9月12日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "http://eulabourlaw.cocolog-nifty.com/blog/2025/09/post-b5fe0e.html"
     },
     {
       "id": "dyn-20250911-news-careerconnection-jp-career-general-230524-",
@@ -306,46 +225,25 @@
       "sourceUrl": "https://jinjibu.jp/news/detl/25484/"
     },
     {
-      "id": "dyn-20250910-news-careerconnection-jp-career-general-230496-",
-      "title": "「残業代カットで月5万減」国家資格持ちの30代女性、上司の給料は自分の1.5倍でモチベ上がらず",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月10日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "就職",
-        "年収",
-        "給料"
-      ],
-      "fullContent": "<p>専門的な国家資格を持ち、長年勤め上げてきたとしても、その努力が必ずしも待遇に反映されるわけではないようだ。子ども2人を育てている30代既婚女性（福岡県／年収350万円）は、医療系の国家資格を取得後に就職し、現在は勤続16 […]\nThe post 「残業代カットで月5万減」国家資格持ちの30代女性、上司の給料は自分の1.5倍でモチベ上がらず first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月10日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/230496/"
-    },
-    {
-      "id": "dyn-20250910-news-careerconnection-jp-career-career-change-230412-",
-      "title": "リモート面接で「会社を辞めた理由はなんですか？」と無限ループ質問…「早く終わらないかな」となった男性",
+      "id": "dyn-20250911-anond-hatelabo-jp-20210619170109",
+      "title": "転職で高給で社員にやさしい会社を見つけるための求人票の読み方",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年9月10日",
-      "author": "キャリコネニュース",
+      "date": "2025年9月11日",
+      "author": "はてな 経済ホット",
       "readTimeMin": 3,
       "tags": [
-        "採用"
+        "転職",
+        "求人"
       ],
-      "fullContent": "<p>採用面接では、思わぬ質問をされることもある。しかし、何度も同じ質問をされれば入社の意思も無くなりそうだ。投稿を寄せた茨城県の50代男性（サービス・販売・外食）は、コロナ禍で勤務先が倒産し、仕事を探していた。とある寝具メー […]\nThe post リモート面接で「会社を辞めた理由はなんですか？」と無限ループ質問…「早く終わらないかな」となった男性 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月10日",
+      "fullContent": "<p>■給与 ・給与レンジをよく確認する 300万〜1,200万よりも400〜800万の会社のほうが、ベース給与が高い。 下限が高い会社のほうが昇級しやすい。 ■業界 ・成長産業を選ぶ 成長産業であれば、会社の舵取りがイマイチでも伸びていく。斜陽産業は入るだけで 倒産リスクが高く給与も上がりにくいので絶対に選択してはいけない......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年9月11日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/career-change/230412/"
+      "sourceUrl": "https://anond.hatelabo.jp/20210619170109"
     },
     {
       "id": "dyn-20250910-jinjibu-jp-news-detl-25483-",
