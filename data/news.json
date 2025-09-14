@@ -1,25 +1,66 @@
 {
-  "lastUpdated": "2025-09-13T03:20:35.152Z",
+  "lastUpdated": "2025-09-14T03:32:17.497Z",
   "items": [
     {
-      "id": "dyn-20250913-prtimes-jp-main-html-rd-p-000000377-000071141-html",
-      "title": "敬老の日、シニア人材の再活躍の場を拡大へ　シニアプロフェッショナル人材サービス「Avanti MOH」",
+      "id": "dyn-20250914-prtimes-jp-main-html-rd-p-000000200-000028842-html",
+      "title": "Indeed、週休3日の求人動向・ニーズ変化を調査。「週休3日」ニーズが拡大。5年で求人5.3倍、仕事検索3.6倍に。医療・運輸などリモート困難職種を中心に導入進み、柔軟な働き方の選択肢が拡大",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年9月13日",
+      "date": "2025年9月14日",
       "author": "PR TIMES",
       "readTimeMin": 3,
       "tags": [
-        "人材"
+        "求人",
+        "働き方"
       ],
-      "fullContent": "<p>[パーソルテンプスタッフ株式会社]\n総合人材サービスのパーソルグループの株式会社アヴァンティスタッフ（本社: 東京都中央区、代表取締役社長: 黒川 良太、以下アヴァンティスタッフ）は、2025年9月15日（月・祝）の敬老の日に合わせて、当社のシ......</p>",
+      "fullContent": "<p>[Indeed Japan株式会社]\n世界No.1求人サイト(*1)「Indeed （インディード）」の日本法人であるIndeed Japan株式会社（本社：東京都港区、代表取締役：淺野 健、https://jp.indeed.com(https://jp.indeed.com) 以下 Indeed ）は、「週休3......</p>",
       "source": "PR TIMES",
       "organization": "PR TIMES",
+      "period": "2025年9月14日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000200.000028842.html"
+    },
+    {
+      "id": "dyn-20250913-news-yahoo-co-jp-pickup-6552362-source-rss",
+      "title": "陸自 レンジャー育成教育見直しへ",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月13日",
+      "author": "Yahoo!ニュース 国内",
+      "readTimeMin": 3,
+      "tags": [
+        "育成"
+      ],
+      "fullContent": "<p>...</p>",
+      "source": "Yahoo!ニュース 国内",
+      "organization": "Yahoo!ニュース 国内",
       "period": "2025年9月13日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000377.000071141.html"
+      "sourceUrl": "https://news.yahoo.co.jp/pickup/6552362?source=rss"
+    },
+    {
+      "id": "dyn-20250912-www-nikkei-com-article-DGXZQOGN11D4A0R10C25A9000000-",
+      "title": "トランプ政権、大学に特許収入の一部請求を検討　ベンチャー育成に逆風 - 日本経済新聞",
+      "category": "市場動向",
+      "categoryClass": "market",
+      "date": "2025年9月12日",
+      "author": "はてな 経済ホット",
+      "readTimeMin": 3,
+      "tags": [
+        "育成"
+      ],
+      "fullContent": "<p>【ニューヨーク=西邨紘子】トランプ米政権が政府の助成金を受けた研究による大学の特許収入の一部について、請求を検討していることが分かった。実現すれば米大学発ベンチャーの育成に影響を与えそうだ。ラトニック商務長官が12日までに公開された米ニュースサイト、アクシオスのインタビューで言及した。政府の歳入拡大......</p>",
+      "source": "はてな 経済ホット",
+      "organization": "はてな 経済ホット",
+      "period": "2025年9月12日",
+      "sampleSize": "",
+      "reliability": "中程度",
+      "updateFrequency": "随時",
+      "sourceUrl": "https://www.nikkei.com/article/DGXZQOGN11D4A0R10C25A9000000/"
     },
     {
       "id": "dyn-20250912-www-mhlw-go-jp-stf-newpage-63038-html",
@@ -42,26 +83,6 @@
       "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_63038.html"
     },
     {
-      "id": "dyn-20250912-www-asahi-com-articles-AST9D4V4WT9DUTIL01ZM-html-ref-rss",
-      "title": "元勤務先の役員刺した疑いで逮捕　雇用めぐりトラブルか　東京・赤坂",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月12日",
-      "author": "朝日新聞 速報",
-      "readTimeMin": 3,
-      "tags": [
-        "雇用"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 速報",
-      "organization": "朝日新聞 速報",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "http://www.asahi.com/articles/AST9D4V4WT9DUTIL01ZM.html?ref=rss"
-    },
-    {
       "id": "dyn-20250912-www-asahi-com-articles-AST9D2JPGT9DUTFK00FM-html-ref-rss",
       "title": "国内AI開発、政府が後押しへ　安全保障リスク対応　雇用影響も分析",
       "category": "市場動向",
@@ -82,45 +103,24 @@
       "sourceUrl": "https://www.asahi.com/articles/AST9D2JPGT9DUTFK00FM.html?ref=rss"
     },
     {
-      "id": "dyn-20250912-news-yahoo-co-jp-pickup-6552245-source-rss",
-      "title": "公明代表が続投表明 人材難あらわ",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月12日",
-      "author": "Yahoo!ニュース 国内",
-      "readTimeMin": 3,
-      "tags": [
-        "人材"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "Yahoo!ニュース 国内",
-      "organization": "Yahoo!ニュース 国内",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.yahoo.co.jp/pickup/6552245?source=rss"
-    },
-    {
-      "id": "dyn-20250912-eulabourlaw-cocolog-nifty-com-blog-2025-09-post-b5fe0e-html",
-      "title": "政治家もメディアも解雇規制を誤解している－問題は法ではなく雇用システム@『中央公論』2024年12月号 - hamachanブログ(EU労働法政策雑記帳)",
+      "id": "dyn-20250912-note-com-powerpoint-jp-n-nb7bdac067e21",
+      "title": "【意外？】コンサルから事業会社に転職して、一番の苦労はパワポ作成という話｜パワポ研",
       "category": "市場動向",
       "categoryClass": "market",
       "date": "2025年9月12日",
       "author": "はてな 経済ホット",
       "readTimeMin": 3,
       "tags": [
-        "雇用",
-        "解雇"
+        "転職"
       ],
-      "fullContent": "<p>本日、小泉進次郎氏が自民党総裁選への出馬の意向を固めたと報じられています。 小泉進次郎氏、自民総裁選に立候補の意向固める　来週会見で調整 小泉進次郎農林水産相（44）は12日、自民党総裁選（22日告示、10月4日投開票）に立候補する意向を固め、周囲に伝えた。13日に地元の神奈川県横須賀市で支援者と意見交換し、......</p>",
+      "fullContent": "<p>みなさんこんにちは。 資料デザインのリサーチや分析に取り組むパワーポイントのスペシャリスト、パワポ研です。 今日は少し趣向を変えて、先日コンサルファームから日系事業会社（いわゆるJTC）に転職した友人から聞いた話を紹介しようと思います。 そんな話は興味がないので良質なパワポを見せて！という方はこちらの......</p>",
       "source": "はてな 経済ホット",
       "organization": "はてな 経済ホット",
       "period": "2025年9月12日",
       "sampleSize": "",
       "reliability": "中程度",
       "updateFrequency": "随時",
-      "sourceUrl": "http://eulabourlaw.cocolog-nifty.com/blog/2025/09/post-b5fe0e.html"
+      "sourceUrl": "https://note.com/powerpoint_jp/n/nb7bdac067e21"
     },
     {
       "id": "dyn-20250911-news-careerconnection-jp-career-general-230524-",
@@ -164,26 +164,6 @@
       "sourceUrl": "https://news.careerconnection.jp/career/general/230507/"
     },
     {
-      "id": "dyn-20250911-news-careerconnection-jp-career-228072-",
-      "title": "【9/11更新　あなたの投稿募集中！】年収いくら？満足していますか？／手柄を横取りされたエピソード／面接で言われた衝撃的な言葉／電車で寝過ごした、など",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>いつもご愛読ありがとうございます。 あなたの周りで起きた「えっ！」と驚くような出来事、「もう許せない！」と感じた瞬間、誰かに話したいと思っていることはありませんか？ キャリコネニュース編集部では現在、読者投稿を募集してい […]\nThe post 【9/11更新　あなたの投稿募集中！】年収いくら？満足していますか？／手柄を横取りされたエピソード／面接で言われた衝撃的な言葉／電車で寝過ごした、など first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/228072/"
-    },
-    {
       "id": "dyn-20250911-jinjibu-jp-news-detl-25502-",
       "title": "「ミドル・シニア人材の採用」に関する意識調査",
       "category": "業界トレンド",
@@ -223,27 +203,6 @@
       "reliability": "中程度",
       "updateFrequency": "随時",
       "sourceUrl": "https://jinjibu.jp/news/detl/25484/"
-    },
-    {
-      "id": "dyn-20250911-anond-hatelabo-jp-20210619170109",
-      "title": "転職で高給で社員にやさしい会社を見つけるための求人票の読み方",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月11日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "求人"
-      ],
-      "fullContent": "<p>■給与 ・給与レンジをよく確認する 300万〜1,200万よりも400〜800万の会社のほうが、ベース給与が高い。 下限が高い会社のほうが昇級しやすい。 ■業界 ・成長産業を選ぶ 成長産業であれば、会社の舵取りがイマイチでも伸びていく。斜陽産業は入るだけで 倒産リスクが高く給与も上がりにくいので絶対に選択してはいけない......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://anond.hatelabo.jp/20210619170109"
     },
     {
       "id": "dyn-20250910-jinjibu-jp-news-detl-25483-",
