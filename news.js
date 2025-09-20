@@ -8,9 +8,20 @@
     items: [],
     highlights: [],
     watchlist: [],
+    hasCustomBrief: false,
+  };
+
+  const ui = {
+    briefButton: null,
+    briefOutput: null,
+    briefStatus: null,
+    watchlistStatus: null,
+    clearWatchlist: null,
   };
 
   document.addEventListener('DOMContentLoaded', () => {
+    captureUi();
+    setBriefAvailability(false, 'データ読み込み中です…');
     loadWatchlist();
     wireFilters();
     wireSearch();
@@ -20,16 +31,28 @@
     fetchNews();
   });
 
+  function captureUi(){
+    ui.briefButton = document.getElementById('generate-brief');
+    ui.briefOutput = document.getElementById('brief-output');
+    ui.briefStatus = document.getElementById('brief-status');
+    ui.watchlistStatus = document.getElementById('watchlist-status');
+    ui.clearWatchlist = document.getElementById('clear-watchlist');
+  }
+
   function loadWatchlist(){
     try {
       state.watchlist = JSON.parse(localStorage.getItem(NEWS_KEY)) || [];
-    } catch { state.watchlist = []; }
+    } catch {
+      state.watchlist = [];
+    }
     renderWatchlist();
+    updateWatchlistStatus();
   }
 
-  function saveWatchlist(){
+  function saveWatchlist(feedback){
     localStorage.setItem(NEWS_KEY, JSON.stringify(state.watchlist));
     renderWatchlist();
+    updateWatchlistStatus(feedback);
   }
 
   function wireFilters(){
@@ -75,39 +98,28 @@
   }
 
   function wireBriefGenerator(){
-    const button = document.getElementById('generate-brief');
-    if(!button) return;
-    button.addEventListener('click', () => {
+    if(!ui.briefButton || !ui.briefOutput) return;
+    ui.briefButton.addEventListener('click', () => {
       const list = getFilteredItems();
-      const target = document.getElementById('brief-output');
-      if(!target) return;
       if(!list.length){
-        target.value = '該当する記事がありません。カテゴリや検索条件を調整してください。';
+        ui.briefOutput.value = '該当する記事がありません。カテゴリや検索条件を調整してください。';
+        updateBriefStatus('条件に合う記事が見つかりませんでした。');
         return;
       }
       const top = list[0];
-      const insight = `${top.tags?.join(' / ') || '---'} | 信頼度: ${top.reliability || '---'}`;
-      const employer = top.actionItems?.employer || '---';
-      const candidate = top.actionItems?.candidate || '---';
-      const summary = top.summary || strip(top.fullContent).slice(0, 140) + '…';
-      target.value = BRIEF_TEMPLATE
-        .replace('{title}', top.title || '---')
-        .replace('{summary}', summary)
-        .replace('{insight}', insight)
-        .replace('{employer}', employer)
-        .replace('{candidate}', candidate);
-      target.focus();
+      ui.briefOutput.value = buildBrief(top);
+      ui.briefOutput.focus();
+      state.hasCustomBrief = true;
+      updateBriefStatus(`「${top.title || '最新ニュース'}」を元にブリーフを生成しました。`);
     });
   }
 
   function wireWatchlistControls(){
-    const clearBtn = document.getElementById('clear-watchlist');
-    if(clearBtn){
-      clearBtn.addEventListener('click', () => {
-        state.watchlist = [];
-        saveWatchlist();
-      });
-    }
+    if(!ui.clearWatchlist) return;
+    ui.clearWatchlist.addEventListener('click', () => {
+      state.watchlist = [];
+      saveWatchlist('ウォッチリストを空にしました。');
+    });
   }
 
   async function fetchNews(){
@@ -121,10 +133,26 @@
       renderHighlights();
       renderNews();
       injectJsonLd(state.items);
+      if(state.items.length){
+        setBriefAvailability(true, '最新の記事を元にブリーフを作成できます。');
+        if(!state.hasCustomBrief && ui.briefOutput){
+          ui.briefOutput.value = buildBrief(state.items[0]);
+          updateBriefStatus(`「${state.items[0].title || '最新ニュース'}」のサマリーをプレビュー表示中です。`);
+        }
+      } else {
+        setBriefAvailability(false, '記事データを取得できませんでした。');
+        if(ui.briefOutput && !state.hasCustomBrief){
+          ui.briefOutput.value = '最新の記事情報が取得できませんでした。';
+        }
+      }
     } catch (err){
       console.error(err);
       state.items = [];
       renderNews();
+      setBriefAvailability(false, 'ニュースデータの取得に失敗しました。再読み込みしてください。');
+      if(ui.briefOutput && !state.hasCustomBrief){
+        ui.briefOutput.value = 'ニュースデータの取得に失敗しました。再読み込みしてください。';
+      }
     }
   }
 
@@ -177,7 +205,7 @@
 
   function renderCard(item){
     const tags = (item.tags || []).map(t => `<span class="category-tag">${escape(t)}</span>`).join(' ');
-    const summary = item.summary || strip(item.fullContent || '').slice(0, 140) + '…';
+    const summary = item.summary || `${strip(item.fullContent || '').slice(0, 140)}…`;
     const source = item.source || '---';
     return `
       <article class="news-card" data-id="${escape(item.id)}">
@@ -236,17 +264,29 @@
 
   function addToWatchlist(id){
     const item = state.items.find(x => x.id === id);
-    if(!item) return;
-    if(state.watchlist.some(w => w.id === id)) return;
-    state.watchlist.push({ id, title: item.title, date: item.date, source: item.source });
-    saveWatchlist();
+    if(!item){
+      updateWatchlistStatus('記事データを取得できませんでした。');
+      return;
+    }
+    if(state.watchlist.some(w => w.id === id)){
+      updateWatchlistStatus('すでにウォッチリストに保存されています。');
+      return;
+    }
+    state.watchlist.push({
+      id,
+      title: item.title,
+      date: item.date,
+      source: item.source,
+      addedAt: new Date().toISOString(),
+    });
+    saveWatchlist(`「${item.title || '記事'}」を保存しました。`);
   }
 
   function renderWatchlist(){
     const list = document.getElementById('watchlist');
     if(!list) return;
     if(!state.watchlist.length){
-      list.innerHTML = '<li class="muted">ウォッチリストは空です。</li>';
+      list.innerHTML = '<li class="muted">保存された記事はまだありません。</li>';
       return;
     }
     list.innerHTML = state.watchlist.map((item, index) => `
@@ -262,9 +302,66 @@
       btn.addEventListener('click', () => {
         const idx = Number(btn.dataset.index);
         state.watchlist.splice(idx, 1);
-        saveWatchlist();
+        saveWatchlist('ウォッチリストから削除しました。');
       });
     });
+  }
+
+  function updateWatchlistStatus(message){
+    if(ui.watchlistStatus){
+      if(message){
+        ui.watchlistStatus.textContent = message;
+      } else if(state.watchlist.length){
+        ui.watchlistStatus.textContent = `保存件数: ${state.watchlist.length} 件`;
+      } else {
+        ui.watchlistStatus.textContent = 'ウォッチリストに追加するとここに表示されます。';
+      }
+    }
+    if(ui.clearWatchlist){
+      const disabled = state.watchlist.length === 0;
+      ui.clearWatchlist.disabled = disabled;
+      ui.clearWatchlist.setAttribute('aria-disabled', String(disabled));
+    }
+  }
+
+  function setBriefAvailability(enabled, message){
+    if(ui.briefButton){
+      ui.briefButton.disabled = !enabled;
+      ui.briefButton.setAttribute('aria-disabled', String(!enabled));
+    }
+    if(message) updateBriefStatus(message);
+  }
+
+  function updateBriefStatus(message){
+    if(ui.briefStatus && message){
+      ui.briefStatus.textContent = message;
+    }
+  }
+
+  function buildBrief(item){
+    if(!item) return '最新の記事情報が取得できませんでした。';
+    const summary = (item.summary && item.summary.trim()) || `${strip(item.fullContent || '').slice(0, 150)}…`;
+    const bits = [];
+    if(item.tags?.length) bits.push(item.tags.join(' / '));
+    if(item.category) bits.push(`カテゴリ: ${item.category}`);
+    if(item.reliability) bits.push(`信頼度: ${item.reliability}`);
+    const insight = bits.join(' | ') || '---';
+    const employer = item.actionItems?.employer || '採用側の次のアクションを追記してください。';
+    const candidate = item.actionItems?.candidate || '候補者向けの示唆を追記してください。';
+    const title = `${item.title || '最新ニュース'}（${formatDateLabel(item.date)}）`;
+    return BRIEF_TEMPLATE
+      .replace('{title}', title)
+      .replace('{summary}', summary)
+      .replace('{insight}', insight)
+      .replace('{employer}', employer)
+      .replace('{candidate}', candidate);
+  }
+
+  function formatDateLabel(dateLike){
+    if(!dateLike) return '';
+    const d = new Date(dateLike);
+    if(Number.isNaN(d.getTime())) return dateLike;
+    return `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`;
   }
 
   function injectJsonLd(items){
