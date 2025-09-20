@@ -1,107 +1,295 @@
-// News page interactions (clean UTF-8)
+﻿(() => {
+  const NEWS_KEY = 'careerHorizon:newsWatchlist';
+  const BRIEF_TEMPLATE = `【主要トピック】\n{title}\n\n【要約】\n{summary}\n\n【注目指標】\n{insight}\n\n【次のアクション】\n- 企業側: {employer}\n- 候補者側: {candidate}`;
 
-document.addEventListener('DOMContentLoaded', () => {
-  initializeMobileNav();
-  initializeNews();
-});
+  const state = {
+    category: 'all',
+    search: '',
+    items: [],
+    highlights: [],
+    watchlist: [],
+  };
 
-function initializeMobileNav(){
-  const mobileMenu=document.getElementById('mobile-menu'); const navMenu=document.querySelector('.nav-menu');
-  if(mobileMenu&&navMenu){ mobileMenu.addEventListener('click',()=>navMenu.classList.toggle('active')); document.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click',()=>navMenu.classList.remove('active'))); }
-}
-
-let __category='all', __subcategory='all', __items=[];
-function initializeNews(){
-  wireFilters(); wireSearch(); wireLoadMore(); injectStructuredData(); fetchDynamicNews();
-}
-
-function wireFilters(){
-  const cats=document.querySelectorAll('.news-categories .category-btn'); const subWrap=document.getElementById('employment-subcategories'); const subs=subWrap? subWrap.querySelectorAll('.subcategory-btn'): [];
-  cats.forEach(btn=>btn.addEventListener('click',function(){ __category=this.dataset.category||'all'; cats.forEach(b=>b.classList.remove('active')); this.classList.add('active'); if(__category==='employment'&&subWrap){ subWrap.style.display=''; } else if(subWrap){ subWrap.style.display='none'; __subcategory='all'; subs.forEach(s=>s.classList.remove('active')); subWrap.querySelector('[data-subcategory="all"]').classList.add('active'); } renderNews(); }));
-  subs.forEach(btn=>btn.addEventListener('click',function(){ __subcategory=this.dataset.subcategory||'all'; subs.forEach(s=>s.classList.remove('active')); this.classList.add('active'); renderNews(); }));
-}
-
-function wireSearch(){
-  const input=document.querySelector('.search-input'); const result=document.getElementById('search-result'); if(!input) return;
-  input.addEventListener('keydown',e=>{ if(e.key==='Enter'){ renderNews(input.value.trim()); }});
-  input.addEventListener('search',()=>{ input.value=''; result.textContent=''; renderNews(); });
-}
-
-function wireLoadMore(){ const btn=document.querySelector('.load-more-btn'); if(!btn) return; btn.addEventListener('click',function(){ this.textContent='読み込み中...'; this.disabled=true; setTimeout(()=>{ appendMore(); this.textContent='さらに記事を読み込む'; this.disabled=false; },1000); }); }
-
-function injectStructuredData(){
-  // Lightweight site-level JSON-LD example
-  const ld = { '@context':'https://schema.org', '@type':'WebSite', name:'Career Horizon', url: location.origin+location.pathname };
-  const s = document.createElement('script'); s.type='application/ld+json'; s.textContent=JSON.stringify(ld); document.head.appendChild(s);
-}
-
-async function fetchDynamicNews(){
-  try {
-    const r = await fetch('data/news.json', { cache:'no-cache' });
-    if(!r.ok) throw new Error('HTTP '+r.status);
-    const db = await r.json();
-    __items = Array.isArray(db.items)? db.items : [];
-    const up = document.querySelector('.update-time'); if (db.lastUpdated && up) up.textContent = `最終更新: ${new Date(db.lastUpdated).toLocaleString()}`;
-    renderNews();
-  } catch(e) {
-    __items = [];
-    renderNews();
-  }
-}
-
-function renderNews(query=''){
-  const grid=document.getElementById('news-grid'); const input=document.querySelector('.search-input'); const result=document.getElementById('search-result'); if(!grid) return;
-  const q = (query||'').toLowerCase();
-  const filtered = (__items||[]).filter(it=>{
-    const catOk = __category==='all' || (it.categoryClass||'').toLowerCase()===__category;
-    const subOk = __category!=='employment' || __subcategory==='all' || (it.subcategory||'')===__subcategory;
-    const text = `${it.title||''} ${stripTags(it.fullContent||'')}`.toLowerCase();
-    const queryOk = !q || text.includes(q);
-    return catOk && subOk && queryOk;
+  document.addEventListener('DOMContentLoaded', () => {
+    loadWatchlist();
+    wireFilters();
+    wireSearch();
+    wireNewsletter();
+    wireBriefGenerator();
+    wireWatchlistControls();
+    fetchNews();
   });
-  grid.innerHTML = filtered.slice(0,20).map(renderCard).join('');
-  if(result){ result.textContent = q? `${filtered.length}件ヒット` : ''; }
-  // Reset tag filters area
-  const tagsArea=document.getElementById('tag-filters'); tagsArea && (tagsArea.innerHTML='');
-}
 
-function renderCard(it){
-  const cat = it.category || 'ニュース'; const catClass = it.categoryClass || 'market';
-  const date = it.date || '';
-  return `
-    <article class="news-card" data-category="${catClass}">
-      <div class="news-image"><div class="placeholder-image">📰</div></div>
-      <div class="news-content">
-        <div class="news-meta"><span class="category-tag ${catClass}">${cat}</span><span class="news-date">${date}</span></div>
-        <h3>${escapeHtml(it.title||'無題')}</h3>
-        <p>${truncate(stripTags(it.fullContent||''), 120)}</p>
-        <div class="news-actions">
-          <a href="#" class="read-more" onclick="openFullArticle(event, '${it.id||''}')">続きを読む →</a>
-          ${it.sourceUrl? `<a class="source-btn" href="${it.sourceUrl}" target="_blank" rel="noopener">出典</a>`:''}
+  function loadWatchlist(){
+    try {
+      state.watchlist = JSON.parse(localStorage.getItem(NEWS_KEY)) || [];
+    } catch { state.watchlist = []; }
+    renderWatchlist();
+  }
+
+  function saveWatchlist(){
+    localStorage.setItem(NEWS_KEY, JSON.stringify(state.watchlist));
+    renderWatchlist();
+  }
+
+  function wireFilters(){
+    document.querySelectorAll('#category-chips .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('#category-chips .chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        state.category = chip.dataset.category || 'all';
+        renderNews();
+      });
+    });
+  }
+
+  function wireSearch(){
+    const input = document.getElementById('news-search-input');
+    if(!input) return;
+    input.addEventListener('keydown', ev => {
+      if(ev.key === 'Enter'){
+        state.search = input.value.trim().toLowerCase();
+        renderNews();
+      } else if(ev.key === 'Escape'){
+        input.value = '';
+        state.search = '';
+        renderNews();
+      }
+    });
+  }
+
+  function wireNewsletter(){
+    const form = document.getElementById('news-newsletter');
+    const status = document.getElementById('news-newsletter-status');
+    if(!form || !status) return;
+    form.addEventListener('submit', ev => {
+      ev.preventDefault();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        status.textContent = 'メールアドレスの形式をご確認ください。';
+        return;
+      }
+      status.textContent = '登録しました。最新の週次レポートをお届けします。';
+      form.reset();
+    });
+  }
+
+  function wireBriefGenerator(){
+    const button = document.getElementById('generate-brief');
+    if(!button) return;
+    button.addEventListener('click', () => {
+      const list = getFilteredItems();
+      const target = document.getElementById('brief-output');
+      if(!target) return;
+      if(!list.length){
+        target.value = '該当する記事がありません。カテゴリや検索条件を調整してください。';
+        return;
+      }
+      const top = list[0];
+      const insight = `${top.tags?.join(' / ') || '---'} | 信頼度: ${top.reliability || '---'}`;
+      const employer = top.actionItems?.employer || '---';
+      const candidate = top.actionItems?.candidate || '---';
+      const summary = top.summary || strip(top.fullContent).slice(0, 140) + '…';
+      target.value = BRIEF_TEMPLATE
+        .replace('{title}', top.title || '---')
+        .replace('{summary}', summary)
+        .replace('{insight}', insight)
+        .replace('{employer}', employer)
+        .replace('{candidate}', candidate);
+      target.focus();
+    });
+  }
+
+  function wireWatchlistControls(){
+    const clearBtn = document.getElementById('clear-watchlist');
+    if(clearBtn){
+      clearBtn.addEventListener('click', () => {
+        state.watchlist = [];
+        saveWatchlist();
+      });
+    }
+  }
+
+  async function fetchNews(){
+    try {
+      const res = await fetch('data/news.json', { cache: 'no-cache' });
+      if(!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      state.items = Array.isArray(data.items) ? data.items : [];
+      state.highlights = Array.isArray(data.highlights) ? data.highlights : [];
+      updateMeta(data);
+      renderHighlights();
+      renderNews();
+      injectJsonLd(state.items);
+    } catch (err){
+      console.error(err);
+      state.items = [];
+      renderNews();
+    }
+  }
+
+  function updateMeta(data){
+    const updated = document.getElementById('news-lastUpdated');
+    if(updated && data.lastUpdated){
+      const d = new Date(data.lastUpdated);
+      if(!Number.isNaN(d.getTime())){
+        updated.textContent = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日 ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+      }
+    }
+  }
+
+  function renderHighlights(){
+    const container = document.getElementById('editorial-highlights');
+    if(!container) return;
+    if(!state.highlights.length){
+      container.innerHTML = '<article class="summary-card"><h3>ハイライトは準備中です</h3><p class="muted">最新データの取り込み後に更新されます。</p></article>';
+      return;
+    }
+    container.innerHTML = state.highlights.map(h => `
+      <article class="summary-card">
+        <h3>${escape(h.title)}</h3>
+        <p>${escape(h.summary)}</p>
+        ${h.link ? `<a class="arrow-link" href="${h.link}" target="_blank" rel="noopener">一次ソースを見る →</a>` : ''}
+      </article>
+    `).join('');
+  }
+
+  function renderNews(){
+    const grid = document.getElementById('news-grid');
+    if(!grid) return;
+    const list = getFilteredItems();
+    if(!list.length){
+      grid.innerHTML = '<p class="muted">該当する記事が見つかりませんでした。</p>';
+      return;
+    }
+    grid.innerHTML = list.map(renderCard).join('');
+    wireCardActions();
+  }
+
+  function getFilteredItems(){
+    return state.items.filter(item => {
+      const categoryOk = state.category === 'all' || (item.categoryClass || '').toLowerCase() === state.category;
+      const searchSource = `${item.title || ''} ${item.summary || ''} ${strip(item.fullContent || '')}`.toLowerCase();
+      const searchOk = !state.search || searchSource.includes(state.search);
+      return categoryOk && searchOk;
+    });
+  }
+
+  function renderCard(item){
+    const tags = (item.tags || []).map(t => `<span class="category-tag">${escape(t)}</span>`).join(' ');
+    const summary = item.summary || strip(item.fullContent || '').slice(0, 140) + '…';
+    const source = item.source || '---';
+    return `
+      <article class="news-card" data-id="${escape(item.id)}">
+        <div class="news-image">📰</div>
+        <div class="news-content">
+          <div class="news-meta">
+            <span>${escape(item.category || 'ニュース')}</span>
+            <span class="news-date">${escape(item.date || '')}</span>
+          </div>
+          <h3>${escape(item.title || 'タイトル未設定')}</h3>
+          <p>${escape(summary)}</p>
+          <div class="small-text">${tags || '<span class="muted">タグ未設定</span>'}</div>
+          <div class="small-text">信頼度: ${escape(item.reliability || '---')} / 出典: ${escape(source)}</div>
+          <div class="news-actions">
+            <button class="ghost-btn" data-action="read" type="button">続きを読む</button>
+            <button class="ghost-btn" data-action="watch" type="button">ウォッチリストに追加</button>
+            ${item.sourceUrl ? `<a class="source-btn" href="${item.sourceUrl}" target="_blank" rel="noopener">出典を見る</a>` : ''}
+          </div>
         </div>
-      </div>
-    </article>`;
-}
+      </article>
+    `;
+  }
 
-function appendMore(){
-  const grid=document.getElementById('news-grid'); const current=grid.children.length; const more=__items.slice(current, current+10); grid.insertAdjacentHTML('beforeend', more.map(renderCard).join(''));
-}
+  function wireCardActions(){
+    document.querySelectorAll('.news-card').forEach(card => {
+      const id = card.dataset.id;
+      card.querySelectorAll('[data-action]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if(btn.dataset.action === 'read') openArticle(id);
+          if(btn.dataset.action === 'watch') addToWatchlist(id);
+        });
+      });
+    });
+  }
 
-// Modal
-function openFullArticle(e, id){ e?.preventDefault(); const item = (__items||[]).find(x=>x.id===id); if(!item) return; const modal=document.getElementById('articleModal'); const t=document.getElementById('modalTitle'); const b=document.getElementById('modalBody'); t.textContent=item.title||'無題'; b.innerHTML=item.fullContent||''; modal.style.display='block'; document.body.style.overflow='hidden'; setupFocusTrap(modal); }
-function closeModal(){ const modal=document.getElementById('articleModal'); if(modal){ modal.style.display='none'; document.body.style.overflow=''; }}
-function showPageSource(){ openFullArticle(null, null); const t=document.getElementById('modalTitle'); const b=document.getElementById('modalBody'); t.textContent='ページ情報'; b.innerHTML='<p>このページは data/news.json を読み込み、カテゴリ/タグでのフィルタとモーダル表示を提供します。</p>'; document.getElementById('articleModal').style.display='block'; }
-function showStructuredData(){ const s = Array.from(document.querySelectorAll('script[type="application/ld+json"]')).map(n=>n.textContent).join('\n'); openFullArticle(null,null); document.getElementById('modalTitle').textContent='構造化データ（JSON-LD）'; document.getElementById('modalBody').innerHTML = `<pre style="white-space:pre-wrap">${escapeHtml(s||'（なし）')}</pre>`; }
-function setupFocusTrap(modal){ const f=modal.querySelectorAll('a,button,input,select,textarea,[tabindex]'); const first=f[0], last=f[f.length-1]; modal.addEventListener('keydown',e=>{ if(e.key==='Tab'){ if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); } } if(e.key==='Escape'){ closeModal(); } }); first?.focus(); }
+  function openArticle(id){
+    const modal = document.getElementById('article-modal');
+    const titleEl = document.getElementById('article-modal-title');
+    const bodyEl = document.getElementById('article-modal-body');
+    if(!modal || !titleEl || !bodyEl) return;
+    const item = state.items.find(x => x.id === id);
+    if(!item){
+      bodyEl.innerHTML = '<p>記事データを取得できませんでした。</p>';
+    } else {
+      titleEl.textContent = item.title || '記事詳細';
+      bodyEl.innerHTML = `
+        <p class="small-text">${escape(item.date || '')} / ${escape(item.source || '')}</p>
+        <p>${escape(item.summary || '')}</p>
+        ${item.editorComment ? `<p><strong>編集部コメント:</strong> ${escape(item.editorComment)}</p>` : ''}
+        ${item.actionItems ? `<ul><li><strong>企業側:</strong> ${escape(item.actionItems.employer || '')}</li><li><strong>候補者側:</strong> ${escape(item.actionItems.candidate || '')}</li></ul>` : ''}
+        ${item.fullContent || '<p>本文の詳細は準備中です。</p>'}
+      `;
+    }
+    window.CareerSite?.openModal(modal);
+  }
 
-// Utils
-function stripTags(html){ const tmp=document.createElement('div'); tmp.innerHTML=html; return tmp.textContent||tmp.innerText||''; }
-function escapeHtml(s){ return (s||'').replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c])); }
-function truncate(s,n){ if(!s) return ''; if(s.length<=n) return s; return s.slice(0,n-1)+'…'; }
+  function addToWatchlist(id){
+    const item = state.items.find(x => x.id === id);
+    if(!item) return;
+    if(state.watchlist.some(w => w.id === id)) return;
+    state.watchlist.push({ id, title: item.title, date: item.date, source: item.source });
+    saveWatchlist();
+  }
 
-// expose for onclick
-window.openFullArticle = openFullArticle;
-window.closeModal = closeModal;
-window.showPageSource = showPageSource;
-window.showStructuredData = showStructuredData;
+  function renderWatchlist(){
+    const list = document.getElementById('watchlist');
+    if(!list) return;
+    if(!state.watchlist.length){
+      list.innerHTML = '<li class="muted">ウォッチリストは空です。</li>';
+      return;
+    }
+    list.innerHTML = state.watchlist.map((item, index) => `
+      <li class="bookmark-list-item">
+        <div>
+          <strong>${escape(item.title || '')}</strong>
+          <div class="small-text">${escape(item.date || '')} / ${escape(item.source || '')}</div>
+        </div>
+        <button class="ghost-btn" data-index="${index}" type="button">削除</button>
+      </li>
+    `).join('');
+    list.querySelectorAll('button[data-index]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.index);
+        state.watchlist.splice(idx, 1);
+        saveWatchlist();
+      });
+    });
+  }
 
+  function injectJsonLd(items){
+    const target = document.getElementById('news-jsonld');
+    if(!target) return;
+    const articles = items.slice(0, 10).map(item => ({
+      '@type': 'NewsArticle',
+      headline: item.title,
+      datePublished: item.date,
+      author: item.author ? { '@type': 'Person', name: item.author } : undefined,
+      publisher: item.source || 'Career Horizon',
+      url: item.sourceUrl || 'https://career-horizon.example/news',
+      description: item.summary || strip(item.fullContent || '').slice(0, 120)
+    }));
+    target.textContent = JSON.stringify({ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: articles });
+  }
+
+  function strip(html){
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  }
+
+  function escape(text){
+    if(text == null) return '';
+    return String(text).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+  }
+})();

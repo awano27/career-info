@@ -1,109 +1,314 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>転職市場インサイト | Career Horizon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>キャリア市場ダッシュボード | Career Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <script defer src="scripts/site.js"></script>
+  <script defer src="dashboard.js"></script>
 </head>
-<body>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main">コンテンツへスキップ</a>
   <header class="header">
-    <nav class="nav">
-      <div class="nav-brand"><h1>Career Horizon</h1></div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link active">ダッシュボード</a></li>
-        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
-        <li><a href="docs/requirements.html" class="nav-link">要件定義書</a></li>
-        <li><a href="docs/requirements_v2.html" class="nav-link">要件定義 v2</a></li>
-        <li><a href="resources.html" class="nav-link">リソース</a></li>
-        <li><a href="glossary.html" class="nav-link">用語集/FAQ</a></li>
-        <li><a href="tools.html" class="nav-link">ツール</a></li>
-        <li><a href="companies.html" class="nav-link">企業研究</a></li>
+    <nav class="nav" aria-label="メインメニュー">
+      <div class="nav-brand"><a href="index.html">Career Horizon</a></div>
+      <button class="nav-toggle" id="mobile-menu" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">メニューを開閉</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation">
+        <li><a class="nav-link" data-nav="dashboard" href="index.html">ダッシュボード</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html">ニュース</a></li>
+        <li><a class="nav-link" data-nav="companies" href="companies.html">企業研究</a></li>
+        <li><a class="nav-link" data-nav="resources" href="resources.html">リソース</a></li>
+        <li><a class="nav-link" data-nav="tools" href="tools.html">ツール</a></li>
+        <li><a class="nav-link" data-nav="requirements" href="docs/requirements_v2.html">要件定義</a></li>
+        <li><a class="nav-link" data-nav="glossary" href="glossary.html">用語集</a></li>
       </ul>
-      <div class="nav-toggle" id="mobile-menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </div>
     </nav>
   </header>
 
-  <main class="main-content">
-    <div class="dashboard-header">
-      <h2>転職市場KPIダッシュボード</h2>
-      <p class="update-time">最終更新: —</p>
+  <main class="main-content" id="main">
+    <section class="page-intro" aria-labelledby="dashboard-title">
+      <p class="eyebrow">WEEKLY UPDATE</p>
+      <h1 class="page-title" id="dashboard-title">転職市場 KPI ダッシュボード</h1>
+      <p class="lead">公開統計と求人データを横断して、採用・転職の判断に必要な指標をまとめています。フィルターを切り替えると、自分の業種や地域に合わせた数字に更新されます。</p>
+      <p class="update-time" aria-live="polite">最終更新: <span id="lastUpdated">読込中...</span></p>
       <div class="header-actions">
-        <button class="view-source-btn" onclick="showDashboardSource()">📄 ページソース表示</button>
+        <button class="view-source-btn" type="button" data-modal-trigger="definition-modal">📄 データ仕様</button>
+        <a class="view-source-btn" href="data/kpi.json" download>📥 JSON をダウンロード</a>
+        <a class="view-source-btn" href="docs/requirements_v2.html">🧭 プロダクト要件</a>
       </div>
-      <div class="data-sources">
-        <h4>データソース</h4>
-        <ul id="dataSourceList"></ul>
-      </div>
-      <div class="data-tools" style="margin-top: .75rem;">
-        <a class="download-btn" href="data/kpi.json" download>JSONをダウンロード</a>
-        <a class="download-btn" href="data/kpi_job_ratio.csv" download>求人倍率CSV</a>
-        <a class="download-btn" href="data/salary_by_industry.csv" download>業界別年収CSV</a>
-        <a class="download-btn" href="data/region_job_share.csv" download>地域別求人数CSV</a>
-        <a class="download-btn" href="data/success_rate_by_age.csv" download>年代別成功率CSV</a>
-      </div>
-    </div>
+      <aside class="data-sources" aria-label="参照元">
+        <h2>データソース</h2>
+        <ul id="dataSourceList" class="data-source-list">
+          <li>統計データを読み込み中...</li>
+        </ul>
+        <p class="muted small-text">各カードの ℹ️ から定義と算出方法を確認できます。</p>
+      </aside>
+    </section>
 
-    <div class="kpi-grid">
-      <div class="kpi-card">
-        <div class="kpi-header"><h3>有効求人倍率</h3><span class="kpi-trend up">↗</span></div>
-        <div class="kpi-value">—</div>
-        <div class="kpi-change">—</div>
+    <section class="filter-panel" aria-labelledby="filter-heading">
+      <div class="section-header">
+        <h2 id="filter-heading">対象を絞り込む</h2>
+        <p>業種・地域・経験年数を選ぶと、KPIカードとチャートが再計算されます。選択内容はブラウザに保存され、次回アクセス時に復元されます。</p>
       </div>
-      <div class="kpi-card">
-        <div class="kpi-header"><h3>平均年収</h3><span class="kpi-trend up">↗</span></div>
-        <div class="kpi-value">—</div>
-        <div class="kpi-change">—</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-header"><h3>転職成功率</h3><span class="kpi-trend stable">→</span></div>
-        <div class="kpi-value">—</div>
-        <div class="kpi-change">—</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-header"><h3>新規求人数</h3><span class="kpi-trend up">↗</span></div>
-        <div class="kpi-value">—</div>
-        <div class="kpi-change">—</div>
-      </div>
-    </div>
+      <form id="dashboard-filters" class="filter-form" data-autosave="dashboardFilters">
+        <label class="filter-control">
+          <span>業種</span>
+          <select name="industry" id="filter-industry" aria-label="業種">
+            <option value="all">全体平均</option>
+            <option value="it">IT・通信</option>
+            <option value="finance">金融・保険</option>
+            <option value="manufacturing">製造</option>
+            <option value="services">サービス</option>
+          </select>
+        </label>
+        <label class="filter-control">
+          <span>地域</span>
+          <select name="region" id="filter-region" aria-label="地域">
+            <option value="all">全国</option>
+            <option value="kanto">関東</option>
+            <option value="kansai">関西</option>
+            <option value="chubu">中部</option>
+            <option value="tohoku">東北</option>
+            <option value="kyushu">九州</option>
+          </select>
+        </label>
+        <label class="filter-control">
+          <span>経験年数</span>
+          <select name="experience" id="filter-experience" aria-label="経験年数">
+            <option value="all">全体</option>
+            <option value="junior">20代</option>
+            <option value="mid">30代</option>
+            <option value="senior">40代</option>
+          </select>
+        </label>
+        <div class="filter-actions">
+          <button class="primary-btn" type="submit">フィルターを適用</button>
+          <button class="ghost-btn" type="button" id="reset-filters">条件をリセット</button>
+        </div>
+      </form>
+    </section>
 
-    <div class="chart-grid">
-      <div class="chart-container"><h3>求人倍率推移</h3><canvas id="jobRatioChart"></canvas></div>
-      <div class="chart-container"><h3>業界別平均年収</h3><canvas id="salaryChart"></canvas></div>
-      <div class="chart-container"><h3>地域別求人数</h3><canvas id="regionChart"></canvas></div>
-      <div class="chart-container"><h3>年代別転職成功率</h3><canvas id="ageChart"></canvas></div>
-    </div>
-
-    <div class="summary-section">
-      <h3>市場概況</h3>
-      <div class="summary-cards">
-        <div class="summary-card"><h4>📈 市場動向</h4><p>IT・DX関連職の需要は高水準。リモートワーク求人も増加傾向です。</p></div>
-        <div class="summary-card"><h4>🎯 注目業界</h4><p>IT・通信、金融・保険、製造が堅調。フィンテック/AI関連の採用が拡大。</p></div>
-        <div class="summary-card"><h4>💼 転職のポイント</h4><p>データ分析・プロジェクト管理・コミュニケーションの3点を強化。</p></div>
+    <section class="kpi-section" aria-labelledby="kpi-heading">
+      <div class="section-header">
+        <h2 id="kpi-heading">主要 KPI</h2>
+        <p>カード右上の指標アイコンから定義と推奨アクションを確認できます。</p>
       </div>
-    </div>
+      <div class="kpi-grid">
+        <article class="kpi-card" data-metric="jobRatio">
+          <header class="kpi-header">
+            <div>
+              <h3>有効求人倍率</h3>
+              <p class="kpi-meta">選択業種: <span data-field="context">全体平均</span></p>
+            </div>
+            <button class="info-button" type="button" aria-label="有効求人倍率の定義" data-definition="jobRatio">ℹ️</button>
+          </header>
+          <p class="kpi-value" data-field="value">--</p>
+          <p class="kpi-change" data-field="change">--</p>
+          <p class="kpi-footnote" data-field="note">全国平均との差: --</p>
+        </article>
+
+        <article class="kpi-card" data-metric="salaryMedian">
+          <header class="kpi-header">
+            <div>
+              <h3>中央値年収</h3>
+              <p class="kpi-meta">万円 / 選択業種・経験</p>
+            </div>
+            <button class="info-button" type="button" aria-label="年収指標の定義" data-definition="salaryMedian">ℹ️</button>
+          </header>
+          <p class="kpi-value" data-field="value">--</p>
+          <p class="kpi-change" data-field="change">--</p>
+          <p class="kpi-footnote" data-field="note">前年比との差: --</p>
+        </article>
+
+        <article class="kpi-card" data-metric="successRate">
+          <header class="kpi-header">
+            <div>
+              <h3>転職成功率</h3>
+              <p class="kpi-meta">内定 / 選考完了</p>
+            </div>
+            <button class="info-button" type="button" aria-label="転職成功率の定義" data-definition="successRate">ℹ️</button>
+          </header>
+          <p class="kpi-value" data-field="value">--</p>
+          <p class="kpi-change" data-field="change">--</p>
+          <p class="kpi-footnote" data-field="note">経験別の到達レンジを表示します。</p>
+        </article>
+
+        <article class="kpi-card" data-metric="newOpenings">
+          <header class="kpi-header">
+            <div>
+              <h3>新規求人数</h3>
+              <p class="kpi-meta">週次登録件数（地域別）</p>
+            </div>
+            <button class="info-button" type="button" aria-label="新規求人の定義" data-definition="newOpenings">ℹ️</button>
+          </header>
+          <p class="kpi-value" data-field="value">--</p>
+          <p class="kpi-change" data-field="change">--</p>
+          <p class="kpi-footnote" data-field="note">直近 4 週移動平均を表示します。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="chart-section" aria-labelledby="chart-heading">
+      <div class="section-header">
+        <h2 id="chart-heading">トレンドと分布</h2>
+        <p>フィルターで選んだ条件に合わせてチャートが更新されます。</p>
+      </div>
+      <div class="chart-grid">
+        <figure class="chart-container">
+          <canvas id="jobRatioChart" aria-label="求人倍率の推移" role="img"></canvas>
+          <figcaption>求人倍率（月次）と前年同月比</figcaption>
+        </figure>
+        <figure class="chart-container">
+          <canvas id="salaryChart" aria-label="業界別の年収" role="img"></canvas>
+          <figcaption>業界別の中央値年収（万円）</figcaption>
+        </figure>
+        <figure class="chart-container">
+          <canvas id="regionChart" aria-label="地域別の求人数シェア" role="img"></canvas>
+          <figcaption>地域別の求人シェアと選択地域の推移</figcaption>
+        </figure>
+        <figure class="chart-container">
+          <canvas id="ageChart" aria-label="年代別の転職成功率" role="img"></canvas>
+          <figcaption>年代別の転職成功率と前年比</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="insight-section" aria-labelledby="insight-heading">
+      <div class="section-header">
+        <h2 id="insight-heading">今週の注目ポイント</h2>
+        <p>データアナリストとキャリアアドバイザーの視点を合わせてインサイトを整理しました。</p>
+      </div>
+      <div class="summary-cards insight-grid" id="insight-list">
+        <article class="summary-card">
+          <h3>データを読み込み中...</h3>
+          <p>数秒経っても表示されない場合はページを再読み込みしてください。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="action-section" aria-labelledby="action-heading">
+      <div class="section-header">
+        <h2 id="action-heading">次のアクション</h2>
+        <p>状況に応じて取るべき打ち手をまとめました。詳細ガイドやテンプレートへすぐにアクセスできます。</p>
+      </div>
+      <div class="action-grid">
+        <article class="action-card">
+          <h3>採用要件を言語化する</h3>
+          <p>要件定義 v2 ではユーザーセグメント、A/B テスト計画、アクセシビリティ指針まで網羅しています。</p>
+          <a class="arrow-link" href="docs/requirements_v2.html">要件定義ガイドを見る</a>
+        </article>
+        <article class="action-card">
+          <h3>候補者体験を強化する</h3>
+          <p>リソース集には履歴書テンプレートや交渉スクリプトに加え、活用手順と成功事例を追記しました。</p>
+          <a class="arrow-link" href="resources.html">リソース集を開く</a>
+        </article>
+        <article class="action-card">
+          <h3>企業リサーチを深掘り</h3>
+          <p>企業研究ページで業界別の財務指標・働き方指標・口コミの要約を比較できます。</p>
+          <a class="arrow-link" href="companies.html">企業比較ツールへ</a>
+        </article>
+        <article class="action-card">
+          <h3>ユーザーの声を集める</h3>
+          <p>フィードバックフォームで匿名の改善要望を収集し、ダッシュボードのロードマップに反映します。</p>
+          <a class="arrow-link" href="#feedback">フィードバックを投稿</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="community-section" aria-labelledby="community-heading" id="feedback">
+      <div class="section-header">
+        <h2 id="community-heading">ユーザー参加とフィードバック</h2>
+        <p>無料会員登録、Q&A、定期アンケートの仕組みを用意しました。入力内容は端末に保存され、ダウンロードも可能です。</p>
+      </div>
+      <div class="community-grid">
+        <article class="summary-card">
+          <h3>無料会員プレビューモード</h3>
+          <p>気になる指標を保存し、後から比較できるようにローカル保存機能を追加しました。会員登録はメール不要です。</p>
+          <form id="bookmark-form" class="inline-form">
+            <label for="bookmark-name">保存する指標メモ</label>
+            <input type="text" id="bookmark-name" name="bookmark" placeholder="例: IT×関東の求人倍率">
+            <button type="submit" class="primary-btn">保存する</button>
+          </form>
+          <ul class="bookmark-list" id="bookmark-list" aria-live="polite"></ul>
+        </article>
+        <article class="summary-card">
+          <h3>Q&A コミュニティ</h3>
+          <p>質問を投稿すると編集部から 48 時間以内に一次回答します。匿名で送信でき、回答はサイト内で共有されます。</p>
+          <form id="question-form" class="inline-form">
+            <label for="question-text">質問内容</label>
+            <textarea id="question-text" rows="3" placeholder="例: 30代後半でスタートアップへ転職する際に準備すべきことは？"></textarea>
+            <button type="submit" class="primary-btn">質問を送信</button>
+          </form>
+          <div class="muted small-text" id="question-status">投稿はローカルに保存されます。</div>
+        </article>
+        <article class="summary-card">
+          <h3>利用者アンケート</h3>
+          <p>サイト改善のためのアンケートを定期実施します。最新の回答結果は CSV でダウンロードできます。</p>
+          <form id="survey-form" class="inline-form">
+            <label for="survey-need">今欲しい機能</label>
+            <select id="survey-need">
+              <option value="personal-dashboard">パーソナライズされたダッシュボード</option>
+              <option value="job-matching">求人レコメンド精度</option>
+              <option value="skill-map">スキル診断の精度向上</option>
+              <option value="portfolio">ポートフォリオ自動生成</option>
+            </select>
+            <button type="submit" class="primary-btn">回答を保存</button>
+          </form>
+          <button class="ghost-btn" type="button" id="download-survey">アンケート結果を CSV で保存</button>
+        </article>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer"><p>&copy; 2025 Career Horizon. All rights reserved.</p></footer>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-heading">Career Horizon</h2>
+        <p class="muted">転職市場の動向と実務ノウハウを 1 か所に集約したキャリア支援プラットフォームです。</p>
+      </div>
+      <div>
+        <h3 class="footer-heading">クイックリンク</h3>
+        <ul class="footer-links">
+          <li><a href="docs/requirements_v2.html">要件定義</a></li>
+          <li><a href="resources.html">テンプレート集</a></li>
+          <li><a href="tools.html">年収・スキル診断</a></li>
+          <li><a href="docs/sources.html">データ出典</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">最新情報</h3>
+        <form id="footer-newsletter" class="inline-form">
+          <label for="footer-email">メールアドレス</label>
+          <input id="footer-email" type="email" placeholder="you@example.com">
+          <button type="submit" class="primary-btn">登録する</button>
+        </form>
+        <p class="muted small-text" id="footer-newsletter-status">毎週月曜日に市場レポートを配信します。</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Career Horizon. All rights reserved.</p>
+  </footer>
 
-  <div id="sourceModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="sourceModalTitle">
+  <div class="modal" id="definition-modal" role="dialog" aria-modal="true" aria-labelledby="definition-title" hidden>
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="sourceModalTitle">ソース表示</h3>
-        <button class="close" onclick="closeSourceModal()" aria-label="閉じる">&times;</button>
+        <h3 class="modal-title" id="definition-title">指標の定義</h3>
+        <button class="close" type="button" data-close-modal aria-label="閉じる">&times;</button>
       </div>
-      <div class="modal-body" id="sourceModalBody"></div>
+      <div class="modal-body" id="definition-body">
+        <p>読み込み中...</p>
+      </div>
     </div>
   </div>
-
-  <script src="dashboard.js"></script>
 </body>
 </html>
-

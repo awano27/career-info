@@ -1,104 +1,174 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>企業研究 | Career Horizon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>企業研究 & 比較ツール | Career Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script defer src="scripts/site.js"></script>
+  <script defer src="scripts/companies.js"></script>
 </head>
-<body>
+<body data-page="companies">
+  <a class="skip-link" href="#main">コンテンツへスキップ</a>
   <header class="header">
-    <nav class="nav">
-      <div class="nav-brand"><h1>Career Horizon</h1></div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
-        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
-        <li><a href="resources.html" class="nav-link">リソース集</a></li>
-        <li><a href="glossary.html" class="nav-link">用語集/FAQ</a></li>
-        <li><a href="tools.html" class="nav-link">ツール</a></li>
-        <li><a href="companies.html" class="nav-link active">企業研究</a></li>
+    <nav class="nav" aria-label="メインメニュー">
+      <div class="nav-brand"><a href="index.html">Career Horizon</a></div>
+      <button class="nav-toggle" id="mobile-menu" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">メニューを開閉</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation">
+        <li><a class="nav-link" data-nav="dashboard" href="index.html">ダッシュボード</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html">ニュース</a></li>
+        <li><a class="nav-link" data-nav="companies" href="companies.html">企業研究</a></li>
+        <li><a class="nav-link" data-nav="resources" href="resources.html">リソース</a></li>
+        <li><a class="nav-link" data-nav="tools" href="tools.html">ツール</a></li>
+        <li><a class="nav-link" data-nav="requirements" href="docs/requirements_v2.html">要件定義</a></li>
+        <li><a class="nav-link" data-nav="glossary" href="glossary.html">用語集</a></li>
       </ul>
-      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
     </nav>
   </header>
 
-  <main class="main-content">
-    <div class="dashboard-header">
-      <h2>業界別・企業研究</h2>
-      <p class="update-time">サンプルデータ（参考指標）</p>
-    </div>
+  <main class="main-content" id="main">
+    <section class="page-intro" aria-labelledby="companies-title">
+      <p class="eyebrow">COMPANY INSIGHTS</p>
+      <h1 class="page-title" id="companies-title">企業研究 & 比較ツール</h1>
+      <p class="lead">業界別の財務指標、働き方、福利厚生、口コミ要約をワンクリックで比較。気になる企業はウォッチリストに保存して、最大 3 社を横並びでチェックできます。</p>
+      <p class="small-text">データソース: 有価証券報告書、求人データベース、公開口コミサイト。</p>
+    </section>
 
-    <section class="summary-section">
-      <h3>フィルタ</h3>
-      <div class="summary-cards">
-        <div class="summary-card">
-          <label>業界:
-            <select id="industry-filter" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;">
-              <option value="all">すべて</option>
-              <option value="IT">IT</option>
-              <option value="金融">金融</option>
-              <option value="製造">製造</option>
-            </select>
-          </label>
+    <section class="filter-panel" aria-labelledby="company-filter-heading">
+      <div class="section-header">
+        <h2 id="company-filter-heading">条件で絞り込む</h2>
+        <p>業種・従業員規模・働き方・注目 KPI を指定すると一覧が更新されます。</p>
+      </div>
+      <form id="company-filters" class="filter-form">
+        <label class="filter-control">
+          <span>業種</span>
+          <select id="company-industry">
+            <option value="all">すべて</option>
+            <option value="it">IT・通信</option>
+            <option value="finance">金融</option>
+            <option value="manufacturing">製造</option>
+            <option value="consulting">コンサル</option>
+            <option value="services">サービス</option>
+            <option value="media">メディア</option>
+          </select>
+        </label>
+        <label class="filter-control">
+          <span>従業員規模</span>
+          <select id="company-size">
+            <option value="all">指定なし</option>
+            <option value="under-500">〜500 名</option>
+            <option value="500-2000">500〜2000 名</option>
+            <option value="over-2000">2000 名以上</option>
+          </select>
+        </label>
+        <label class="filter-control">
+          <span>働き方</span>
+          <select id="company-style">
+            <option value="all">指定なし</option>
+            <option value="remote">リモート比率高</option>
+            <option value="hybrid">ハイブリッド</option>
+            <option value="on-site">出社中心</option>
+          </select>
+        </label>
+        <label class="filter-control">
+          <span>注目 KPI</span>
+          <select id="company-kpi">
+            <option value="salaryMedian">中央値年収</option>
+            <option value="growthRate">売上成長率</option>
+            <option value="retention">定着率</option>
+            <option value="remoteRatio">リモート比率</option>
+          </select>
+        </label>
+        <div class="filter-actions">
+          <button class="primary-btn" type="submit">適用</button>
+          <button class="ghost-btn" type="button" id="company-reset">リセット</button>
         </div>
+      </form>
+    </section>
+
+    <section aria-labelledby="company-table-heading">
+      <h2 class="section-heading" id="company-table-heading">企業一覧</h2>
+      <div class="table-wrapper">
+        <table id="company-table">
+          <thead>
+            <tr>
+              <th scope="col">企業名</th>
+              <th scope="col">業種</th>
+              <th scope="col">従業員数</th>
+              <th scope="col">中央値年収</th>
+              <th scope="col">売上成長率</th>
+              <th scope="col">働き方</th>
+              <th scope="col">注目ポイント</th>
+              <th scope="col">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="8">データを読み込み中です…</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section class="summary-section">
-      <h3>主要企業プロファイル</h3>
-      <div class="summary-card">
-        <div style="overflow-x:auto;">
-          <table id="company-table" style="width:100%; border-collapse:collapse;">
-            <thead>
-              <tr>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">企業名</th>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">業界</th>
-                <th style="text-align:right; padding:8px; border-bottom:1px solid var(--border-color);">平均年収（万円）</th>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">採用動向</th>
-                <th style="text-align:left; padding:8px; border-bottom:1px solid var(--border-color);">面接ポイント</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
+    <section class="summary-section" aria-labelledby="comparison-heading">
+      <div class="section-header">
+        <h2 id="comparison-heading">最大 3 社を比較</h2>
+        <p>ウォッチリストに追加した企業を横並びで比較できます。</p>
       </div>
-      <p class="muted">注: 値はデモ用です。公式公開値・有価証券報告書等で必ずご確認ください。</p>
+      <div class="comparison-grid" id="comparison-grid">
+        <p class="muted">ウォッチリストに企業を追加すると比較表が表示されます。</p>
+      </div>
+    </section>
+
+    <section class="summary-section" aria-labelledby="watchlist-heading">
+      <div class="section-header">
+        <h2 id="watchlist-heading">ウォッチリスト</h2>
+        <p>気になる企業を保存し、進捗メモや比較対象として活用しましょう。</p>
+      </div>
+      <div class="watchlist" id="company-watchlist"></div>
+      <button class="ghost-btn" type="button" id="watchlist-export">ウォッチリストを CSV で出力</button>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-heading">Career Horizon</h2>
+        <p class="muted">企業研究をもっとシンプルに。データに基づく意思決定を支援します。</p>
+      </div>
+      <div>
+        <h3 class="footer-heading">関連コンテンツ</h3>
+        <ul class="footer-links">
+          <li><a href="news.html">業界ニュース</a></li>
+          <li><a href="resources.html">リソース集</a></li>
+          <li><a href="tools.html">ツール</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">データ出典</h3>
+        <p class="muted"><a href="docs/sources.html">docs/sources.html</a> に詳しくまとめています。</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Career Horizon. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
-      document.querySelector('.nav-menu')?.classList.toggle('active');
-    });
-    const rows = [
-      { name:'Tech A', ind:'IT', sal:720, trend:'AI/クラウド強化', tip:'成果/技術深堀り・プロダクト志向' },
-      { name:'Fin B', ind:'金融', sal:800, trend:'DX/データ活用', tip:'定量/ロジカル・セキュリティ意識' },
-      { name:'Manu C', ind:'製造', sal:650, trend:'IoT/EV部品', tip:'現場改善/品質・安全性' },
-      { name:'Tech D', ind:'IT', sal:690, trend:'SaaS/グロース', tip:'ユーザー価値/PMF・仮説検証' }
-    ];
-    const tbody = document.querySelector('#company-table tbody');
-    function render(ind='all'){
-      tbody.innerHTML='';
-      rows.filter(r=> ind==='all' || r.ind===ind).forEach(r=>{
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.name}</td>
-                        <td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.ind}</td>
-                        <td style="padding:8px;border-bottom:1px solid var(--border-color);text-align:right;">${r.sal.toLocaleString()}</td>
-                        <td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.trend}</td>
-                        <td style="padding:8px;border-bottom:1px solid var(--border-color);">${r.tip}</td>`;
-        tbody.appendChild(tr);
-      })
-    }
-    document.getElementById('industry-filter')?.addEventListener('change', (e)=> render(e.target.value));
-    render('all');
-  </script>
+  <div class="modal" id="company-modal" role="dialog" aria-modal="true" aria-labelledby="company-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="company-modal-title">企業詳細</h3>
+        <button class="close" type="button" data-close-modal aria-label="閉じる">&times;</button>
+      </div>
+      <div class="modal-body" id="company-modal-body">
+        <p>詳細を読み込み中...</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
-
