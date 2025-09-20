@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   const STORAGE_KEY = 'careerHorizon:dashboardFilters';
   let dashboardData = null;
   let charts = { jobRatio: null, regionRatio: null, salary: null, success: null };
