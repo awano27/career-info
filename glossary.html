@@ -1,93 +1,98 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>用語集/FAQ | Career Horizon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>用語集 & FAQ | Career Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json" id="faq-jsonld"></script>
+  <script defer src="scripts/site.js"></script>
+  <script defer src="scripts/glossary.js"></script>
 </head>
-<body>
+<body data-page="glossary">
+  <a class="skip-link" href="#main">コンテンツへスキップ</a>
   <header class="header">
-    <nav class="nav">
-      <div class="nav-brand"><h1>Career Horizon</h1></div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
-        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
-        <li><a href="resources.html" class="nav-link">リソース集</a></li>
-        <li><a href="glossary.html" class="nav-link active">用語集/FAQ</a></li>
-        <li><a href="tools.html" class="nav-link">ツール</a></li>
-        <li><a href="companies.html" class="nav-link">企業研究</a></li>
+    <nav class="nav" aria-label="メインメニュー">
+      <div class="nav-brand"><a href="index.html">Career Horizon</a></div>
+      <button class="nav-toggle" id="mobile-menu" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">メニューを開閉</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation">
+        <li><a class="nav-link" data-nav="dashboard" href="index.html">ダッシュボード</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html">ニュース</a></li>
+        <li><a class="nav-link" data-nav="companies" href="companies.html">企業研究</a></li>
+        <li><a class="nav-link" data-nav="resources" href="resources.html">リソース</a></li>
+        <li><a class="nav-link" data-nav="tools" href="tools.html">ツール</a></li>
+        <li><a class="nav-link" data-nav="requirements" href="docs/requirements_v2.html">要件定義</a></li>
+        <li><a class="nav-link" data-nav="glossary" href="glossary.html">用語集</a></li>
       </ul>
-      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
     </nav>
   </header>
 
-  <main class="main-content">
-    <div class="dashboard-header">
-      <h2>用語集 / よくある質問</h2>
-      <p class="update-time">FAQと主要用語のまとめ</p>
-    </div>
+  <main class="main-content" id="main">
+    <section class="page-intro" aria-labelledby="glossary-title">
+      <p class="eyebrow">KNOWLEDGE BASE</p>
+      <h1 class="page-title" id="glossary-title">用語集 & FAQ</h1>
+      <p class="lead">転職市場・採用活動・ダッシュボードで使用する専門用語をわかりやすく解説します。検索ボックスからキーワードを入力すると即座に絞り込まれます。</p>
+      <p class="small-text">FAQ セクションは JSON-LD の構造化データを生成し、検索結果での強調表示に対応しています。</p>
+    </section>
 
-    <section class="summary-section">
-      <h3>用語集</h3>
-      <div class="summary-cards">
-        <div class="summary-card">
-          <h4>KPI（重要業績評価指標）</h4>
-          <p>目標達成度合いを測るための主要な指標。求人倍率/平均年収/転職成功率など。</p>
-        </div>
-        <div class="summary-card">
-          <h4>求人倍率（有効求人倍率）</h4>
-          <p>求人数÷求職者数。1を超えるほど売り手市場。</p>
-        </div>
-        <div class="summary-card">
-          <h4>ポータブルスキル</h4>
-          <p>業界や職種を超えて活用できるスキル（コミュニケーション/問題解決/PMなど）。</p>
-        </div>
+    <section class="filter-panel" aria-labelledby="glossary-search-heading">
+      <div class="section-header">
+        <h2 id="glossary-search-heading">用語を検索</h2>
+        <p>アルファベットでも日本語でも検索可能です。</p>
+      </div>
+      <div class="news-search">
+        <label class="sr-only" for="glossary-search">用語の検索</label>
+        <input type="search" id="glossary-search" class="search-input" placeholder="例: KPI, ATS, リテンション" autocomplete="off">
+        <span class="search-hint">入力すると自動で絞り込まれます</span>
       </div>
     </section>
 
-    <section class="summary-section">
-      <h3>FAQ</h3>
-      <div class="summary-cards" id="faq-list">
-        <div class="summary-card">
-          <h4>Q. データの出典はどこですか？</h4>
-          <p>A. 厚生労働省/総務省/国税庁/IPAなどの公的機関・公式資料を基にしています。</p>
-        </div>
-        <div class="summary-card">
-          <h4>Q. ニュース記事は本物ですか？</h4>
-          <p>A. 公式発表/報道の要約に加えて、編集部の解説を含みます（出典を明記）。</p>
-        </div>
-        <div class="summary-card">
-          <h4>Q. 相談や面談の予約はできますか？</h4>
-          <p>A. 近日、初回相談予約（オンライン）に対応予定です。</p>
-        </div>
+    <section class="summary-section" aria-labelledby="term-heading">
+      <div class="section-header">
+        <h2 id="term-heading">主要用語</h2>
+        <p>50 音順でソートしています。クリックで詳細を展開できます。</p>
       </div>
+      <div class="glossary-list" id="glossary-list" aria-live="polite"></div>
+    </section>
+
+    <section class="summary-section" aria-labelledby="faq-heading">
+      <div class="section-header">
+        <h2 id="faq-heading">FAQ</h2>
+        <p>よくある質問と回答。要件定義、データ仕様、更新フローに関する内容も含みます。</p>
+      </div>
+      <div class="accordion faq-list" id="faq-list"></div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-heading">Career Horizon</h2>
+        <p class="muted">ダッシュボードやニュースの用語を一目で整理できます。</p>
+      </div>
+      <div>
+        <h3 class="footer-heading">ショートカット</h3>
+        <ul class="footer-links">
+          <li><a href="docs/requirements_v2.html">要件定義</a></li>
+          <li><a href="docs/sources.html">データ出典</a></li>
+          <li><a href="tools.html">ツール</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">更新履歴</h3>
+        <p class="muted">2025-09-15: 用語を 12 件追加、FAQ に更新フローを追記。</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Career Horizon. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
-      document.querySelector('.nav-menu')?.classList.toggle('active');
-    });
-    // Build FAQPage JSON-LD
-    (function(){
-      const faqs = Array.from(document.querySelectorAll('#faq-list .summary-card')).map(card => {
-        const q = card.querySelector('h4')?.textContent?.replace(/^Q\.[\s　]*/, '') || '';
-        const a = card.querySelector('p')?.textContent?.replace(/^A\.[\s　]*/, '') || '';
-        return { '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } };
-      });
-      const json = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs };
-      document.getElementById('faq-jsonld').textContent = JSON.stringify(json);
-    })();
-  </script>
+  <script type="application/ld+json" id="faq-jsonld"></script>
 </body>
 </html>
-

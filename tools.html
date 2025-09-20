@@ -1,104 +1,186 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ツール | Career Horizon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>キャリア支援ツール | Career Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script defer src="scripts/site.js"></script>
+  <script defer src="scripts/tools.js"></script>
 </head>
-<body>
+<body data-page="tools">
+  <a class="skip-link" href="#main">コンテンツへスキップ</a>
   <header class="header">
-    <nav class="nav">
-      <div class="nav-brand"><h1>Career Horizon</h1></div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
-        <li><a href="news.html" class="nav-link">転職ニュース</a></li>
-        <li><a href="resources.html" class="nav-link">リソース集</a></li>
-        <li><a href="glossary.html" class="nav-link">用語集/FAQ</a></li>
-        <li><a href="tools.html" class="nav-link active">ツール</a></li>
-        <li><a href="companies.html" class="nav-link">企業研究</a></li>
+    <nav class="nav" aria-label="メインメニュー">
+      <div class="nav-brand"><a href="index.html">Career Horizon</a></div>
+      <button class="nav-toggle" id="mobile-menu" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">メニューを開閉</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation">
+        <li><a class="nav-link" data-nav="dashboard" href="index.html">ダッシュボード</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html">ニュース</a></li>
+        <li><a class="nav-link" data-nav="companies" href="companies.html">企業研究</a></li>
+        <li><a class="nav-link" data-nav="resources" href="resources.html">リソース</a></li>
+        <li><a class="nav-link" data-nav="tools" href="tools.html">ツール</a></li>
+        <li><a class="nav-link" data-nav="requirements" href="docs/requirements_v2.html">要件定義</a></li>
+        <li><a class="nav-link" data-nav="glossary" href="glossary.html">用語集</a></li>
       </ul>
-      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
     </nav>
   </header>
 
-  <main class="main-content">
-    <div class="dashboard-header">
-      <h2>キャリア支援ツール</h2>
-      <p class="update-time">年収シミュレーター / スキル診断（簡易）</p>
-    </div>
+  <main class="main-content" id="main">
+    <section class="page-intro" aria-labelledby="tools-title">
+      <p class="eyebrow">INTERACTIVE TOOLS</p>
+      <h1 class="page-title" id="tools-title">年収シミュレーター & スキル診断</h1>
+      <p class="lead">最新の統計データをもとに、ターゲット年収の試算やスキルギャップの可視化、交渉シナリオ作成を支援します。</p>
+    </section>
 
-    <section class="summary-section">
-      <h3>年収ターゲット・シミュレーター</h3>
-      <div class="summary-cards">
-        <div class="summary-card">
-          <h4>入力</h4>
-          <p><label>現在の年収（万円） <input id="cur-salary" type="number" min="100" max="3000" value="450" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;width:140px;"></label></p>
-          <p><label>上げ幅（%） <input id="inc-pct" type="number" min="0" max="100" value="15" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;width:120px;"></label></p>
-          <p><label>地域係数（1=全国平均） <input id="region-coef" type="number" min="0.6" max="1.5" step="0.05" value="1.00" style="padding:.5rem;border:1px solid var(--border-color);border-radius:6px;width:120px;"></label></p>
-          <button class="view-source-btn" id="calc-btn">計算する</button>
-        </div>
-        <div class="summary-card">
-          <h4>結果</h4>
-          <p id="result" style="font-size:1.5rem;font-weight:700;">—</p>
-          <p class="muted" id="result-note"></p>
-        </div>
+    <section class="summary-section" aria-labelledby="salary-heading">
+      <div class="section-header">
+        <h2 id="salary-heading">年収ターゲット・シミュレーター</h2>
+        <p>現在の年収、上げ幅、地域係数、業種を入力するとおすすめターゲットと参考レンジを提示します。</p>
+      </div>
+      <div class="tool-grid">
+        <form id="salary-form" class="tool-card" aria-describedby="salary-note">
+          <div class="form-group">
+            <label for="salary-current">現在の年収（万円）</label>
+            <input type="number" id="salary-current" name="current" value="450" min="100" max="3000" required>
+          </div>
+          <div class="form-group">
+            <label for="salary-increase">希望する上げ幅（%）</label>
+            <input type="number" id="salary-increase" name="increase" value="15" min="0" max="200" step="1" required>
+          </div>
+          <div class="form-group">
+            <label for="salary-region">地域係数</label>
+            <select id="salary-region" name="region" required>
+              <option value="kanto" data-coef="1.05">関東（+5%）</option>
+              <option value="kansai" data-coef="1.00">関西（±0%）</option>
+              <option value="chubu" data-coef="0.97">中部（-3%）</option>
+              <option value="tohoku" data-coef="0.92">東北（-8%）</option>
+              <option value="kyushu" data-coef="0.90">九州（-10%）</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="salary-industry">業種</label>
+            <select id="salary-industry" name="industry" required>
+              <option value="it">IT・通信</option>
+              <option value="finance">金融・保険</option>
+              <option value="manufacturing">製造</option>
+              <option value="services">サービス</option>
+              <option value="consulting">コンサルティング</option>
+            </select>
+          </div>
+          <div class="filter-actions">
+            <button class="primary-btn" type="submit">期待年収を計算</button>
+            <button class="ghost-btn" type="button" id="salary-export">結果を PDF 保存</button>
+          </div>
+          <p class="small-text" id="salary-note">係数は厚生労働省「賃金構造基本統計調査」と求人メディアの平均値を基に算出しています。</p>
+        </form>
+        <article class="tool-card" aria-live="polite">
+          <h3>算出結果</h3>
+          <p class="result-value" id="salary-result">--</p>
+          <ul class="result-details" id="salary-details"></ul>
+          <div class="small-text" id="salary-benchmark">ベンチマークを計算しています...</div>
+        </article>
       </div>
     </section>
 
-    <section class="summary-section">
-      <h3>スキル診断（簡易）</h3>
-      <div class="summary-cards">
-        <div class="summary-card">
-          <h4>保有スキルを選択</h4>
-          <p>
-            <label><input type="checkbox" class="skill" value="データ分析"> データ分析</label>
-            <label><input type="checkbox" class="skill" value="プロジェクト管理"> プロジェクト管理</label>
-            <label><input type="checkbox" class="skill" value="Web開発"> Web開発</label>
-            <label><input type="checkbox" class="skill" value="クラウド"> クラウド</label>
-            <label><input type="checkbox" class="skill" value="英語"> 英語</label>
-          </p>
-          <button class="view-source-btn" id="diag-btn">診断する</button>
-        </div>
-        <div class="summary-card">
-          <h4>提案</h4>
-          <p id="diag-result">—</p>
-        </div>
+    <section class="summary-section" aria-labelledby="skill-heading">
+      <div class="section-header">
+        <h2 id="skill-heading">スキル診断</h2>
+        <p>保有スキルをチェックすると、補強したいスキルとおすすめ学習リソースをレコメンドします。</p>
+      </div>
+      <div class="tool-grid">
+        <form id="skill-form" class="tool-card">
+          <fieldset>
+            <legend class="small-text">保有しているスキル（複数選択可）</legend>
+            <div class="skill-list">
+              <label><input type="checkbox" value="data" checked> データ分析 / SQL</label>
+              <label><input type="checkbox" value="python"> Python / 機械学習</label>
+              <label><input type="checkbox" value="project"> プロジェクトマネジメント</label>
+              <label><input type="checkbox" value="frontend"> フロントエンド開発</label>
+              <label><input type="checkbox" value="cloud"> クラウド設計 (AWS/GCP)</label>
+              <label><input type="checkbox" value="communication"> ビジネスコミュニケーション</label>
+              <label><input type="checkbox" value="english"> 英語 / グローバル対応</label>
+              <label><input type="checkbox" value="security"> セキュリティ基礎</label>
+            </div>
+          </fieldset>
+          <button class="primary-btn" type="submit">診断する</button>
+        </form>
+        <article class="tool-card" aria-live="polite">
+          <h3>診断結果</h3>
+          <p class="result-value" id="skill-summary">スキルを選択してください。</p>
+          <ul class="result-details" id="skill-suggestions"></ul>
+          <div class="small-text" id="skill-links">推奨学習リソースを読み込み中...</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="summary-section" aria-labelledby="negotiation-heading">
+      <div class="section-header">
+        <h2 id="negotiation-heading">交渉スクリプトジェネレーター</h2>
+        <p>条件交渉のためのトークスクリプトをテンプレート化。実績や代替案を入力してコピーできます。</p>
+      </div>
+      <div class="tool-grid">
+        <form id="negotiation-form" class="tool-card">
+          <div class="form-group">
+            <label for="negotiation-role">相手側ロール</label>
+            <select id="negotiation-role">
+              <option value="recruiter">採用担当（企業）</option>
+              <option value="agency">人材紹介エージェント</option>
+              <option value="manager">入社予定上長</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="negotiation-fact">実績・根拠</label>
+            <textarea id="negotiation-fact" rows="2" placeholder="例: 直近 3 四半期で ARR 120% を達成"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="negotiation-request">希望条件</label>
+            <textarea id="negotiation-request" rows="2" placeholder="例: 基本給 650 万円、リモート 80%"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="negotiation-fallback">代替案</label>
+            <textarea id="negotiation-fallback" rows="2" placeholder="例: 住宅補助 3 万円 or RSU 付与"></textarea>
+          </div>
+          <button class="primary-btn" type="submit">スクリプトを生成</button>
+          <button class="ghost-btn" type="button" id="negotiation-copy">クリップボードにコピー</button>
+        </form>
+        <article class="tool-card" aria-live="polite">
+          <h3>生成されたスクリプト</h3>
+          <textarea id="negotiation-output" rows="12" readonly placeholder="ここに生成結果が表示されます"></textarea>
+          <p class="small-text">厚生労働省や求人データなど客観的な根拠を添付すると交渉成功率が高まります。</p>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-heading">Career Horizon</h2>
+        <p class="muted">意思決定を後押しするインタラクティブなツール群。</p>
+      </div>
+      <div>
+        <h3 class="footer-heading">関連ページ</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">ダッシュボード</a></li>
+          <li><a href="news.html">ニュース</a></li>
+          <li><a href="companies.html">企業研究</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">サポート</h3>
+        <p class="muted">ツールについてのご意見は community@career-horizon.example まで。</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Career Horizon. All rights reserved.</p>
   </footer>
-
-  <script>
-    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
-      document.querySelector('.nav-menu')?.classList.toggle('active');
-    });
-    document.getElementById('calc-btn')?.addEventListener('click',()=>{
-      const cur = Number(document.getElementById('cur-salary').value||0);
-      const pct = Number(document.getElementById('inc-pct').value||0)/100;
-      const coef = Number(document.getElementById('region-coef').value||1);
-      if (cur<=0) return;
-      const target = Math.round(cur*(1+pct)*coef);
-      document.getElementById('result').textContent = `${target.toLocaleString()} 万円`;
-      const note = pct>=0.2? 'チャレンジングな水準です。根拠準備を厚めに。' : '実現可能性は十分です。実績と市場データを提示しましょう。';
-      document.getElementById('result-note').textContent = note;
-    });
-    document.getElementById('diag-btn')?.addEventListener('click',()=>{
-      const skills = Array.from(document.querySelectorAll('.skill:checked')).map(el=>el.value);
-      if (!skills.length) { document.getElementById('diag-result').textContent='スキルを選択してください'; return; }
-      const suggestions = [];
-      if (!skills.includes('データ分析')) suggestions.push('データ分析基礎（統計/SQL）');
-      if (!skills.includes('クラウド')) suggestions.push('クラウド基礎（AWS/Azure）');
-      if (!skills.includes('英語')) suggestions.push('英語（Tech英語/読解）');
-      document.getElementById('diag-result').textContent = suggestions.length? `推奨学習: ${suggestions.join('、')}` : '市場価値は高い水準です。実践案件で経験を積みましょう。';
-    });
-  </script>
 </body>
 </html>
-

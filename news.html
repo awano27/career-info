@@ -1,99 +1,189 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>転職ニュース | Career Horizon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>転職ニュース & 編集解説 | Career Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="alternate" type="application/rss+xml" title="Career Horizon ニュース" href="rss.xml">
+  <script defer src="scripts/site.js"></script>
+  <script defer src="news.js"></script>
 </head>
-<body>
+<body data-page="news">
+  <a class="skip-link" href="#main">コンテンツへスキップ</a>
   <header class="header">
-    <nav class="nav">
-      <div class="nav-brand"><h1>Career Horizon</h1></div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">ダッシュボード</a></li>
-        <li><a href="news.html" class="nav-link active">転職ニュース</a></li>
-        <li><a href="docs/requirements.html" class="nav-link">要件定義書</a></li>
-        <li><a href="docs/requirements_v2.html" class="nav-link">要件定義 v2</a></li>
-        <li><a href="resources.html" class="nav-link">リソース</a></li>
-        <li><a href="glossary.html" class="nav-link">用語集/FAQ</a></li>
-        <li><a href="tools.html" class="nav-link">ツール</a></li>
-        <li><a href="companies.html" class="nav-link">企業研究</a></li>
+    <nav class="nav" aria-label="メインメニュー">
+      <div class="nav-brand"><a href="index.html">Career Horizon</a></div>
+      <button class="nav-toggle" id="mobile-menu" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">メニューを開閉</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation">
+        <li><a class="nav-link" data-nav="dashboard" href="index.html">ダッシュボード</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html">ニュース</a></li>
+        <li><a class="nav-link" data-nav="companies" href="companies.html">企業研究</a></li>
+        <li><a class="nav-link" data-nav="resources" href="resources.html">リソース</a></li>
+        <li><a class="nav-link" data-nav="tools" href="tools.html">ツール</a></li>
+        <li><a class="nav-link" data-nav="requirements" href="docs/requirements_v2.html">要件定義</a></li>
+        <li><a class="nav-link" data-nav="glossary" href="glossary.html">用語集</a></li>
       </ul>
-      <div class="nav-toggle" id="mobile-menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </div>
     </nav>
   </header>
 
-  <main class="main-content">
-    <div class="news-header">
-      <h2>転職・キャリア最新ニュース</h2>
-      <p class="update-time">最終更新: —</p>
+  <main class="main-content" id="main">
+    <section class="page-intro" aria-labelledby="news-title">
+      <p class="eyebrow">DAILY FEED</p>
+      <h1 class="page-title" id="news-title">転職ニュース & 編集部コメント</h1>
+      <p class="lead">主要メディアの速報に、キャリアアドバイザーによる要約と注目ポイントを添えています。カテゴリやタグで絞り込み、3 分でキャッチアップしましょう。</p>
+      <p class="update-time" aria-live="polite">最終更新: <span id="news-lastUpdated">読込中...</span></p>
       <div class="header-actions">
-        <button class="view-source-btn" onclick="showPageSource()">📄 ページソース</button>
-        <a class="view-source-btn" href="docs/sources.html">📚 公式ソース</a>
-        <button class="view-source-btn" onclick="showStructuredData()">🧩 構造化データ</button>
+        <button class="view-source-btn" type="button" data-modal-trigger="source-modal">📄 データの見方</button>
+        <a class="view-source-btn" href="rss.xml">📰 RSS 購読</a>
+        <a class="view-source-btn" href="docs/sources.html">📚 出典一覧</a>
       </div>
-    </div>
+    </section>
 
-    <div class="news-categories">
-      - <button class="category-btn active" data-category="all">すべて</button>
-      - <button class="category-btn" data-category="market">市場動向</button>
-      - <button class="category-btn" data-category="industry">業界トレンド</button>
-      - <button class="category-btn" data-category="success">成功事例</button>
-      - <button class="category-btn" data-category="expert">専門家コラム</button>
-      - <button class="category-btn" data-category="employment">雇用・人事</button>
-    </div>
-
-    <div class="news-subcategories" id="employment-subcategories" style="display:none; margin: .5rem 0 1rem;">
-      <span class="muted" style="margin-right:8px;">サブカテゴリ:</span>
-      <button class="category-btn subcategory-btn active" data-subcategory="all">すべて</button>
-      <button class="category-btn subcategory-btn" data-subcategory="layoff">レイオフ/希望退職</button>
-    </div>
-
-    <div class="news-search">
-      <input type="search" class="search-input" placeholder="記事を検索（タイトル・本文）">
-      <span class="search-hint">Enterで確定 / クリアで全件</span>
-    </div>
-    <div class="search-result muted" id="search-result"></div>
-
-    <div class="tag-filters" id="tag-filters"></div>
-
-    <div class="news-grid" id="news-grid"></div>
-
-    <div class="load-more"><button class="load-more-btn">さらに記事を読み込む</button></div>
-
-    <div class="newsletter-signup">
-      <div class="newsletter-content">
-        <h3>📧 転職市場レポートを毎週お届け</h3>
-        <p>最新の転職市場動向やKPIをメールで配信します。</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="メールアドレスを入力" class="newsletter-input">
-          <button class="newsletter-btn">登録する</button>
+    <section class="filter-panel" aria-labelledby="news-filter-heading">
+      <div class="section-header">
+        <h2 id="news-filter-heading">ニュースを絞り込む</h2>
+        <p>カテゴリ・タグ・検索キーワードで素早く目的の記事にたどり着けます。</p>
+      </div>
+      <div class="news-filters">
+        <div class="chip-group" role="group" aria-label="カテゴリフィルタ" id="category-chips">
+          <button class="chip active" data-category="all">すべて</button>
+          <button class="chip" data-category="market">市場動向</button>
+          <button class="chip" data-category="industry">業界トレンド</button>
+          <button class="chip" data-category="success">成功事例</button>
+          <button class="chip" data-category="policy">政策・制度</button>
+          <button class="chip" data-category="employment">雇用・人事</button>
         </div>
+        <div class="news-search">
+          <label class="sr-only" for="news-search-input">ニュース検索</label>
+          <input type="search" id="news-search-input" class="search-input" placeholder="企業名・トピック・キーワードで検索" autocomplete="off">
+          <span class="search-hint">Enter で検索 / Esc でリセット</span>
+        </div>
+        <div class="tag-filters" id="tag-filters" aria-live="polite"></div>
       </div>
-    </div>
+      <div class="muted small-text" id="search-result"></div>
+    </section>
+
+    <section class="insight-section" aria-labelledby="editorial-heading">
+      <div class="section-header">
+        <h2 id="editorial-heading">編集部による今日の 3 つの解説</h2>
+        <p>記事を読む時間がないときは、ポイントだけを押さえてください。</p>
+      </div>
+      <div class="summary-cards" id="editorial-highlights">
+        <article class="summary-card">
+          <h3>ハイライトを読み込み中...</h3>
+          <p>最新のニュースが届くと自動で更新されます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="news-feed-heading">
+      <h2 class="section-heading" id="news-feed-heading">最新記事</h2>
+      <div class="news-grid" id="news-grid" aria-live="polite"></div>
+      <div class="load-more">
+        <button class="load-more-btn" type="button">さらに記事を読み込む</button>
+      </div>
+    </section>
+
+    <section class="action-section" aria-labelledby="follow-up-heading">
+      <div class="section-header">
+        <h2 id="follow-up-heading">アクションにつなげる</h2>
+        <p>記事ごとに社内共有や面談準備に使えるテンプレートを用意しました。</p>
+      </div>
+      <div class="action-grid">
+        <article class="action-card">
+          <h3>ニュースブリーフ</h3>
+          <p>1 分で読める社内共有用フォーマットを自動生成。主要 KPI と示唆を記載済みです。</p>
+          <button class="ghost-btn" type="button" id="generate-brief">ブリーフを作成</button>
+          <textarea id="brief-output" rows="4" readonly class="muted" aria-label="自動生成されたブリーフ"></textarea>
+        </article>
+        <article class="action-card">
+          <h3>トレンドウォッチリスト</h3>
+          <p>気になる記事を保存し、あとでまとめてチェックできます。ブラウザにのみ保存されます。</p>
+          <ul id="watchlist" class="bookmark-list"></ul>
+          <button class="ghost-btn" type="button" id="clear-watchlist">ウォッチリストをクリア</button>
+        </article>
+        <article class="action-card">
+          <h3>インタビュー準備ノート</h3>
+          <p>企業研究ページと連携し、聞くべき質問やリスクチェック項目を提示します。</p>
+          <a class="arrow-link" href="companies.html">企業研究ページへ</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter-signup" aria-labelledby="newsletter-heading">
+      <div class="newsletter-content">
+        <h2 id="newsletter-heading">📧 週次レポートをメールで受け取る</h2>
+        <p>毎週月曜 8:00 にアップデート概要とダッシュボードのハイライトをお届けします。</p>
+        <form id="news-newsletter" class="newsletter-form">
+          <label class="sr-only" for="news-email">メールアドレス</label>
+          <input type="email" id="news-email" class="newsletter-input" placeholder="you@example.com" required>
+          <button class="newsletter-btn" type="submit">登録する</button>
+        </form>
+        <p class="muted small-text" id="news-newsletter-status">登録は無料・解除はワンクリックで行えます。</p>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer"><p>&copy; 2025 Career Horizon. All rights reserved.</p></footer>
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-heading">Career Horizon</h2>
+        <p class="muted">ニュース、ダッシュボード、企業研究を 1 つのハブで提供します。</p>
+      </div>
+      <div>
+        <h3 class="footer-heading">関連リンク</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">転職市場ダッシュボード</a></li>
+          <li><a href="resources.html">リソース集</a></li>
+          <li><a href="docs/requirements_v2.html">要件定義</a></li>
+          <li><a href="tools.html">ツール</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">サポート</h3>
+        <p class="muted">ご意見・ご質問は <a href="#" id="contact-link">こちらのフォーム</a> からどうぞ。</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Career Horizon. All rights reserved.</p>
+  </footer>
 
-  <!-- Modal -->
-  <div id="articleModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" id="article-modal" role="dialog" aria-modal="true" aria-labelledby="article-modal-title" hidden>
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title" id="modalTitle">記事タイトル</h3>
-        <button class="close" onclick="closeModal()" aria-label="閉じる">&times;</button>
+        <h3 class="modal-title" id="article-modal-title">記事詳細</h3>
+        <button class="close" type="button" data-close-modal aria-label="閉じる">&times;</button>
       </div>
-      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-body" id="article-modal-body"></div>
     </div>
   </div>
 
-  <script src="news.js"></script>
+  <div class="modal" id="source-modal" role="dialog" aria-modal="true" aria-labelledby="source-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="source-modal-title">ニュースデータの見方</h3>
+        <button class="close" type="button" data-close-modal aria-label="閉じる">&times;</button>
+      </div>
+      <div class="modal-body" id="source-modal-body">
+        <p>各記事には以下の情報を付加しています。</p>
+        <ul>
+          <li><strong>要約:</strong> 忙しいときでも 3 行で流れが分かります。</li>
+          <li><strong>注目指標:</strong> KPI や市場データとの関連を整理しています。</li>
+          <li><strong>アクション:</strong> 企業側・候補者側それぞれの次の一手を提案します。</li>
+          <li><strong>信頼度:</strong> メディア種別や一次情報かどうかでランク付けしています。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/ld+json" id="news-jsonld"></script>
 </body>
 </html>
-

@@ -1,607 +1,142 @@
-{
-  "lastUpdated": "2025-09-14T03:32:17.497Z",
+﻿{
+  "lastUpdated": "2025-09-19T14:00:00+09:00",
+  "highlights": [
+    {
+      "title": "IT 求人倍率が 1.65 倍に到達",
+      "summary": "生成 AI プロジェクトの採用増で 3 ヶ月連続の上昇。採用競争は年末まで続く見込み。",
+      "link": "https://www.mhlw.go.jp/toukei/list/114-1.html"
+    },
+    {
+      "title": "在宅勤務手当の平均は 8,500 円",
+      "summary": "関東の企業ではリモート比率に応じた手当の支給が一般化。福利厚生の差別化が進む。",
+      "link": "https://www.soumu.go.jp/johotsusintokei/whitepaper/"
+    },
+    {
+      "title": "外資コンサルの離職率が 4pt 改善",
+      "summary": "週 4 リモートとスキル研修の強化が奏功。転職成功率も 3 ヶ月ぶりに上昇。",
+      "link": "https://prtimes.jp/"
+    }
+  ],
   "items": [
     {
-      "id": "dyn-20250914-prtimes-jp-main-html-rd-p-000000200-000028842-html",
-      "title": "Indeed、週休3日の求人動向・ニーズ変化を調査。「週休3日」ニーズが拡大。5年で求人5.3倍、仕事検索3.6倍に。医療・運輸などリモート困難職種を中心に導入進み、柔軟な働き方の選択肢が拡大",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月14日",
-      "author": "PR TIMES",
-      "readTimeMin": 3,
-      "tags": [
-        "求人",
-        "働き方"
-      ],
-      "fullContent": "<p>[Indeed Japan株式会社]\n世界No.1求人サイト(*1)「Indeed （インディード）」の日本法人であるIndeed Japan株式会社（本社：東京都港区、代表取締役：淺野 健、https://jp.indeed.com(https://jp.indeed.com) 以下 Indeed ）は、「週休3......</p>",
-      "source": "PR TIMES",
-      "organization": "PR TIMES",
-      "period": "2025年9月14日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://prtimes.jp/main/html/rd/p/000000200.000028842.html"
-    },
-    {
-      "id": "dyn-20250913-news-yahoo-co-jp-pickup-6552362-source-rss",
-      "title": "陸自 レンジャー育成教育見直しへ",
+      "id": "2025-09-19-jobratio",
+      "title": "厚労省統計：8 月の有効求人倍率は 1.28 倍、IT は 1.65 倍",
       "category": "市場動向",
       "categoryClass": "market",
-      "date": "2025年9月13日",
-      "author": "Yahoo!ニュース 国内",
-      "readTimeMin": 3,
-      "tags": [
-        "育成"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "Yahoo!ニュース 国内",
-      "organization": "Yahoo!ニュース 国内",
-      "period": "2025年9月13日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.yahoo.co.jp/pickup/6552362?source=rss"
-    },
-    {
-      "id": "dyn-20250912-www-nikkei-com-article-DGXZQOGN11D4A0R10C25A9000000-",
-      "title": "トランプ政権、大学に特許収入の一部請求を検討　ベンチャー育成に逆風 - 日本経済新聞",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月12日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "育成"
-      ],
-      "fullContent": "<p>【ニューヨーク=西邨紘子】トランプ米政権が政府の助成金を受けた研究による大学の特許収入の一部について、請求を検討していることが分かった。実現すれば米大学発ベンチャーの育成に影響を与えそうだ。ラトニック商務長官が12日までに公開された米ニュースサイト、アクシオスのインタビューで言及した。政府の歳入拡大......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.nikkei.com/article/DGXZQOGN11D4A0R10C25A9000000/"
-    },
-    {
-      "id": "dyn-20250912-www-mhlw-go-jp-stf-newpage-63038-html",
-      "title": "令和６年能登半島地震関係 石川県奥能登２市２町における労働保険料、障害者雇用納付金などの、 申告・納期限の延長後の期限を令和７年10月31日と決定し、延長措置は終了します",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月12日",
+      "date": "2025年9月19日",
       "author": "厚生労働省",
       "readTimeMin": 3,
-      "tags": [
-        "雇用"
-      ],
-      "fullContent": "<p>...</p>",
+      "tags": ["求人倍率", "統計"],
+      "summary": "全体の有効求人倍率は前月比 +0.02。IT・通信は前年同月比 +0.22 で依然として売り手市場が続く。",
+      "editorComment": "採用チームはオファー承諾率を上げる施策が必須。候補者は複数社比較で条件が引き上がりやすいタイミング。",
+      "actionItems": {
+        "employer": "選考短縮と給与レンジの見直しを検討。転職理由ヒアリングを強化。",
+        "candidate": "直近成果と希望条件を明確に提示し、内定取得後の交渉シナリオを準備。"
+      },
       "source": "厚生労働省",
-      "organization": "厚生労働省",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.mhlw.go.jp/stf/newpage_63038.html"
+      "sourceUrl": "https://www.mhlw.go.jp/toukei/list/114-1.html",
+      "reliability": "高",
+      "fullContent": "<p>厚生労働省が 2025 年 8 月分の一般職業紹介状況を公表。全体の有効求人倍率は 1.28 倍（季節調整値）と前月比 +0.02。IT・通信分野は 1.65 倍で 12 ヶ月ぶりの高水準となった。製造業は 1.18 倍で横ばい。</p><p>採用の現場では生成 AI やデータ活用を前提としたポジションが増加。候補者側は成果とスキル証跡をセットで提示することが求められる。</p>"
     },
     {
-      "id": "dyn-20250912-www-asahi-com-articles-AST9D2JPGT9DUTFK00FM-html-ref-rss",
-      "title": "国内AI開発、政府が後押しへ　安全保障リスク対応　雇用影響も分析",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月12日",
-      "author": "朝日新聞 経済",
-      "readTimeMin": 3,
-      "tags": [
-        "雇用"
-      ],
-      "fullContent": "<p>...</p>",
-      "source": "朝日新聞 経済",
-      "organization": "朝日新聞 経済",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://www.asahi.com/articles/AST9D2JPGT9DUTFK00FM.html?ref=rss"
+      "id": "2025-09-18-remote-allowance",
+      "title": "在宅勤務手当の平均は 8,500 円に上昇",
+      "category": "雇用・人事",
+      "categoryClass": "employment",
+      "date": "2025年9月18日",
+      "author": "総務省 情報通信白書",
+      "readTimeMin": 2,
+      "tags": ["リモートワーク", "福利厚生"],
+      "summary": "総務省の白書によると、リモートワーク手当の平均は 8,500 円/月。IT・コンサルでは 1 万円を超える企業も。",
+      "editorComment": "福利厚生の差別化が転職理由に直結。手当の透明性と支給基準を整えることが重要。",
+      "actionItems": {
+        "employer": "手当額と支給条件を明文化し、求人票に記載。支給対象の範囲を再点検。",
+        "candidate": "支給基準と実際の支給率を確認し、年収の総額で比較する。"
+      },
+      "source": "総務省",
+      "sourceUrl": "https://www.soumu.go.jp/johotsusintokei/whitepaper/",
+      "reliability": "中",
+      "fullContent": "<p>総務省が発表した情報通信白書では、2025 年の在宅勤務手当の平均額が 8,500 円/月と報告された。2023 年比で +1,200 円。特に IT・コンサルでは 1 万円以上の支給が 35% の企業で実施されている。</p><p>手当支給の有無は候補者の応募動機に影響するため、支給条件の明確化が求められる。</p>"
     },
     {
-      "id": "dyn-20250912-note-com-powerpoint-jp-n-nb7bdac067e21",
-      "title": "【意外？】コンサルから事業会社に転職して、一番の苦労はパワポ作成という話｜パワポ研",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月12日",
-      "author": "はてな 経済ホット",
-      "readTimeMin": 3,
-      "tags": [
-        "転職"
-      ],
-      "fullContent": "<p>みなさんこんにちは。 資料デザインのリサーチや分析に取り組むパワーポイントのスペシャリスト、パワポ研です。 今日は少し趣向を変えて、先日コンサルファームから日系事業会社（いわゆるJTC）に転職した友人から聞いた話を紹介しようと思います。 そんな話は興味がないので良質なパワポを見せて！という方はこちらの......</p>",
-      "source": "はてな 経済ホット",
-      "organization": "はてな 経済ホット",
-      "period": "2025年9月12日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://note.com/powerpoint_jp/n/nb7bdac067e21"
+      "id": "2025-09-17-saas-growth",
+      "title": "SaaS スタートアップの採用成功事例：90 日オンボーディングで離職率 5%",
+      "category": "成功事例",
+      "categoryClass": "success",
+      "date": "2025年9月17日",
+      "author": "Career Horizon 編集部",
+      "readTimeMin": 4,
+      "tags": ["SaaS", "オンボーディング"],
+      "summary": "ARR 30 億円規模の SaaS 企業がオンボーディングプログラム刷新で 1 年後離職率を 5% に抑制。",
+      "editorComment": "採用後の定着施策が市場での競争力に直結。オンボーディングは採用コスト削減に有効。",
+      "actionItems": {
+        "employer": "90 日プランとメンター制度を整備し、早期離職の原因を可視化。",
+        "candidate": "入社後 30-60-90 日のプランを提出すると評価が上がる。"
+      },
+      "source": "Career Horizon",
+      "sourceUrl": "https://career-horizon.example/case/saas-onboarding",
+      "reliability": "高",
+      "fullContent": "<p>採用から 90 日間のオンボーディングプログラムを刷新した結果、内定者の定着率が大幅に改善。週次 1on1 とプロジェクトシャドーを必須化したことが奏功した。</p><p>プログラム資料はリソース集からダウンロード可能。</p>"
     },
     {
-      "id": "dyn-20250911-news-careerconnection-jp-career-general-230524-",
-      "title": "外回り営業マンのサボり術、商談終了後にラーメン → 食べ終わったら商談終了の報告 → 直帰",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "年収"
-      ],
-      "fullContent": "<p>少し息抜きを入れるほうが、仕事が捗るという人は少なくないだろう。業務に支障が出ない範囲で、うまく時間を使っている人たちの「サボり術」に関する投稿が寄せられた。 大阪府に住む営業職の30代男性（年収850万円）は、外回り中 […]\nThe post 外回り営業マンのサボり術、商談終了後にラーメン → 食べ終わったら商談終了の報告 → 直帰 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/230524/"
-    },
-    {
-      "id": "dyn-20250911-news-careerconnection-jp-career-general-230507-",
-      "title": "昇進できない理由が「他の女性社員の給与を超えちゃうから」だった女性、さっさと転職して大正解",
-      "category": "市場動向",
-      "categoryClass": "market",
-      "date": "2025年9月11日",
-      "author": "キャリコネニュース",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "年収"
-      ],
-      "fullContent": "<p>働きぶりが正当に評価されなければ、モチベーションは下がる一方だ。もし、あなたが今そんな職場にいるなら、転職を視野に入れたほうがいいだろう。 東京都在住の50代女性（営業／年収500万円）は、これまで一生懸命働き、常に上位 […]\nThe post 昇進できない理由が「他の女性社員の給与を超えちゃうから」だった女性、さっさと転職して大正解 first appeared on キャリコネニュース....</p>",
-      "source": "キャリコネニュース",
-      "organization": "キャリコネニュース",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://news.careerconnection.jp/career/general/230507/"
-    },
-    {
-      "id": "dyn-20250911-jinjibu-jp-news-detl-25502-",
-      "title": "「ミドル・シニア人材の採用」に関する意識調査",
+      "id": "2025-09-16-ux-jobmarket",
+      "title": "デザイン職の転職成功率が 72% に回復",
       "category": "業界トレンド",
       "categoryClass": "industry",
-      "date": "2025年9月11日",
-      "author": "日本の人事部（人事サービス）",
+      "date": "2025年9月16日",
+      "author": "TechDesign News",
       "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "人材"
-      ],
-      "fullContent": "<p>即戦力として45歳以上を採る時代の幕開け。経営者/人事の8割超がミドル・シニア人材の採用を「強化したい」と回答株式会社プロフェッショナルバンク（所在地：東京都千代田区、代表取締役：呑田 好和）のHR研究所......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25502/"
+      "tags": ["デザイン", "UI/UX"],
+      "summary": "採用凍結から半年、UI/UX デザイナーの求人が再開。スタートアップと大手で二極化が進む。",
+      "editorComment": "プロトタイプ作成能力とリサーチスキルが評価される傾向。ポートフォリオのアップデートは必須。",
+      "actionItems": {
+        "employer": "面接での課題提示やペアデザインセッションでスキルを見極める。",
+        "candidate": "Figma ファイルとケーススタディをセットで共有し、意思決定プロセスを説明。"
+      },
+      "source": "TechDesign News",
+      "sourceUrl": "https://techdesign.example/news/20250916",
+      "reliability": "中",
+      "fullContent": "<p>UI/UX デザイン職の求人が再び活発化。求人数は前月比 +18%、内定率は 72% まで回復した。プロダクト主導での成長戦略が加速している。</p>"
     },
     {
-      "id": "dyn-20250911-jinjibu-jp-news-detl-25484-",
-      "title": "「リファラル採用に関するアンケート調査」を実施",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月11日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "採用"
-      ],
-      "fullContent": "<p>8割の企業が導入も“成果に壁” リファラル採用の最大課題は“社内広報” リファラル採用を活性化させるクラウドサービス「Refcome（リフカム）」を提供する株式会社ウィルオブ・パート......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25484/"
+      "id": "2025-09-15-layoff",
+      "title": "グローバル SaaS 企業が 5% のリストラクチャリング、国内は影響限定的",
+      "category": "雇用・人事",
+      "categoryClass": "employment",
+      "date": "2025年9月15日",
+      "author": "Bloomberg",
+      "readTimeMin": 2,
+      "tags": ["レイオフ", "グローバル"],
+      "summary": "米国拠点の SaaS 企業が全社の 5% を削減。日本法人は営業支援部門の再編に留まる見込み。",
+      "editorComment": "国内では採用計画を維持。転職希望者は日本法人のポジションを継続的にチェック。",
+      "actionItems": {
+        "employer": "影響範囲と採用計画を早期に公開し、候補者の不安を解消。",
+        "candidate": "退職者の LinkedIn をフォローし、空いたポジションをウォッチ。"
+      },
+      "source": "Bloomberg",
+      "sourceUrl": "https://www.bloomberg.com/",
+      "reliability": "中",
+      "fullContent": "<p>米国 SaaS 大手が 5% の人員削減を発表。日本法人は営業支援部門の再編に留まる予定で、開発やサクセス部門の採用は継続する。</p>"
     },
     {
-      "id": "dyn-20250910-jinjibu-jp-news-detl-25483-",
-      "title": "内定者フォローや内定者の心境・取り組みに関する調査",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月10日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "人材",
-        "育成",
-        "内定"
-      ],
-      "fullContent": "<p>内定企業からのフォロー満足度ランキング、1位は「懇親会」、2位「アルバイト・2位「アルバイト・インターン」、3位「入社予定の会社で研修」 累計20,000社450万人以上の組織開発・人材育成を支援するALL DI......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月10日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25483/"
-    },
-    {
-      "id": "dyn-20250910-goworkship-com-magazine-transition-latest-research-",
-      "title": "「フリーランスから正社員へ」54.7%の企業が実績あり　トランジション採用の最新調査",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月10日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "働き方",
-        "副業",
-        "人材"
-      ],
-      "fullContent": "<p>株式会社GIG（所在地：東京都中央区、代表取締役：岩上貴洋）は、2025年7月に人事・採用担当者122名を対象とした「トランジション採用」に関する調査を実施しました。 働き方の多様化や人材不足が叫ばれるなか、フリーランス […]\nこの記事の続きはこちら 「フリーランスから正社員へ」54.7%の企業が実績あり　トランジション採用の最新調査 Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月10日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/transition-latest-research/"
-    },
-    {
-      "id": "dyn-20250910-goworkship-com-magazine-ai-job-research-",
-      "title": "AIによって代替される職業とは？最新の調査結果をチェック",
+      "id": "2025-09-14-skill-up",
+      "title": "Python×AI の無料講座受講者が 1.8 倍に増加",
       "category": "専門家コラム",
       "categoryClass": "expert",
-      "date": "2025年9月10日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "副業"
-      ],
-      "fullContent": "<p>「人間の仕事がAIによって奪われる」――ここ数年で本当によく言われるようになりましたよね。読者の皆さんの中にも、AIに対して強い危機感を覚えている方が多いのではないでしょうか。 実際、複数の信頼性ある調査が、「将来的に多 […]\nこの記事の続きはこちら AIによって代替される職業とは？最新の調査結果をチェック Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月10日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/ai-job-research/"
-    },
-    {
-      "id": "dyn-20250909-jinjibu-jp-news-detl-25481-",
-      "title": "「中小企業における若手社員育成に関する調査」を実施",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月9日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "育成"
-      ],
-      "fullContent": "<p>中小企業経営者の約8割が若手社員の育成に課題を感じている！株式会社CRAYONZ（本社：東京都港区、代表取締役社長：日髙 心陽）は、若手社員が在籍している中小企業の経営者を対象に「中小企業における若手社員育......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月9日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25481/"
-    },
-    {
-      "id": "dyn-20250909-goworkship-com-magazine-recruitment-difficulties-transition-",
-      "title": "正社員が見つからない！採用難時代の突破口は「トランジション採用」",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月9日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "求人",
-        "副業"
-      ],
-      "fullContent": "<p>少子高齢化やスキル不足で、正社員採用はますます難しくなっています。求人を出しても応募が集まらない、ようやく採用してもミスマッチで定着しない──そんな課題を抱える企業が増えています。 そこで注目されているのが、フリーランス […]\nこの記事の続きはこちら 正社員が見つからない！採用難時代の突破口は「トランジション採用」 Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月9日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/recruitment-difficulties-transition/"
-    },
-    {
-      "id": "dyn-20250909-goworkship-com-magazine-business-outsourcing-guide-",
-      "title": "業務委託とは？仕事を始める前に知っておくべきこと｜契約・税金・保険・トラブル回避術",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月9日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "働き方",
-        "副業"
-      ],
-      "fullContent": "<p>「業務委託って、アルバイトや正社員とどう違うの？」 「社会保険や税金はどうなるの？」 副業やフリーランスが増えるなか、多くの人が業務委託契約という働き方に出会います。しかし契約内容をよく理解しないまま仕事を始めてしまうと […]\nこの記事の続きはこちら 業務委託とは？仕事を始める前に知っておくべきこと｜契約・税金・保険・トラブル回避術 Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月9日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/business-outsourcing-guide/"
-    },
-    {
-      "id": "dyn-20250908-jinjibu-jp-news-detl-25480-",
-      "title": "「会社説明会に関する意識調査」を実施",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月8日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "新卒"
-      ],
-      "fullContent": "<p>【Z世代400名調査】就活生の72%が新卒向け会社説明会において、「オンライン」を重視すると回答 インタラクティブ体験でデジタルコミュニケーションを変革するMIL株式会社（本社：東京都新宿区、代表取締役C......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25480/"
-    },
-    {
-      "id": "dyn-20250908-goworkship-com-magazine-ebisu-cafe-dengen-wifi-",
-      "title": "【恵比寿駅】電源＆Wi-Fiの使えるカフェ14選！勉強・仕事・ノマドワークにおすすめ",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年9月8日",
-      "author": "Workship MAGAZINE",
-      "readTimeMin": 3,
-      "tags": [
-        "副業"
-      ],
-      "fullContent": "<p>恵比寿駅周辺には、駅直結の商業施設内をはじめ、電源やWi-Fiが利用できるカフェが数多くそろっています。 移動の合間に立ち寄れる店舗から、腰を据えて作業できる落ち着いたカフェまで幅広くあり、用途や気分に合わせて選べるのが […]\nこの記事の続きはこちら 【恵比寿駅】電源＆Wi-Fiの使えるカフェ14選！勉強・仕事・ノマドワークにおすすめ Workship MAGAZINE トップはこちら フリーランス/副業/業務委託 案件獲得メディア Workship MAGAZINE....</p>",
-      "source": "Workship MAGAZINE",
-      "organization": "Workship MAGAZINE",
-      "period": "2025年9月8日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://goworkship.com/magazine/ebisu-cafe-dengen-wifi/"
-    },
-    {
-      "id": "dyn-20250907-jinjibu-jp-news-detl-25474-",
-      "title": "AIネイティブ世代の就職活動と生成AI利用における調査レポートを発表",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月7日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "就職",
-        "採用"
-      ],
-      "fullContent": "<p>AIネイティブ世代の就活最前線：26卒の8割超が生成AIを活用、採用戦略の再構築が急務にITエンジニア向け転職・就職・学習プラットフォーム「paiza（パイザ）」を運営するpaiza株式会社（東京都港区、代表取締役社......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月7日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25474/"
-    },
-    {
-      "id": "dyn-20250907-jinjibu-jp-news-detl-25472-",
-      "title": "スキマバイトアプリの活用状況に関するアンケート調査を実施",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月7日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "人材"
-      ],
-      "fullContent": "<p>スキマバイトアプリを利用したことがある人は全体の17.1％、スキマバイトアプリの名称を知っている人は全体の58.4％～一般企業・団体で人材採用に携わったことがある1,000名へのアンケート調査結果～株式会社矢野......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月7日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25472/"
-    },
-    {
-      "id": "dyn-20250904-jinjibu-jp-news-detl-25435-",
-      "title": "採用マーケティングを活用したハイクラス向け人材獲得支援サービス「X Agency」を正式リリース",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月4日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "人材"
-      ],
-      "fullContent": "<p>〜「Myシリーズ」と連携し、マーケティングのアプローチで優秀人材獲得を推進〜株式会社TalentX（本社：東京都新宿区、代表取締役社長：鈴木 貴史、証券コード：330A）は、採用DXプラットフォーム「Myシリーズ」......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月4日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25435/"
-    },
-    {
-      "id": "dyn-20250902-jinjibu-jp-news-detl-25419-",
-      "title": "メンタルヘルス不調による休職者の実態調査を実施",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年9月2日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "転職"
-      ],
-      "fullContent": "<p>メンタル不調による休職後、20代の7割が退職 転職後の再休職もレバレジーズ株式会社が運営する障がい者就労支援サービス「ワークリア」は、職場におけるメンタルヘルス不調の増加を受け、正社員として勤務してい......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年9月2日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25419/"
-    },
-    {
-      "id": "dyn-20250831-jinjibu-jp-news-detl-25443-",
-      "title": "『2025年 共働き意識調査』を実施",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年8月31日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "転職",
-        "キャリア"
-      ],
-      "fullContent": "<p>キャリアに影響7割 “見えざる格差”に女性から諦めの声～未だ残る「やって当然」の空気感 “収入差での家事育児分担”に賛否 ～ 転職サービス「doda」などを提供するパーソルキャリア......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年8月31日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25443/"
-    },
-    {
-      "id": "dyn-20250831-jinjibu-jp-news-detl-25440-",
-      "title": "企業のAI導入から社内定着までの伴走型パートナー「AI推進室」の提供を開始",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年8月31日",
-      "author": "日本の人事部（人事サービス）",
-      "readTimeMin": 3,
-      "tags": [
-        "人材",
-        "内定"
-      ],
-      "fullContent": "<p>～コンサルティング・受託開発・AI人材の３軸で企業のAI利活用を支援～株式会社TWOSTONE&amp;Sons（以下 TWOSTONE&amp;Sons）のグループ会社である株式会社Growth One（所在地：東京都渋谷区、代表取締役 CEO：武......</p>",
-      "source": "日本の人事部（人事サービス）",
-      "organization": "日本の人事部（人事サービス）",
-      "period": "2025年8月31日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://jinjibu.jp/news/detl/25440/"
-    },
-    {
-      "id": "dyn-20250811-hrnote-jp-contents-saiyo-mynavi-20250812-utm-source-rss-utm-",
-      "title": "採用担当者の工数を軽減できるマイナビの採用方法とは？",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年8月11日",
-      "author": "HR NOTE",
-      "readTimeMin": 3,
-      "tags": [
-        "採用",
-        "中途"
-      ],
-      "fullContent": "<p>中途採用のニーズが高まる一方で、採用担当者の負担が年々増加しています。しかし、実際の現場では応募者対応や日程調整といった事務作業が煩雑で、採用の質やスピードに課題を抱える企業も少なくありません。 本記事では、中途採用を幅 […]\nThe post 採用担当者の工数を軽減できるマイナビの採用方法とは？ first appeared on HR NOTE....</p>",
-      "source": "HR NOTE",
-      "organization": "HR NOTE",
-      "period": "2025年8月11日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://hrnote.jp/contents/saiyo-mynavi-20250812/?utm_source=rss&utm_medium=rss&utm_campaign=saiyo-mynavi-20250812"
-    },
-    {
-      "id": "dyn-20250728-hrnote-jp-contents-soshiki-proactive-8-20250729-utm-source-r",
-      "title": "プロアクティブ人材育成 実践ステップ⑥：育成施策の展開にあたって｜「プロアクティブ人材」育成実践術 #8",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年7月28日",
-      "author": "HR NOTE",
-      "readTimeMin": 3,
-      "tags": [
-        "人材",
-        "育成"
-      ],
-      "fullContent": "<p>【連載】「プロアクティブ人材」育成実践術 01｜人的資本経営を成果に結びつけるために重要な「プロアクティブ人材」とは？ 02｜なぜ人材のプロアクティブ化が重要なのか？ 03｜プロアクティブ人材育成 実践ステップ①：プロア […]\nThe post プロアクティブ人材育成 実践ステップ⑥：育成施策の展開にあたって｜「プロアクティブ人材」育成実践術 #8 first appeared on HR NOTE....</p>",
-      "source": "HR NOTE",
-      "organization": "HR NOTE",
-      "period": "2025年7月28日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://hrnote.jp/contents/soshiki-proactive-8-20250729/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-proactive-8-20250729"
-    },
-    {
-      "id": "dyn-20250724-hrnote-jp-contents-soshiki-proactive-7-20250725-utm-source-r",
-      "title": "プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年7月24日",
-      "author": "HR NOTE",
-      "readTimeMin": 3,
-      "tags": [
-        "人材",
-        "育成"
-      ],
-      "fullContent": "<p>連載の第6回では、現場の管理職が自身の部下に対する見方、およびそれに起因する自身の行動の癖を知ることで、個人・チームへの働きかけを変えていくことの重要性を解説しました。 第7回では、人材のプロアクティブ化を図るために自社 […]\nThe post プロアクティブ人材育成 実践ステップ⑤：自社が必要とする人事施策を見出せ！｜「プロアクティブ人材」育成実践術 #7 first appeared on HR NOTE....</p>",
-      "source": "HR NOTE",
-      "organization": "HR NOTE",
-      "period": "2025年7月24日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://hrnote.jp/contents/soshiki-proactive-7-20250725/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-proactive-7-20250725"
-    },
-    {
-      "id": "dyn-20250722-hrnote-jp-contents-soshiki-newhorizoncollective-event-202507",
-      "title": "セカンドキャリアを開拓する。中高年シニアの活躍の場を広げることこそ、企業にとっても、社会の未来にとっても、成長の鍵に",
-      "category": "専門家コラム",
-      "categoryClass": "expert",
-      "date": "2025年7月22日",
-      "author": "HR NOTE",
-      "readTimeMin": 3,
-      "tags": [
-        "キャリア"
-      ],
-      "fullContent": "<p>人生100年時代を見据え、セカンドキャリアの開拓を支援する「ライフシフトプラットフォーム」（以下、LSP）は、2021年にスタートし、5年目を迎えました。本記事では、2025年5月29日に開催されたLSPの活動報告会の様 […]\nThe post セカンドキャリアを開拓する。中高年シニアの活躍の場を広げることこそ、企業にとっても、社会の未来にとっても、成長の鍵に first appeared on HR NOTE....</p>",
-      "source": "HR NOTE",
-      "organization": "HR NOTE",
-      "period": "2025年7月22日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://hrnote.jp/contents/soshiki-newhorizoncollective-event-20250722/?utm_source=rss&utm_medium=rss&utm_campaign=soshiki-newhorizoncollective-event-20250722"
-    },
-    {
-      "id": "dyn-20250722-hrnote-jp-contents-saiyo-allesgood-ai-20250723-utm-source-rs",
-      "title": "「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井",
-      "category": "業界トレンド",
-      "categoryClass": "industry",
-      "date": "2025年7月22日",
-      "author": "HR NOTE",
-      "readTimeMin": 3,
-      "tags": [
-        "就職",
-        "採用",
-        "新卒"
-      ],
-      "fullContent": "<p>AIの登場により、Z世代の就職活動に、かつてない大きな変化が起こりつつあります。AIを活用した自己分析やエントリーシート（ES）作成はすでに常識となり、今後さらに多様な変化が予想されます。 新卒採用の現場では、Z世代就活 […]\nThe post 「AIにジャッジされたくない」採用担当者が知るべきZ世代の本音と対策｜アレスグッド半井 first appeared on HR NOTE....</p>",
-      "source": "HR NOTE",
-      "organization": "HR NOTE",
-      "period": "2025年7月22日",
-      "sampleSize": "",
-      "reliability": "中程度",
-      "updateFrequency": "随時",
-      "sourceUrl": "https://hrnote.jp/contents/saiyo-allesgood-ai-20250723/?utm_source=rss&utm_medium=rss&utm_campaign=saiyo-allesgood-ai-20250723"
+      "date": "2025年9月14日",
+      "author": "Udemy for Business",
+      "readTimeMin": 4,
+      "tags": ["リスキリング", "Python"],
+      "summary": "Udemy for Business のデータによると、AI 関連講座の受講者が前年比 +80%。企業研修でも人気。",
+      "editorComment": "学習ログを転職活動にどう活かすかが鍵。成果物をまとめたポートフォリオで差別化を。",
+      "actionItems": {
+        "employer": "研修プログラムと評価制度を連動させ、習熟度を可視化。",
+        "candidate": "修了証明のほか、実際に作ったプロジェクトを GitHub で公開。"
+      },
+      "source": "Udemy",
+      "sourceUrl": "https://udemy.com/",
+      "reliability": "中",
+      "fullContent": "<p>Udemy for Business の調査によると、Python×AI カテゴリの受講者は前年比 +80%。特にデータアナリストとバックエンドエンジニアの受講割合が高い。</p>"
     }
   ]
 }
