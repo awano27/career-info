@@ -3,88 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>繝ｪ繧ｽ繝ｼ繧ｹ髮・| Career Horizon</title>
+  <title>リソース集 | Career Horizon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="resources">
+  <a class="skip-link" href="#main">コンテンツへスキップ</a>
   <header class="header">
-    <nav class="nav">
-      <div class="nav-brand"><h1>Career Horizon</h1></div>
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">繝繝・す繝･繝懊・繝・/a></li>
-        <li><a href="news.html" class="nav-link">霆｢閨ｷ繝九Η繝ｼ繧ｹ</a></li>
-        <li><a href="resources.html" class="nav-link active">繝ｪ繧ｽ繝ｼ繧ｹ髮・/a></li>
-        <li><a href="glossary.html" class="nav-link">逕ｨ隱樣寔/FAQ</a></li>
-        <li><a href="tools.html" class="nav-link">繝・・繝ｫ</a></li>
-        <li><a href="companies.html" class="nav-link">莨∵･ｭ遐皮ｩｶ</a></li>
+    <nav class="nav" aria-label="メインメニュー">
+      <div class="nav-brand"><a href="index.html">Career Horizon</a></div>
+      <button class="nav-toggle" id="mobile-menu" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">メニューを開閉</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="primary-navigation">
+        <li><a class="nav-link" data-nav="dashboard" href="index.html">ダッシュボード</a></li>
+        <li><a class="nav-link" data-nav="news" href="news.html">ニュース</a></li>
+        <li><a class="nav-link" data-nav="companies" href="companies.html">企業研究</a></li>
+        <li><a class="nav-link" data-nav="resources" href="resources.html">リソース</a></li>
+        <li><a class="nav-link" data-nav="tools" href="tools.html">ツール</a></li>
+        <li><a class="nav-link" data-nav="glossary" href="glossary.html">用語集</a></li>
       </ul>
-      <div class="nav-toggle" id="mobile-menu"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
     </nav>
   </header>
 
-  <main class="main-content">
-    <div class="dashboard-header">
-      <h2>繧ｭ繝｣繝ｪ繧｢/霆｢閨ｷ 繝ｪ繧ｽ繝ｼ繧ｹ髮・/h2>
-      <p class="update-time">譛譁ｰ繝・Φ繝励Ξ繝ｼ繝医→繝√ぉ繝・け繝ｪ繧ｹ繝・/p>
-    </div>
+  <main class="main-content" id="main">
+    <section class="page-intro" aria-labelledby="resources-title">
+      <p class="eyebrow">PLAYBOOKS</p>
+      <h1 class="page-title" id="resources-title">キャリア支援リソース集</h1>
+      <p class="lead">履歴書テンプレートから交渉スクリプト、自己分析ワークシート、ロードマップまで。実務での使い方やアレンジ例を添えて提供します。</p>
+      <p class="muted small-text">すべてのテンプレートは Markdown / Google スプレッドシート両対応です。社内共有や Notion への貼り付けにも使いやすい構成にしています。</p>
+    </section>
 
-    <section class="summary-section">
-      <h3>繝・Φ繝励Ξ繝ｼ繝・/h3>
-      <div class="summary-cards">
-        <div class="summary-card">
-          <h4>塘 螻･豁ｴ譖ｸ繝・Φ繝励Ξ繝ｼ繝茨ｼ・oogle繝峨く繝･繝｡繝ｳ繝茨ｼ・/h4>
-          <p>隱ｭ縺ｿ繧・☆縺・ATS蟇ｾ蠢懊ｒ諢剰ｭ倥＠縺溘Δ繝繝ｳ縺ｪ螻･豁ｴ譖ｸ繝輔か繝ｼ繝槭ャ繝医・/p>
-          <p><a href="docs/templates/resume_template.md" download>繝繧ｦ繝ｳ繝ｭ繝ｼ繝会ｼ・arkdown・・/a></p>
-        </div>
-        <div class="summary-card">
-          <h4>塘 閨ｷ蜍咏ｵ梧ｭｴ譖ｸ繝・Φ繝励Ξ繝ｼ繝・/h4>
-          <p>謌先棡/謨ｰ蛟､繧剃ｸｭ蠢・↓縲ヾTAR縺ｧ謨ｴ逅・☆繧玖・蜍咏ｵ梧ｭｴ譖ｸ縲・/p>
-          <p><a href="docs/templates/job_history_template.md" download>繝繧ｦ繝ｳ繝ｭ繝ｼ繝会ｼ・arkdown・・/a></p>
-        </div>
-        <div class="summary-card">
-          <h4>笨・髱｢謗･繝√ぉ繝・け繝ｪ繧ｹ繝・/h4>
-          <p>蠖捺律謖√■迚ｩ/遒ｺ隱堺ｺ矩・諠ｳ螳壼撫遲斐・譛邨ゅメ繧ｧ繝・け縺ｫ縲・/p>
-          <p><a href="docs/templates/interview_checklist.md" download>繝繧ｦ繝ｳ繝ｭ繝ｼ繝会ｼ・arkdown・・/a></p>
-        </div>
-        <div class="summary-card">
-          <h4>町 蟷ｴ蜿惹ｺ､貂峨せ繧ｯ繝ｪ繝励ヨ</h4>
-          <p>莠句燕貅門ｙ/譬ｹ諡謠千､ｺ/莉｣譖ｿ譯医・豬√ｌ縺ｧ隱ｬ蠕怜鴨繧帝ｫ倥ａ繧九・/p>
-          <p><a href="docs/templates/salary_negotiation_script.md" download>繝繧ｦ繝ｳ繝ｭ繝ｼ繝会ｼ・arkdown・・/a></p>
-        </div>
+    <section class="summary-section" aria-labelledby="template-heading">
+      <div class="section-header">
+        <h2 id="template-heading">テンプレート & チェックリスト</h2>
+        <p>用途別にセクションを分けました。ダウンロード後、そのまま記入して使えます。</p>
+      </div>
+      <div class="summary-cards resource-grid">
+        <article class="summary-card">
+          <h3>履歴書テンプレート</h3>
+          <p>ATS 対応の 2 カラム構成。成果を「課題 → 行動 → 結果」で整理できる記入欄付き。</p>
+          <ul class="muted small-text">
+            <li>おすすめ活用: SaaS / IT 企業の応募、英語表記に切り替え可能</li>
+            <li>応用例: 右カラムを「推しポイント」に置き換えてポートフォリオ連携</li>
+          </ul>
+          <div class="resource-actions">
+            <a class="download-btn" href="docs/templates/resume_template.md" download>Markdown</a>
+            <a class="download-btn" href="docs/templates/resume_template_google.csv" download>Google 用レイアウト</a>
+          </div>
+        </article>
+        <article class="summary-card">
+          <h3>職務経歴書テンプレート</h3>
+          <p>STAR フレームワークで成果を可視化。採用担当者用のレビュー欄も併記しています。</p>
+          <ul class="muted small-text">
+            <li>おすすめ活用: 面談前の事前共有資料、面接官向け簡易サマリー</li>
+            <li>応用例: PM ロール向けに KPI セクションを追記するフォーマットを同梱</li>
+          </ul>
+          <div class="resource-actions">
+            <a class="download-btn" href="docs/templates/job_history_template.md" download>Markdown</a>
+            <a class="download-btn" href="docs/templates/job_history_template_google.csv" download>Google 用レイアウト</a>
+          </div>
+        </article>
+        <article class="summary-card">
+          <h3>面接チェックリスト</h3>
+          <p>前日準備・当日の持ち物・オンライン面接時の環境チェックを 1 枚に集約。</p>
+          <ul class="muted small-text">
+            <li>おすすめ活用: 1 on 1 面談で候補者と共有し、ステータスを可視化</li>
+            <li>応用例: Slack 共有用にチェック項目を JSON でエクスポート可能</li>
+          </ul>
+          <div class="resource-actions">
+            <a class="download-btn" href="docs/templates/interview_checklist.md" download>Markdown</a>
+            <a class="download-btn" href="docs/templates/interview_checklist_google.csv" download>Google 用レイアウト</a>
+          </div>
+        </article>
+        <article class="summary-card">
+          <h3>年収交渉スクリプト</h3>
+          <p>ファクト・希望条件・代替案の 3 段構え。ロールプレイで使える例文入り。</p>
+          <ul class="muted small-text">
+            <li>おすすめ活用: オファー受諾前の条件交渉、リクルーターとの調整</li>
+            <li>応用例: 英語交渉向けテンプレートを追記、Slack DM に貼れる要約版付き</li>
+          </ul>
+          <div class="resource-actions">
+            <a class="download-btn" href="docs/templates/salary_negotiation_script.md" download>Markdown</a>
+            <a class="download-btn" href="docs/templates/salary_negotiation_script_google.csv" download>Google 用レイアウト</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="summary-section">
-      <h3>蜿り・ぎ繧､繝・/h3>
-      <div class="summary-cards">
-        <div class="summary-card">
-          <h4>ｧｭ 繧ｭ繝｣繝ｪ繧｢譁ｹ驥昴・豎ｺ繧∵婿</h4>
-          <p>萓｡蛟､隕ｳ/蠑ｷ縺ｿ/蟶ょｴ縺ｮ莠､轤ｹ繧定ｦ九▽縺代ｋ3繧ｹ繝・ャ繝励・/p>
-        </div>
-        <div class="summary-card">
-          <h4>ｧｪ 繧ｹ繧ｭ繝ｫ譽壼査縺励Ρ繝ｼ繧ｯ</h4>
-          <p>螳溽ｸｾ竊貞ｼｷ縺ｿ竊呈署萓帑ｾ｡蛟､縺ｮ險隱槫喧繝ｯ繝ｼ繧ｯ繧ｷ繝ｼ繝医・/p>
-        </div>
-        <div class="summary-card">
-          <h4>翌・・繝昴・繝医ヵ繧ｩ繝ｪ繧ｪ菴懈・</h4>
-          <p>隕九○譁ｹ/讒区・/螟ｱ謨嶺ｾ九°繧牙ｭｦ縺ｶ繝√ぉ繝・け繝昴う繝ｳ繝医・/p>
-        </div>
+    <section class="summary-section" aria-labelledby="longterm-heading">
+      <div class="section-header">
+        <h2 id="longterm-heading">長期戦略に役立つ資料</h2>
+        <p>転職活動を通年のプロジェクトとして捉えるためのガイドとワークシートです。</p>
+      </div>
+      <div class="summary-cards resource-grid">
+        <article class="summary-card">
+          <h3>キャリアロードマップ</h3>
+          <p>四半期ごとのゴールとマイルストーンを可視化。スキル投資と応募計画を一目で確認できます。</p>
+          <div class="resource-actions">
+            <a class="download-btn" href="docs/templates/career_roadmap_canvas.md" download>Markdown</a>
+            <a class="download-btn" href="docs/templates/career_roadmap_canvas.csv" download>CSV</a>
+          </div>
+        </article>
+        <article class="summary-card">
+          <h3>自己分析ワークシート</h3>
+          <p>価値観・強み・ライフスタイル制約を 3 軸で整理。面接回答や Will/CAN/MUST の言語化に役立ちます。</p>
+          <div class="resource-actions">
+            <a class="download-btn" href="docs/templates/self_assessment_worksheet.md" download>Markdown</a>
+            <a class="download-btn" href="docs/templates/self_assessment_worksheet.csv" download>CSV</a>
+          </div>
+        </article>
+        <article class="summary-card">
+          <h3>ポートフォリオ構築ガイド</h3>
+          <p>GitHub・Note・Slides など複数チャネルの整理テンプレート。レビュー依頼のチェックリスト付き。</p>
+          <div class="resource-actions">
+            <a class="download-btn" href="docs/templates/portfolio_playbook.md" download>Markdown</a>
+            <a class="download-btn" href="docs/templates/portfolio_playbook.csv" download>CSV</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="summary-section" aria-labelledby="howto-heading">
+      <div class="section-header">
+        <h2 id="howto-heading">活用ガイド</h2>
+        <p>テンプレートをどのように使うか、動画・記事・チェックポイントをまとめました。</p>
+      </div>
+      <div class="accordion" id="resource-accordion">
+        <details open>
+          <summary>履歴書テンプレートの書き方</summary>
+          <ol>
+            <li>トップの「キャリアサマリー」に 3 行で強みを記載。KPI と変化量をセットで書くと伝わりやすくなります。</li>
+            <li>成果ブロックでは「課題 → 施策 → 結果」の順で記載し、成果は定量化した数値で締めます。</li>
+            <li>右カラムの「補足情報」にはポートフォリオ URL や推薦コメントを記載しましょう。</li>
+          </ol>
+        </details>
+        <details>
+          <summary>交渉スクリプトの使い方</summary>
+          <ul>
+            <li>スクリプト内の <code>{{fact}}</code> などの変数を埋めると自動でメッセージが生成されるようになっています。</li>
+            <li>相手の懸念に対する「Yes, and」型の返答例も追加しているのでロールプレイに活用してください。</li>
+            <li>厚生労働省や求人メディアのベンチマークリンクを添えると説得力が高まります。</li>
+          </ul>
+        </details>
+        <details>
+          <summary>自己分析ワークショップの進め方（60 分）</summary>
+          <ol>
+            <li>10 分: 最近楽しかった仕事を 3 つ挙げ、共通する要素を抽出。</li>
+            <li>20 分: ワークシートの「強み」欄を記入。証拠となるエピソードも書き出します。</li>
+            <li>20 分: キャリアの条件（年収・働き方・成長機会など）を優先度付きで整理。</li>
+            <li>10 分: まとめを 3 行のメッセージに変換し、面接回答用メモに転記。</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <section class="community-section" aria-labelledby="share-heading">
+      <div class="section-header">
+        <h2 id="share-heading">共有とフィードバック</h2>
+        <p>テンプレートを使った事例や改善のリクエストを募集しています。</p>
+      </div>
+      <div class="community-grid">
+        <article class="summary-card">
+          <h3>活用事例ギャラリー</h3>
+          <p>他の利用者がアレンジした例を匿名で掲載。自分の工夫も投稿できます。</p>
+          <button class="ghost-btn" type="button" id="open-gallery">ギャラリーを見る</button>
+          <ul class="bookmark-list" id="gallery-list"></ul>
+        </article>
+        <article class="summary-card">
+          <h3>テンプレート改善リクエスト</h3>
+          <form id="resource-feedback" class="inline-form">
+            <label for="resource-name">対象テンプレート</label>
+            <select id="resource-name">
+              <option value="resume">履歴書テンプレート</option>
+              <option value="job-history">職務経歴書</option>
+              <option value="interview">面接チェックリスト</option>
+              <option value="negotiation">交渉スクリプト</option>
+              <option value="roadmap">キャリアロードマップ</option>
+            </select>
+            <label for="resource-request">改善してほしいポイント</label>
+            <textarea id="resource-request" rows="3" placeholder="例: 生成AI職種向けの例文が欲しい"></textarea>
+            <button class="primary-btn" type="submit">送信する</button>
+          </form>
+          <p class="muted small-text" id="resource-feedback-status">送信内容はローカルに保存され、CSV で書き出せます。</p>
+          <button class="ghost-btn" type="button" id="download-resource-feedback">CSV をエクスポート</button>
+        </article>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2025 Career Horizon. All rights reserved.</p>
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-heading">Career Horizon</h2>
+        <p class="muted">キャリアの「調べる・準備する・交渉する」を支える情報基盤。</p>
+      </div>
+      <div>
+        <h3 class="footer-heading">リンク</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">ダッシュボード</a></li>
+          <li><a href="news.html">ニュース</a></li>
+          <li><a href="tools.html">ツール</a></li>
+          <li><a href="docs/sources.html">データ出典</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-heading">お問い合わせ</h3>
+        <p class="muted">リソースの追加リクエストは community@career-horizon.example まで。</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2025 Career Horizon. All rights reserved.</p>
   </footer>
 
   <script>
-    document.getElementById('mobile-menu')?.addEventListener('click',()=>{
+    document.getElementById('mobile-menu')?.addEventListener('click', () => {
       document.querySelector('.nav-menu')?.classList.toggle('active');
     });
   </script>
 </body>
 </html>
-
