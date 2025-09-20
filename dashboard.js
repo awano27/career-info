@@ -383,6 +383,15 @@
     return `${Number(parts[1])}月`;
   }
 
+  function formatNumber(value, options = {}) {
+    if (value == null) return '';
+    const num = typeof value === 'number' ? value : Number(value);
+    if (!Number.isFinite(num)) {
+      return String(value ?? '');
+    }
+    return num.toLocaleString('ja-JP', options);
+  }
+
   function escapeHtml(text){
     if(text == null) return '';
     return String(text).replace(/[&<>"']/g, (m) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[m]));
