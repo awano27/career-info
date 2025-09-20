@@ -52,19 +52,19 @@
     "regions": [
       {
         "key": "all",
-        "label": "??"
+        "label": "全国"
       },
       {
         "key": "kanto",
-        "label": "??"
+        "label": "関東"
       },
       {
         "key": "kansai",
-        "label": "??"
+        "label": "関西"
       },
       {
         "key": "chubu",
-        "label": "??"
+        "label": "中部"
       }
     ],
     "experienceLevels": [
@@ -125,6 +125,16 @@
       "recommendedActions": [
         "新規求人が増加する地域では告知タイミングを合わせる",
         "減少している場合は社内リファラルやダイレクトソーシングを強化"
+      ]
+    },
+    "unemploymentRate": {
+      "title": "失業率",
+      "unit": "%",
+      "description": "完全失業者数を労働力人口で割った指標。普及支援策やスキルリスクの求めを指標として利用します。",
+      "calculation": "完全失業者数 ÷ 労働力人口",
+      "recommendedActions": [
+        "失業率が上昇する局面では、再雇用支援やスキルアップの需要が高まります",
+        "労働市場が緩和する際は採用条件を再点検するようにしましょう"
       ]
     }
   },
@@ -607,7 +617,7 @@
       "regions": [
         {
           "key": "kanto",
-          "name": "??",
+          "name": "関東",
           "values": [
             3.95,
             3.45,
@@ -622,7 +632,7 @@
         },
         {
           "key": "kansai",
-          "name": "??",
+          "name": "関西",
           "values": [
             2.67,
             2.3,
@@ -637,7 +647,7 @@
         },
         {
           "key": "chubu",
-          "name": "??",
+          "name": "中部",
           "values": [
             3.23,
             2.79,
