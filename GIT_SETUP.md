@@ -1,4 +1,4 @@
-# GitHub Pages デプロイ手順
+﻿# GitHub Pages デプロイ手順
 
 ## 📋 前提条件
 - Gitがインストールされていること
@@ -82,7 +82,6 @@ career-info/
 ├── dashboard.js        # ダッシュボード用JavaScript
 ├── news.js             # ニュースページ用JavaScript
 ├── docs/
-│   └── requirements.html # 要件定義書
 ├── README.md           # プロジェクト説明
 ├── .gitignore          # Git無視ファイル設定
 └── GIT_SETUP.md        # この手順書
@@ -109,7 +108,6 @@ git push
 
 ✅ https://awano27.github.io/career-info/ でダッシュボードが表示される
 ✅ https://awano27.github.io/career-info/news.html でニュースページが表示される
-✅ https://awano27.github.io/career-info/docs/requirements.html で要件定義書が表示される
 ✅ チャートが正常に表示される
 ✅ ニュース記事のモーダルが動作する
 ✅ レスポンシブデザインが機能する
@@ -120,4 +118,5 @@ git push
 |--------|-----|------|
 | ダッシュボード | https://awano27.github.io/career-info/ | KPI指標とチャート |
 | ニュース | https://awano27.github.io/career-info/news.html | 転職関連ニュース |
-| 要件定義書 | https://awano27.github.io/career-info/docs/requirements.html | プロジェクト仕様書 |
+
+
