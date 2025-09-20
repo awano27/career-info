@@ -965,3 +965,6 @@ figcaption {
     padding: 20px;
   }
 }
+.definition-block { margin-bottom: 1.5rem; }
+.definition-block h4 { margin-bottom: 0.5rem; font-size: 1.05rem; }
+.definition-block ul { margin-top: 0.5rem; margin-left: 1rem; color: var(--secondary-color); }

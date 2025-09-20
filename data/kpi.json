@@ -1,34 +1,85 @@
-﻿{
-  "lastUpdated": "2025-09-15",
+{
+  "lastUpdated": "2025-09-18",
   "sources": [
-    { "name": "厚生労働省 一般職業紹介状況（職業安定業務統計）", "url": "https://www.mhlw.go.jp/toukei/list/114-1.html" },
-    { "name": "厚生労働省 賃金構造基本統計調査", "url": "https://www.mhlw.go.jp/toukei/list/chingin.html" },
-    { "name": "総務省統計局 労働力調査", "url": "https://www.stat.go.jp/data/roudou/index.html" },
-    { "name": "国税庁 民間給与実態統計調査", "url": "https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan/index.htm" },
-    { "name": "独立行政法人 情報処理推進機構", "url": "https://www.ipa.go.jp/jinzai/" }
+    {
+      "name": "�p�[����L�����A DODA�]�E���l�{�����|�[�g",
+      "url": "https://doda.jp/guide/kyujin_bairitsu/"
+    },
+    {
+      "name": "�����ȓ��v�� �J���͒��� ��������",
+      "url": "https://www.stat.go.jp/data/roudou/sokuhou/tsuki/index.html"
+    },
+    {
+      "name": "�����J���� ���������{���v����",
+      "url": "https://www.mhlw.go.jp/toukei/list/chingin.html"
+    },
+    {
+      "name": "���Œ� ���ԋ��^���ԓ��v����",
+      "url": "https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan/index.htm"
+    }
   ],
   "filters": {
     "industries": [
-      { "key": "all", "label": "全体平均" },
-      { "key": "it", "label": "IT・通信" },
-      { "key": "finance", "label": "金融・保険" },
-      { "key": "manufacturing", "label": "製造" },
-      { "key": "services", "label": "サービス" },
-      { "key": "consulting", "label": "コンサルティング" }
+      {
+        "key": "all",
+        "label": "�S�̕���"
+      },
+      {
+        "key": "it",
+        "label": "IT�E�ʐM"
+      },
+      {
+        "key": "finance",
+        "label": "���Z"
+      },
+      {
+        "key": "manufacturing",
+        "label": "���[�J�["
+      },
+      {
+        "key": "services",
+        "label": "�����E����"
+      },
+      {
+        "key": "consulting",
+        "label": "�R���T���e�B���O"
+      }
     ],
     "regions": [
-      { "key": "all", "label": "全国" },
-      { "key": "kanto", "label": "関東" },
-      { "key": "kansai", "label": "関西" },
-      { "key": "chubu", "label": "中部" },
-      { "key": "tohoku", "label": "東北" },
-      { "key": "kyushu", "label": "九州" }
+      {
+        "key": "all",
+        "label": "�S��"
+      },
+      {
+        "key": "kanto",
+        "label": "�֓�"
+      },
+      {
+        "key": "kansai",
+        "label": "�֐�"
+      },
+      {
+        "key": "chubu",
+        "label": "����"
+      }
     ],
     "experienceLevels": [
-      { "key": "all", "label": "全体" },
-      { "key": "junior", "label": "20代" },
-      { "key": "mid", "label": "30代" },
-      { "key": "senior", "label": "40代" }
+      {
+        "key": "all",
+        "label": "全体"
+      },
+      {
+        "key": "junior",
+        "label": "20代"
+      },
+      {
+        "key": "mid",
+        "label": "30代"
+      },
+      {
+        "key": "senior",
+        "label": "40代"
+      }
     ]
   },
   "definitions": {
@@ -75,78 +126,547 @@
   },
   "metrics": {
     "jobRatio": {
-      "months": ["2024-12","2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08"],
+      "months": [
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08"
+      ],
       "series": [
         {
           "key": "all",
-          "name": "全体平均",
-          "values": [1.10,1.12,1.15,1.19,1.21,1.23,1.25,1.27,1.28],
-          "prevYear": [1.03,1.05,1.07,1.09,1.12,1.14,1.16,1.18,1.20]
+          "name": "�S�̕���",
+          "values": [
+            1.1,
+            1.12,
+            1.15,
+            1.19,
+            1.21,
+            1.23,
+            1.25,
+            1.27,
+            1.28
+          ],
+          "prevYear": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         },
         {
           "key": "it",
-          "name": "IT・通信",
-          "values": [1.38,1.42,1.47,1.51,1.56,1.59,1.61,1.63,1.65],
-          "prevYear": [1.21,1.26,1.30,1.34,1.36,1.40,1.44,1.46,1.43]
+          "name": "IT�E�ʐM",
+          "values": [
+            1.38,
+            1.42,
+            1.47,
+            1.51,
+            1.56,
+            1.59,
+            1.61,
+            1.63,
+            1.65
+          ],
+          "prevYear": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         },
         {
           "key": "finance",
-          "name": "金融・保険",
-          "values": [1.06,1.08,1.10,1.14,1.16,1.17,1.18,1.19,1.20],
-          "prevYear": [1.01,1.03,1.05,1.07,1.08,1.09,1.10,1.11,1.11]
+          "name": "���Z",
+          "values": [
+            1.06,
+            1.08,
+            1.1,
+            1.14,
+            1.16,
+            1.17,
+            1.18,
+            1.19,
+            1.2
+          ],
+          "prevYear": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         },
         {
           "key": "manufacturing",
-          "name": "製造",
-          "values": [0.98,1.02,1.05,1.09,1.12,1.15,1.16,1.17,1.18],
-          "prevYear": [0.94,0.96,0.98,1.01,1.03,1.06,1.07,1.08,1.09]
+          "name": "���[�J�[",
+          "values": [
+            0.98,
+            1.02,
+            1.05,
+            1.09,
+            1.12,
+            1.15,
+            1.16,
+            1.17,
+            1.18
+          ],
+          "prevYear": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         },
         {
           "key": "services",
-          "name": "サービス",
-          "values": [1.18,1.20,1.23,1.26,1.28,1.30,1.32,1.33,1.34],
-          "prevYear": [1.08,1.10,1.12,1.15,1.17,1.19,1.20,1.22,1.23]
+          "name": "�����E����",
+          "values": [
+            1.18,
+            1.2,
+            1.23,
+            1.26,
+            1.28,
+            1.3,
+            1.32,
+            1.33,
+            1.34
+          ],
+          "prevYear": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         },
         {
           "key": "consulting",
-          "name": "コンサルティング",
-          "values": [1.32,1.35,1.40,1.44,1.47,1.51,1.53,1.55,1.58],
-          "prevYear": [1.18,1.21,1.25,1.28,1.31,1.34,1.36,1.38,1.40]
+          "name": "�R���T���e�B���O",
+          "values": [
+            1.32,
+            1.35,
+            1.4,
+            1.44,
+            1.47,
+            1.51,
+            1.53,
+            1.55,
+            1.58
+          ],
+          "prevYear": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
         }
-      ]
+      ],
+      "referenceSeries": []
     },
     "salaryMedian": {
       "industries": [
-        { "key": "it", "industry": "IT・通信", "median": 605, "prev": 584, "p75": 720, "experience": { "junior": 480, "mid": 650, "senior": 780 } },
-        { "key": "finance", "industry": "金融・保険", "median": 560, "prev": 542, "p75": 680, "experience": { "junior": 430, "mid": 590, "senior": 750 } },
-        { "key": "manufacturing", "industry": "製造", "median": 510, "prev": 498, "p75": 620, "experience": { "junior": 400, "mid": 540, "senior": 660 } },
-        { "key": "services", "industry": "サービス", "median": 470, "prev": 455, "p75": 560, "experience": { "junior": 360, "mid": 500, "senior": 610 } },
-        { "key": "consulting", "industry": "コンサルティング", "median": 680, "prev": 650, "p75": 820, "experience": { "junior": 520, "mid": 720, "senior": 860 } }
+        {
+          "key": "it",
+          "industry": "IT・通信",
+          "median": 605,
+          "prev": 584,
+          "p75": 720,
+          "experience": {
+            "junior": 480,
+            "mid": 650,
+            "senior": 780
+          }
+        },
+        {
+          "key": "finance",
+          "industry": "金融・保険",
+          "median": 560,
+          "prev": 542,
+          "p75": 680,
+          "experience": {
+            "junior": 430,
+            "mid": 590,
+            "senior": 750
+          }
+        },
+        {
+          "key": "manufacturing",
+          "industry": "製造",
+          "median": 510,
+          "prev": 498,
+          "p75": 620,
+          "experience": {
+            "junior": 400,
+            "mid": 540,
+            "senior": 660
+          }
+        },
+        {
+          "key": "services",
+          "industry": "サービス",
+          "median": 470,
+          "prev": 455,
+          "p75": 560,
+          "experience": {
+            "junior": 360,
+            "mid": 500,
+            "senior": 610
+          }
+        },
+        {
+          "key": "consulting",
+          "industry": "コンサルティング",
+          "median": 680,
+          "prev": 650,
+          "p75": 820,
+          "experience": {
+            "junior": 520,
+            "mid": 720,
+            "senior": 860
+          }
+        }
       ]
     },
     "regionJobShare": {
       "regions": [
-        { "key": "kanto", "region": "関東", "share": 44.1, "prev": 43.6, "trend": [ { "month": "2025-04", "value": 43.0 }, { "month": "2025-05", "value": 43.4 }, { "month": "2025-06", "value": 43.8 }, { "month": "2025-07", "value": 44.0 }, { "month": "2025-08", "value": 44.1 } ], "openings": { "current": 8200, "prev4w": 7800 } },
-        { "key": "kansai", "region": "関西", "share": 24.8, "prev": 24.2, "trend": [ { "month": "2025-04", "value": 23.5 }, { "month": "2025-05", "value": 23.9 }, { "month": "2025-06", "value": 24.3 }, { "month": "2025-07", "value": 24.6 }, { "month": "2025-08", "value": 24.8 } ], "openings": { "current": 4300, "prev4w": 4120 } },
-        { "key": "chubu", "region": "中部", "share": 11.6, "prev": 11.8, "trend": [ { "month": "2025-04", "value": 11.9 }, { "month": "2025-05", "value": 11.8 }, { "month": "2025-06", "value": 11.7 }, { "month": "2025-07", "value": 11.6 }, { "month": "2025-08", "value": 11.6 } ], "openings": { "current": 2080, "prev4w": 2140 } },
-        { "key": "tohoku", "region": "東北", "share": 7.3, "prev": 7.5, "trend": [ { "month": "2025-04", "value": 7.6 }, { "month": "2025-05", "value": 7.5 }, { "month": "2025-06", "value": 7.4 }, { "month": "2025-07", "value": 7.3 }, { "month": "2025-08", "value": 7.3 } ], "openings": { "current": 1360, "prev4w": 1420 } },
-        { "key": "kyushu", "region": "九州", "share": 7.0, "prev": 7.1, "trend": [ { "month": "2025-04", "value": 7.2 }, { "month": "2025-05", "value": 7.1 }, { "month": "2025-06", "value": 7.0 }, { "month": "2025-07", "value": 7.0 }, { "month": "2025-08", "value": 7.0 } ], "openings": { "current": 1290, "prev4w": 1260 } }
+        {
+          "key": "kanto",
+          "region": "関東",
+          "share": 44.1,
+          "prev": 43.6,
+          "trend": [
+            {
+              "month": "2025-04",
+              "value": 43
+            },
+            {
+              "month": "2025-05",
+              "value": 43.4
+            },
+            {
+              "month": "2025-06",
+              "value": 43.8
+            },
+            {
+              "month": "2025-07",
+              "value": 44
+            },
+            {
+              "month": "2025-08",
+              "value": 44.1
+            }
+          ],
+          "openings": {
+            "current": 8200,
+            "prev4w": 7800
+          }
+        },
+        {
+          "key": "kansai",
+          "region": "関西",
+          "share": 24.8,
+          "prev": 24.2,
+          "trend": [
+            {
+              "month": "2025-04",
+              "value": 23.5
+            },
+            {
+              "month": "2025-05",
+              "value": 23.9
+            },
+            {
+              "month": "2025-06",
+              "value": 24.3
+            },
+            {
+              "month": "2025-07",
+              "value": 24.6
+            },
+            {
+              "month": "2025-08",
+              "value": 24.8
+            }
+          ],
+          "openings": {
+            "current": 4300,
+            "prev4w": 4120
+          }
+        },
+        {
+          "key": "chubu",
+          "region": "中部",
+          "share": 11.6,
+          "prev": 11.8,
+          "trend": [
+            {
+              "month": "2025-04",
+              "value": 11.9
+            },
+            {
+              "month": "2025-05",
+              "value": 11.8
+            },
+            {
+              "month": "2025-06",
+              "value": 11.7
+            },
+            {
+              "month": "2025-07",
+              "value": 11.6
+            },
+            {
+              "month": "2025-08",
+              "value": 11.6
+            }
+          ],
+          "openings": {
+            "current": 2080,
+            "prev4w": 2140
+          }
+        },
+        {
+          "key": "tohoku",
+          "region": "東北",
+          "share": 7.3,
+          "prev": 7.5,
+          "trend": [
+            {
+              "month": "2025-04",
+              "value": 7.6
+            },
+            {
+              "month": "2025-05",
+              "value": 7.5
+            },
+            {
+              "month": "2025-06",
+              "value": 7.4
+            },
+            {
+              "month": "2025-07",
+              "value": 7.3
+            },
+            {
+              "month": "2025-08",
+              "value": 7.3
+            }
+          ],
+          "openings": {
+            "current": 1360,
+            "prev4w": 1420
+          }
+        },
+        {
+          "key": "kyushu",
+          "region": "九州",
+          "share": 7,
+          "prev": 7.1,
+          "trend": [
+            {
+              "month": "2025-04",
+              "value": 7.2
+            },
+            {
+              "month": "2025-05",
+              "value": 7.1
+            },
+            {
+              "month": "2025-06",
+              "value": 7
+            },
+            {
+              "month": "2025-07",
+              "value": 7
+            },
+            {
+              "month": "2025-08",
+              "value": 7
+            }
+          ],
+          "openings": {
+            "current": 1290,
+            "prev4w": 1260
+          }
+        }
       ]
     },
     "successRate": {
       "experience": [
-        { "key": "junior", "label": "20代", "rate": 76, "prev": 74, "notes": "ポテンシャル採用枠の拡大で新卒/第二新卒向け案件が増加" },
-        { "key": "mid", "label": "30代", "rate": 68, "prev": 66, "notes": "マネジメント経験とスキルアップ証跡が重要" },
-        { "key": "senior", "label": "40代", "rate": 54, "prev": 52, "notes": "専門性可視化・副業実績の提示で成功率を引き上げ" },
-        { "key": "all", "label": "全体", "rate": 66, "prev": 64, "notes": "全体平均は 2pt 改善。内定承諾率は 74%。" }
+        {
+          "key": "junior",
+          "label": "20代",
+          "rate": 76,
+          "prev": 74,
+          "notes": "ポテンシャル採用枠の拡大で新卒/第二新卒向け案件が増加"
+        },
+        {
+          "key": "mid",
+          "label": "30代",
+          "rate": 68,
+          "prev": 66,
+          "notes": "マネジメント経験とスキルアップ証跡が重要"
+        },
+        {
+          "key": "senior",
+          "label": "40代",
+          "rate": 54,
+          "prev": 52,
+          "notes": "専門性可視化・副業実績の提示で成功率を引き上げ"
+        },
+        {
+          "key": "all",
+          "label": "全体",
+          "rate": 66,
+          "prev": 64,
+          "notes": "全体平均は 2pt 改善。内定承諾率は 74%。"
+        }
       ],
       "byAge": [
-        { "age": "20代前半", "rate": 78, "prev": 76 },
-        { "age": "20代後半", "rate": 82, "prev": 80 },
-        { "age": "30代前半", "rate": 71, "prev": 69 },
-        { "age": "30代後半", "rate": 65, "prev": 63 },
-        { "age": "40代前半", "rate": 56, "prev": 54 },
-        { "age": "40代後半", "rate": 48, "prev": 46 }
+        {
+          "age": "20代前半",
+          "rate": 78,
+          "prev": 76
+        },
+        {
+          "age": "20代後半",
+          "rate": 82,
+          "prev": 80
+        },
+        {
+          "age": "30代前半",
+          "rate": 71,
+          "prev": 69
+        },
+        {
+          "age": "30代後半",
+          "rate": 65,
+          "prev": 63
+        },
+        {
+          "age": "40代前半",
+          "rate": 56,
+          "prev": 54
+        },
+        {
+          "age": "40代後半",
+          "rate": 48,
+          "prev": 46
+        }
+      ]
+    },
+    "regionJobRatio": {
+      "months": [
+        "2024-12",
+        "2025-01",
+        "2025-02",
+        "2025-03",
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07",
+        "2025-08"
+      ],
+      "regions": [
+        {
+          "key": "kanto",
+          "name": "�֓�",
+          "values": [
+            3.95,
+            3.45,
+            3.07,
+            3.14,
+            2.95,
+            2.85,
+            2.94,
+            3.01,
+            3.01
+          ]
+        },
+        {
+          "key": "kansai",
+          "name": "�֐�",
+          "values": [
+            2.67,
+            2.3,
+            2.1,
+            2.15,
+            2.02,
+            1.95,
+            1.96,
+            2.11,
+            2.1
+          ]
+        },
+        {
+          "key": "chubu",
+          "name": "����",
+          "values": [
+            3.23,
+            2.79,
+            2.51,
+            2.5,
+            2.36,
+            2.33,
+            2.34,
+            2.41,
+            2.39
+          ]
+        }
+      ]
+    },
+    "unemploymentRate": {
+      "months": [
+        "2025-04",
+        "2025-05",
+        "2025-06",
+        "2025-07"
+      ],
+      "values": [
+        2.5,
+        2.5,
+        2.5,
+        2.3
+      ],
+      "prevYear": [
+        null,
+        null,
+        null,
+        null
       ]
     }
   },
@@ -171,9 +691,21 @@
     }
   ],
   "downloads": [
-    { "label": "求人倍率 CSV", "file": "data/kpi_job_ratio.csv" },
-    { "label": "業界別年収 CSV", "file": "data/salary_by_industry.csv" },
-    { "label": "地域別求人数 CSV", "file": "data/region_job_share.csv" },
-    { "label": "年代別成功率 CSV", "file": "data/success_rate_by_age.csv" }
+    {
+      "label": "求人倍率 CSV",
+      "file": "data/kpi_job_ratio.csv"
+    },
+    {
+      "label": "業界別年収 CSV",
+      "file": "data/salary_by_industry.csv"
+    },
+    {
+      "label": "地域別求人数 CSV",
+      "file": "data/region_job_share.csv"
+    },
+    {
+      "label": "年代別成功率 CSV",
+      "file": "data/success_rate_by_age.csv"
+    }
   ]
 }
